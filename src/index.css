@@ -2,39 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Django Developer Portfolio Design System */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Professional color palette inspired by Django */
+    --background: 0 0% 98%;
+    --foreground: 215 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Django green as primary */
+    --primary: 152 73% 15%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 152 73% 12%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 15% 92%;
+    --secondary-foreground: 215 25% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 15% 95%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 152 40% 88%;
+    --accent-foreground: 152 73% 15%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 15% 88%;
+    --input: 215 15% 88%;
+    --ring: 152 73% 15%;
+
+    /* Professional gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(152 73% 15%) 0%, hsl(152 60% 12%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 98%) 0%, hsl(210 15% 95%) 100%);
+    
+    /* Code-like shadows */
+    --shadow-card: 0 4px 12px -2px hsl(215 25% 15% / 0.08);
+    --shadow-hover: 0 8px 24px -4px hsl(215 25% 15% / 0.12);
+    
+    /* Professional transitions */
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
@@ -100,6 +113,16 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-['Inter'];
+  }
+  
+  /* Professional typography */
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  /* Code-like elements */
+  .tech-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-md bg-accent text-accent-foreground font-mono text-sm;
   }
 }
