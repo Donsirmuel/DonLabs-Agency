@@ -1,56 +1,91 @@
 import { Button } from "@/components/ui/button";
-import { Code2, Database, Server } from "lucide-react";
+import { Code2, Database, Server, Download, Briefcase } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted px-4">
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="flex justify-center space-x-4 mb-8">
-          <div className="p-3 bg-primary/10 rounded-lg">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted px-4 relative overflow-hidden">
+      {/* Background animation elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="animate-float absolute top-20 left-10 w-4 h-4 bg-primary/20 rounded-full"></div>
+        <div className="animate-float absolute top-40 right-20 w-6 h-6 bg-primary/10 rounded-full" style={{animationDelay: '2s'}}></div>
+        <div className="animate-float absolute bottom-40 left-20 w-3 h-3 bg-primary/30 rounded-full" style={{animationDelay: '4s'}}></div>
+      </div>
+      
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        {/* Avatar */}
+        <div className="flex justify-center mb-8 animate-fade-in-up">
+          <Avatar className="w-32 h-32 border-4 border-primary/20 shadow-xl animate-glow">
+            <AvatarImage src="/placeholder.svg" alt="Don Sirmuel" />
+            <AvatarFallback className="text-2xl font-bold bg-primary text-primary-foreground">DS</AvatarFallback>
+          </Avatar>
+        </div>
+        
+        <div className="flex justify-center space-x-4 mb-8 animate-slide-up">
+          <div className="p-3 bg-primary/10 rounded-lg animate-float hover-lift">
             <Database className="h-8 w-8 text-primary" />
           </div>
-          <div className="p-3 bg-primary/10 rounded-lg">
+          <div className="p-3 bg-primary/10 rounded-lg animate-float hover-lift" style={{animationDelay: '1s'}}>
             <Server className="h-8 w-8 text-primary" />
           </div>
-          <div className="p-3 bg-primary/10 rounded-lg">
+          <div className="p-3 bg-primary/10 rounded-lg animate-float hover-lift" style={{animationDelay: '2s'}}>
             <Code2 className="h-8 w-8 text-primary" />
           </div>
         </div>
         
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
-          Django Developer
+        <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground animate-fade-in-up">
+          Don Sirmuel
         </h1>
         
-        <p className="text-xl md:text-2xl text-muted-foreground mb-4">
+        <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-primary animate-fade-in-up">
+          Django Developer
+        </h2>
+        
+        <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in-up">
           Full-Stack Developer with Backend Expertise
         </p>
         
-        <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+        <div className="flex items-center justify-center gap-2 mb-6 text-lg text-muted-foreground animate-fade-in-up">
+          <Briefcase className="h-5 w-5 text-primary" />
+          <span>Available for hire • Web Apps • Websites • PWAs</span>
+        </div>
+        
+        <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in-up">
           Specialized in building robust, scalable web applications with Django. 
-          Strong backend foundation with practical frontend skills.
+          Ready to create powerful backends for your next project.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 animate-fade-in-up">
           <Button 
             size="lg" 
-            className="bg-primary hover:bg-primary-hover text-primary-foreground font-medium"
+            className="bg-primary hover:bg-primary-hover text-primary-foreground font-medium hover-lift"
           >
             View Projects
           </Button>
           <Button 
             variant="outline" 
             size="lg"
-            className="border-primary text-primary hover:bg-primary/5"
+            className="border-primary text-primary hover:bg-primary/5 hover-lift"
           >
             Get In Touch
           </Button>
+          <Button 
+            variant="outline" 
+            size="lg"
+            className="border-primary text-primary hover:bg-primary/5 hover-lift"
+          >
+            <Download className="h-4 w-4 mr-2" />
+            Download CV
+          </Button>
         </div>
         
-        <div className="mt-12 flex justify-center space-x-8 text-sm text-muted-foreground">
+        <div className="mt-12 flex justify-center flex-wrap gap-4 text-sm animate-fade-in-up">
           <div className="tech-badge">Python</div>
           <div className="tech-badge">Django</div>
           <div className="tech-badge">PostgreSQL</div>
           <div className="tech-badge">REST APIs</div>
+          <div className="tech-badge">PWAs</div>
+          <div className="tech-badge">Web Apps</div>
         </div>
       </div>
     </section>

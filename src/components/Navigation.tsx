@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Code2 } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const Navigation = () => {
   const scrollToSection = (sectionId: string) => {
@@ -17,7 +18,7 @@ const Navigation = () => {
             <div className="p-2 bg-primary/10 rounded-lg">
               <Code2 className="h-5 w-5 text-primary" />
             </div>
-            <span className="font-bold text-lg">Django Dev</span>
+            <span className="font-bold text-lg">Don Sirmuel</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
@@ -47,12 +48,15 @@ const Navigation = () => {
             </button>
           </div>
           
-          <Button 
-            onClick={() => scrollToSection('contact')}
-            className="bg-primary hover:bg-primary-hover text-primary-foreground"
-          >
-            Hire Me
-          </Button>
+          <div className="flex items-center space-x-2">
+            <ThemeToggle />
+            <Button 
+              onClick={() => scrollToSection('contact')}
+              className="bg-primary hover:bg-primary-hover text-primary-foreground hover-lift"
+            >
+              Hire Me
+            </Button>
+          </div>
         </div>
       </div>
     </nav>

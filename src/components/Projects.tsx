@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Database } from "lucide-react";
+import { ExternalLink, Github, Database, Image as ImageIcon } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -11,7 +11,9 @@ const Projects = () => {
       technologies: ["Django", "PostgreSQL", "Stripe API", "Celery", "Redis"],
       features: ["User Management", "Payment Processing", "Inventory Management", "Order Tracking"],
       githubUrl: "#",
-      liveUrl: "#"
+      liveUrl: "#",
+      imageUrl: "/placeholder.svg",
+      hasLive: true
     },
     {
       title: "Task Management API",
@@ -19,7 +21,9 @@ const Projects = () => {
       technologies: ["Django REST Framework", "WebSockets", "PostgreSQL", "Docker"],
       features: ["REST API", "Real-time Updates", "File Upload", "Team Collaboration"],
       githubUrl: "#",
-      liveUrl: "#"
+      liveUrl: "#",
+      imageUrl: "/placeholder.svg",
+      hasLive: false
     },
     {
       title: "Content Management System",
@@ -27,7 +31,9 @@ const Projects = () => {
       technologies: ["Django", "MySQL", "JavaScript", "AWS S3"],
       features: ["Content Editor", "SEO Tools", "Multi-language", "Media Management"],
       githubUrl: "#",
-      liveUrl: "#"
+      liveUrl: "#",
+      imageUrl: "/placeholder.svg",
+      hasLive: true
     }
   ];
 
@@ -43,7 +49,25 @@ const Projects = () => {
         
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="shadow-card hover:shadow-hover transition-all duration-300 bg-card">
+            <Card key={index} className="project-card shadow-card bg-card overflow-hidden group animate-fade-in-up" style={{animationDelay: `${index * 0.2}s`}}>
+              {/* Project Image */}
+              <div className="aspect-video bg-muted relative overflow-hidden">
+                <img 
+                  src={project.imageUrl} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {!project.hasLive && (
+                  <div className="absolute top-3 right-3">
+                    <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm">
+                      <ImageIcon className="h-3 w-3 mr-1" />
+                      Screenshot
+                    </Badge>
+                  </div>
+                )}
+              </div>
+              
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <Database className="h-5 w-5 text-primary" />
@@ -85,18 +109,30 @@ const Projects = () => {
                     <Button 
                       variant="outline" 
                       size="sm"
-                      className="flex-1 border-primary/20 text-primary hover:bg-primary/5"
+                      className="flex-1 border-primary/20 text-primary hover:bg-primary/5 hover-lift"
                     >
                       <Github className="h-4 w-4 mr-1" />
                       Code
                     </Button>
-                    <Button 
-                      size="sm"
-                      className="flex-1 bg-primary hover:bg-primary-hover text-primary-foreground"
-                    >
-                      <ExternalLink className="h-4 w-4 mr-1" />
-                      Live
-                    </Button>
+                    {project.hasLive ? (
+                      <Button 
+                        size="sm"
+                        className="flex-1 bg-primary hover:bg-primary-hover text-primary-foreground hover-lift"
+                      >
+                        <ExternalLink className="h-4 w-4 mr-1" />
+                        Live
+                      </Button>
+                    ) : (
+                      <Button 
+                        variant="outline"
+                        size="sm"
+                        className="flex-1 border-muted-foreground/20 text-muted-foreground cursor-not-allowed"
+                        disabled
+                      >
+                        <ImageIcon className="h-4 w-4 mr-1" />
+                        Preview
+                      </Button>
+                    )}
                   </div>
                 </div>
               </CardContent>

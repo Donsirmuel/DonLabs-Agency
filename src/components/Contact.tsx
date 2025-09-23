@@ -3,18 +3,18 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Github, Linkedin, MapPin } from "lucide-react";
+import { Mail, Github, Linkedin, MapPin, MessageCircle, Send } from "lucide-react";
 
 const Contact = () => {
   return (
     <section className="py-20 px-4 bg-background">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to collaborate on your next Django project? Let's discuss how I can help build your backend.
-          </p>
-        </div>
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Ready to collaborate on your next Django project? Let's discuss how I can help build your web application, website, or PWA.
+            </p>
+          </div>
         
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Info */}
@@ -28,43 +28,63 @@ const Contact = () => {
             </div>
             
             <div className="space-y-4">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2">
                 <div className="p-2 bg-primary/10 rounded-lg">
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-muted-foreground">your.email@example.com</p>
+                  <p className="text-muted-foreground">don.sirmuel@example.com</p>
                 </div>
               </div>
               
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2">
                 <div className="p-2 bg-primary/10 rounded-lg">
                   <Github className="h-5 w-5 text-primary" />
                 </div>
                 <div>
                   <p className="font-medium">GitHub</p>
-                  <p className="text-muted-foreground">github.com/yourusername</p>
+                  <p className="text-muted-foreground">github.com/donsirmuel</p>
                 </div>
               </div>
               
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2">
                 <div className="p-2 bg-primary/10 rounded-lg">
                   <Linkedin className="h-5 w-5 text-primary" />
                 </div>
                 <div>
                   <p className="font-medium">LinkedIn</p>
-                  <p className="text-muted-foreground">linkedin.com/in/yourprofile</p>
+                  <p className="text-muted-foreground">linkedin.com/in/donsirmuel</p>
                 </div>
               </div>
               
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2">
+                <div className="p-2 bg-green-500/10 rounded-lg">
+                  <MessageCircle className="h-5 w-5 text-green-500" />
+                </div>
+                <div>
+                  <p className="font-medium">WhatsApp</p>
+                  <p className="text-muted-foreground">+234 xxx xxx xxxx</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2">
+                <div className="p-2 bg-blue-500/10 rounded-lg">
+                  <Send className="h-5 w-5 text-blue-500" />
+                </div>
+                <div>
+                  <p className="font-medium">Telegram</p>
+                  <p className="text-muted-foreground">@donsirmuel</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2">
                 <div className="p-2 bg-primary/10 rounded-lg">
                   <MapPin className="h-5 w-5 text-primary" />
                 </div>
                 <div>
                   <p className="font-medium">Location</p>
-                  <p className="text-muted-foreground">Your City, Country</p>
+                  <p className="text-muted-foreground">Nigeria</p>
                 </div>
               </div>
             </div>
