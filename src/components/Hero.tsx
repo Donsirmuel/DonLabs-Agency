@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Code2, Database, Server, Download, Briefcase } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { ASSETS } from "@/lib/assets";
 
 const Hero = () => {
   return (
@@ -22,7 +23,7 @@ const Hero = () => {
         <div className="flex justify-center mb-8 animate-fade-in-up">
           <Avatar className="w-32 h-32 border-4 border-primary/20 shadow-xl animate-glow">
             <AvatarImage 
-              src="/profile-image.jpg" 
+              src={ASSETS.profileImage} 
               alt="Samuel Olaonipekun - Professional Django Web Developer from Lagos, Nigeria" 
               itemProp="image"
             />
@@ -86,7 +87,7 @@ const Hero = () => {
             className="border-primary text-primary hover:bg-primary/5 hover-lift"
             asChild
           >
-            <a href="/Samuel_Olaonipekun_CV.pdf" download="Samuel_Olaonipekun_CV.pdf">
+            <a href={ASSETS.cv} download="Samuel_Olaonipekun_CV.pdf">
               <Download className="h-4 w-4 mr-2" />
               Download CV
             </a>

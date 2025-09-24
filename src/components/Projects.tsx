@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Database, Image as ImageIcon } from "lucide-react";
+import { ASSETS } from "@/lib/assets";
 
 const Projects = () => {
   const projects = [
@@ -12,7 +13,7 @@ const Projects = () => {
       features: ["User Management", "Product Catalog", "Shopping Cart", "Admin Dashboard"],
       githubUrl: "https://github.com/Donsirmuel/vendora",
       liveUrl: "#",
-      imageUrl: "/placeholder.svg",
+      imageUrl: ASSETS.placeholder,
       hasLive: false
     },
     {
@@ -22,7 +23,7 @@ const Projects = () => {
       features: ["Responsive Design", "Product Management", "User Authentication", "Order Processing"],
       githubUrl: "#",
       liveUrl: "#",
-      imageUrl: "/placeholder.svg",
+      imageUrl: ASSETS.placeholder,
       hasLive: false
     },
     {
@@ -32,7 +33,7 @@ const Projects = () => {
       features: ["REST APIs", "Database Design", "Clean Architecture", "Test-Driven Development"],
       githubUrl: "https://github.com/Donsirmuel",
       liveUrl: "#",
-      imageUrl: "/placeholder.svg",
+      imageUrl: ASSETS.placeholder,
       hasLive: false
     }
   ];
