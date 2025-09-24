@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? "/django-backbone-showcase/" : "/",
+  base: mode === "production" ? "/My-Portfolio/" : "/",
   server: {
     host: "::",
     port: 8080,
