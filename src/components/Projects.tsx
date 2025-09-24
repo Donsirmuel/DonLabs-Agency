@@ -6,34 +6,34 @@ import { ExternalLink, Github, Database, Image as ImageIcon } from "lucide-react
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Full-featured e-commerce platform built with Django. Includes user authentication, product catalog, shopping cart, payment integration, and admin dashboard.",
-      technologies: ["Django", "PostgreSQL", "Stripe API", "Celery", "Redis"],
-      features: ["User Management", "Payment Processing", "Inventory Management", "Order Tracking"],
-      githubUrl: "#",
+      title: "Vendora - E-Commerce Platform",
+      description: "Full-featured e-commerce platform built with Django. Features user authentication, product catalog, shopping cart, payment integration, and comprehensive admin dashboard.",
+      technologies: ["Django", "PostgreSQL", "JavaScript", "HTML", "CSS"],
+      features: ["User Management", "Product Catalog", "Shopping Cart", "Admin Dashboard"],
+      githubUrl: "https://github.com/Donsirmuel/vendora",
       liveUrl: "#",
       imageUrl: "/placeholder.svg",
-      hasLive: true
+      hasLive: false
     },
     {
-      title: "Task Management API",
-      description: "RESTful API for task management with advanced features like team collaboration, file attachments, and real-time notifications.",
-      technologies: ["Django REST Framework", "WebSockets", "PostgreSQL", "Docker"],
-      features: ["REST API", "Real-time Updates", "File Upload", "Team Collaboration"],
+      title: "E-Commerce Site",
+      description: "Modern e-commerce website with responsive design and user-friendly interface. Built with Django backend and clean frontend implementation.",
+      technologies: ["Django", "MySQL", "JavaScript", "HTML", "CSS"],
+      features: ["Responsive Design", "Product Management", "User Authentication", "Order Processing"],
       githubUrl: "#",
       liveUrl: "#",
       imageUrl: "/placeholder.svg",
       hasLive: false
     },
     {
-      title: "Content Management System",
-      description: "Custom CMS built for content creators with drag-and-drop interface, SEO optimization, and multi-language support.",
-      technologies: ["Django", "MySQL", "JavaScript", "AWS S3"],
-      features: ["Content Editor", "SEO Tools", "Multi-language", "Media Management"],
-      githubUrl: "#",
+      title: "Portfolio Projects",
+      description: "Collection of web development projects showcasing Django expertise, API development, and full-stack capabilities. More projects coming soon!",
+      technologies: ["Django", "Django REST Framework", "PostgreSQL", "JavaScript"],
+      features: ["REST APIs", "Database Design", "Clean Architecture", "Test-Driven Development"],
+      githubUrl: "https://github.com/Donsirmuel",
       liveUrl: "#",
       imageUrl: "/placeholder.svg",
-      hasLive: true
+      hasLive: false
     }
   ];
 
@@ -43,7 +43,7 @@ const Projects = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Django applications showcasing backend expertise and full-stack capabilities
+            Django applications showcasing web development expertise and scalable solutions
           </p>
         </div>
         

@@ -16,8 +16,8 @@ const Hero = () => {
         {/* Avatar */}
         <div className="flex justify-center mb-8 animate-fade-in-up">
           <Avatar className="w-32 h-32 border-4 border-primary/20 shadow-xl animate-glow">
-            <AvatarImage src="/placeholder.svg" alt="Don Sirmuel" />
-            <AvatarFallback className="text-2xl font-bold bg-primary text-primary-foreground">DS</AvatarFallback>
+            <AvatarImage src="/placeholder.svg" alt="Samuel Olaonipekun" />
+            <AvatarFallback className="text-2xl font-bold bg-primary text-primary-foreground">SO</AvatarFallback>
           </Avatar>
         </div>
         
@@ -34,25 +34,25 @@ const Hero = () => {
         </div>
         
         <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground animate-fade-in-up">
-          Don Sirmuel
+          Samuel Olaonipekun
         </h1>
         
         <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-primary animate-fade-in-up">
-          Django Developer
+          Web Developer (Django)
         </h2>
         
         <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in-up">
-          Full-Stack Developer with Backend Expertise
+          Django Specialist • Backend & Full-Stack
         </p>
         
         <div className="flex items-center justify-center gap-2 mb-6 text-lg text-muted-foreground animate-fade-in-up">
           <Briefcase className="h-5 w-5 text-primary" />
-          <span>Available for hire • Web Apps • Websites • PWAs</span>
+          <span>Available for hire • Backend • Full-Stack • Web Apps</span>
         </div>
         
         <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in-up">
-          Specialized in building robust, scalable web applications with Django. 
-          Ready to create powerful backends for your next project.
+          Django Web Developer with hands-on experience building scalable web applications and APIs. 
+          Passionate about clean architecture, backend performance, and delivering user-focused solutions.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 animate-fade-in-up">
@@ -82,10 +82,10 @@ const Hero = () => {
         <div className="mt-12 flex justify-center flex-wrap gap-4 text-sm animate-fade-in-up">
           <div className="tech-badge">Python</div>
           <div className="tech-badge">Django</div>
+          <div className="tech-badge">JavaScript</div>
           <div className="tech-badge">PostgreSQL</div>
           <div className="tech-badge">REST APIs</div>
-          <div className="tech-badge">PWAs</div>
-          <div className="tech-badge">Web Apps</div>
+          <div className="tech-badge">Flask</div>
         </div>
       </div>
     </section>

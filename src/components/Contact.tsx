@@ -12,7 +12,7 @@ const Contact = () => {
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ready to collaborate on your next Django project? Let's discuss how I can help build your web application, website, or PWA.
+              Ready to contribute to impactful projects? Let's discuss web development opportunities and how I can bring value to your team.
             </p>
           </div>
         
@@ -22,8 +22,8 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
               <p className="text-muted-foreground mb-8">
-                I'm always interested in discussing new Django projects, backend challenges, 
-                or opportunities to collaborate on full-stack applications.
+                Actively seeking opportunities to contribute to impactful projects and grow within a forward-thinking team. 
+                Ready to bring reliability, problem-solving skills, and Django expertise to make a measurable difference.
               </p>
             </div>
             
@@ -34,7 +34,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-muted-foreground">don.sirmuel@example.com</p>
+                  <p className="text-muted-foreground">Samuelolaonipekun050@Outlook.com</p>
                 </div>
               </div>
               
@@ -44,7 +44,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium">GitHub</p>
-                  <p className="text-muted-foreground">github.com/donsirmuel</p>
+                  <p className="text-muted-foreground">github.com/Donsirmuel</p>
                 </div>
               </div>
               
@@ -54,7 +54,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium">LinkedIn</p>
-                  <p className="text-muted-foreground">linkedin.com/in/donsirmuel</p>
+                  <p className="text-muted-foreground">linkedin.com/in/samuel-olaonipekun</p>
                 </div>
               </div>
               
@@ -64,7 +64,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium">WhatsApp</p>
-                  <p className="text-muted-foreground">+234 xxx xxx xxxx</p>
+                  <p className="text-muted-foreground">+234 915 099 6465</p>
                 </div>
               </div>
               
@@ -73,8 +73,8 @@ const Contact = () => {
                   <Send className="h-5 w-5 text-blue-500" />
                 </div>
                 <div>
-                  <p className="font-medium">Telegram</p>
-                  <p className="text-muted-foreground">@donsirmuel</p>
+                  <p className="font-medium">Twitter</p>
+                  <p className="text-muted-foreground">@_donsirmuel</p>
                 </div>
               </div>
               
@@ -84,7 +84,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium">Location</p>
-                  <p className="text-muted-foreground">Nigeria</p>
+                  <p className="text-muted-foreground">Lagos, Nigeria</p>
                 </div>
               </div>
             </div>

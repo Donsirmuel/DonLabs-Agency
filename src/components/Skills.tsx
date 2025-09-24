@@ -8,25 +8,25 @@ const Skills = () => {
       title: "Backend Development",
       icon: <Server className="h-6 w-6" />,
       description: "Core expertise in server-side development",
-      skills: ["Django", "Django REST Framework", "Python", "Celery", "Redis", "PostgreSQL", "MySQL"]
+      skills: ["Django", "Django REST Framework", "Flask", "Python", "Celery", "Redis"]
     },
     {
       title: "Database & APIs",
       icon: <Database className="h-6 w-6" />,
       description: "Database design and API development",
-      skills: ["PostgreSQL", "MySQL", "SQLite", "REST APIs", "GraphQL", "Database Optimization"]
+      skills: ["PostgreSQL", "MySQL", "SQLite", "REST API Design", "Test-Driven Development"]
     },
     {
-      title: "Frontend Integration",
+      title: "Frontend Technologies",
       icon: <Code className="h-6 w-6" />,
       description: "Frontend technologies for full-stack development",
-      skills: ["HTML5", "CSS3", "JavaScript", "React", "Bootstrap", "Tailwind CSS"]
+      skills: ["HTML", "CSS", "JavaScript", "Responsive Design", "Bootstrap", "Tailwind CSS"]
     },
     {
-      title: "DevOps & Deployment",
+      title: "Tools & Methodologies",
       icon: <Globe className="h-6 w-6" />,
-      description: "Deployment and server management",
-      skills: ["Docker", "AWS", "Nginx", "Gunicorn", "Linux", "Git", "CI/CD"]
+      description: "Development tools and practices",
+      skills: ["Git", "Docker", "AWS", "Agile", "Clean Architecture", "Performance Optimization"]
     }
   ];
 
@@ -36,7 +36,7 @@ const Skills = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Technical Skills</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Specialized in Django backend development with comprehensive full-stack capabilities
+            Django specialist with comprehensive backend and full-stack development capabilities
           </p>
         </div>
         

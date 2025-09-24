@@ -1,4 +1,14 @@
-# Welcome to your Lovable project
+# Samuel Olaonipekun - Portfolio
+
+## About
+
+This is the portfolio website of **Samuel Olaonipekun**, a Django Web Developer based in Lagos, Nigeria. The portfolio showcases my skills, projects, and experience in web development with a focus on Django backend development and full-stack capabilities.
+
+### Technologies Featured
+- **Backend**: Django, Django REST Framework, Flask, Python
+- **Frontend**: HTML, CSS, JavaScript, React, Tailwind CSS
+- **Databases**: PostgreSQL, MySQL, SQLite
+- **Tools**: Git, Docker, AWS, Celery, Redis
 
 ## Project info
 

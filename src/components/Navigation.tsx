@@ -23,7 +23,7 @@ const Navigation = () => {
             <div className="p-2 bg-primary/10 rounded-lg">
               <Code2 className="h-5 w-5 text-primary" />
             </div>
-            <span className="font-bold text-lg">Don Sirmuel</span>
+            <span className="font-bold text-lg">Samuel Olaonipekun</span>
           </div>
           
           <div className="hidden lg:flex items-center space-x-8">
