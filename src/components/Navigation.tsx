@@ -1,12 +1,17 @@
 import { Button } from "@/components/ui/button";
-import { Code2 } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Code2, Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
+import { useState } from "react";
 
 const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      setIsOpen(false); // Close mobile menu after navigation
     }
   };
 
@@ -21,7 +26,7 @@ const Navigation = () => {
             <span className="font-bold text-lg">Don Sirmuel</span>
           </div>
           
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('home')}
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -49,13 +54,61 @@ const Navigation = () => {
           </div>
           
           <div className="flex items-center space-x-2">
-            <ThemeToggle />
-            <Button 
-              onClick={() => scrollToSection('contact')}
-              className="bg-primary hover:bg-primary-hover text-primary-foreground hover-lift"
-            >
-              Hire Me
-            </Button>
+            <div className="hidden lg:flex items-center space-x-2">
+              <ThemeToggle />
+              <Button 
+                onClick={() => scrollToSection('contact')}
+                className="bg-primary hover:bg-primary-hover text-primary-foreground hover-lift"
+              >
+                Hire Me
+              </Button>
+            </div>
+            
+            {/* Mobile Menu */}
+            <div className="lg:hidden flex items-center space-x-2">
+              <ThemeToggle />
+              <Sheet open={isOpen} onOpenChange={setIsOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu className="h-5 w-5" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                  <div className="flex flex-col space-y-4 mt-8">
+                    <button 
+                      onClick={() => scrollToSection('home')}
+                      className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border"
+                    >
+                      Home
+                    </button>
+                    <button 
+                      onClick={() => scrollToSection('skills')}
+                      className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border"
+                    >
+                      Skills
+                    </button>
+                    <button 
+                      onClick={() => scrollToSection('projects')}
+                      className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border"
+                    >
+                      Projects
+                    </button>
+                    <button 
+                      onClick={() => scrollToSection('contact')}
+                      className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border"
+                    >
+                      Contact
+                    </button>
+                    <Button 
+                      onClick={() => scrollToSection('contact')}
+                      className="bg-primary hover:bg-primary-hover text-primary-foreground hover-lift mt-4 w-full"
+                    >
+                      Hire Me
+                    </Button>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </div>
