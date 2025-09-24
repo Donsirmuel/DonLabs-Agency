@@ -7,12 +7,12 @@ import { Mail, Github, Linkedin, MapPin, MessageCircle, Send } from "lucide-reac
 
 const Contact = () => {
   return (
-    <section className="py-20 px-4 bg-background">
+    <section className="py-20 px-4 bg-background" aria-labelledby="contact-heading">
       <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
+            <h2 id="contact-heading" className="text-4xl font-bold mb-4">Hire Samuel Olaonipekun - Django Developer</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ready to contribute to impactful projects? Let's discuss web development opportunities and how I can bring value to your team.
+              Ready to contribute to impactful Django projects? Available for hire in Lagos, Nigeria and remote work. Let's discuss web development opportunities and how I can bring value to your team with Python expertise.
             </p>
           </div>
         

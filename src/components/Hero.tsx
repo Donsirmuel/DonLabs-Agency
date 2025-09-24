@@ -4,7 +4,12 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted px-4 relative overflow-hidden">
+    <section 
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted px-4 relative overflow-hidden"
+      aria-label="Hero section introducing Samuel Olaonipekun"
+      itemScope 
+      itemType="https://schema.org/Person"
+    >
       {/* Background animation elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="animate-float absolute top-20 left-10 w-4 h-4 bg-primary/20 rounded-full"></div>
@@ -16,7 +21,11 @@ const Hero = () => {
         {/* Avatar */}
         <div className="flex justify-center mb-8 animate-fade-in-up">
           <Avatar className="w-32 h-32 border-4 border-primary/20 shadow-xl animate-glow">
-            <AvatarImage src="/profile-image.jpg" alt="Samuel Olaonipekun" />
+            <AvatarImage 
+              src="/profile-image.jpg" 
+              alt="Samuel Olaonipekun - Professional Django Web Developer from Lagos, Nigeria" 
+              itemProp="image"
+            />
             <AvatarFallback className="text-2xl font-bold bg-primary text-primary-foreground">SO</AvatarFallback>
           </Avatar>
         </div>
@@ -33,11 +42,11 @@ const Hero = () => {
           </div>
         </div>
         
-        <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground animate-fade-in-up">
+        <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground animate-fade-in-up" itemProp="name">
           Samuel Olaonipekun
         </h1>
         
-        <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-primary animate-fade-in-up">
+        <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-primary animate-fade-in-up" itemProp="jobTitle">
           Web Developer (Django)
         </h2>
         

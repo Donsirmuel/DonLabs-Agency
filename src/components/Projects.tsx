@@ -38,12 +38,12 @@ const Projects = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-muted/30">
+    <section className="py-20 px-4 bg-muted/30" aria-labelledby="projects-heading">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
+          <h2 id="projects-heading" className="text-4xl font-bold mb-4">Featured Django Projects & Portfolio</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Django applications showcasing web development expertise and scalable solutions
+            Professional Django applications showcasing web development expertise, scalable architecture, and modern backend solutions. View source code on GitHub.
           </p>
         </div>
         
@@ -54,8 +54,9 @@ const Projects = () => {
               <div className="aspect-video bg-muted relative overflow-hidden">
                 <img 
                   src={project.imageUrl} 
-                  alt={project.title}
+                  alt={`${project.title} - Django web application developed by Samuel Olaonipekun`}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {!project.hasLive && (

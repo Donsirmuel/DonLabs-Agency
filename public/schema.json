@@ -1,0 +1,56 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Samuel Olaonipekun",
+  "alternateName": "Donsirmuel",
+  "jobTitle": "Django Web Developer",
+  "description": "Django Web Developer with hands-on experience building scalable web applications and APIs. Passionate about clean architecture, backend performance, and delivering user-focused solutions.",
+  "url": "https://donsirmuel.github.io/My-Portfolio",
+  "image": "https://donsirmuel.github.io/My-Portfolio/profile-image.jpg",
+  "email": "Samuelolaonipekun050@Outlook.com",
+  "telephone": "+2349150996465",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lagos",
+    "addressCountry": "Nigeria"
+  },
+  "sameAs": [
+    "https://github.com/Donsirmuel",
+    "https://linkedin.com/in/samuel-olaonipekun",
+    "https://twitter.com/_donsirmuel"
+  ],
+  "knowsAbout": [
+    "Django",
+    "Python",
+    "Web Development",
+    "REST API",
+    "PostgreSQL",
+    "JavaScript",
+    "Flask",
+    "MySQL",
+    "Git",
+    "Docker",
+    "AWS",
+    "Backend Development",
+    "Full Stack Development"
+  ],
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Web Developer",
+    "occupationalCategory": "Software Development",
+    "skills": ["Django", "Python", "JavaScript", "PostgreSQL", "REST API Development"]
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance"
+  },
+  "owns": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Vendora E-Commerce Platform",
+      "applicationCategory": "E-Commerce",
+      "operatingSystem": "Web",
+      "url": "https://github.com/Donsirmuel/vendora"
+    }
+  ]
+}

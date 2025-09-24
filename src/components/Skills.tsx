@@ -31,12 +31,12 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-background">
+    <section className="py-20 px-4 bg-background" aria-labelledby="skills-heading">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Technical Skills</h2>
+          <h2 id="skills-heading" className="text-4xl font-bold mb-4">Technical Skills & Expertise</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Django specialist with comprehensive backend and full-stack development capabilities
+            Django specialist with comprehensive backend and full-stack development capabilities. Experienced in building scalable web applications using modern technologies.
           </p>
         </div>
         
