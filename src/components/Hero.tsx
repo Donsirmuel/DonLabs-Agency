@@ -16,7 +16,7 @@ const Hero = () => {
         {/* Avatar */}
         <div className="flex justify-center mb-8 animate-fade-in-up">
           <Avatar className="w-32 h-32 border-4 border-primary/20 shadow-xl animate-glow">
-            <AvatarImage src="/placeholder.svg" alt="Samuel Olaonipekun" />
+            <AvatarImage src="/profile-image.jpg" alt="Samuel Olaonipekun" />
             <AvatarFallback className="text-2xl font-bold bg-primary text-primary-foreground">SO</AvatarFallback>
           </Avatar>
         </div>
@@ -59,6 +59,7 @@ const Hero = () => {
           <Button 
             size="lg" 
             className="bg-primary hover:bg-primary-hover text-primary-foreground font-medium hover-lift"
+            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
           >
             View Projects
           </Button>
@@ -66,6 +67,7 @@ const Hero = () => {
             variant="outline" 
             size="lg"
             className="border-primary text-primary hover:bg-primary/5 hover-lift"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Get In Touch
           </Button>
@@ -73,9 +75,12 @@ const Hero = () => {
             variant="outline" 
             size="lg"
             className="border-primary text-primary hover:bg-primary/5 hover-lift"
+            asChild
           >
-            <Download className="h-4 w-4 mr-2" />
-            Download CV
+            <a href="/Samuel_Olaonipekun_CV.pdf" download="Samuel_Olaonipekun_CV.pdf">
+              <Download className="h-4 w-4 mr-2" />
+              Download CV
+            </a>
           </Button>
         </div>
         
