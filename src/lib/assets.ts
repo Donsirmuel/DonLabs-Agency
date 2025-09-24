@@ -18,4 +18,5 @@ export const ASSETS = {
   cv: getAssetPath('Samuel_Olaonipekun_CV.pdf'),
   placeholder: getAssetPath('placeholder.svg'),
   favicon: getAssetPath('favicon.ico'),
+  logo: getAssetPath('logo.jpeg'),
 } as const;

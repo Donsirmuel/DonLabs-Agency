@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Code2, Menu, X } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { ASSETS } from "@/lib/assets";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,10 +19,12 @@ const Navigation = () => {
     <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
       <div className="max-w-6xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <Code2 className="h-5 w-5 text-primary" />
-            </div>
+          <div className="flex items-center gap-3">
+            <img 
+              src={ASSETS.logo} 
+              alt="Samuel Olaonipekun Logo" 
+              className="h-10 w-10 rounded-lg object-cover"
+            />
             <span className="font-bold text-lg">Samuel Olaonipekun</span>
           </div>
           
@@ -61,7 +63,6 @@ const Navigation = () => {
           
           <div className="flex items-center space-x-2">
             <div className="hidden lg:flex items-center space-x-2">
-              <ThemeToggle />
               <Button 
                 onClick={() => scrollToSection('contact')}
                 className="bg-primary hover:bg-primary-hover text-primary-foreground hover-lift"
@@ -71,8 +72,7 @@ const Navigation = () => {
             </div>
             
             {/* Mobile Menu */}
-            <div className="lg:hidden flex items-center space-x-2">
-              <ThemeToggle />
+            <div className="lg:hidden">
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon">

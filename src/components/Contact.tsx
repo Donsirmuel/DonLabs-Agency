@@ -31,7 +31,10 @@ const Contact = () => {
             </div>
             
             <div className="space-y-4">
-              <div className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2">
+              <a 
+                href="mailto:Samuelolaonipekun050@Outlook.com"
+                className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2 transition-colors hover:bg-primary/5"
+              >
                 <div className="p-2 bg-primary/10 rounded-lg">
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
@@ -39,9 +42,14 @@ const Contact = () => {
                   <p className="font-medium">Email</p>
                   <p className="text-muted-foreground">Samuelolaonipekun050@Outlook.com</p>
                 </div>
-              </div>
+              </a>
               
-              <div className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2">
+              <a 
+                href="https://github.com/Donsirmuel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2 transition-colors hover:bg-primary/5"
+              >
                 <div className="p-2 bg-primary/10 rounded-lg">
                   <Github className="h-5 w-5 text-primary" />
                 </div>
@@ -49,9 +57,14 @@ const Contact = () => {
                   <p className="font-medium">GitHub</p>
                   <p className="text-muted-foreground">github.com/Donsirmuel</p>
                 </div>
-              </div>
+              </a>
               
-              <div className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2">
+              <a 
+                href="https://linkedin.com/in/samuel-olaonipekun"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2 transition-colors hover:bg-primary/5"
+              >
                 <div className="p-2 bg-primary/10 rounded-lg">
                   <Linkedin className="h-5 w-5 text-primary" />
                 </div>
@@ -59,9 +72,14 @@ const Contact = () => {
                   <p className="font-medium">LinkedIn</p>
                   <p className="text-muted-foreground">linkedin.com/in/samuel-olaonipekun</p>
                 </div>
-              </div>
+              </a>
               
-              <div className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2">
+              <a 
+                href="https://wa.me/2349150996465"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2 transition-colors hover:bg-green-500/5"
+              >
                 <div className="p-2 bg-green-500/10 rounded-lg">
                   <MessageCircle className="h-5 w-5 text-green-500" />
                 </div>
@@ -69,9 +87,14 @@ const Contact = () => {
                   <p className="font-medium">WhatsApp</p>
                   <p className="text-muted-foreground">+234 915 099 6465</p>
                 </div>
-              </div>
+              </a>
               
-              <div className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2">
+              <a 
+                href="https://twitter.com/_donsirmuel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2 transition-colors hover:bg-blue-500/5"
+              >
                 <div className="p-2 bg-blue-500/10 rounded-lg">
                   <Send className="h-5 w-5 text-blue-500" />
                 </div>
@@ -79,7 +102,7 @@ const Contact = () => {
                   <p className="font-medium">Twitter</p>
                   <p className="text-muted-foreground">@_donsirmuel</p>
                 </div>
-              </div>
+              </a>
               
               <div className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2">
                 <div className="p-2 bg-primary/10 rounded-lg">

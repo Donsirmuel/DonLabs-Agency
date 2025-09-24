@@ -6,47 +6,47 @@ import { Globe, ShoppingCart, Smartphone, Code, Zap, Shield } from "lucide-react
 const Services = () => {
   const services = [
     {
-      title: "🚀 Revenue-Generating Business Websites",
+      title: "Business Websites",
       icon: <Globe className="h-8 w-8" />,
-      description: "Django-powered websites that convert visitors into paying customers and leave competitors wondering how you did it!",
+      description: "Professional business websites designed to enhance your online presence and connect with your target audience effectively.",
       price: "From $400 / ₦150k",
       features: [
-        "💰 Conversion-Optimized Design (More Sales!)",
-        "🎯 SEO That Crushes Competition",
-        "⚡ Lightning-Fast Django Backend",
-        "📱 Mobile-First Domination",
-        "🛡️ Enterprise-Level Security",
-        "🔥 1-Year FREE Maintenance & Updates"
+        "Responsive Design & Mobile Optimization",
+        "Search Engine Optimization (SEO)",
+        "Content Management System",
+        "Contact Forms & Business Integration",
+        "Performance Optimization",
+        "1-Year Maintenance & Support"
       ],
       popular: false
     },
     {
-      title: "💰 Money-Making E-Commerce Empires",
+      title: "E-Commerce Solutions",
       icon: <ShoppingCart className="h-8 w-8" />,
-      description: "Django-powered online stores that turn browsers into buyers and generate passive income 24/7!",
+      description: "Complete online store solutions with secure payment processing, inventory management, and customer-friendly shopping experiences.",
       price: "From $800 / ₦300k",
       features: [
-        "🎯 Conversion-Optimized Product Pages",
-        "💳 Multi-Payment Gateway Integration",
-        "📊 Advanced Analytics & Sales Tracking",
-        "🤖 Automated Inventory Management",
-        "👥 Customer Retention Systems",
-        "📱 Mobile Shopping Domination"
+        "Product Catalog & Shopping Cart",
+        "Payment Gateway Integration",
+        "Order Management System",
+        "Inventory Tracking",
+        "Customer Account Management",
+        "Mobile-Responsive Design"
       ],
       popular: true
     },
     {
-      title: "⚡ Business-Crushing Web Applications",
+      title: "Custom Web Applications",
       icon: <Code className="h-8 w-8" />,
-      description: "Custom Django applications that automate your business, eliminate inefficiencies, and multiply your profits!",
+      description: "Tailored web applications built to address your specific business requirements and streamline your operations.",
       price: "From $1,200 / ₦500k",
       features: [
-        "🧠 AI-Powered Business Intelligence",
-        "🔐 Military-Grade Security Systems",
-        "🚀 Real-Time Performance Monitoring",
-        "🔄 Automated Workflow Systems",
-        "📈 Advanced Analytics Dashboard",
-        "🌐 Unlimited Scalability"
+        "Custom Business Logic",
+        "User Authentication & Roles",
+        "Database Management",
+        "API Integration",
+        "Real-time Features",
+        "Scalable Architecture"
       ],
       popular: false
     },
@@ -89,11 +89,11 @@ const Services = () => {
     <section className="py-20 px-4 bg-background" id="services" aria-labelledby="services-heading">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 id="services-heading" className="text-4xl font-bold mb-4">🔥 Business Domination Arsenal</h2>
+          <h2 id="services-heading" className="text-4xl font-bold mb-4">Professional Services</h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-            <strong>Forget basic WordPress sites!</strong> I build Django-powered business empires that generate revenue while you sleep. 
-            These aren't just websites - they're <strong>profit-generating machines, customer-converting systems, and competition-crushing weapons</strong>. 
-            Ready to 10x your business? Let's build something that makes your competitors cry! 💪
+            I provide comprehensive web development services to help businesses establish a strong digital presence. 
+            From custom web applications to e-commerce platforms, I deliver <strong>scalable, secure, and performance-optimized solutions</strong> 
+            tailored to your specific business needs and growth objectives.
           </p>
         </div>
 
@@ -157,79 +157,28 @@ const Services = () => {
           </div>
         </div>
 
-        {/* Competitive Advantage Section */}
-        <div className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-950/20 dark:to-orange-950/20 rounded-lg p-8 mb-8 border-2 border-red-200 dark:border-red-800">
-          <h3 className="text-3xl font-bold mb-6 text-center text-red-600 dark:text-red-400">
-            🥊 Why I DESTROY WordPress Developers
-          </h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-xl font-bold mb-4 text-red-700 dark:text-red-300">🔥 Django Power vs WordPress Weakness</h4>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <span className="text-green-600 font-bold">✅</span>
-                  <span><strong>Custom Python Logic:</strong> While they drag-and-drop, I code intelligent solutions</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-600 font-bold">✅</span>
-                  <span><strong>Enterprise Security:</strong> My Django fortress vs their plugin vulnerabilities</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-600 font-bold">✅</span>
-                  <span><strong>Lightning Speed:</strong> Optimized Python vs bloated WordPress themes</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-600 font-bold">✅</span>
-                  <span><strong>Unlimited Scalability:</strong> Handle millions of users without breaking</span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-xl font-bold mb-4 text-red-700 dark:text-red-300">💰 Business Results That Crush Competition</h4>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <span className="text-green-600 font-bold">💎</span>
-                  <span><strong>10x Conversion Rates:</strong> Psychology-based design that forces sales</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-600 font-bold">💎</span>
-                  <span><strong>Revenue Automation:</strong> Systems that make money while you sleep</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-600 font-bold">💎</span>
-                  <span><strong>Data Intelligence:</strong> AI-powered insights that outsmart competitors</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-600 font-bold">💎</span>
-                  <span><strong>Future-Proof Technology:</strong> Built to dominate for decades</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
         {/* Call to Action */}
         <div className="bg-gradient-to-r from-primary/10 to-purple-500/10 rounded-lg p-8 text-center">
-          <h3 className="text-3xl font-bold mb-4">🚀 Ready to Leave Your Competitors in the Dust?</h3>
+          <h3 className="text-3xl font-bold mb-4">Ready to Start Your Project?</h3>
           <p className="text-lg text-muted-foreground mb-6">
-            Stop settling for basic WordPress sites! Let's build a Django-powered business empire that generates revenue, 
-            crushes competition, and makes your success inevitable. Your competitors won't know what hit them! 💥
+            Let's discuss your project requirements and create a digital solution that helps your business grow and succeed online. 
+            I'm committed to delivering high-quality work that meets your objectives and exceeds expectations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white font-bold animate-pulse"
-              onClick={() => window.open('https://wa.me/2349150996465?text=I%20want%20to%20crush%20my%20competition%20with%20Django!%20Let%27s%20build%20something%20EPIC!', '_blank')}
+              className="bg-green-600 hover:bg-green-700 text-white font-medium"
+              onClick={() => window.open('https://wa.me/2349150996465?text=Hi%20Samuel!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you.', '_blank')}
             >
-              💬 WhatsApp: "Let's Dominate!" 
+              � WhatsApp Message
             </Button>
             <Button 
               variant="outline"
               size="lg"
-              className="border-primary text-primary hover:bg-primary/5 font-bold"
+              className="border-primary text-primary hover:bg-primary/5 font-medium"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              🔥 Start World Domination
+              Get Started
             </Button>
           </div>
         </div>

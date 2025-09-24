@@ -6,16 +6,20 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
 
 @layer base {
+  * {
+    color-scheme: dark;
+  }
+  
   :root {
-    /* Professional color palette inspired by Django */
-    --background: 0 0% 98%;
-    --foreground: 215 25% 15%;
+    /* Force dark mode - Professional dark theme */
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
 
     /* Django green as primary */
     --primary: 152 73% 15%;
@@ -68,7 +72,8 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
+  /* Remove .dark class - force dark mode globally */
+  html {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 

@@ -48,11 +48,11 @@ const Hero = () => {
         </h1>
         
         <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-primary animate-fade-in-up" itemProp="jobTitle">
-          Elite Django Developer • Business Growth Specialist
+          Full-Stack Developer • Business Solutions Architect
         </h2>
         
         <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in-up">
-          🚀 I Don't Build Websites, I Build Business Empires • Lagos, Nigeria → Global
+          Building Digital Solutions That Drive Business Growth • Lagos, Nigeria → Global
         </p>
         
         <div className="flex items-center justify-center gap-2 mb-6 text-lg text-muted-foreground animate-fade-in-up">
@@ -61,43 +61,42 @@ const Hero = () => {
         </div>
         
         <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in-up">
-          🔥 <strong>While others build basic WordPress sites, I engineer high-performance Django applications</strong> that convert visitors into customers and customers into profits. 
-          I don't just code - I architect digital solutions that <strong>10x your revenue, automate your operations, and dominate your competition.</strong> 
-          Ready to leave your competitors wondering what hit them?
+          I specialize in creating <strong>high-performance web applications and business solutions</strong> that streamline operations and drive growth. 
+          From concept to deployment, I deliver <strong>scalable, secure, and user-focused digital experiences</strong> that help businesses achieve their goals and serve their customers better.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 animate-fade-in-up">
           <Button 
             size="lg" 
-            className="bg-green-600 hover:bg-green-700 text-white font-bold hover-lift animate-pulse"
-            onClick={() => window.open('https://wa.me/2349150996465?text=Hi%20Samuel!%20I%20want%20to%20discuss%20a%20project%20that%20will%20crush%20my%20competition!', '_blank')}
+            className="bg-green-600 hover:bg-green-700 text-white font-medium hover-lift"
+            onClick={() => window.open('https://wa.me/2349150996465?text=Hi%20Samuel!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you.', '_blank')}
           >
-            💬 WhatsApp Me NOW - Let's Dominate!
+            � Get In Touch
           </Button>
           <Button 
             size="lg"
-            className="bg-primary hover:bg-primary-hover text-primary-foreground font-bold hover-lift"
+            className="bg-primary hover:bg-primary-hover text-primary-foreground font-medium hover-lift"
             onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            🚀 See My Arsenal
+            View Services
           </Button>
           <Button 
             variant="outline" 
             size="lg"
-            className="border-primary text-primary hover:bg-primary/5 hover-lift font-bold"
+            className="border-primary text-primary hover:bg-primary/5 hover-lift font-medium"
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            💰 Profit Generators
+            My Work
           </Button>
         </div>
         
         <div className="mt-12 flex justify-center flex-wrap gap-4 text-sm animate-fade-in-up">
-          <div className="tech-badge">🔥 Django Python Beast</div>
-          <div className="tech-badge">💰 Revenue Generators</div>
-          <div className="tech-badge">⚡ WordPress Killer</div>
-          <div className="tech-badge">🚀 Conversion Machines</div>
-          <div className="tech-badge">🛡️ Enterprise Security</div>
-          <div className="tech-badge">📈 Business Accelerators</div>
+          <div className="tech-badge">Web Applications</div>
+          <div className="tech-badge">E-commerce Solutions</div>
+          <div className="tech-badge">Business Websites</div>
+          <div className="tech-badge">API Development</div>
+          <div className="tech-badge">Database Design</div>
+          <div className="tech-badge">Cloud Deployment</div>
         </div>
       </div>
     </section>
