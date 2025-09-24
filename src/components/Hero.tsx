@@ -48,11 +48,11 @@ const Hero = () => {
         </h1>
         
         <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-primary animate-fade-in-up" itemProp="jobTitle">
-          #1 Website Developer in Lagos Nigeria
+          Professional Website Developer & Designer
         </h2>
         
         <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in-up">
-          Professional Website Designer Near You | Serving Lagos, Abuja & All Nigeria
+          Based in Lagos, Nigeria • Serving Clients Worldwide
         </p>
         
         <div className="flex items-center justify-center gap-2 mb-6 text-lg text-muted-foreground animate-fade-in-up">
@@ -60,10 +60,10 @@ const Hero = () => {
           <span>Open for Business • Lagos, Nigeria • Remote Services Available</span>
         </div>
         
-        <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in-up">
-          Looking for professional website developers near you? As the top-rated website designer in Lagos Nigeria, 
-          I build custom business websites, e-commerce stores, and web applications for clients across Lagos, Abuja, 
-          Port Harcourt, and all of Nigeria. Get your professional website designed by expert web developers today!
+        <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in-up">
+          I specialize in creating modern, professional websites and web applications for businesses worldwide. 
+          Based in Lagos, Nigeria, I work with clients locally and internationally to deliver high-quality web solutions. 
+          From simple business websites to complex e-commerce platforms - I bring your digital vision to life.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 animate-fade-in-up">

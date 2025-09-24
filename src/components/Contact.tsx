@@ -10,11 +10,11 @@ const Contact = () => {
     <section className="py-20 px-4 bg-background" aria-labelledby="contact-heading">
       <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 id="contact-heading" className="text-4xl font-bold mb-4">Get Professional Website Development Services</h2>
+            <h2 id="contact-heading" className="text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Need a website developer near you? Looking for professional website designers in Lagos, Abuja or anywhere in Nigeria? 
-              Ready to hire experienced web developers for your business website, e-commerce store, or web application? 
-              Contact the best website development company in Nigeria today for a free consultation and quote!
+              Looking for a skilled website developer? Whether you're in Nigeria, Africa, or anywhere in the world, 
+              I'm ready to help bring your digital vision to life. From business websites to complex web applications, 
+              let's discuss your project and create something amazing together. Contact me today for a free consultation!
             </p>
           </div>
         
@@ -25,8 +25,8 @@ const Contact = () => {
               <h3 className="text-2xl font-semibold mb-6">Start Your Project Today</h3>
               <p className="text-muted-foreground mb-8">
                 Whether you need a simple business website, an e-commerce store, or a custom web application, 
-                I'm here to help. Based in Lagos, Nigeria, I work with businesses across the country to build 
-                professional web solutions that drive results.
+                I'm here to help. Based in Lagos, Nigeria, I work with clients locally and internationally to build 
+                professional web solutions that drive results and grow your business online.
               </p>
             </div>
             

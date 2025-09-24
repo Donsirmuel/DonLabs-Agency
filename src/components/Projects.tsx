@@ -48,11 +48,11 @@ const Projects = () => {
     <section className="py-20 px-4 bg-muted/30" aria-labelledby="projects-heading">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 id="projects-heading" className="text-4xl font-bold mb-4">Website Development Portfolio - Nigerian Businesses</h2>
+          <h2 id="projects-heading" className="text-4xl font-bold mb-4">Website Development Portfolio</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Professional websites, e-commerce stores, and web applications built for Nigerian businesses. 
-            See examples of custom website development, online stores, and business web solutions created by experienced website developers. 
-            These projects showcase the quality website design and development you can expect for your business.
+            Professional websites, e-commerce stores, and web applications built for businesses across Nigeria and internationally. 
+            See examples of custom website development, online stores, and business web solutions. 
+            These projects showcase the quality website design and development you can expect for your business, wherever you're located.
           </p>
         </div>
         

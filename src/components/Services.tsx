@@ -9,7 +9,7 @@ const Services = () => {
       title: "Business Websites",
       icon: <Globe className="h-8 w-8" />,
       description: "Professional websites that grow your business online",
-      price: "From ₦150,000",
+      price: "From $400 / ₦150k",
       features: [
         "Responsive Design (Mobile-Friendly)",
         "Search Engine Optimization (SEO)",
@@ -24,7 +24,7 @@ const Services = () => {
       title: "E-Commerce Stores",
       icon: <ShoppingCart className="h-8 w-8" />,
       description: "Sell your products online with a professional store",
-      price: "From ₦300,000",
+      price: "From $800 / ₦300k",
       features: [
         "Product Catalog & Shopping Cart",
         "Payment Integration (Paystack, Flutterwave)",
@@ -39,7 +39,7 @@ const Services = () => {
       title: "Web Applications",
       icon: <Code className="h-8 w-8" />,
       description: "Custom web apps tailored to your business needs",
-      price: "From ₦500,000",
+      price: "From $1,200 / ₦500k",
       features: [
         "Custom Business Logic",
         "User Authentication & Roles",
@@ -89,11 +89,11 @@ const Services = () => {
     <section className="py-20 px-4 bg-background" id="services" aria-labelledby="services-heading">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 id="services-heading" className="text-4xl font-bold mb-4">Professional Website Development Services in Nigeria</h2>
+          <h2 id="services-heading" className="text-4xl font-bold mb-4">Professional Website Development Services</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Expert website developers and designers serving Lagos, Abuja, Port Harcourt & all Nigeria. 
-            Professional website development services from experienced web developers near you. 
-            Custom business websites, e-commerce stores, and web applications at affordable rates.
+            Expert website development and design services for businesses worldwide. Based in Lagos, Nigeria, 
+            I provide professional web solutions to local and international clients. 
+            Custom business websites, e-commerce stores, and web applications with global reach and local expertise.
           </p>
         </div>
 
