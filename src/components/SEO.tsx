@@ -6,69 +6,80 @@ interface SEOProps {
   keywords?: string;
   image?: string;
   url?: string;
+  canonical?: string;
+  structuredData?: object | null;
 }
+
+const setMetaTag = (selector: string, attr: string, value: string) => {
+  const el = document.querySelector(selector) as HTMLMetaElement | null;
+  if (el) el.setAttribute(attr, value);
+};
+
+const ensureLinkCanonical = (href: string) => {
+  let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+  if (!link) {
+    link = document.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    document.head.appendChild(link);
+  }
+  link.setAttribute('href', href);
+};
+
+const ensureStructuredData = (data: object | null) => {
+  const id = 'page-structured-data';
+  let el = document.getElementById(id) as HTMLScriptElement | null;
+  if (el && !data) {
+    el.remove();
+    return;
+  }
+
+  if (!el && data) {
+    el = document.createElement('script');
+    el.type = 'application/ld+json';
+    el.id = id;
+    document.head.appendChild(el);
+  }
+
+  if (el && data) {
+    el.textContent = JSON.stringify(data);
+  }
+};
 
 const SEO = ({ 
   title = "Samuel Olaonipekun - Django Web Developer | Python Backend Expert | Lagos Nigeria",
   description = "Hire Samuel Olaonipekun, a skilled Django Web Developer from Lagos, Nigeria. Expert in Python, REST APIs, PostgreSQL, and scalable web applications.",
   keywords = "Samuel Olaonipekun, Django Developer, Python Developer, Web Developer Lagos, Backend Developer Nigeria, REST API Developer, PostgreSQL Expert",
   image = "https://donsirmuel.github.io/My-Portfolio/profile-image.jpg",
-  url = "https://donsirmuel.github.io/My-Portfolio/"
+  url = "https://donsirmuel.github.io/My-Portfolio/",
+  canonical,
+  structuredData = null
 }: SEOProps) => {
-  
+
   useEffect(() => {
-    // Update document title
     document.title = title;
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', description);
-    }
-    
-    // Update meta keywords
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', keywords);
-    }
-    
-    // Update Open Graph tags
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) {
-      ogTitle.setAttribute('content', title);
-    }
-    
-    const ogDescription = document.querySelector('meta[property="og:description"]');
-    if (ogDescription) {
-      ogDescription.setAttribute('content', description);
-    }
-    
-    const ogImage = document.querySelector('meta[property="og:image"]');
-    if (ogImage) {
-      ogImage.setAttribute('content', image);
-    }
-    
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) {
-      ogUrl.setAttribute('content', url);
-    }
-    
-    // Update Twitter Card tags
-    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twitterTitle) {
-      twitterTitle.setAttribute('content', title);
-    }
-    
-    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
-    if (twitterDescription) {
-      twitterDescription.setAttribute('content', description);
-    }
-    
-    const twitterImage = document.querySelector('meta[name="twitter:image"]');
-    if (twitterImage) {
-      twitterImage.setAttribute('content', image);
-    }
-  }, [title, description, keywords, image, url]);
+
+    setMetaTag('meta[name="description"]', 'content', description);
+    setMetaTag('meta[name="keywords"]', 'content', keywords);
+
+    // Open Graph
+    setMetaTag('meta[property="og:title"]', 'content', title);
+    setMetaTag('meta[property="og:description"]', 'content', description);
+    setMetaTag('meta[property="og:image"]', 'content', image);
+    setMetaTag('meta[property="og:url"]', 'content', url);
+
+    // Twitter
+    setMetaTag('meta[name="twitter:title"]', 'content', title);
+    setMetaTag('meta[name="twitter:description"]', 'content', description);
+    setMetaTag('meta[name="twitter:image"]', 'content', image);
+
+    // Canonical
+    const canonicalHref = canonical || url;
+    if (canonicalHref) ensureLinkCanonical(canonicalHref);
+
+    // Structured data injection (per-page)
+    ensureStructuredData(structuredData);
+
+  }, [title, description, keywords, image, url, canonical, structuredData]);
 
   return null;
 };

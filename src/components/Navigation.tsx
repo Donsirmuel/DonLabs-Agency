@@ -1,19 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { useState } from "react";
 import { ASSETS } from "@/lib/assets";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false); // Close mobile menu after navigation
-    }
+  const navigate = useNavigate();
+
+  const goto = (path: string) => {
+    setIsOpen(false);
+    navigate(path);
   };
 
   return (
@@ -30,36 +30,11 @@ const Navigation = () => {
           </div>
           
           <div className="hidden lg:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection('home')}
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Home
-            </button>
-            <button 
-              onClick={() => scrollToSection('services')}
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Services
-            </button>
-            <button 
-              onClick={() => scrollToSection('projects')}
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              My Work
-            </button>
-            <button 
-              onClick={() => scrollToSection('skills')}
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              About Me
-            </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Contact
-            </button>
+            <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
+            <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Services</Link>
+            <Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors">My Work</Link>
+            <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">About Me</Link>
+            <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link>
           </div>
           
           <div className="flex items-center space-x-2">
@@ -69,7 +44,7 @@ const Navigation = () => {
                 <ThemeToggle />
               </div>
               <Button 
-                onClick={() => scrollToSection('contact')}
+                onClick={() => goto('/contact')}
                 className="bg-primary hover:bg-primary-hover text-primary-foreground hover-lift"
               >
                 Hire Me
@@ -90,32 +65,12 @@ const Navigation = () => {
                 </SheetTrigger>
                 <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                   <div className="flex flex-col space-y-4 mt-8">
-                    <button 
-                      onClick={() => scrollToSection('home')}
-                      className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border"
-                    >
-                      Home
-                    </button>
-                    <button 
-                      onClick={() => scrollToSection('skills')}
-                      className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border"
-                    >
-                      Skills
-                    </button>
-                    <button 
-                      onClick={() => scrollToSection('projects')}
-                      className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border"
-                    >
-                      Projects
-                    </button>
-                    <button 
-                      onClick={() => scrollToSection('contact')}
-                      className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border"
-                    >
-                      Contact
-                    </button>
+                    <button onClick={() => goto('/')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">Home</button>
+                    <button onClick={() => goto('/about')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">About</button>
+                    <button onClick={() => goto('/projects')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">Projects</button>
+                    <button onClick={() => goto('/contact')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">Contact</button>
                     <Button 
-                      onClick={() => scrollToSection('contact')}
+                      onClick={() => goto('/contact')}
                       className="bg-primary hover:bg-primary-hover text-primary-foreground hover-lift mt-4 w-full"
                     >
                       Hire Me

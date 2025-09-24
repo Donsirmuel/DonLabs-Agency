@@ -1,102 +1,95 @@
 import { Button } from "@/components/ui/button";
-import { Code2, Database, Server, Download, Briefcase } from "lucide-react";
+import { Code2, Database, Server, Briefcase } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ASSETS } from "@/lib/assets";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
-    <section 
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted px-4 relative overflow-hidden"
+    <section
+      className="min-h-screen flex items-center bg-gradient-to-br from-neutral-900 via-neutral-900/80 to-neutral-800 px-4 relative overflow-hidden"
       aria-label="Hero section introducing Samuel Olaonipekun"
-      itemScope 
+      itemScope
       itemType="https://schema.org/Person"
     >
-      {/* Background animation elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="animate-float absolute top-20 left-10 w-4 h-4 bg-primary/20 rounded-full"></div>
-        <div className="animate-float absolute top-40 right-20 w-6 h-6 bg-primary/10 rounded-full" style={{animationDelay: '2s'}}></div>
-        <div className="animate-float absolute bottom-40 left-20 w-3 h-3 bg-primary/30 rounded-full" style={{animationDelay: '4s'}}></div>
-      </div>
-      
-      <div className="max-w-4xl mx-auto text-center relative z-10">
-        {/* Avatar */}
-        <div className="flex justify-center mb-8 animate-fade-in-up">
-          <Avatar className="w-32 h-32 border-4 border-primary/20 shadow-xl animate-glow">
-            <AvatarImage 
-              src={ASSETS.profileImage} 
-              alt="Samuel Olaonipekun - Professional Django Web Developer from Lagos, Nigeria" 
-              itemProp="image"
-            />
-            <AvatarFallback className="text-2xl font-bold bg-primary text-primary-foreground">SO</AvatarFallback>
-          </Avatar>
-        </div>
-        
-        <div className="flex justify-center space-x-4 mb-8 animate-slide-up">
-          <div className="p-3 bg-primary/10 rounded-lg animate-float hover-lift">
-            <Database className="h-8 w-8 text-primary" />
+      {/* Decorative large SVG background for visual depth */}
+      <svg className="absolute right-0 top-0 h-full w-1/2 hidden lg:block opacity-20" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+        <defs>
+          <linearGradient id="g" x1="0" x2="1">
+            <stop offset="0%" stopColor="#7c3aed" />
+            <stop offset="100%" stopColor="#06b6d4" />
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="800" height="800" fill="url(#g)" rx="80" />
+      </svg>
+
+      <div className="max-w-6xl mx-auto w-full relative z-10 py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div className="text-left">
+            <div className="mb-6 inline-flex items-center gap-3 bg-primary/10 text-primary rounded-full px-4 py-2 text-sm font-medium">
+              <Database className="h-5 w-5" />
+              Trusted by Nigerian Businesses & Startups
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 text-white">
+              Building digital products that move businesses forward
+            </h1>
+
+            <p className="text-lg text-muted-foreground max-w-2xl mb-6">
+              I'm Samuel — a Lagos-based web developer and solutions architect. I build high-performance websites, e-commerce
+              platforms and custom web applications designed to increase conversion, improve operations and scale with your business.
+            </p>
+
+            <div className="flex flex-wrap gap-3 mb-8">
+              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white font-medium" onClick={() => window.open('https://wa.me/2349150996465?text=Hi%20Samuel!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you.', '_blank')}>
+                Message on WhatsApp
+              </Button>
+              <Button size="lg" className="bg-primary hover:bg-primary-hover text-primary-foreground" onClick={() => navigate('/services')}>
+                Explore Services
+              </Button>
+              <Button variant="outline" size="lg" className="border-primary text-primary" onClick={() => navigate('/projects')}>
+                View Portfolio
+              </Button>
+            </div>
+
+            <div className="flex items-center gap-6 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <Briefcase className="h-5 w-5 text-primary" />
+                <span>Available for hire • Lagos & Remote</span>
+              </div>
+              <div className="hidden sm:flex items-center gap-2">
+                <Code2 className="h-5 w-5 text-primary" />
+                <span>Specialist: Django, Python, React</span>
+              </div>
+            </div>
           </div>
-          <div className="p-3 bg-primary/10 rounded-lg animate-float hover-lift" style={{animationDelay: '1s'}}>
-            <Server className="h-8 w-8 text-primary" />
+
+          {/* Right column: profile / mockup card for visual interest */}
+          <div className="hidden lg:flex items-center justify-center">
+            <div className="w-[420px] p-6 rounded-2xl bg-gradient-to-br from-black/40 to-white/5 border border-white/5 shadow-2xl">
+              <div className="flex items-center gap-4 mb-4">
+                <Avatar className="w-16 h-16 border-2 border-primary">
+                  <AvatarImage src={ASSETS.profileImage} alt="Samuel profile" />
+                  <AvatarFallback>SO</AvatarFallback>
+                </Avatar>
+                <div>
+                  <div className="font-semibold text-lg text-white">Samuel Olaonipekun</div>
+                  <div className="text-sm text-muted-foreground">Web Developer • Lagos</div>
+                </div>
+              </div>
+
+              <div className="rounded-lg overflow-hidden bg-gradient-to-tr from-primary/10 to-transparent p-4">
+                <div className="bg-border p-4 rounded-lg">
+                  <img src={ASSETS.profileImage} alt="project snapshot" className="w-full h-36 object-cover rounded-md" />
+                </div>
+                <div className="mt-4 text-sm text-muted-foreground">
+                  Recent work: E-commerce platform for local retail — increased transactions by 43%.
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="p-3 bg-primary/10 rounded-lg animate-float hover-lift" style={{animationDelay: '2s'}}>
-            <Code2 className="h-8 w-8 text-primary" />
-          </div>
-        </div>
-        
-        <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground animate-fade-in-up" itemProp="name">
-          Samuel Olaonipekun
-        </h1>
-        
-        <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-primary animate-fade-in-up" itemProp="jobTitle">
-          Full-Stack Developer • Business Solutions Architect
-        </h2>
-        
-        <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in-up">
-          Building Digital Solutions That Drive Business Growth • Lagos, Nigeria → Global
-        </p>
-        
-        <div className="flex items-center justify-center gap-2 mb-6 text-lg text-muted-foreground animate-fade-in-up">
-          <Briefcase className="h-5 w-5 text-primary" />
-          <span>Open for Business • Lagos, Nigeria • Remote Services Available</span>
-        </div>
-        
-        <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in-up">
-          I specialize in creating <strong>high-performance web applications and business solutions</strong> that streamline operations and drive growth. 
-          From concept to deployment, I deliver <strong>scalable, secure, and user-focused digital experiences</strong> that help businesses achieve their goals and serve their customers better.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 animate-fade-in-up">
-          <Button 
-            size="lg" 
-            className="bg-green-600 hover:bg-green-700 text-white font-medium hover-lift"
-            onClick={() => window.open('https://wa.me/2349150996465?text=Hi%20Samuel!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you.', '_blank')}
-          >
-            � Get In Touch
-          </Button>
-          <Button 
-            size="lg"
-            className="bg-primary hover:bg-primary-hover text-primary-foreground font-medium hover-lift"
-            onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            View Services
-          </Button>
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="border-primary text-primary hover:bg-primary/5 hover-lift font-medium"
-            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            My Work
-          </Button>
-        </div>
-        
-        <div className="mt-12 flex justify-center flex-wrap gap-4 text-sm animate-fade-in-up">
-          <div className="tech-badge">Web Applications</div>
-          <div className="tech-badge">E-commerce Solutions</div>
-          <div className="tech-badge">Business Websites</div>
-          <div className="tech-badge">API Development</div>
-          <div className="tech-badge">Database Design</div>
-          <div className="tech-badge">Cloud Deployment</div>
         </div>
       </div>
     </section>

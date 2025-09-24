@@ -9,7 +9,7 @@ const Services = () => {
       title: "Business Websites",
       icon: <Globe className="h-8 w-8" />,
       description: "Professional business websites designed to enhance your online presence and connect with your target audience effectively.",
-      price: "From $400 / ₦150k",
+  price: "From ₦150,000",
       features: [
         "Responsive Design & Mobile Optimization",
         "Search Engine Optimization (SEO)",
@@ -24,7 +24,7 @@ const Services = () => {
       title: "E-Commerce Solutions",
       icon: <ShoppingCart className="h-8 w-8" />,
       description: "Complete online store solutions with secure payment processing, inventory management, and customer-friendly shopping experiences.",
-      price: "From $800 / ₦300k",
+  price: "From ₦300,000",
       features: [
         "Product Catalog & Shopping Cart",
         "Payment Gateway Integration",
@@ -39,7 +39,7 @@ const Services = () => {
       title: "Custom Web Applications",
       icon: <Code className="h-8 w-8" />,
       description: "Tailored web applications built to address your specific business requirements and streamline your operations.",
-      price: "From $1,200 / ₦500k",
+  price: "From ₦500,000",
       features: [
         "Custom Business Logic",
         "User Authentication & Roles",
@@ -170,7 +170,7 @@ const Services = () => {
               className="bg-green-600 hover:bg-green-700 text-white font-medium"
               onClick={() => window.open('https://wa.me/2349150996465?text=Hi%20Samuel!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you.', '_blank')}
             >
-              � WhatsApp Message
+              WhatsApp Message
             </Button>
             <Button 
               variant="outline"
