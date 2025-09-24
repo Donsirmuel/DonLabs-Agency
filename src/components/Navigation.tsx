@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 import { useState } from "react";
 import { ASSETS } from "@/lib/assets";
 
@@ -63,6 +64,10 @@ const Navigation = () => {
           
           <div className="flex items-center space-x-2">
             <div className="hidden lg:flex items-center space-x-2">
+              {/* ThemeToggle is hidden but still functional */}
+              <div className="hidden">
+                <ThemeToggle />
+              </div>
               <Button 
                 onClick={() => scrollToSection('contact')}
                 className="bg-primary hover:bg-primary-hover text-primary-foreground hover-lift"
@@ -72,7 +77,11 @@ const Navigation = () => {
             </div>
             
             {/* Mobile Menu */}
-            <div className="lg:hidden">
+            <div className="lg:hidden flex items-center space-x-2">
+              {/* ThemeToggle is hidden but still functional */}
+              <div className="hidden">
+                <ThemeToggle />
+              </div>
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon">
