@@ -10,9 +10,11 @@ const Contact = () => {
     <section className="py-20 px-4 bg-background" aria-labelledby="contact-heading">
       <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 id="contact-heading" className="text-4xl font-bold mb-4">Get Your Website or App Built Today</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ready to take your business online or upgrade your existing website? I'm here to help Nigerian businesses succeed with professional web solutions. Get a free quote for your project today!
+            <h2 id="contact-heading" className="text-4xl font-bold mb-4">Get Professional Website Development Services</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Need a website developer near you? Looking for professional website designers in Lagos, Abuja or anywhere in Nigeria? 
+              Ready to hire experienced web developers for your business website, e-commerce store, or web application? 
+              Contact the best website development company in Nigeria today for a free consultation and quote!
             </p>
           </div>
         

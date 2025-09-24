@@ -89,10 +89,11 @@ const Services = () => {
     <section className="py-20 px-4 bg-background" id="services" aria-labelledby="services-heading">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 id="services-heading" className="text-4xl font-bold mb-4">Services for Nigerian Businesses</h2>
+          <h2 id="services-heading" className="text-4xl font-bold mb-4">Professional Website Development Services in Nigeria</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Professional web development services to help your business succeed online. 
-            From simple business websites to complex web applications - I deliver quality solutions at affordable rates.
+            Expert website developers and designers serving Lagos, Abuja, Port Harcourt & all Nigeria. 
+            Professional website development services from experienced web developers near you. 
+            Custom business websites, e-commerce stores, and web applications at affordable rates.
           </p>
         </div>
 

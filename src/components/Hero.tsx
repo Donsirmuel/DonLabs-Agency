@@ -48,11 +48,11 @@ const Hero = () => {
         </h1>
         
         <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-primary animate-fade-in-up" itemProp="jobTitle">
-          Professional Website & Web App Developer
+          #1 Website Developer in Lagos Nigeria
         </h2>
         
         <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in-up">
-          Building Modern Websites & Apps for Nigerian Businesses
+          Professional Website Designer Near You | Serving Lagos, Abuja & All Nigeria
         </p>
         
         <div className="flex items-center justify-center gap-2 mb-6 text-lg text-muted-foreground animate-fade-in-up">
@@ -61,9 +61,9 @@ const Hero = () => {
         </div>
         
         <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in-up">
-          Need a professional website for your business? I build custom websites, e-commerce stores, 
-          web applications, and mobile apps using modern technology. From simple business websites 
-          to complex web applications - I deliver quality solutions for Nigerian entrepreneurs and businesses.
+          Looking for professional website developers near you? As the top-rated website designer in Lagos Nigeria, 
+          I build custom business websites, e-commerce stores, and web applications for clients across Lagos, Abuja, 
+          Port Harcourt, and all of Nigeria. Get your professional website designed by expert web developers today!
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 animate-fade-in-up">
