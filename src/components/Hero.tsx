@@ -48,30 +48,31 @@ const Hero = () => {
         </h1>
         
         <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-primary animate-fade-in-up" itemProp="jobTitle">
-          Web Developer (Django)
+          Professional Website & Web App Developer
         </h2>
         
         <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in-up">
-          Django Specialist • Backend & Full-Stack
+          Building Modern Websites & Apps for Nigerian Businesses
         </p>
         
         <div className="flex items-center justify-center gap-2 mb-6 text-lg text-muted-foreground animate-fade-in-up">
           <Briefcase className="h-5 w-5 text-primary" />
-          <span>Available for hire • Backend • Full-Stack • Web Apps</span>
+          <span>Open for Business • Lagos, Nigeria • Remote Services Available</span>
         </div>
         
         <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in-up">
-          Django Web Developer with hands-on experience building scalable web applications and APIs. 
-          Passionate about clean architecture, backend performance, and delivering user-focused solutions.
+          Need a professional website for your business? I build custom websites, e-commerce stores, 
+          web applications, and mobile apps using modern technology. From simple business websites 
+          to complex web applications - I deliver quality solutions for Nigerian entrepreneurs and businesses.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 animate-fade-in-up">
           <Button 
             size="lg" 
             className="bg-primary hover:bg-primary-hover text-primary-foreground font-medium hover-lift"
-            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            View Projects
+            My Services
           </Button>
           <Button 
             variant="outline" 
@@ -79,28 +80,25 @@ const Hero = () => {
             className="border-primary text-primary hover:bg-primary/5 hover-lift"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Get In Touch
+            Get Quote
           </Button>
           <Button 
             variant="outline" 
             size="lg"
             className="border-primary text-primary hover:bg-primary/5 hover-lift"
-            asChild
+            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            <a href={ASSETS.cv} download="Samuel_Olaonipekun_CV.pdf">
-              <Download className="h-4 w-4 mr-2" />
-              Download CV
-            </a>
+            View Work
           </Button>
         </div>
         
         <div className="mt-12 flex justify-center flex-wrap gap-4 text-sm animate-fade-in-up">
-          <div className="tech-badge">Python</div>
-          <div className="tech-badge">Django</div>
-          <div className="tech-badge">JavaScript</div>
-          <div className="tech-badge">PostgreSQL</div>
-          <div className="tech-badge">REST APIs</div>
-          <div className="tech-badge">Flask</div>
+          <div className="tech-badge">Business Websites</div>
+          <div className="tech-badge">E-commerce Stores</div>
+          <div className="tech-badge">Web Applications</div>
+          <div className="tech-badge">Mobile Apps (PWA)</div>
+          <div className="tech-badge">Custom Solutions</div>
+          <div className="tech-badge">Fast & Secure</div>
         </div>
       </div>
     </section>

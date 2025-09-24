@@ -7,34 +7,40 @@ import { ASSETS } from "@/lib/assets";
 const Projects = () => {
   const projects = [
     {
-      title: "Vendora - E-Commerce Platform",
-      description: "Full-featured e-commerce platform built with Django. Features user authentication, product catalog, shopping cart, payment integration, and comprehensive admin dashboard.",
-      technologies: ["Django", "PostgreSQL", "JavaScript", "HTML", "CSS"],
-      features: ["User Management", "Product Catalog", "Shopping Cart", "Admin Dashboard"],
+      title: "Vendora - E-Commerce Store",
+      description: "Complete online store solution with product catalog, shopping cart, secure checkout, and admin panel. Perfect example of what your business e-commerce site could look like.",
+      technologies: ["E-Commerce", "Online Store", "Payment Gateway", "Inventory"],
+      features: ["Product Catalog", "Shopping Cart", "Secure Payments", "Order Management"],
       githubUrl: "https://github.com/Donsirmuel/vendora",
       liveUrl: "#",
       imageUrl: ASSETS.placeholder,
-      hasLive: false
+      hasLive: false,
+      projectType: "E-Commerce Store",
+      clientBenefit: "Increase sales with professional online store"
     },
     {
-      title: "E-Commerce Site",
-      description: "Modern e-commerce website with responsive design and user-friendly interface. Built with Django backend and clean frontend implementation.",
-      technologies: ["Django", "MySQL", "JavaScript", "HTML", "CSS"],
-      features: ["Responsive Design", "Product Management", "User Authentication", "Order Processing"],
+      title: "Business Website Portfolio",
+      description: "Professional business websites with modern design, mobile optimization, and SEO. These examples show how your business website could look and perform online.",
+      technologies: ["Business Website", "Mobile-Friendly", "SEO Optimized", "Contact Forms"],
+      features: ["Responsive Design", "Fast Loading", "SEO Optimized", "Business Information"],
       githubUrl: "#",
       liveUrl: "#",
       imageUrl: ASSETS.placeholder,
-      hasLive: false
+      hasLive: false,
+      projectType: "Business Website",
+      clientBenefit: "Attract more customers online"
     },
     {
-      title: "Portfolio Projects",
-      description: "Collection of web development projects showcasing Django expertise, API development, and full-stack capabilities. More projects coming soon!",
-      technologies: ["Django", "Django REST Framework", "PostgreSQL", "JavaScript"],
-      features: ["REST APIs", "Database Design", "Clean Architecture", "Test-Driven Development"],
+      title: "Custom Web Applications",
+      description: "Tailored web applications for specific business needs. From inventory management to customer portals - I build solutions that solve real business problems.",
+      technologies: ["Custom Development", "Business Logic", "Database", "User Management"],
+      features: ["Custom Features", "User Accounts", "Data Management", "Secure Access"],
       githubUrl: "https://github.com/Donsirmuel",
       liveUrl: "#",
       imageUrl: ASSETS.placeholder,
-      hasLive: false
+      hasLive: false,
+      projectType: "Web Application",
+      clientBenefit: "Streamline your business operations"
     }
   ];
 
@@ -42,9 +48,10 @@ const Projects = () => {
     <section className="py-20 px-4 bg-muted/30" aria-labelledby="projects-heading">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 id="projects-heading" className="text-4xl font-bold mb-4">Featured Django Projects & Portfolio</h2>
+          <h2 id="projects-heading" className="text-4xl font-bold mb-4">My Recent Work & Client Projects</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Professional Django applications showcasing web development expertise, scalable architecture, and modern backend solutions. View source code on GitHub.
+            See examples of websites, e-commerce stores, and web applications I've built for businesses. 
+            These projects showcase the quality and professionalism you can expect for your own project.
           </p>
         </div>
         

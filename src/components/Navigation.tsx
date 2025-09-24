@@ -34,16 +34,22 @@ const Navigation = () => {
               Home
             </button>
             <button 
-              onClick={() => scrollToSection('skills')}
+              onClick={() => scrollToSection('services')}
               className="text-muted-foreground hover:text-primary transition-colors"
             >
-              Skills
+              Services
             </button>
             <button 
               onClick={() => scrollToSection('projects')}
               className="text-muted-foreground hover:text-primary transition-colors"
             >
-              Projects
+              My Work
+            </button>
+            <button 
+              onClick={() => scrollToSection('skills')}
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              About Me
             </button>
             <button 
               onClick={() => scrollToSection('contact')}

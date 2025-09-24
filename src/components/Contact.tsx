@@ -10,9 +10,9 @@ const Contact = () => {
     <section className="py-20 px-4 bg-background" aria-labelledby="contact-heading">
       <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 id="contact-heading" className="text-4xl font-bold mb-4">Hire Samuel Olaonipekun - Django Developer</h2>
+            <h2 id="contact-heading" className="text-4xl font-bold mb-4">Get Your Website or App Built Today</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ready to contribute to impactful Django projects? Available for hire in Lagos, Nigeria and remote work. Let's discuss web development opportunities and how I can bring value to your team with Python expertise.
+              Ready to take your business online or upgrade your existing website? I'm here to help Nigerian businesses succeed with professional web solutions. Get a free quote for your project today!
             </p>
           </div>
         
@@ -20,10 +20,11 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
+              <h3 className="text-2xl font-semibold mb-6">Start Your Project Today</h3>
               <p className="text-muted-foreground mb-8">
-                Actively seeking opportunities to contribute to impactful projects and grow within a forward-thinking team. 
-                Ready to bring reliability, problem-solving skills, and Django expertise to make a measurable difference.
+                Whether you need a simple business website, an e-commerce store, or a custom web application, 
+                I'm here to help. Based in Lagos, Nigeria, I work with businesses across the country to build 
+                professional web solutions that drive results.
               </p>
             </div>
             
@@ -93,9 +94,9 @@ const Contact = () => {
           {/* Contact Form */}
           <Card className="shadow-card">
             <CardHeader>
-              <CardTitle>Send a Message</CardTitle>
+              <CardTitle>Get Your Free Quote</CardTitle>
               <CardDescription>
-                Fill out the form below and I'll get back to you soon.
+                Tell me about your project and I'll get back to you with a customized quote within 24 hours.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -111,14 +112,14 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" placeholder="Project inquiry" />
+                  <Label htmlFor="subject">Project Type</Label>
+                  <Input id="subject" placeholder="e.g. Business Website, E-commerce Store, Web App" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
+                  <Label htmlFor="message">Project Details</Label>
                   <Textarea 
                     id="message" 
-                    placeholder="Tell me about your project..."
+                    placeholder="Describe your business and what kind of website/app you need. Include your budget range if possible."
                     className="min-h-[120px]"
                   />
                 </div>
@@ -126,7 +127,7 @@ const Contact = () => {
                   type="submit" 
                   className="w-full bg-primary hover:bg-primary-hover text-primary-foreground"
                 >
-                  Send Message
+                  Get My Free Quote
                 </Button>
               </form>
             </CardContent>
