@@ -5,68 +5,9 @@ import { Globe, ShoppingCart, Smartphone, Code, Zap, Shield } from "lucide-react
 import CustomQuoteModal from "@/components/CustomQuoteModal";
 
 const Services = () => {
-  const services = [
-    {
-      title: "Business Websites",
-      icon: <Globe className="h-8 w-8" />,
-      description: "Professional business websites designed to enhance your online presence and connect with your target audience effectively.",
-      features: [
-        "Responsive Design & Mobile Optimization",
-        "Search Engine Optimization (SEO)",
-        "Content Management System",
-        "Contact Forms & Business Integration",
-        "Performance Optimization",
-        "1-Year Maintenance & Support"
-      ],
-      popular: false,
-      recommendedPackage: 'Corporate / Business Website'
-    },
-    {
-      title: "E-Commerce Solutions",
-      icon: <ShoppingCart className="h-8 w-8" />,
-      description: "Complete online store solutions with secure payment processing, inventory management, and customer-friendly shopping experiences.",
-      features: [
-        "Product Catalog & Shopping Cart",
-        "Payment Gateway Integration",
-        "Order Management System",
-        "Inventory Tracking",
-        "Customer Account Management",
-        "Mobile-Responsive Design"
-      ],
-      popular: true,
-      recommendedPackage: 'Small e‑commerce / Medium e‑commerce'
-    },
-    {
-      title: "Custom Web Applications",
-      icon: <Code className="h-8 w-8" />,
-      description: "Tailored web applications built to address your specific business requirements and streamline your operations.",
-      features: [
-        "Custom Business Logic",
-        "User Authentication & Roles",
-        "Database Management",
-        "API Integration",
-        "Real-time Features",
-        "Scalable Architecture"
-      ],
-      popular: false,
-      recommendedPackage: 'Premium e‑commerce / Enterprise'
-    },
-    {
-      title: "Mobile Apps (PWA)",
-      icon: <Smartphone className="h-8 w-8" />,
-      description: "App-like experience that works on all devices",
-      features: [
-        "Works Like Native App",
-        "Offline Functionality",
-        "Push Notifications",
-        "App Store Ready",
-        "Fast & Lightweight",
-        "Cross-Platform Compatible"
-      ],
-      popular: false,
-      recommendedPackage: 'Premium / Enterprise'
-    }
-  ];
+  // pull services from content provider so admin can update them
+  const { content } = require('@/lib/ContentProvider').useContent ? (require('@/lib/ContentProvider') as any).useContent() : { content: null };
+  const services = Array.isArray(content?.services) ? content.services : [];
 
   const whyChooseMe = [
     {
@@ -100,7 +41,7 @@ const Services = () => {
 
         {/* Services Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          {services.map((service, index) => (
+          {services.map((service: any, index: number) => (
             <Card key={index} className={`relative shadow-card hover:shadow-hover transition-all duration-300 ${service.popular ? 'border-primary ring-2 ring-primary/20' : ''}`}>
               {service.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">

@@ -5,41 +5,9 @@ import { ExternalLink, Github, Database, Image as ImageIcon } from "lucide-react
 import { ASSETS } from "@/lib/assets";
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "Vendora - E-Commerce Platform",
-      description: "A comprehensive e-commerce solution with product management, secure payment processing, and customer account features. Built for scalability and optimal user experience.",
-      features: ["Product Catalog", "Shopping Cart", "Payment Integration", "Order Management", "Customer Accounts", "Admin Dashboard"],
-      githubUrl: "https://github.com/Donsirmuel/vendora",
-      liveUrl: "#",
-      imageUrl: ASSETS.placeholder,
-      hasLive: false,
-      projectType: "E-Commerce Platform",
-      clientBenefit: "Complete online store with secure transactions"
-    },
-    {
-      title: "Business Portfolio Websites",
-  description: "Professional business websites and e-commerce platforms featuring responsive design, SEO optimization, and content management. Built for local businesses and growing e-commerce stores using Django, React and PostgreSQL.",
-      features: ["Responsive Design", "SEO Optimization", "Content Management", "Contact Forms", "Performance Optimization", "Mobile-Friendly"],
-      githubUrl: "#",
-      liveUrl: "#",
-      imageUrl: ASSETS.placeholder,
-      hasLive: false,
-      projectType: "Business Website",
-      clientBenefit: "Enhanced online presence and customer engagement"
-    },
-    {
-      title: "Custom Web Applications",
-      description: "Tailored web applications designed to streamline business processes and improve operational efficiency. Features custom workflows, user management, and data analytics.",
-      features: ["Custom Workflows", "User Management", "Data Analytics", "API Integration", "Real-time Updates", "Scalable Architecture"],
-      githubUrl: "https://github.com/Donsirmuel",
-      liveUrl: "#",
-      imageUrl: ASSETS.placeholder,
-      hasLive: false,
-      projectType: "Web Application",
-      clientBenefit: "Streamlined operations and improved efficiency"
-    }
-  ];
+  const { content } = require('@/lib/ContentProvider').useContent ? (require('@/lib/ContentProvider') as any).useContent() : { content: null };
+
+  const projects = Array.isArray(content?.projects) ? content.projects : [];
 
   return (
     <section className="py-20 px-4 bg-muted/30" aria-labelledby="projects-heading">

@@ -10,7 +10,6 @@ import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
 import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
-import AdminShell from "./pages/Admin/AdminShell";
 import SEO from "./components/SEO";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -30,7 +29,7 @@ const App = () => (
         <Route path="/services" element={<ServicesPage />} />
   <Route path="/pricing" element={<Pricing />} />
   <Route path="/projects" element={<ProjectsPage />} />
-  <Route path="/admin/*" element={<AdminShell />} />
+  
         <Route path="/contact" element={<ContactPage />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />

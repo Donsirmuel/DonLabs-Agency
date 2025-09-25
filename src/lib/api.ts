@@ -1,9 +1,15 @@
 export const API_BASE = '/api';
 
 export async function getJSON(path: string, opts: RequestInit = {}) {
+  const access = typeof window !== 'undefined' ? localStorage.getItem('admin_access') : null;
+  const defaultHeaders: Record<string, string> = { 'Content-Type': 'application/json' };
+  if (access) defaultHeaders['Authorization'] = `Bearer ${access}`;
+
+  const mergedHeaders = { ...defaultHeaders, ...(opts.headers || {}) } as Record<string, string>;
+
   const res = await fetch(`${API_BASE}${path}`, {
-    headers: { 'Content-Type': 'application/json' },
     ...opts,
+    headers: mergedHeaders,
   });
   if (!res.ok) {
     const text = await res.text();

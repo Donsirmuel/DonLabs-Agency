@@ -9,6 +9,7 @@ const canonical = "https://donsirmuel.github.io/My-Portfolio/about";
 
 const About = () => {
   const navigate = useNavigate();
+  const { content } = require('@/lib/ContentProvider').useContent ? (require('@/lib/ContentProvider') as any).useContent() : { content: null };
 
   return (
     <main className="min-h-screen bg-background pt-20">
@@ -25,18 +26,11 @@ const About = () => {
             </div>
 
             <div className="md:col-span-2">
-              <h1 className="text-4xl font-bold mb-4">About Samuel</h1>
+              <h1 className="text-4xl font-bold mb-4">{content?.about?.heading ?? 'About Samuel'}</h1>
 
-              <p className="text-lg text-muted-foreground mb-4">
-                I build web products that help businesses sell more and operate better. Based in Lagos, I specialise in
-                Django backends and React frontends, with production deployments on PostgreSQL and container platforms.
-              </p>
+              <p className="text-lg text-muted-foreground mb-4">{content?.about?.intro ?? ''}</p>
 
-              <p className="text-md text-muted-foreground mb-6">
-                My work focuses on measurable outcomes: faster page loads, reliable payment flows, and admin tools that
-                save time. Recent projects include an e-commerce rebuild that increased transactions by 43% and a
-                marketplace API that handled a 3x traffic spike without downtime.
-              </p>
+              <p className="text-md text-muted-foreground mb-6">{content?.about?.details ?? ''}</p>
             </div>
           </div>
 
