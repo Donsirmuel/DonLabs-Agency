@@ -59,84 +59,142 @@ export const defaultContent: SiteContent = {
       hasLive: false,
       projectType: "E-Commerce Platform",
       clientBenefit: "Complete online store with secure transactions"
+    },
+    {
+      title: "Business Portfolio Websites",
+      description: "Professional business websites and e-commerce platforms featuring responsive design, SEO optimization, and content management. Built for local businesses and growing e-commerce stores using Django, React and PostgreSQL.",
+      features: ["Responsive Design", "SEO Optimization", "Content Management", "Contact Forms", "Performance Optimization", "Mobile-Friendly"],
+      githubUrl: "#",
+      liveUrl: "#",
+      imageUrl: ASSETS.placeholder,
+      hasLive: false,
+      projectType: "Business Website",
+      clientBenefit: "Enhanced online presence and customer engagement"
+    },
+    {
+      title: "Custom Web Applications",
+      description: "Tailored web applications designed to streamline business processes and improve operational efficiency. Features custom workflows, user management, and data analytics.",
+      features: ["Custom Workflows", "User Management", "Data Analytics", "API Integration", "Real-time Updates", "Scalable Architecture"],
+      githubUrl: "https://github.com/Donsirmuel",
+      liveUrl: "#",
+      imageUrl: ASSETS.placeholder,
+      hasLive: false,
+      projectType: "Web Application",
+      clientBenefit: "Streamlined operations and improved efficiency"
     }
   ],
   services: [
     {
       title: "Business Websites",
       description: "Professional business websites designed to enhance your online presence and connect with your target audience effectively.",
-      features: ["Responsive Design & Mobile Optimization", "Search Engine Optimization (SEO)", "Content Management System", "Contact Forms & Business Integration", "Performance Optimization", "1-Year Maintenance & Support"],
+      features: [
+        "Responsive Design & Mobile Optimization",
+        "Search Engine Optimization (SEO)",
+        "Content Management System",
+        "Contact Forms & Business Integration",
+        "Performance Optimization",
+        "1-Year Maintenance & Support"
+      ],
       popular: false,
       recommendedPackage: 'Corporate / Business Website'
     },
     {
-      title: "E‑commerce & Marketplaces",
-      description: "Online stores and marketplace platforms with secure payments, inventory, and order management built for growth.",
-      features: ["Product Catalog & Variants", "Secure Payment Integration", "Order & Inventory Management", "Admin Dashboard", "Performance & Caching", "Scalable Hosting"],
+      title: "E-Commerce Solutions",
+      description: "Complete online store solutions with secure payment processing, inventory management, and customer-friendly shopping experiences.",
+      features: [
+        "Product Catalog & Shopping Cart",
+        "Payment Gateway Integration",
+        "Order Management System",
+        "Inventory Tracking",
+        "Customer Account Management",
+        "Mobile-Responsive Design"
+      ],
       popular: true,
-      recommendedPackage: 'E‑commerce Package'
+      recommendedPackage: 'Small e‑commerce / Medium e‑commerce'
     },
     {
-      title: "CMS & Admin Tools",
-      description: "Headless CMS setups and custom admin panels that make content updates and business workflows simpler.",
-      features: ["Headless CMS (optional)", "Custom Admin UI", "User & Permissions", "Media Management", "Integrations & Webhooks"],
+      title: "Custom Web Applications",
+      description: "Tailored web applications built to address your specific business requirements and streamline your operations.",
+      features: [
+        "Custom Business Logic",
+        "User Authentication & Roles",
+        "Database Management",
+        "API Integration",
+        "Real-time Features",
+        "Scalable Architecture"
+      ],
       popular: false,
-      recommendedPackage: 'Custom / Premium'
+      recommendedPackage: 'Premium e‑commerce / Enterprise'
+    },
+    {
+      title: "Mobile Apps (PWA)",
+      description: "App-like experience that works on all devices",
+      features: [
+        "Works Like Native App",
+        "Offline Functionality",
+        "Push Notifications",
+        "App Store Ready",
+        "Fast & Lightweight",
+        "Cross-Platform Compatible"
+      ],
+      popular: false,
+      recommendedPackage: 'Premium / Enterprise'
     }
   ],
   pricing: [
-    {
-      id: 'basic',
-      name: 'Starter / Landing Page',
-      price: '₦80,000 - ₦140,000',
-      desc: 'A focused landing page or small site for individuals and startups starting online.',
-      includes: [
-        '1–3 pages (Landing, Contact, About)',
-        'Responsive React frontend',
-        'Basic SEO & analytics setup',
-        'Contact form integration'
-      ]
-    },
-    {
-      id: 'corporate',
-      name: 'Corporate / Business Website',
-      price: '₦180,000 - ₦350,000',
-      desc: 'For professionals, agencies, corporate teams and service providers who need a polished web presence or company site.',
-      includes: [
-        '5–10 content pages (About, Services, Team, Blog, Contact)',
-        'SEO-friendly React frontend, optional Django headless CMS',
-        'Blog setup with structured content and RSS',
-        'Contact forms, lead capture & newsletter integration',
-        'Basic analytics, accessibility checks & 1 month support'
-      ]
-    },
-    {
-      id: 'ecommerce',
-      name: 'E‑commerce Package',
-      price: '₦300,000 - ₦800,000+',
-      desc: 'Full-featured online store or marketplace for merchants and agencies with payment and order workflows.',
-      includes: [
-        'Product catalog & variants',
-        'Checkout & payment integration',
-        'Order management & admin dashboard',
-        'Shipping & tax configuration assistance',
-        'Performance & scalability guidance'
-      ],
-      popular: true
-    },
-    {
-      id: 'premium',
-      name: 'Custom / Premium',
-      price: '₦450,000+',
-      desc: 'Custom solutions, complex integrations, or enterprise workflows requiring bespoke engineering.',
-      includes: [
-        'Custom features & integrations',
-        'Dedicated architecture & SLA',
-        'Advanced analytics & monitoring',
-        'Extended maintenance options'
-      ]
-    }
-  ]
+  {
+    id: 'corporate',
+    name: 'Corporate / Business Website',
+    price: '₦180,000 - ₦350,000',
+    desc: 'For professionals, agencies, corporate teams and service providers who need a polished web presence or company site.',
+    includes: [
+      '5–10 content pages (About, Services, Team, Blog, Contact)',
+      'SEO-friendly React frontend, optional Django headless CMS',
+      'Blog setup with structured content and RSS',
+      'Contact forms, lead capture & newsletter integration',
+      'Basic analytics, accessibility checks & 1 month support'
+    ]
+  },
+  {
+    id: 'small-ecom',
+    name: 'Small e‑commerce',
+    price: '₦350,000 - ₦600,000',
+    desc: 'Small online stores with product catalogs and simple checkout - ideal for boutiques and SMB sellers.',
+    includes: [
+      'Product catalog, product pages and category browsing',
+      'Cart, checkout and order confirmation flows',
+      'Payment gateway integration (Paystack / Flutterwave / Stripe)',
+      'Django backend or Django + DRF APIs with PostgreSQL',
+      'Admin order/product management, basic reporting & 3 months support'
+    ],
+    popular: true
+  },
+  {
+    id: 'medium-ecom',
+    name: 'Medium e‑commerce',
+    price: '₦600,000 - ₦1,200,000',
+    desc: 'Growing stores that need inventory, user accounts, discounts and integrations.',
+    includes: [
+      'Everything in Small e‑commerce',
+      'User accounts, order history and customer dashboards',
+      'Inventory management, discounts & coupon systems',
+      'Integrated email/SMS notifications and analytics',
+      'Performance tuning, staging environment & 4 months support'
+    ]
+  },
+  {
+    id: 'premium-ecom',
+    name: 'Premium e‑commerce / Enterprise',
+    price: 'Custom pricing (₦1,200,000+)',
+    desc: 'Full custom e‑commerce platforms with integrations, automation and scaling support.',
+    includes: [
+      'Custom API design (Django + DRF) and React storefront',
+      'PostgreSQL schema design, caching & background workers',
+      'Third‑party integrations (ERP/CRM, logistics, payment providers)',
+      'Containerized deployments (Docker), CI/CD, monitoring & 6 months support'
+    ]
+  }
+]
 };
 
 const STORAGE_KEY = 'siteContent';
