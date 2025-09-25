@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Globe, ShoppingCart, Smartphone, Code, Zap, Shield } from "lucide-react";
 import CustomQuoteModal from "@/components/CustomQuoteModal";
+import { useContent } from '@/lib/ContentProvider';
 
 const Services = () => {
   // pull services from content provider so admin can update them
-  const { content } = require('@/lib/ContentProvider').useContent ? (require('@/lib/ContentProvider') as any).useContent() : { content: null };
+  const { content } = useContent();
   const services = Array.isArray(content?.services) ? content.services : [];
 
   const whyChooseMe = [

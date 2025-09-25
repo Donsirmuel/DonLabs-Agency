@@ -2,11 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
-// pull packages from content provider so admin can update them
-const { content } = require('@/lib/ContentProvider').useContent ? (require('@/lib/ContentProvider') as any).useContent() : { content: null };
-const packages = Array.isArray(content?.pricing) ? content.pricing : [];
+import { useContent } from '@/lib/ContentProvider';
+
+// pull packages from content provider so admin can update them (inside component)
 
 const PricingGrid = () => {
+  const { content } = useContent();
+  const packages = Array.isArray(content?.pricing) ? content.pricing : [];
+
   return (
     <section className="py-20 px-4 bg-background">
       <div className="max-w-6xl mx-auto">

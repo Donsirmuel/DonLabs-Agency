@@ -4,12 +4,13 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ASSETS } from "@/lib/assets";
+import { useContent } from '@/lib/ContentProvider';
 
 const canonical = "https://donsirmuel.github.io/My-Portfolio/about";
 
 const About = () => {
   const navigate = useNavigate();
-  const { content } = require('@/lib/ContentProvider').useContent ? (require('@/lib/ContentProvider') as any).useContent() : { content: null };
+  const { content } = useContent();
 
   return (
     <main className="min-h-screen bg-background pt-20">

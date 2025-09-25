@@ -3,9 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Database, Image as ImageIcon } from "lucide-react";
 import { ASSETS } from "@/lib/assets";
+import { useContent } from '@/lib/ContentProvider';
 
 const Projects = () => {
-  const { content } = require('@/lib/ContentProvider').useContent ? (require('@/lib/ContentProvider') as any).useContent() : { content: null };
+  const { content } = useContent();
 
   const projects = Array.isArray(content?.projects) ? content.projects : [];
 
