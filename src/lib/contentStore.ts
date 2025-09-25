@@ -42,6 +42,9 @@ export type SiteContent = {
 
 import { ASSETS } from "@/lib/assets";
 
+// Version number - increment this when you want to force update all users' cached content
+const CONTENT_VERSION = 2;
+
 export const defaultContent: SiteContent = {
   about: {
     heading: 'About Samuel',
@@ -198,22 +201,39 @@ export const defaultContent: SiteContent = {
 };
 
 const STORAGE_KEY = 'siteContent';
+const VERSION_KEY = 'siteContentVersion';
 
 export function loadContent(): SiteContent {
   try {
+    // Check if stored version matches current version
+    const storedVersion = localStorage.getItem(VERSION_KEY);
+    const currentVersion = CONTENT_VERSION.toString();
+    
+    if (storedVersion !== currentVersion) {
+      // Version mismatch - clear old content and use defaults
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.setItem(VERSION_KEY, currentVersion);
+      return defaultContent;
+    }
+    
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
       return JSON.parse(raw) as SiteContent;
     }
   } catch (err) {
-    // ignore
+    // ignore parsing errors and fall back to defaults
   }
+  
+  // Set version for first-time visitors
+  localStorage.setItem(VERSION_KEY, CONTENT_VERSION.toString());
   return defaultContent;
 }
 
 export function saveContent(content: SiteContent) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(content));
+    // Always save current version when content is saved
+    localStorage.setItem(VERSION_KEY, CONTENT_VERSION.toString());
   } catch (err) {
     console.error('Failed to save content', err);
   }
