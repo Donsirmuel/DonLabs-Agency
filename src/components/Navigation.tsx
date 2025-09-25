@@ -68,6 +68,8 @@ const Navigation = () => {
                   <div className="flex flex-col space-y-4 mt-8">
                     <button onClick={() => goto('/')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">Home</button>
                     <button onClick={() => goto('/about')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">About</button>
+                    <button onClick={() => goto('/services')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">Services</button>
+                    <button onClick={() => goto('/pricing')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">Pricing</button>
                     <button onClick={() => goto('/projects')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">Projects</button>
                     <button onClick={() => goto('/contact')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">Contact</button>
                     <Button 

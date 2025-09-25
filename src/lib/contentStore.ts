@@ -68,9 +68,35 @@ export const defaultContent: SiteContent = {
       features: ["Responsive Design & Mobile Optimization", "Search Engine Optimization (SEO)", "Content Management System", "Contact Forms & Business Integration", "Performance Optimization", "1-Year Maintenance & Support"],
       popular: false,
       recommendedPackage: 'Corporate / Business Website'
+    },
+    {
+      title: "E‑commerce & Marketplaces",
+      description: "Online stores and marketplace platforms with secure payments, inventory, and order management built for growth.",
+      features: ["Product Catalog & Variants", "Secure Payment Integration", "Order & Inventory Management", "Admin Dashboard", "Performance & Caching", "Scalable Hosting"],
+      popular: true,
+      recommendedPackage: 'E‑commerce Package'
+    },
+    {
+      title: "CMS & Admin Tools",
+      description: "Headless CMS setups and custom admin panels that make content updates and business workflows simpler.",
+      features: ["Headless CMS (optional)", "Custom Admin UI", "User & Permissions", "Media Management", "Integrations & Webhooks"],
+      popular: false,
+      recommendedPackage: 'Custom / Premium'
     }
   ],
   pricing: [
+    {
+      id: 'basic',
+      name: 'Starter / Landing Page',
+      price: '₦80,000 - ₦140,000',
+      desc: 'A focused landing page or small site for individuals and startups starting online.',
+      includes: [
+        '1–3 pages (Landing, Contact, About)',
+        'Responsive React frontend',
+        'Basic SEO & analytics setup',
+        'Contact form integration'
+      ]
+    },
     {
       id: 'corporate',
       name: 'Corporate / Business Website',
@@ -82,6 +108,32 @@ export const defaultContent: SiteContent = {
         'Blog setup with structured content and RSS',
         'Contact forms, lead capture & newsletter integration',
         'Basic analytics, accessibility checks & 1 month support'
+      ]
+    },
+    {
+      id: 'ecommerce',
+      name: 'E‑commerce Package',
+      price: '₦300,000 - ₦800,000+',
+      desc: 'Full-featured online store or marketplace for merchants and agencies with payment and order workflows.',
+      includes: [
+        'Product catalog & variants',
+        'Checkout & payment integration',
+        'Order management & admin dashboard',
+        'Shipping & tax configuration assistance',
+        'Performance & scalability guidance'
+      ],
+      popular: true
+    },
+    {
+      id: 'premium',
+      name: 'Custom / Premium',
+      price: '₦450,000+',
+      desc: 'Custom solutions, complex integrations, or enterprise workflows requiring bespoke engineering.',
+      includes: [
+        'Custom features & integrations',
+        'Dedicated architecture & SLA',
+        'Advanced analytics & monitoring',
+        'Extended maintenance options'
       ]
     }
   ]
