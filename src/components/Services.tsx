@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Globe, ShoppingCart, Smartphone, Code, Zap, Shield } from "lucide-react";
+import CustomQuoteModal from "@/components/CustomQuoteModal";
 
 const Services = () => {
   const services = [
@@ -9,7 +10,6 @@ const Services = () => {
       title: "Business Websites",
       icon: <Globe className="h-8 w-8" />,
       description: "Professional business websites designed to enhance your online presence and connect with your target audience effectively.",
-  price: "From ₦150,000",
       features: [
         "Responsive Design & Mobile Optimization",
         "Search Engine Optimization (SEO)",
@@ -18,13 +18,13 @@ const Services = () => {
         "Performance Optimization",
         "1-Year Maintenance & Support"
       ],
-      popular: false
+      popular: false,
+      recommendedPackage: 'Corporate / Business Website'
     },
     {
       title: "E-Commerce Solutions",
       icon: <ShoppingCart className="h-8 w-8" />,
       description: "Complete online store solutions with secure payment processing, inventory management, and customer-friendly shopping experiences.",
-  price: "From ₦300,000",
       features: [
         "Product Catalog & Shopping Cart",
         "Payment Gateway Integration",
@@ -33,13 +33,13 @@ const Services = () => {
         "Customer Account Management",
         "Mobile-Responsive Design"
       ],
-      popular: true
+      popular: true,
+      recommendedPackage: 'Small e‑commerce / Medium e‑commerce'
     },
     {
       title: "Custom Web Applications",
       icon: <Code className="h-8 w-8" />,
       description: "Tailored web applications built to address your specific business requirements and streamline your operations.",
-  price: "From ₦500,000",
       features: [
         "Custom Business Logic",
         "User Authentication & Roles",
@@ -48,13 +48,13 @@ const Services = () => {
         "Real-time Features",
         "Scalable Architecture"
       ],
-      popular: false
+      popular: false,
+      recommendedPackage: 'Premium e‑commerce / Enterprise'
     },
     {
       title: "Mobile Apps (PWA)",
       icon: <Smartphone className="h-8 w-8" />,
       description: "App-like experience that works on all devices",
-      price: "From ₦250,000",
       features: [
         "Works Like Native App",
         "Offline Functionality",
@@ -63,7 +63,8 @@ const Services = () => {
         "Fast & Lightweight",
         "Cross-Platform Compatible"
       ],
-      popular: false
+      popular: false,
+      recommendedPackage: 'Premium / Enterprise'
     }
   ];
 
@@ -81,7 +82,7 @@ const Services = () => {
     {
       title: "Modern Technology",
       icon: <Code className="h-6 w-6" />,
-      description: "Using latest web technologies to ensure your website is fast, secure, and future-proof."
+      description: "Django (DRF) backends, React frontends, PostgreSQL databases and containerized deployments - built for reliability and scale."
     }
   ];
 
@@ -114,7 +115,9 @@ const Services = () => {
                   </div>
                   <div>
                     <CardTitle className="text-xl">{service.title}</CardTitle>
-                    <div className="text-2xl font-bold text-primary mt-1">{service.price}</div>
+                    {service.recommendedPackage && (
+                      <div className="text-sm text-muted-foreground mt-1">Recommended package: <strong>{service.recommendedPackage}</strong></div>
+                    )}
                   </div>
                 </div>
                 <CardDescription>{service.description}</CardDescription>
@@ -132,7 +135,11 @@ const Services = () => {
                 
                 <Button 
                   className="w-full bg-primary hover:bg-primary-hover text-primary-foreground"
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => {
+                    const pkg = service.recommendedPackage ? `Recommended package: ${service.recommendedPackage}. ` : '';
+                    const msg = `Hi Samuel, I'm interested in your ${service.title} service. ${pkg}Please send pricing and next steps.`;
+                    window.open('https://wa.me/2349150996465?text=' + encodeURIComponent(msg), '_blank');
+                  }}
                 >
                   Get Quote for {service.title}
                 </Button>
@@ -180,7 +187,9 @@ const Services = () => {
             >
               Get Started
             </Button>
+            <CustomQuoteModal />
           </div>
+          <p className="text-sm text-muted-foreground mt-4">Note: Pricing, hosting, content creation, and third-party service fees (domain, paid plugins, payment gateway charges) are not included. I can advise and help procure these where needed.</p>
         </div>
       </div>
     </section>

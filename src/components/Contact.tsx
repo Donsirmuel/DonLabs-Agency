@@ -13,7 +13,7 @@ const Contact = () => {
             <h2 id="contact-heading" className="text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Looking for a skilled website developer? Whether you're in Nigeria, Africa, or anywhere in the world, 
-              I'm ready to help bring your digital vision to life. From business websites to complex web applications, 
+              I'm ready to help bring your digital vision to life. Whether you need a corporate site, a small or medium e-commerce store, or a custom web application, 
               let's discuss your project and create something amazing together. Contact me today for a free consultation!
             </p>
           </div>

@@ -1,0 +1,6 @@
+{
+  "typeStubSearchPaths": [
+    "./backend/typings"
+  ],
+  "venvPath": "./.venv"
+}

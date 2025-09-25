@@ -10,7 +10,7 @@ const Footer = () => {
           <img src={ASSETS.logo} alt="logo" className="h-10 w-10 rounded-md object-cover" />
           <div>
             <div className="font-bold">Samuel Olaonipekun</div>
-            <div className="text-sm text-muted-foreground">Website Developer & Designer — Lagos, Nigeria</div>
+            <div className="text-sm text-muted-foreground">Website Developer & Designer - Lagos, Nigeria</div>
           </div>
         </div>
 

@@ -32,6 +32,7 @@ const Navigation = () => {
           <div className="hidden lg:flex items-center space-x-8">
             <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
             <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Services</Link>
+            <Link to="/pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</Link>
             <Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors">My Work</Link>
             <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">About Me</Link>
             <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link>

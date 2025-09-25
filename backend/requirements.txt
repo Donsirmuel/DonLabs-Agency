@@ -1,0 +1,5 @@
+Django>=4.2
+djangorestframework>=3.14
+django-stubs>=1.24
+djangorestframework-stubs>=1.7
+types-PyYAML

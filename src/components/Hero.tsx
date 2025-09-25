@@ -30,7 +30,7 @@ const Hero = () => {
           <div className="text-left">
             <div className="mb-6 inline-flex items-center gap-3 bg-primary/10 text-primary rounded-full px-4 py-2 text-sm font-medium">
               <Database className="h-5 w-5" />
-              Trusted by Nigerian Businesses & Startups
+              Trusted by Nigerian Businesses & SMEs
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 text-white">

@@ -19,7 +19,7 @@ const Projects = () => {
     },
     {
       title: "Business Portfolio Websites",
-      description: "Professional business websites featuring responsive design, SEO optimization, and content management. Designed to establish strong online presence and connect with target audiences.",
+  description: "Professional business websites and e-commerce platforms featuring responsive design, SEO optimization, and content management. Built for local businesses and growing e-commerce stores using Django, React and PostgreSQL.",
       features: ["Responsive Design", "SEO Optimization", "Content Management", "Contact Forms", "Performance Optimization", "Mobile-Friendly"],
       githubUrl: "#",
       liveUrl: "#",

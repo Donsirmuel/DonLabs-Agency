@@ -49,7 +49,7 @@ const SEO = ({
   title = "Samuel Olaonipekun - Django Web Developer | Python Backend Expert | Lagos Nigeria",
   description = "Hire Samuel Olaonipekun, a skilled Django Web Developer from Lagos, Nigeria. Expert in Python, REST APIs, PostgreSQL, and scalable web applications.",
   keywords = "Samuel Olaonipekun, Django Developer, Python Developer, Web Developer Lagos, Backend Developer Nigeria, REST API Developer, PostgreSQL Expert",
-  image = "https://donsirmuel.github.io/My-Portfolio/profile-image.jpg",
+  image = "/My-Portfolio/og/home.svg",
   url = "https://donsirmuel.github.io/My-Portfolio/",
   canonical,
   structuredData = null
