@@ -43,7 +43,7 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 2;
+const CONTENT_VERSION = 3;
 
 export const defaultContent: SiteContent = {
   about: {
@@ -53,37 +53,38 @@ export const defaultContent: SiteContent = {
   },
   projects: [
     {
-      title: "Vendora - E-Commerce Platform",
-      description: "A comprehensive e-commerce solution with product management, secure payment processing, and customer account features. Built for scalability and optimal user experience.",
-      features: ["Product Catalog", "Shopping Cart", "Payment Integration", "Order Management", "Customer Accounts", "Admin Dashboard"],
-      githubUrl: "https://github.com/Donsirmuel/vendora",
-      liveUrl: "#",
-      imageUrl: ASSETS.placeholder,
-      hasLive: false,
-      projectType: "E-Commerce Platform",
-      clientBenefit: "Complete online store with secure transactions"
+      title: "Devblog.com.ng",
+      description: "Devblog is a Nigerian tech blog covering web development, tutorials, and product engineering best practices. I built the platform with a Django backend and a modern React frontend to deliver fast, SEO-friendly articles.",
+      features: [
+        "Django-powered CMS for articles",
+        "Responsive React frontend",
+        "SEO-friendly markup and RSS",
+        "Search and category filters",
+        "Optimized image delivery and caching"
+      ],
+      githubUrl: "#",
+      liveUrl: "https://devblog.com.ng",
+  imageUrl: ASSETS.devblogScreenshot,
+      hasLive: true,
+      projectType: "Tech Blog",
+      clientBenefit: "A fast, searchable content platform for technical articles and tutorials"
     },
     {
-      title: "Business Portfolio Websites",
-      description: "Professional business websites and e-commerce platforms featuring responsive design, SEO optimization, and content management. Built for local businesses and growing e-commerce stores using Django, React and PostgreSQL.",
-      features: ["Responsive Design", "SEO Optimization", "Content Management", "Contact Forms", "Performance Optimization", "Mobile-Friendly"],
+      title: "GlitGlam - Fashion Store",
+      description: "GlitGlam is a boutique fashion store focused on curated womenswear. The project includes a product catalog, shopping cart, and checkout flows with a polished responsive design crafted to increase conversions.",
+      features: [
+        "Product catalog & category browsing",
+        "Shopping cart and checkout",
+        "Payment gateway integration",
+        "Admin product management",
+        "Responsive, conversion-focused UI"
+      ],
       githubUrl: "#",
       liveUrl: "#",
-      imageUrl: ASSETS.placeholder,
+      imageUrl: ASSETS.glitglam,
       hasLive: false,
-      projectType: "Business Website",
-      clientBenefit: "Enhanced online presence and customer engagement"
-    },
-    {
-      title: "Custom Web Applications",
-      description: "Tailored web applications designed to streamline business processes and improve operational efficiency. Features custom workflows, user management, and data analytics.",
-      features: ["Custom Workflows", "User Management", "Data Analytics", "API Integration", "Real-time Updates", "Scalable Architecture"],
-      githubUrl: "https://github.com/Donsirmuel",
-      liveUrl: "#",
-      imageUrl: ASSETS.placeholder,
-      hasLive: false,
-      projectType: "Web Application",
-      clientBenefit: "Streamlined operations and improved efficiency"
+      projectType: "Retail / E-Commerce",
+      clientBenefit: "A high-converting online storefront for boutique fashion"
     }
   ],
   services: [

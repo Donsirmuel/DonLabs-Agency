@@ -19,4 +19,8 @@ export const ASSETS = {
   placeholder: getAssetPath('placeholder.svg'),
   favicon: getAssetPath('favicon.ico'),
   logo: getAssetPath('logo.jpeg'),
+  // Project screenshots
+  devblog: getAssetPath('og/home.svg'),
+  glitglam: getAssetPath('glitglam-screenshot.png'),
+  devblogScreenshot: getAssetPath('devblog-screenshot.png'),
 } as const;

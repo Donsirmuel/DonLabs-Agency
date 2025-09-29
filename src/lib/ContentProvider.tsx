@@ -15,11 +15,13 @@ export const ContentProvider: React.FC<any> = ({ children }) => {
 
   useEffect(() => {
     saveContent(content);
-    // attempt to sync to server if authenticated
+    // attempt to sync to server only when an admin token is present
     (async () => {
       try {
-        const token = localStorage.getItem('admin_token');
-        const headers = token ? { Authorization: `Token ${token}` } : undefined;
+        // api.ts reads the token from localStorage key 'admin_access'
+        const token = typeof window !== 'undefined' ? localStorage.getItem('admin_access') : null;
+        if (!token) return; // do not attempt anonymous writes (GitHub Pages will 405)
+
         // try to POST if no server copy exists
         await postJSON('/site-content/', content);
       } catch (err) {
@@ -27,7 +29,7 @@ export const ContentProvider: React.FC<any> = ({ children }) => {
           // fallback to PATCH (if resource exists)
           await patchJSON('/site-content/1/', content);
         } catch (e) {
-          // ignore; server may not exist
+          // ignore; server may not exist or request may be disallowed
         }
       }
     })();
