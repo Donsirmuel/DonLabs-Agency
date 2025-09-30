@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Globe, ShoppingCart, Smartphone, Code, Zap, Shield } from "lucide-react";
 import CustomQuoteModal from "@/components/CustomQuoteModal";
 import { useContent } from '@/lib/ContentProvider';
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
 
 const Services = () => {
   // pull services from content provider so admin can update them
@@ -27,6 +28,15 @@ const Services = () => {
       description: "Django (DRF) backends, React frontends, PostgreSQL databases and containerized deployments - built for reliability and scale."
     }
   ];
+
+  const getServiceIcon = (title: string) => {
+    const t = (title || '').toLowerCase();
+    if (t.includes('e‑commerce') || t.includes('e-commerce') || t.includes('commerce') || t.includes('store')) return <ShoppingCart className="h-6 w-6" />;
+    if (t.includes('business') || t.includes('website') || t.includes('websites')) return <Globe className="h-6 w-6" />;
+    if (t.includes('custom') || t.includes('app') || t.includes('application')) return <Code className="h-6 w-6" />;
+    if (t.includes('pwa') || t.includes('progressive') || t.includes('mobile') || t.includes('app-like')) return <Smartphone className="h-6 w-6" />;
+    return <Globe className="h-6 w-6" />;
+  };
 
   return (
     <section className="py-20 px-4 bg-background" id="services" aria-labelledby="services-heading">
@@ -53,7 +63,7 @@ const Services = () => {
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="p-3 bg-primary/10 rounded-lg text-primary">
-                    {service.icon}
+                    {getServiceIcon(service.title)}
                   </div>
                   <div>
                     <CardTitle className="text-xl">{service.title}</CardTitle>
@@ -75,16 +85,29 @@ const Services = () => {
                   ))}
                 </ul>
                 
-                <Button 
-                  className="w-full bg-primary hover:bg-primary-hover text-primary-foreground"
-                  onClick={() => {
-                    const pkg = service.recommendedPackage ? `Recommended package: ${service.recommendedPackage}. ` : '';
-                    const msg = `Hi Samuel, I'm interested in your ${service.title} service. ${pkg}Please send pricing and next steps.`;
-                    window.open('https://wa.me/2349150996465?text=' + encodeURIComponent(msg), '_blank');
-                  }}
-                >
-                  Get Quote for {service.title}
-                </Button>
+                <div className="flex gap-3">
+                  <Button 
+                    className="flex-1 bg-primary hover:bg-primary-hover text-primary-foreground"
+                    onClick={() => {
+                      const pkg = service.recommendedPackage ? `Recommended package: ${service.recommendedPackage}. ` : '';
+                      const msg = `Hi Samuel, I'm interested in your ${service.title} service. ${pkg}Please send pricing and next steps.`;
+                      window.open('https://wa.me/2349150996465?text=' + encodeURIComponent(msg), '_blank');
+                    }}
+                  >
+                    Get Quote
+                  </Button>
+
+                  <Button 
+                    variant="outline"
+                    className="flex-1 border-primary text-primary hover:bg-primary/5"
+                    onClick={() => {
+                      // Scroll to How it works / FAQ section
+                      document.getElementById('how-we-work')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  >
+                    Learn more
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}
@@ -119,7 +142,7 @@ const Services = () => {
               className="bg-green-600 hover:bg-green-700 text-white font-medium"
               onClick={() => window.open('https://wa.me/2349150996465?text=Hi%20Samuel!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you.', '_blank')}
             >
-              WhatsApp Message
+              Message on WhatsApp
             </Button>
             <Button 
               variant="outline"
@@ -132,6 +155,35 @@ const Services = () => {
             <CustomQuoteModal />
           </div>
           <p className="text-sm text-muted-foreground mt-4">Note: Pricing, hosting, content creation, and third-party service fees (domain, paid plugins, payment gateway charges) are not included. I can advise and help procure these where needed.</p>
+        </div>
+
+        {/* How it works & FAQ */}
+        <div id="how-we-work" className="max-w-4xl mx-auto mt-12">
+          <h3 className="text-2xl font-semibold text-center mb-4">How we work</h3>
+          <div className="space-y-3 text-sm text-muted-foreground mb-8">
+            {(content?.servicesInfo?.howItWorks ?? []).map((step: string, i: number) => (
+              <div key={i} className="flex items-start gap-3">
+                <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center mt-1">{i+1}</div>
+                <div>{step}</div>
+              </div>
+            ))}
+          </div>
+
+          <h4 className="text-xl font-semibold mb-3">Frequently asked questions</h4>
+          <div className="space-y-2">
+            {(content?.servicesInfo?.faq ?? []).map((qa: any, idx: number) => (
+              <Collapsible key={idx}>
+                <div className="border rounded-md p-3">
+                  <CollapsibleTrigger asChild>
+                    <button className="w-full text-left font-medium">{qa.q}</button>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <div className="mt-2 text-sm text-muted-foreground">{qa.a}</div>
+                  </CollapsibleContent>
+                </div>
+              </Collapsible>
+            ))}
+          </div>
         </div>
       </div>
     </section>

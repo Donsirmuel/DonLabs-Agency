@@ -14,7 +14,7 @@ const About = () => {
 
   return (
     <main className="min-h-screen bg-background pt-20">
-  <SEO title="About — Samuel Olaonipekun | Django & React Developer" description="Samuel Olaonipekun — Lagos-based web developer specialising in Django, React and PostgreSQL. I build high-converting websites and e-commerce platforms for Nigerian businesses and international clients." canonical={canonical} image="/My-Portfolio/og/profile-card.svg" />
+  <SEO title="About - Samuel Olaonipekun | Django & React Developer" description="Samuel Olaonipekun - Lagos-based web developer specialising in Django, React and PostgreSQL. I build high-converting websites and e-commerce platforms for Nigerian businesses and international clients." canonical={canonical} image="/My-Portfolio/og/profile-card.svg" />
 
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">

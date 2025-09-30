@@ -37,6 +37,10 @@ export type SiteContent = {
   about: AboutContent;
   projects: Project[];
   services: Service[];
+  servicesInfo?: {
+    howItWorks?: string[];
+    faq?: { q: string; a: string }[];
+  };
   pricing: Package[];
 };
 
@@ -90,61 +94,84 @@ export const defaultContent: SiteContent = {
   services: [
     {
       title: "Business Websites",
-      description: "Professional business websites designed to enhance your online presence and connect with your target audience effectively.",
+      description: "Want a website that looks great and actually brings customers? I build fast, easy-to-update sites that make visitors comfortable and get them to contact you.",
       features: [
-        "Responsive Design & Mobile Optimization",
-        "Search Engine Optimization (SEO)",
-        "Content Management System",
-        "Contact Forms & Business Integration",
-        "Performance Optimization",
-        "1-Year Maintenance & Support"
+        "Mobile-first design that looks great on any device",
+        "Simple content editing (Django CMS or headless options)",
+        "SEO basics so new customers can find you",
+        "Contact forms, lead capture and newsletters",
+        "Speed and accessibility checks for better conversions",
+        "Launch help and optional ongoing support"
       ],
       popular: false,
       recommendedPackage: 'Corporate / Business Website'
     },
     {
-      title: "E-Commerce Solutions",
-      description: "Complete online store solutions with secure payment processing, inventory management, and customer-friendly shopping experiences.",
+      title: "E‑commerce Stores",
+      description: "Sell online without the headache. I set up product pages, a smooth checkout, and easy admin so you can focus on growing sales - not wrestling with software.",
       features: [
-        "Product Catalog & Shopping Cart",
-        "Payment Gateway Integration",
-        "Order Management System",
-        "Inventory Tracking",
-        "Customer Account Management",
-        "Mobile-Responsive Design"
+        "Product listings, search and categories",
+        "Fast, secure cart and checkout flows",
+        "Payment integrations (Paystack / Flutterwave / Stripe)",
+        "Order and inventory management made simple",
+        "Mobile shopping that converts",
+        "Launch support and basic fraud protections"
       ],
       popular: true,
       recommendedPackage: 'Small e‑commerce / Medium e‑commerce'
     },
     {
-      title: "Custom Web Applications",
-      description: "Tailored web applications built to address your specific business requirements and streamline your operations.",
+      title: "Custom Web Apps",
+      description: "Got a process that could be faster? I build custom apps - dashboards, booking systems, marketplaces - that automate work and help your team deliver more.",
       features: [
-        "Custom Business Logic",
-        "User Authentication & Roles",
-        "Database Management",
-        "API Integration",
-        "Real-time Features",
-        "Scalable Architecture"
+        "Custom workflows that match how you work",
+        "User accounts, roles and secure access",
+        "APIs and integrations (payments, shipping, CRM)",
+        "Reports, dashboards and admin tools",
+        "Built to scale with performance in mind",
+        "Transparent milestones and ongoing support"
       ],
       popular: false,
       recommendedPackage: 'Premium e‑commerce / Enterprise'
     },
     {
-      title: "Mobile Apps (PWA)",
-      description: "App-like experience that works on all devices",
+      title: "Progressive Web Apps (PWA)",
+      description: "Want an app-like experience without the app store hassle? PWAs install on phones, work offline and feel instant - great for repeat customers.",
       features: [
-        "Works Like Native App",
-        "Offline Functionality",
-        "Push Notifications",
-        "App Store Ready",
-        "Fast & Lightweight",
-        "Cross-Platform Compatible"
+        "Install on the home screen for quick access",
+        "Offline caching for fast repeat visits",
+        "Push notifications to bring customers back",
+        "Smooth cross-platform experience on mobile browsers",
+        "Lightweight and easy to maintain",
+        "Tracking to improve conversions"
       ],
       popular: false,
       recommendedPackage: 'Premium / Enterprise'
     }
   ],
+  servicesInfo: {
+    howItWorks: [
+      "Discovery - We start with a short chat to understand your goals and the results you want.",
+      "Proposal - I send a clear plan, timeline and fixed price (or range). You review and we tweak it together.",
+      "Build - I deliver work in short, visible milestones so you can see progress and give feedback.",
+      "Launch - I deploy your site or app, handle DNS and initial monitoring, and make sure everything runs smoothly.",
+      "Support - After launch I offer maintenance and support options so your site stays fast and secure."
+    ],
+    faq: [
+      {
+        q: "How long does a project take?",
+        a: "Small sites: 2–4 weeks. Simple stores: 4–8 weeks. Custom apps: timelines depend on scope - I’ll give a clear estimate in the proposal."
+      },
+      {
+        q: "How much will it cost?",
+        a: "I offer clear price ranges on the pricing cards. I’ll also give a fixed quote in the proposal so there are no surprises."
+      },
+      {
+        q: "Do you offer ongoing support?",
+        a: "Yes - I offer maintenance packages for updates, backups and security. You can also opt for hourly support after launch."
+      }
+    ]
+  },
   pricing: [
   {
     id: 'corporate',
