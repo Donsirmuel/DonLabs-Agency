@@ -10,16 +10,23 @@ const Hero = () => {
 
   return (
     <section
-      className="min-h-screen flex items-center bg-gradient-to-br from-neutral-900 via-neutral-900/80 to-neutral-800 px-4 relative overflow-hidden"
+      className="min-h-screen flex items-center px-4 relative overflow-hidden"
       aria-label="Hero section introducing Samuel Olaonipekun"
       itemScope
       itemType="https://schema.org/Person"
     >
-        <Section
-          as="section"
-          className="relative overflow-hidden bg-gradient-to-tr from-primary/10 via-transparent to-transparent"
-          aria-labelledby="home-heading"
-        >
+      <Section
+        as="section"
+        className="relative overflow-hidden bg-gradient-to-tr from-primary/10 via-transparent to-transparent"
+        aria-labelledby="home-heading"
+      >
+        {/* Background: desktop uses CSS background image, mobile shows an <img> for better performance */}
+        <div
+          className="absolute inset-0 bg-cover bg-center hidden lg:block"
+          style={{ backgroundImage: `url('${ASSETS.hero}')` }}
+          aria-hidden
+        />
+        <img src={ASSETS.heroMobile} alt="Hero background" className="absolute inset-0 w-full h-full object-cover lg:hidden" aria-hidden />
       {/* Decorative large SVG background for visual depth */}
       <svg className="absolute right-0 top-0 h-full w-1/2 hidden lg:block opacity-20" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden>
         <defs>

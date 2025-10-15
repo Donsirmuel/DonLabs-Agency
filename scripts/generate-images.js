@@ -17,7 +17,22 @@ async function processFile(file) {
 }
 
 async function main() {
-  const files = fs.readdirSync(publicDir).filter(f => /screenshot\.(png|jpg|jpeg)$/.test(f));
+  const arg = process.argv[2];
+  let files = [];
+
+  if (arg) {
+    // process a single file passed as argument
+    const base = path.basename(arg);
+    files = fs.existsSync(path.join(publicDir, base)) ? [base] : [];
+    if (!files.length) {
+      console.error('file not found in public/:', base);
+      process.exit(1);
+    }
+  } else {
+    // process screenshots and hero images
+    files = fs.readdirSync(publicDir).filter(f => /(screenshot|hero)(?:-.*)?\.(png|jpg|jpeg)$/i.test(f));
+  }
+
   for (const f of files) {
     try {
       await processFile(f);

@@ -11,9 +11,22 @@ type SectionProps = React.PropsWithChildren<{
   'aria-labelledby'?: string;
 }>;
 
+const ANIMATIONS = [
+  'animate-fade-in-up',
+  'animate-slide-up',
+  'animate-float',
+  'animate-glow'
+];
+
 const Section = ({ children, className = '', animationClass, once = true, delay = 0, as = 'section', ...rest }: SectionProps) => {
   const ref = useRef<HTMLElement | null>(null);
-  useInViewAnimate(ref as React.RefObject<HTMLElement>, { animationClass: animationClass || 'animate-fade-in-up', once, delay });
+
+  // Respect user reduced motion preference
+  const prefersReduced = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const chosenAnimation = animationClass ?? (prefersReduced ? 'animate-fade-in-up' : ANIMATIONS[Math.floor(Math.random() * ANIMATIONS.length)]);
+
+  useInViewAnimate(ref as React.RefObject<HTMLElement>, { animationClass: chosenAnimation, once, delay });
 
   const Tag: any = as;
   return (

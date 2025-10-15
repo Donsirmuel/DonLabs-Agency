@@ -5,6 +5,7 @@ import { Globe, ShoppingCart, Smartphone, Code, Zap, Shield } from "lucide-react
 import CustomQuoteModal from "@/components/CustomQuoteModal";
 import Section from '@/components/Section';
 import { useContent } from '@/lib/ContentProvider';
+import { defaultContent } from '@/lib/contentStore';
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
 
 const Services = () => {
@@ -162,7 +163,7 @@ const Services = () => {
         <div id="how-we-work" className="max-w-4xl mx-auto mt-12">
           <h3 className="text-2xl font-semibold text-center mb-4">How we work</h3>
           <div className="space-y-3 text-sm text-muted-foreground mb-8">
-            {(content?.servicesInfo?.howItWorks ?? []).map((step: string, i: number) => (
+            {((content?.servicesInfo?.howItWorks && content.servicesInfo.howItWorks.length > 0) ? content.servicesInfo.howItWorks : (defaultContent.servicesInfo?.howItWorks ?? [])).map((step: string, i: number) => (
               <div key={i} className="flex items-start gap-3">
                 <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center mt-1">{i+1}</div>
                 <div>{step}</div>
@@ -172,7 +173,7 @@ const Services = () => {
 
           <h4 className="text-xl font-semibold mb-3">Frequently asked questions</h4>
           <div className="space-y-2">
-            {(content?.servicesInfo?.faq ?? []).map((qa: any, idx: number) => (
+            {((content?.servicesInfo?.faq && content.servicesInfo.faq.length > 0) ? content.servicesInfo.faq : (defaultContent.servicesInfo?.faq ?? [])).map((qa: any, idx: number) => (
               <Collapsible key={idx}>
                 <div className="border rounded-md p-3">
                   <CollapsibleTrigger asChild>

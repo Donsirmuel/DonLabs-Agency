@@ -23,4 +23,8 @@ export const ASSETS = {
   devblog: getAssetPath('og/home.svg'),
   glitglam: getAssetPath('glitglam-screenshot.png'),
   devblogScreenshot: getAssetPath('devblog-screenshot.png'),
+  // Hero background images - place copies in public/ as hero.jpg and hero-mobile.jpg
+  hero: getAssetPath('hero.jpg'),
+  // use generated 640px mobile-friendly variant when available
+  heroMobile: getAssetPath('hero-640.jpg'),
 } as const;
