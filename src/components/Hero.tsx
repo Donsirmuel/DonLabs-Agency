@@ -27,6 +27,8 @@ const Hero = () => {
           aria-hidden
         />
         <img src={ASSETS.heroMobile} alt="Hero background" className="absolute inset-0 w-full h-full object-cover lg:hidden" aria-hidden />
+        {/* Dark overlay to improve text contrast against busy images */}
+        <div className="absolute inset-0 bg-black/50 lg:bg-black/40" aria-hidden />
       {/* Decorative large SVG background for visual depth */}
       <svg className="absolute right-0 top-0 h-full w-1/2 hidden lg:block opacity-20" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden>
         <defs>
@@ -46,12 +48,12 @@ const Hero = () => {
               Trusted by Nigerian Businesses & SMEs
             </div>
 
-            <h1 id="home-heading" className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 text-white">
+            <h1 id="home-heading" className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 text-white hero-text-shadow">
               <span className="block">We build</span>
               <span className="block headline-accent underline-animate">high-converting digital experiences</span>
             </h1>
 
-            <p className="text-lg text-muted-foreground max-w-2xl mb-6">
+            <p className="text-lg text-muted-foreground max-w-2xl mb-6 hero-text-shadow">
               I'm Samuel — a Lagos-based web developer and solutions architect. I design resilient web platforms and e-commerce
               experiences that increase revenue, reduce friction, and scale with your business.
             </p>
@@ -76,31 +78,6 @@ const Hero = () => {
               <div className="hidden sm:flex items-center gap-2">
                 <Code2 className="h-5 w-5 text-primary" />
                 <span>Specialist: Django, Python, React</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right column: profile / mockup card for visual interest */}
-          <div className="hidden lg:flex items-center justify-center">
-            <div className="w-[420px] p-6 rounded-2xl hero-overlay hover-lift animate-float" role="group" aria-label="Profile card">
-              <div className="flex items-center gap-4 mb-4">
-                <Avatar className="w-16 h-16 border-2 border-primary">
-                  <AvatarImage src={ASSETS.profileImage} alt="Samuel profile" />
-                  <AvatarFallback>SO</AvatarFallback>
-                </Avatar>
-                <div>
-                  <div className="font-semibold text-lg text-white">Samuel Olaonipekun</div>
-                  <div className="text-sm text-muted-foreground">Web Developer • Lagos</div>
-                </div>
-              </div>
-
-              <div className="rounded-lg overflow-hidden bg-gradient-to-tr from-primary/10 to-transparent p-4">
-                <div className="bg-border p-4 rounded-lg">
-                  <img src={ASSETS.profileImage} alt="project snapshot" className="w-full h-36 object-cover rounded-md" />
-                </div>
-                <div className="mt-4 text-sm text-muted-foreground">
-                  Recent work: E-commerce platform for local retail - increased transactions by 43%.
-                </div>
               </div>
             </div>
           </div>
