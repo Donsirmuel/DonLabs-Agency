@@ -38,31 +38,32 @@ const Hero = () => {
         <rect x="0" y="0" width="800" height="800" fill="url(#g)" rx="80" />
       </svg>
 
-      <div className="max-w-6xl mx-auto w-full relative z-10 py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div className="max-w-6xl mx-auto w-full relative z-10 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="text-left">
-            <div className="mb-6 inline-flex items-center gap-3 bg-primary/10 text-primary rounded-full px-4 py-2 text-sm font-medium">
+            <div className="mb-6 inline-flex items-center gap-3 hero-badge text-sm font-medium px-4 py-2 rounded-full bg-primary/8 text-primary">
               <Database className="h-5 w-5" />
               Trusted by Nigerian Businesses & SMEs
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 text-white">
-              Building digital products that move businesses forward
+            <h1 id="home-heading" className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 text-white">
+              <span className="block">We build</span>
+              <span className="block headline-accent underline-animate">high-converting digital experiences</span>
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-2xl mb-6">
-              I'm Samuel - a Lagos-based web developer and solutions architect. I build high-performance websites, e-commerce
-              platforms and custom web applications designed to increase conversion, improve operations and scale with your business.
+              I'm Samuel — a Lagos-based web developer and solutions architect. I design resilient web platforms and e-commerce
+              experiences that increase revenue, reduce friction, and scale with your business.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-8">
-              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white font-medium" onClick={() => window.open('https://wa.me/2349150996465?text=Hi%20Samuel!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you.', '_blank')}>
+              <Button size="lg" className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium shadow-md" onClick={() => window.open('https://wa.me/2349150996465?text=Hi%20Samuel!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you.', '_blank')}>
                 Message on WhatsApp
               </Button>
               <Button size="lg" className="bg-primary hover:bg-primary-hover text-primary-foreground" onClick={() => navigate('/services')}>
                 Explore Services
               </Button>
-              <Button variant="outline" size="lg" className="border-primary text-primary" onClick={() => navigate('/projects')}>
+              <Button variant="ghost" size="lg" className="border border-white/10 text-white" onClick={() => navigate('/projects')}>
                 View Portfolio
               </Button>
             </div>
@@ -81,7 +82,7 @@ const Hero = () => {
 
           {/* Right column: profile / mockup card for visual interest */}
           <div className="hidden lg:flex items-center justify-center">
-            <div className="w-[420px] p-6 rounded-2xl bg-gradient-to-br from-black/40 to-white/5 border border-white/5 shadow-2xl">
+            <div className="w-[420px] p-6 rounded-2xl hero-overlay hover-lift animate-float" role="group" aria-label="Profile card">
               <div className="flex items-center gap-4 mb-4">
                 <Avatar className="w-16 h-16 border-2 border-primary">
                   <AvatarImage src={ASSETS.profileImage} alt="Samuel profile" />
