@@ -47,7 +47,7 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 3;
+const CONTENT_VERSION = 4;
 
 export const defaultContent: SiteContent = {
   about: {
@@ -89,6 +89,24 @@ export const defaultContent: SiteContent = {
       hasLive: false,
       projectType: "Retail / E-Commerce",
       clientBenefit: "A high-converting online storefront for boutique fashion"
+    },
+    {
+      title: "Shindara Style Hub (Concept)",
+      description: "A small fashion e-commerce store I recently built. Built for a Fashion Brand that sells men's and women's wear and focuses on clear product pages and easy shopping.",
+      features: [
+        "Men's and women's collections",
+        "Simple product pages with prices and sizes",
+        "Easy browsing and quick checkout flow",
+        "Mobile-friendly and fast to load",
+        "Paystack-integrated for fast and secure payment",
+        "Blog Section for Sharing latest Fashion works and contents to Customers."
+      ],
+      githubUrl: "#",
+      liveUrl: "https://donsirmuel.github.io/shindara-style-hub/#",
+      imageUrl: ASSETS.shindaraScreenshot,
+      hasLive: true,
+      projectType: "Small Fashion E-Commerce",
+      clientBenefit: "A clean, user-friendly store that helps small fashion businesses sell more online. You can view the live concept on GitHub Pages without visiting the client's real store."
     }
   ],
   services: [
