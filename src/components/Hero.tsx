@@ -38,7 +38,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-2xl mb-6">
-              I'm Samuel — a Lagos-based web developer and solutions architect. I build high-performance websites, e-commerce
+              I'm Samuel - a Lagos-based web developer and solutions architect. I build high-performance websites, e-commerce
               platforms and custom web applications designed to increase conversion, improve operations and scale with your business.
             </p>
 
@@ -85,7 +85,7 @@ const Hero = () => {
                   <img src={ASSETS.profileImage} alt="project snapshot" className="w-full h-36 object-cover rounded-md" />
                 </div>
                 <div className="mt-4 text-sm text-muted-foreground">
-                  Recent work: E-commerce platform for local retail — increased transactions by 43%.
+                  Recent work: E-commerce platform for local retail - increased transactions by 43%.
                 </div>
               </div>
             </div>

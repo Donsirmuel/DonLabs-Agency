@@ -1,3 +1,0 @@
-from typing import Any
-
-def register(model: Any, admin_class: Any = ...) -> None: ...

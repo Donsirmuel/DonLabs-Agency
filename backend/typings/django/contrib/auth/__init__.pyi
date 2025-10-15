@@ -1,3 +1,0 @@
-from typing import Any
-
-def get_user_model() -> Any: ...

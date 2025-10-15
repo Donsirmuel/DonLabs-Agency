@@ -2,6 +2,10 @@ import Hero from "@/components/Hero";
 import SEO from "@/components/SEO";
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
+import WhatWeDo from "@/components/WhatWeDo";
+import AboutSnippet from "@/components/AboutSnippet";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import FAQ from "@/components/FAQ";
 
 const canonical = "https://donsirmuel.github.io/My-Portfolio/";
 
@@ -13,7 +17,11 @@ const Home = () => {
         <Hero />
       </div>
       <div>
+        <WhatWeDo />
+        <AboutSnippet />
+        <WhyChooseUs />
         <Process />
+        <FAQ />
         <Testimonials />
       </div>
     </main>

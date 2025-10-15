@@ -6,6 +6,7 @@ import { ASSETS } from "@/lib/assets";
 import { useContent } from '@/lib/ContentProvider';
 import { useEffect, useRef, useState } from 'react';
 import { X } from 'lucide-react';
+import ProjectDetailModal from '@/components/ProjectDetailModal';
 
 type ProjectMediaProps = {
   title: string;
@@ -182,6 +183,11 @@ const Projects = () => {
                         Preview
                       </Button>
                     )}
+
+                    {/* Project details modal trigger */}
+                    <div className="flex-1">
+                      <ProjectDetailModal project={project} />
+                    </div>
                   </div>
                 </div>
               </CardContent>
