@@ -1,4 +1,5 @@
 import { Quote } from "lucide-react";
+import Section from '@/components/Section';
 
 const testimonials = [
   {
@@ -20,7 +21,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-20 px-4 bg-background">
+    <Section as="section" className="py-20 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold">What clients say</h2>
@@ -42,7 +43,7 @@ const Testimonials = () => {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

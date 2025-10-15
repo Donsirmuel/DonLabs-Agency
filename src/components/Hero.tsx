@@ -3,6 +3,7 @@ import { Code2, Database, Server, Briefcase } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ASSETS } from "@/lib/assets";
 import { useNavigate } from "react-router-dom";
+import Section from '@/components/Section';
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -14,6 +15,11 @@ const Hero = () => {
       itemScope
       itemType="https://schema.org/Person"
     >
+        <Section
+          as="section"
+          className="relative overflow-hidden bg-gradient-to-tr from-primary/10 via-transparent to-transparent"
+          aria-labelledby="home-heading"
+        >
       {/* Decorative large SVG background for visual depth */}
       <svg className="absolute right-0 top-0 h-full w-1/2 hidden lg:block opacity-20" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden>
         <defs>
@@ -92,6 +98,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+        </Section>
     </section>
   );
 };

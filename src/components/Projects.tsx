@@ -7,6 +7,7 @@ import { useContent } from '@/lib/ContentProvider';
 import { useEffect, useRef, useState } from 'react';
 import { X } from 'lucide-react';
 import ProjectDetailModal from '@/components/ProjectDetailModal';
+import Section from '@/components/Section';
 
 type ProjectMediaProps = {
   title: string;
@@ -84,7 +85,7 @@ const Projects = () => {
   const projects = Array.isArray(content?.projects) ? content.projects : [];
 
   return (
-    <section className="py-20 px-4 bg-muted/30" aria-labelledby="projects-heading">
+    <Section as="section" className="py-20 px-4 bg-muted/30" aria-labelledby="projects-heading">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 id="projects-heading" className="text-4xl font-bold mb-4">Recent Projects</h2>
@@ -195,7 +196,7 @@ const Projects = () => {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

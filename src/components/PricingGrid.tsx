@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Section from '@/components/Section';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
@@ -11,7 +12,7 @@ const PricingGrid = () => {
   const packages = Array.isArray(content?.pricing) ? content.pricing : [];
 
   return (
-    <section className="py-20 px-4 bg-background">
+    <Section as="section" className="py-20 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
           <h2 className="text-3xl font-bold">Pricing - corporate & e‑commerce packages</h2>
@@ -84,7 +85,7 @@ const PricingGrid = () => {
           </Accordion>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

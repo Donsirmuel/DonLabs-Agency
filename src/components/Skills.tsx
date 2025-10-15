@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Section from '@/components/Section';
 import { Server, Database, Code, Globe } from "lucide-react";
 
 const Skills = () => {
@@ -31,7 +32,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-background" aria-labelledby="skills-heading">
+    <Section as="section" className="py-20 px-4 bg-background" aria-labelledby="skills-heading">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 id="skills-heading" className="text-4xl font-bold mb-4">Why Businesses Trust Me</h2>
@@ -70,7 +71,7 @@ const Skills = () => {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

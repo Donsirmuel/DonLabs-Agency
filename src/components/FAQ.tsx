@@ -1,5 +1,6 @@
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
 import { useContent } from '@/lib/ContentProvider';
+import Section from '@/components/Section';
 
 const defaultFaq = [
   { q: 'How long does a project take?', a: 'Small sites: 2–4 weeks. Simple stores: 4–8 weeks. Custom apps: it depends on scope.' },
@@ -12,7 +13,7 @@ const FAQ = () => {
   const faq = content?.servicesInfo?.faq ?? defaultFaq;
 
   return (
-    <section className="py-16 px-4 bg-muted/10" aria-labelledby="faq-heading">
+    <Section as="section" className="py-16 px-4 bg-muted/10" aria-labelledby="faq-heading">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h2 id="faq-heading" className="text-3xl font-bold">Frequently asked questions</h2>
@@ -34,7 +35,7 @@ const FAQ = () => {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

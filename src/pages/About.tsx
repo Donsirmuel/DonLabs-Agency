@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ASSETS } from "@/lib/assets";
 import { useContent } from '@/lib/ContentProvider';
+import Section from '@/components/Section';
 
 const canonical = "https://donsirmuel.github.io/My-Portfolio/about";
 
@@ -16,8 +17,8 @@ const About = () => {
     <main className="min-h-screen bg-background pt-20">
   <SEO title="About - Samuel Olaonipekun | Django & React Developer" description="Samuel Olaonipekun - Lagos-based web developer specialising in Django, React and PostgreSQL. I build high-converting websites and e-commerce platforms for Nigerian businesses and international clients." canonical={canonical} image="/My-Portfolio/og/profile-card.svg" />
 
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
+  <Section as="section" className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 items-start mb-6">
             <div className="md:col-span-1 flex justify-center md:justify-start">
               <Avatar className="w-40 h-40">
@@ -64,7 +65,7 @@ const About = () => {
           </div>
 
         </div>
-      </section>
+      </Section>
 
       <div id="skills">
         <Skills />

@@ -1,6 +1,8 @@
+import Section from '@/components/Section';
+
 const WhyChooseUs = () => {
   return (
-    <section className="py-16 px-4" aria-labelledby="why-choose">
+    <Section as="section" className="py-16 px-4" aria-labelledby="why-choose">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h2 id="why-choose" className="text-3xl font-bold">Why work with me</h2>
@@ -20,11 +22,11 @@ const WhyChooseUs = () => {
 
           <div className="p-6 bg-card border border-border rounded-lg">
             <h3 className="font-semibold mb-2">Who I work with</h3>
-            <p className="text-sm text-muted-foreground">Boutique retailers, service providers, startups and SMEs who need practical, measurable results from their web presence.</p>
+            <p className="text-sm text-muted-foreground">Personal Brand & Business-inclined Startups, Fashion boutiques and growing retailers, SME's, Tech MVP's & SaaS Companies, NGO's & Educational Platforms and Real Estate & Property Brands who need practical, measurable results from their web presence to create practical systems that scale and optimize Productivity and Growth.</p>
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

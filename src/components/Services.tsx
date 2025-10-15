@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Globe, ShoppingCart, Smartphone, Code, Zap, Shield } from "lucide-react";
 import CustomQuoteModal from "@/components/CustomQuoteModal";
+import Section from '@/components/Section';
 import { useContent } from '@/lib/ContentProvider';
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
 
@@ -39,7 +40,7 @@ const Services = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-background" id="services" aria-labelledby="services-heading">
+    <Section as="section" className="py-20 px-4 bg-background" id="services" aria-labelledby="services-heading">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 id="services-heading" className="text-4xl font-bold mb-4">Professional Services</h2>
@@ -186,7 +187,7 @@ const Services = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

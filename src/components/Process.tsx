@@ -1,4 +1,6 @@
 import { Search, LayoutList, PenTool, Code, Rocket } from "lucide-react";
+import { Hexagon, Calendar, Check } from 'lucide-react';
+import Section from '@/components/Section';
 
 const steps = [
   { title: 'Discovery & Strategy', icon: <Search className="h-6 w-6" />, desc: 'Understand goals, audience and business needs.' },
@@ -10,7 +12,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="py-20 px-4">
+    <Section as="section" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold">How I work</h2>
@@ -27,7 +29,7 @@ const Process = () => {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

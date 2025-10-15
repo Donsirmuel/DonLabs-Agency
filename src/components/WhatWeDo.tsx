@@ -1,4 +1,5 @@
 import { Briefcase, ShoppingCart, Globe, Zap } from 'lucide-react';
+import Section from '@/components/Section';
 
 const items = [
   { title: 'Business Websites', desc: 'Fast, responsive sites that help customers trust your brand.', icon: <Globe className="h-6 w-6" /> },
@@ -9,7 +10,7 @@ const items = [
 
 const WhatWeDo = () => {
   return (
-    <section className="py-16 px-4" aria-labelledby="what-we-do">
+    <Section as="section" className="py-16 px-4" aria-labelledby="what-we-do">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
           <h2 id="what-we-do" className="text-3xl font-bold">What I do</h2>
@@ -26,7 +27,7 @@ const WhatWeDo = () => {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

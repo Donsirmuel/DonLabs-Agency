@@ -4,10 +4,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Github, Linkedin, MapPin, MessageCircle, Send } from "lucide-react";
+import Section from '@/components/Section';
 
 const Contact = () => {
   return (
-    <section className="py-20 px-4 bg-background" aria-labelledby="contact-heading">
+    <Section as="section" className="py-20 px-4 bg-background" aria-labelledby="contact-heading">
       <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 id="contact-heading" className="text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
@@ -159,7 +160,7 @@ const Contact = () => {
           </Card>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 
