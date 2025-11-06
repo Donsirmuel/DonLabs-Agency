@@ -12,7 +12,29 @@ const canonical = "https://donsirmuel.github.io/My-Portfolio/";
 const Home = () => {
   return (
     <main className="min-h-screen bg-background pt-20">
-      <SEO title="Home - Samuel Olaonipekun | Web Developer Lagos" description="Professional web developer based in Lagos, Nigeria. Building websites, e-commerce stores and web apps for local and international clients." canonical={canonical} />
+      <SEO 
+        title="Samuel Olaonipekun | Web Developer Portfolio | Lagos Nigeria"
+        description="Portfolio of Samuel Olaonipekun - Web developer from Lagos, Nigeria. Showcasing projects in Django, React, JavaScript, and Python. Open to freelance work and collaborations."
+        keywords="Samuel Olaonipekun, web developer Lagos, Django developer, React developer, Python developer, freelance developer Nigeria"
+        canonical={canonical}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          "mainEntity": {
+            "@type": "Person",
+            "name": "Samuel Olaonipekun",
+            "alternateName": "Donsirmuel",
+            "description": "Web Developer from Lagos, Nigeria",
+            "jobTitle": "Web Developer",
+            "url": "https://donsirmuel.github.io/My-Portfolio/",
+            "sameAs": [
+              "https://github.com/Donsirmuel",
+              "https://linkedin.com/in/samuel-olaonipekun",
+              "https://twitter.com/_donsirmuel"
+            ]
+          }
+        }}
+      />
       <div id="home">
         <Hero />
       </div>

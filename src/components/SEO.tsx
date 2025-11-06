@@ -46,9 +46,9 @@ const ensureStructuredData = (data: object | null) => {
 };
 
 const SEO = ({ 
-  title = "Samuel Olaonipekun - Django Web Developer | Python Backend Expert | Lagos Nigeria",
-  description = "Hire Samuel Olaonipekun, a skilled Django Web Developer from Lagos, Nigeria. Expert in Python, REST APIs, PostgreSQL, and scalable web applications.",
-  keywords = "Samuel Olaonipekun, Django Developer, Python Developer, Web Developer Lagos, Backend Developer Nigeria, REST API Developer, PostgreSQL Expert",
+  title = "Samuel Olaonipekun | Web Developer Portfolio | Lagos Nigeria",
+  description = "Portfolio of Samuel Olaonipekun, an aspiring web developer from Lagos, Nigeria specializing in Django, React, and Python. View projects and get in touch for web development opportunities.",
+  keywords = "Samuel Olaonipekun, web developer Lagos, Django developer, React developer, Python developer, freelance web developer Nigeria, web development portfolio",
   image = "/My-Portfolio/og/home.svg",
   url = "https://donsirmuel.github.io/My-Portfolio/",
   canonical,

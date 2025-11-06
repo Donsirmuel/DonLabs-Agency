@@ -15,7 +15,22 @@ const About = () => {
 
   return (
     <main className="min-h-screen bg-background pt-20">
-  <SEO title="About - Samuel Olaonipekun | Django & React Developer" description="Samuel Olaonipekun - Lagos-based web developer specialising in Django, React and PostgreSQL. I build high-converting websites and e-commerce platforms for Nigerian businesses and international clients." canonical={canonical} image="/My-Portfolio/og/profile-card.svg" />
+  <SEO 
+        title="About Samuel Olaonipekun | Web Developer from Lagos"
+        description="Learn about Samuel Olaonipekun's journey as a web developer. Skills in Django, React, Python, JavaScript, and modern web technologies. Based in Lagos, Nigeria and open to remote opportunities."
+        canonical={canonical}
+        image="/My-Portfolio/og/profile-card.svg"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "mainEntity": {
+            "@type": "Person",
+            "name": "Samuel Olaonipekun",
+            "description": "Web Developer from Lagos, Nigeria",
+            "knowsAbout": ["Django", "Python", "React", "JavaScript", "Web Development", "Full Stack Development"]
+          }
+        }}
+      />
 
   <Section as="section" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">

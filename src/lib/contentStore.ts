@@ -57,56 +57,56 @@ export const defaultContent: SiteContent = {
   },
   projects: [
     {
-      title: "Devblog.com.ng",
-      description: "Devblog is a Nigerian tech blog covering web development, tutorials, and product engineering best practices. I built the platform with a Django backend and a modern React frontend to deliver fast, SEO-friendly articles.",
+      title: "DevBlog Platform",
+      description: "A blogging platform I built to practice full-stack development with rich text editing, user authentication, and responsive design.",
       features: [
-        "Django-powered CMS for articles",
-        "Responsive React frontend",
-        "SEO-friendly markup and RSS",
-        "Search and category filters",
-        "Optimized image delivery and caching"
+        "Rich text editor with markdown support",
+        "User authentication system",
+        "Comment functionality",
+        "SEO-friendly URLs",
+        "Fully responsive design"
       ],
-      githubUrl: "#",
-      liveUrl: "https://devblog.com.ng",
-  imageUrl: ASSETS.devblogScreenshot,
+      githubUrl: "https://github.com/Donsirmuel/DevBlog-A-Developer-Blog",
+      liveUrl: "https://donsirmuel.github.io/DevBlog-A-Developer-Blog/",
+      imageUrl: ASSETS.devblogScreenshot,
       hasLive: true,
-      projectType: "Tech Blog",
-      clientBenefit: "A fast, searchable content platform for technical articles and tutorials"
+      projectType: "Content Management / Portfolio Project",
+      clientBenefit: "Demonstrates full-stack development skills with content management features"
     },
     {
-      title: "GlitGlam - Fashion Store",
-      description: "GlitGlam is a boutique fashion store focused on curated womenswear. The project includes a product catalog, shopping cart, and checkout flows with a polished responsive design crafted to increase conversions.",
+      title: "Glitglam Beauty Salon",
+      description: "Practice e-commerce website for a beauty boutique concept, featuring product showcases and modern design patterns.",
       features: [
-        "Product catalog & category browsing",
-        "Shopping cart and checkout",
-        "Payment gateway integration",
-        "Admin product management",
-        "Responsive, conversion-focused UI"
+        "Product catalog with filtering",
+        "Responsive product pages",
+        "Modern UI/UX design",
+        "Shopping cart functionality",
+        "Clean, maintainable code"
       ],
       githubUrl: "#",
       liveUrl: "#",
       imageUrl: ASSETS.glitglam,
       hasLive: false,
-      projectType: "Retail / E-Commerce",
-      clientBenefit: "A high-converting online storefront for boutique fashion"
+      projectType: "E-Commerce / Portfolio Project",
+      clientBenefit: "Showcases e-commerce development skills and modern web design capabilities"
     },
     {
-      title: "Shindara Style Hub (Concept)",
-      description: "A small fashion e-commerce store I recently built. Built for a Fashion Brand that sells men's and women's wear and focuses on clear product pages and easy shopping.",
+      title: "Shindara Style Hub",
+      description: "Fashion e-commerce concept I built to practice building online stores with payment integration and product management.",
       features: [
-        "Men's and women's collections",
-        "Simple product pages with prices and sizes",
-        "Easy browsing and quick checkout flow",
-        "Mobile-friendly and fast to load",
-        "Paystack-integrated for fast and secure payment",
-        "Blog Section for Sharing latest Fashion works and contents to Customers."
+        "Men's and women's product collections",
+        "Product pages with details and variants",
+        "Shopping cart and checkout flow",
+        "Mobile-responsive design",
+        "Paystack payment integration",
+        "Blog section for content marketing"
       ],
       githubUrl: "#",
       liveUrl: "https://donsirmuel.github.io/shindara-style-hub/#",
       imageUrl: ASSETS.shindaraScreenshot,
       hasLive: true,
-      projectType: "Small Fashion E-Commerce",
-      clientBenefit: "A clean, user-friendly store that helps small fashion businesses sell more online. You can view the live concept on GitHub Pages without visiting the client's real store."
+      projectType: "Fashion E-Commerce / Portfolio Project",
+      clientBenefit: "Demonstrates ability to build complete e-commerce solutions with payment processing"
     }
   ],
   services: [

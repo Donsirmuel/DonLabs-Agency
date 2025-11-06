@@ -88,11 +88,11 @@ const Projects = () => {
     <Section as="section" className="py-20 px-4 bg-muted/30" aria-labelledby="projects-heading">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 id="projects-heading" className="text-4xl font-bold mb-4">Recent Projects</h2>
+          <h2 id="projects-heading" className="text-4xl font-bold mb-4">Portfolio Projects</h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-            Explore some of the web applications and business solutions I've developed for clients. 
-            Each project showcases different aspects of modern web development, from e-commerce platforms 
-            to custom business applications, demonstrating <strong>scalable architecture, user-focused design, and robust functionality</strong>.
+            Explore my portfolio of web development projects built to learn and demonstrate my skills. 
+            These projects showcase different aspects of modern web development, from e-commerce platforms 
+            to business websites, featuring <strong>clean code, responsive design, and modern functionality</strong>.
           </p>
         </div>
         

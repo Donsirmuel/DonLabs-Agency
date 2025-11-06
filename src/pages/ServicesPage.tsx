@@ -47,7 +47,36 @@ const servicesStructuredData = {
 const ServicesPage = () => {
   return (
     <main className="min-h-screen bg-background pt-20">
-      <SEO title="Services - Web Development (NGN) | Samuel Olaonipekun" description="Professional web development services (Naira pricing) for businesses in Nigeria and beyond. Corporate sites and multiple e-commerce packages (Small, Medium, Premium) built with Django, React and PostgreSQL." canonical={canonical} structuredData={servicesStructuredData} />
+      <SEO 
+        title="Web Development Services | Samuel Olaonipekun Portfolio"
+        description="Web development services offered by Samuel Olaonipekun: Django web apps, React frontends, REST APIs, and full-stack solutions. View skills and technologies I work with."
+        canonical={canonical}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Web Development Services",
+          "itemListElement": [
+            {
+              "@type": "Service",
+              "position": 1,
+              "name": "Django Web Development",
+              "description": "Building web applications with Django framework"
+            },
+            {
+              "@type": "Service",
+              "position": 2,
+              "name": "React Development",
+              "description": "Creating interactive user interfaces with React"
+            },
+            {
+              "@type": "Service",
+              "position": 3,
+              "name": "Full Stack Development",
+              "description": "End-to-end web application development"
+            }
+          ]
+        }}
+      />
       <div id="services">
         <Services />
         <PricingGrid />
