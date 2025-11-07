@@ -7,8 +7,7 @@ import { ASSETS } from "@/lib/assets";
 import { useContent } from '@/lib/ContentProvider';
 import Section from '@/components/Section';
 
-const canonical = "https://donsirmuel.github.io/My-Portfolio/about";
-
+// canonical will default to the current runtime URL
 const About = () => {
   const navigate = useNavigate();
   const { content } = useContent();
@@ -18,8 +17,8 @@ const About = () => {
   <SEO 
         title="About Samuel Olaonipekun | Web Developer from Lagos"
         description="Learn about Samuel Olaonipekun's journey as a web developer. Skills in Django, React, Python, JavaScript, and modern web technologies. Based in Lagos, Nigeria and open to remote opportunities."
-        canonical={canonical}
-        image="/My-Portfolio/og/profile-card.svg"
+  // canonical will default to the current runtime URL
+  // image will default to the site's ASSETS configuration
         structuredData={{
           "@context": "https://schema.org",
           "@type": "AboutPage",

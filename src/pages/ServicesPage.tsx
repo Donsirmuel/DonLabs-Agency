@@ -2,8 +2,6 @@ import Services from "@/components/Services";
 import PricingGrid from "@/components/PricingGrid";
 import SEO from "@/components/SEO";
 
-const canonical = "https://donsirmuel.github.io/My-Portfolio/services";
-
 const servicesStructuredData = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -50,7 +48,7 @@ const ServicesPage = () => {
       <SEO 
         title="Web Development Services | Samuel Olaonipekun Portfolio"
         description="Web development services offered by Samuel Olaonipekun: Django web apps, React frontends, REST APIs, and full-stack solutions. View skills and technologies I work with."
-        canonical={canonical}
+        // canonical will default to the current runtime URL
         structuredData={{
           "@context": "https://schema.org",
           "@type": "ItemList",

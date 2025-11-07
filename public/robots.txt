@@ -15,7 +15,7 @@ Allow: /
 Disallow: /private/
 
 # Sitemap
-Sitemap: https://donsirmuel.github.io/My-Portfolio/sitemap.xml
+Sitemap: /sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1

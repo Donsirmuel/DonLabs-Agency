@@ -2,28 +2,28 @@
   "name": "Samuel Olaonipekun - Django Web Developer Portfolio",
   "short_name": "Samuel Portfolio",
   "description": "Professional portfolio of Samuel Olaonipekun, Django Web Developer from Lagos, Nigeria",
-  "start_url": "/My-Portfolio/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#3B82F6",
   "orientation": "portrait-primary",
-  "scope": "/My-Portfolio/",
+  "scope": "/",
   "lang": "en-US",
   "categories": ["business", "productivity", "developer"],
   "icons": [
     {
-      "src": "/My-Portfolio/favicon.ico",
+      "src": "/favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "/My-Portfolio/profile-image.jpg",
+      "src": "/profile-image.jpg",
       "sizes": "192x192",
       "type": "image/jpeg",
       "purpose": "any maskable"
     },
     {
-      "src": "/My-Portfolio/profile-image.jpg",
+      "src": "/profile-image.jpg",
       "sizes": "512x512",
       "type": "image/jpeg",
       "purpose": "any maskable"

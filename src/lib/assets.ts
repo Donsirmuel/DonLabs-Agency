@@ -2,14 +2,28 @@
 export const getAssetPath = (path: string): string => {
   // Remove leading slash if present
   const cleanPath = path.startsWith('/') ? path.slice(1) : path;
-  
-  // In production (GitHub Pages), prepend the repository name
-  if (import.meta.env.PROD) {
-    return `/My-Portfolio/${cleanPath}`;
-  }
-  
-  // In development, use the path as-is
-  return `/${cleanPath}`;
+
+  // Helper to detect GitHub Pages-like subpath at runtime
+  const isGitHubPagesRuntime = () => {
+    try {
+      if (typeof window !== 'undefined') {
+        // Hostname contains github.io OR the current path contains the repo base
+        if (window.location.hostname.includes('github.io')) return true;
+        if (window.location.pathname.startsWith('/My-Portfolio/')) return true;
+      }
+    } catch (e) {
+      // ignore
+    }
+    return false;
+  };
+
+  // Build-time heuristic: Vite exposes BASE_URL; if it's set to the repo subpath, respect it
+  const baseUrl = (import.meta.env && (import.meta.env as any).BASE_URL) || '/';
+  const isGitHubPagesBuild = typeof baseUrl === 'string' && baseUrl.startsWith('/My-Portfolio/');
+
+  const useRepoPrefix = isGitHubPagesBuild || isGitHubPagesRuntime();
+
+  return useRepoPrefix ? `/My-Portfolio/${cleanPath}` : `/${cleanPath}`;
 };
 
 // Pre-configured asset paths

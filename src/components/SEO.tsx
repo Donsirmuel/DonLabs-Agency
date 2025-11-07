@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { ASSETS } from '@/lib/assets';
 
 interface SEOProps {
   title?: string;
@@ -49,8 +50,8 @@ const SEO = ({
   title = "Samuel Olaonipekun | Web Developer Portfolio | Lagos Nigeria",
   description = "Portfolio of Samuel Olaonipekun, an aspiring web developer from Lagos, Nigeria specializing in Django, React, and Python. View projects and get in touch for web development opportunities.",
   keywords = "Samuel Olaonipekun, web developer Lagos, Django developer, React developer, Python developer, freelance web developer Nigeria, web development portfolio",
-  image = "/My-Portfolio/og/home.svg",
-  url = "https://donsirmuel.github.io/My-Portfolio/",
+  image = ASSETS.devblog,
+  url = typeof window !== 'undefined' ? window.location.href : 'https://donsirmuel.github.io/My-Portfolio/',
   canonical,
   structuredData = null
 }: SEOProps) => {

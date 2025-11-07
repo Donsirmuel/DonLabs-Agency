@@ -8,7 +8,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import FAQ from "@/components/FAQ";
 import AnimatedSection from "@/components/AnimatedSection";
 
-const canonical = "https://donsirmuel.github.io/My-Portfolio/";
+// canonical left to default runtime URL
 
 const Home = () => {
   return (
@@ -17,7 +17,7 @@ const Home = () => {
         title="Samuel Olaonipekun | Web Developer Portfolio | Lagos Nigeria"
         description="Portfolio of Samuel Olaonipekun - Web developer from Lagos, Nigeria. Showcasing projects in Django, React, JavaScript, and Python. Open to freelance work and collaborations."
         keywords="Samuel Olaonipekun, web developer Lagos, Django developer, React developer, Python developer, freelance developer Nigeria"
-        canonical={canonical}
+  // canonical will default to the current runtime URL
         structuredData={{
           "@context": "https://schema.org",
           "@type": "ProfilePage",
@@ -27,7 +27,7 @@ const Home = () => {
             "alternateName": "Donsirmuel",
             "description": "Web Developer from Lagos, Nigeria",
             "jobTitle": "Web Developer",
-            "url": "https://donsirmuel.github.io/My-Portfolio/",
+            "url": "/",
             "sameAs": [
               "https://github.com/Donsirmuel",
               "https://linkedin.com/in/samuel-olaonipekun",

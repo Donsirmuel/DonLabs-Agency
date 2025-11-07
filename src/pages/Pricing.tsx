@@ -1,16 +1,14 @@
 import PricingGrid from "@/components/PricingGrid";
 import SEO from "@/components/SEO";
 
-const canonical = "https://donsirmuel.github.io/My-Portfolio/pricing";
-
 const Pricing = () => {
   return (
     <main className="min-h-screen bg-background pt-20">
   <SEO 
-        title="Web Development Pricing | Samuel Olaonipekun" 
-        description="Affordable web development pricing in Naira for business websites, e-commerce stores, and custom web applications. View packages and request a quote." 
-        canonical={canonical} 
-        image="/My-Portfolio/og/profile-card.svg"
+    title="Web Development Pricing | Samuel Olaonipekun" 
+    description="Affordable web development pricing in Naira for business websites, e-commerce stores, and custom web applications. View packages and request a quote." 
+    // canonical will default to the current runtime URL
+    // image uses ASSETS by default; override only when necessary
         structuredData={{
           "@context": "https://schema.org",
           "@type": "PriceSpecification",
