@@ -12,46 +12,80 @@ const PricingGrid = () => {
   const packages = Array.isArray(content?.pricing) ? content.pricing : [];
 
   return (
-    <Section as="section" className="py-20 px-4 bg-background">
-      <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold">Pricing - corporate & e‑commerce packages</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto mt-2">Packages are organised by business type and scale so you can pick a plan that fits your company size and complexity. All prices are shown in Naira; custom enterprise quotes are available.</p>
+    <Section as="section" className="section-spacing container-padding bg-background">
+      <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+              Transparent Pricing
+            </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Corporate & E-commerce Packages</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Packages organized by business type and scale. Choose a plan that fits your company size and complexity. 
+            All prices in Naira • Custom enterprise quotes available.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {packages.map((p) => (
-            <Card key={p.id} className={`p-0 ${p.popular ? 'ring-2 ring-primary/20' : ''}`}>
-              <CardHeader className="p-6">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-xl">{p.name}</CardTitle>
-                  <div className="text-2xl font-bold text-primary">{p.price}</div>
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 stagger-children">
+          {packages.map((p, index) => (
+            <Card 
+              key={p.id} 
+              className={`flex flex-col hover-lift ${p.popular ? 'ring-2 ring-primary shadow-premium' : 'shadow-card'}`}
+            >
+              <CardHeader className="p-6 pb-4">
+                <div className="space-y-3">
+                  <div className="flex items-start justify-between gap-4">
+                    <CardTitle className="text-2xl flex-1">{p.name}</CardTitle>
+                    {p.popular && (
+                      <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-full whitespace-nowrap">
+                        Popular
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-3xl md:text-4xl font-bold text-primary">{p.price}</span>
+                    <span className="text-sm text-muted-foreground">one-time</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
                 </div>
-                <div className="text-sm text-muted-foreground mt-2">{p.desc}</div>
               </CardHeader>
-              <CardContent className="p-6">
-                <ul className="mb-6 space-y-2 text-sm">
-                  {p.includes.map((inc, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <span>{inc}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button size="lg" className="w-full bg-primary hover:bg-primary-hover text-primary-foreground" onClick={() => window.open('https://wa.me/2349150996465?text=Hi%20Samuel!%20I%20am%20interested%20in%20the%20' + encodeURIComponent(p.name) + '%20package.', '_blank')}>
-                  Get Quote - {p.price}
+              <CardContent className="p-6 pt-0 flex-1 flex flex-col">
+                <div className="mb-6 flex-1">
+                  <h4 className="text-sm font-semibold mb-3 text-foreground">What's Included:</h4>
+                  <ul className="space-y-2.5">
+                    {p.includes.map((inc, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm">
+                        <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <div className="w-2 h-2 bg-primary rounded-full"></div>
+                        </div>
+                        <span className="leading-relaxed">{inc}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <Button 
+                  size="lg" 
+                  variant={p.popular ? "hero" : "default"}
+                  className="w-full" 
+                  onClick={() => window.open('https://wa.me/2349150996465?text=Hi%20Samuel!%20I%20am%20interested%20in%20the%20' + encodeURIComponent(p.name) + '%20package.', '_blank')}
+                >
+                  Get Quote • {p.price}
                 </Button>
               </CardContent>
             </Card>
           ))}
         </div>
-        <div className="mt-8 text-sm text-muted-foreground">
-          <p><strong>Note:</strong> Hosting, domain registration, paid third‑party services (payment provider fees, premium plugins), content writing and platform transaction fees are not included. For Premium packages we recommend containerized hosting (DigitalOcean, AWS, Render) and can manage deployments for an additional fee.</p>
+        <div className="mt-8 p-6 bg-muted/30 border border-border rounded-xl">
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            <strong className="text-foreground">Important Note:</strong> Hosting, domain registration, paid third-party services 
+            (payment provider fees, premium plugins), content writing, and platform transaction fees are not included. 
+            For Premium packages we recommend containerized hosting (DigitalOcean, AWS, Render) and can manage deployments for an additional fee.
+          </p>
         </div>
-        <div className="mt-12">
-          <div className="text-center mb-6">
-            <h3 className="text-2xl font-semibold">Pricing FAQs</h3>
-            <p className="text-muted-foreground">Common questions about packages and what they include.</p>
+        
+        <div className="mt-16 animate-fade-in-up">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl md:text-4xl font-bold mb-3">Pricing FAQs</h3>
+            <p className="text-lg text-muted-foreground">Common questions about packages and what they include</p>
           </div>
 
           <Accordion type="single" collapsible>

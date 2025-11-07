@@ -6,6 +6,7 @@ import WhatWeDo from "@/components/WhatWeDo";
 import AboutSnippet from "@/components/AboutSnippet";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import FAQ from "@/components/FAQ";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const canonical = "https://donsirmuel.github.io/My-Portfolio/";
 
@@ -39,12 +40,24 @@ const Home = () => {
         <Hero />
       </div>
       <div>
-        <WhatWeDo />
-        <AboutSnippet />
-        <WhyChooseUs />
-        <Process />
-        <FAQ />
-        <Testimonials />
+        <AnimatedSection animation="fade-in-up">
+          <WhatWeDo />
+        </AnimatedSection>
+        <AnimatedSection animation="slide-in-left" delay={100}>
+          <AboutSnippet />
+        </AnimatedSection>
+        <AnimatedSection animation="slide-in-right" delay={100}>
+          <WhyChooseUs />
+        </AnimatedSection>
+        <AnimatedSection animation="fade-in-up" delay={100}>
+          <Process />
+        </AnimatedSection>
+        <AnimatedSection animation="scale-in" delay={100}>
+          <FAQ />
+        </AnimatedSection>
+        <AnimatedSection animation="fade-in-up" delay={100}>
+          <Testimonials />
+        </AnimatedSection>
       </div>
     </main>
   );

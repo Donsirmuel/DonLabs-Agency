@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound";
 import SEO from "./components/SEO";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import BackToTop from "./components/BackToTop";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
+      <BackToTop />
     </TooltipProvider>
   </QueryClientProvider>
 );

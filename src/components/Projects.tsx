@@ -85,22 +85,25 @@ const Projects = () => {
   const projects = Array.isArray(content?.projects) ? content.projects : [];
 
   return (
-    <Section as="section" className="py-20 px-4 bg-muted/30" aria-labelledby="projects-heading">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 id="projects-heading" className="text-4xl font-bold mb-4">Portfolio Projects</h2>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+    <Section as="section" className="section-spacing container-padding bg-muted/30" aria-labelledby="projects-heading">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16 animate-fade-in-up">
+          <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+            My Work
+          </div>
+          <h2 id="projects-heading" className="text-4xl md:text-5xl font-bold mb-6">Portfolio Projects</h2>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Explore my portfolio of web development projects built to learn and demonstrate my skills. 
             These projects showcase different aspects of modern web development, from e-commerce platforms 
-            to business websites, featuring <strong>clean code, responsive design, and modern functionality</strong>.
+            to business websites, featuring <strong className="text-foreground">clean code, responsive design, and modern functionality</strong>.
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 stagger-children">
           {projects.map((project, index) => (
-            <Card key={index} className="project-card shadow-card bg-card overflow-hidden group animate-fade-in-up" style={{animationDelay: `${index * 0.2}s`}}>
+            <Card key={index} className="project-card shadow-card bg-card overflow-hidden group flex flex-col">
               {/* Project Image / Live Preview with fallback */}
-              <div className="aspect-video bg-muted relative overflow-hidden">
+              <div className="aspect-video bg-muted relative overflow-hidden cursor-pointer">
                 <ProjectMedia
                   title={project.title}
                   liveUrl={project.liveUrl}
@@ -111,35 +114,36 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               
-              <CardHeader>
+              <CardHeader className="pb-3">
                 <div className="flex items-center gap-2 mb-2">
-                  <Database className="h-5 w-5 text-primary" />
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
+                  <Database className="h-5 w-5 text-primary flex-shrink-0" />
+                  <CardTitle className="text-xl md:text-2xl">{project.title}</CardTitle>
                 </div>
                 <CardDescription className="text-sm leading-relaxed">
                   {project.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="text-sm font-medium mb-2 text-muted-foreground">Key Features</h4>
-                    <ul className="text-xs space-y-1">
+              <CardContent className="flex-1 flex flex-col">
+                <div className="space-y-4 flex-1 flex flex-col">
+                  <div className="flex-1">
+                    <h4 className="text-sm font-semibold mb-3 text-foreground">Key Features:</h4>
+                    <ul className="text-sm space-y-2">
                       {project.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="text-muted-foreground">
-                          • {feature}
+                        <li key={featureIndex} className="flex items-start gap-2 text-muted-foreground">
+                          <span className="text-primary mt-1">•</span>
+                          <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                   
                   <div className="pt-2">
-                    <p className="text-xs text-muted-foreground bg-muted/30 p-2 rounded">
-                      <strong>Client Benefit:</strong> {project.clientBenefit}
+                    <p className="text-sm text-muted-foreground bg-muted/40 p-3 rounded-lg leading-relaxed">
+                      <strong className="text-foreground">Value:</strong> {project.clientBenefit}
                     </p>
                   </div>
                   
-                  <div className="flex gap-2 pt-2">
+                  <div className="flex gap-2 pt-3">
                     {project.githubUrl && project.githubUrl !== '#' ? (
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
                         <Button 

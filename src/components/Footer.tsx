@@ -3,40 +3,117 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  
   return (
-    <footer className="bg-background border-t border-border mt-12">
-      <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between">
-        <div className="flex items-center gap-3">
-          <img src={ASSETS.logo} alt="logo" className="h-10 w-10 rounded-md object-cover" />
+    <footer className="bg-card border-t border-border mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Footer Content */}
+        <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {/* Brand Section */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-3 mb-4">
+              <img src={ASSETS.logo} alt="Samuel Olaonipekun Logo" className="h-12 w-12 rounded-lg object-cover shadow-sm" />
+              <div>
+                <div className="font-bold text-lg">Samuel Olaonipekun</div>
+                <div className="text-sm text-muted-foreground">Web Developer & Designer</div>
+              </div>
+            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-md mb-6">
+              Building high-performance web solutions for businesses in Lagos and beyond. 
+              Specializing in Django, React, and modern full-stack development.
+            </p>
+            <div className="flex items-center gap-3">
+              <a 
+                href="https://github.com/Donsirmuel" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-2.5 bg-muted hover:bg-primary hover:text-primary-foreground rounded-lg transition-all hover:scale-110"
+                aria-label="GitHub Profile"
+              >
+                <Github className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://linkedin.com/in/samuel-olaonipekun" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-2.5 bg-muted hover:bg-primary hover:text-primary-foreground rounded-lg transition-all hover:scale-110"
+                aria-label="LinkedIn Profile"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://twitter.com/_donsirmuel" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-2.5 bg-muted hover:bg-primary hover:text-primary-foreground rounded-lg transition-all hover:scale-110"
+                aria-label="Twitter Profile"
+              >
+                <Twitter className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
           <div>
-            <div className="font-bold">Samuel Olaonipekun</div>
-            <div className="text-sm text-muted-foreground">Website Developer & Designer - Lagos, Nigeria</div>
+            <h3 className="font-semibold text-base mb-4">Quick Links</h3>
+            <nav className="flex flex-col gap-2.5">
+              <Link to="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Home
+              </Link>
+              <Link to="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                About Me
+              </Link>
+              <Link to="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Services
+              </Link>
+              <Link to="/projects" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Portfolio
+              </Link>
+              <Link to="/pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Pricing
+              </Link>
+            </nav>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="font-semibold text-base mb-4">Get In Touch</h3>
+            <div className="flex flex-col gap-3 text-sm">
+              <a 
+                href="https://wa.me/2349150996465" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                WhatsApp: +234 915 099 6465
+              </a>
+              <a 
+                href="mailto:Samuelolaonipekun050@Outlook.com" 
+                className="text-muted-foreground hover:text-primary transition-colors break-words"
+              >
+                Samuelolaonipekun050@Outlook.com
+              </a>
+              <p className="text-muted-foreground">
+                Lagos, Nigeria
+              </p>
+              <Link 
+                to="/contact" 
+                className="inline-flex items-center gap-2 text-primary hover:underline font-medium mt-2"
+              >
+                Contact Me →
+              </Link>
+            </div>
           </div>
         </div>
 
-        <nav className="flex items-center gap-4 mt-4 md:mt-0">
-          <Link to="/" className="text-sm text-muted-foreground hover:text-primary">Home</Link>
-          <Link to="/about" className="text-sm text-muted-foreground hover:text-primary">About</Link>
-          <Link to="/services" className="text-sm text-muted-foreground hover:text-primary">Services</Link>
-          <Link to="/projects" className="text-sm text-muted-foreground hover:text-primary">Projects</Link>
-          <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary">Contact</Link>
-        </nav>
-
-        <div className="flex items-center gap-3 mt-4 md:mt-0">
-          <a href="https://github.com/Donsirmuel" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary">
-            <Github className="h-5 w-5" />
-          </a>
-          <a href="https://linkedin.com/in/samuel-olaonipekun" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary">
-            <Linkedin className="h-5 w-5" />
-          </a>
-          <a href="https://twitter.com/_donsirmuel" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary">
-            <Twitter className="h-5 w-5" />
-          </a>
+        {/* Bottom Bar */}
+        <div className="border-t border-border py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+          <p>© {currentYear} Samuel Olaonipekun. All rights reserved.</p>
+          <p className="text-center sm:text-right">
+            Built with React, TypeScript & Tailwind CSS
+          </p>
         </div>
-      </div>
-
-      <div className="text-center text-sm text-muted-foreground py-4 border-t border-border">
-        © {new Date().getFullYear()} Samuel Olaonipekun. All rights reserved.
       </div>
     </footer>
   );

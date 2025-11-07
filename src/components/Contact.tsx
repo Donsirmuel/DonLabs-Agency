@@ -8,14 +8,14 @@ import Section from '@/components/Section';
 
 const Contact = () => {
   return (
-    <Section as="section" className="py-24 px-4 bg-gradient-to-b from-background to-accent/20" aria-labelledby="contact-heading">
-      <div className="max-w-5xl mx-auto">
+    <Section as="section" className="section-spacing container-padding bg-gradient-to-b from-background to-accent/20" aria-labelledby="contact-heading">
+      <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in-up">
             <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold">
               Get In Touch
             </div>
             <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Project?</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Let's discuss your project and create something amazing together. I work with clients in Lagos, across Nigeria, and globally to build professional web solutions.
             </p>
           </div>
