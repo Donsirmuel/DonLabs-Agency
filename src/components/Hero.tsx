@@ -40,44 +40,47 @@ const Hero = () => {
         <rect x="0" y="0" width="800" height="800" fill="url(#g)" rx="80" />
       </svg>
 
-      <div className="max-w-6xl mx-auto w-full relative z-10 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className="max-w-6xl mx-auto w-full relative z-10 py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-left">
-            <div className="mb-6 inline-flex items-center gap-3 hero-badge text-sm font-medium px-4 py-2 rounded-full bg-primary/8 text-primary">
-              <Database className="h-5 w-5" />
-              Trusted by Nigerian Businesses & SMEs
+            <div className="mb-8 inline-flex items-center gap-3 text-sm font-semibold px-5 py-2.5 rounded-full bg-primary/10 backdrop-blur-sm text-primary border border-primary/20 animate-fade-in">
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+              Available for Projects • Lagos & Remote
             </div>
 
-            <h1 id="home-heading" className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 text-white hero-text-shadow">
-              <span className="block">We build</span>
-              <span className="block headline-accent underline-animate">high-converting digital experiences</span>
+            <h1 id="home-heading" className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-[1.1] mb-6 text-white hero-text-shadow">
+              <span className="block mb-2">Build Websites That</span>
+              <span className="block bg-gradient-to-r from-primary via-primary-glow to-cyan-400 bg-clip-text text-transparent animate-slide-up">Convert & Scale</span>
             </h1>
 
-            <p className="text-lg text-muted-foreground max-w-2xl mb-6 hero-text-shadow">
-              I'm Samuel — a Lagos-based web developer and solutions architect. I design resilient web platforms and e-commerce
-              experiences that increase revenue, reduce friction, and scale with your business.
+            <p className="text-xl text-white/90 max-w-2xl mb-10 leading-relaxed hero-text-shadow">
+              Full-stack web developer crafting <strong className="text-white font-semibold">high-performance platforms</strong> for Nigerian businesses. From sleek landing pages to complex e-commerce systems.
             </p>
 
-            <div className="flex flex-wrap gap-3 mb-8">
-              <Button size="lg" className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium shadow-md" onClick={() => window.open('https://wa.me/2349150996465?text=Hi%20Samuel!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you.', '_blank')}>
-                Message on WhatsApp
+            <div className="flex flex-wrap gap-4 mb-10">
+              <Button variant="hero" size="lg" onClick={() => window.open('https://wa.me/2349150996465?text=Hi%20Samuel!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you.', '_blank')}>
+                Start Your Project
               </Button>
-              <Button size="lg" className="bg-primary hover:bg-primary-hover text-primary-foreground" onClick={() => navigate('/services')}>
-                Explore Services
+              <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20" onClick={() => navigate('/services')}>
+                View Services
               </Button>
-              <Button variant="ghost" size="lg" className="border border-white/10 text-white" onClick={() => navigate('/projects')}>
-                View Portfolio
+              <Button variant="ghost" size="lg" className="text-white hover:bg-white/10" onClick={() => navigate('/projects')}>
+                See Portfolio →
               </Button>
             </div>
 
-            <div className="flex items-center gap-6 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Briefcase className="h-5 w-5 text-primary" />
-                <span>Available for hire • Lagos & Remote</span>
+            <div className="flex flex-wrap items-center gap-6 text-sm">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
+                <Server className="h-4 w-4 text-primary" />
+                <span className="text-white/80 font-medium">Django + React</span>
               </div>
-              <div className="hidden sm:flex items-center gap-2">
-                <Code2 className="h-5 w-5 text-primary" />
-                <span>Specialist: Django, Python, React</span>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
+                <Database className="h-4 w-4 text-primary" />
+                <span className="text-white/80 font-medium">PostgreSQL + APIs</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
+                <Code2 className="h-4 w-4 text-primary" />
+                <span className="text-white/80 font-medium">E-commerce Expert</span>
               </div>
             </div>
           </div>

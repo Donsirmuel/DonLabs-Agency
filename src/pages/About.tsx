@@ -73,10 +73,10 @@ const About = () => {
             </div>
           </div>
 
-          <div className="flex gap-4 mb-8">
-            <Button onClick={() => navigate('/services')} className="bg-primary hover:bg-primary-hover text-primary-foreground">View Services</Button>
+          <div className="flex flex-wrap gap-4 mb-8">
+            <Button variant="hero" onClick={() => window.open('https://wa.me/2349150996465?text=Hi%20Samuel!%20I%20would%20like%20to%20discuss%20working%20together.', '_blank')}>Let's Work Together</Button>
+            <Button onClick={() => navigate('/services')}>View Services</Button>
             <Button variant="outline" onClick={() => navigate('/projects')}>See Projects</Button>
-            <Button onClick={() => window.open('https://wa.me/2349150996465?text=Hi%20Samuel!%20I%20would%20like%20to%20discuss%20working%20together.', '_blank')} className="bg-green-600 hover:bg-green-700 text-white">Contact</Button>
           </div>
 
         </div>

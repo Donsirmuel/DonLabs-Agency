@@ -10,19 +10,22 @@ const items = [
 
 const WhatWeDo = () => {
   return (
-    <Section as="section" className="py-16 px-4" aria-labelledby="what-we-do">
+    <Section as="section" className="py-24 px-4 bg-gradient-to-b from-background to-accent/20" aria-labelledby="what-we-do">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-10">
-          <h2 id="what-we-do" className="text-3xl font-bold">What I do</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto mt-2">I build practical web products that help you sell more and run better.</p>
+        <div className="text-center mb-16">
+          <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+            Services
+          </div>
+          <h2 id="what-we-do" className="text-4xl md:text-5xl font-bold mb-4">What I Build</h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Practical web solutions that drive revenue and streamline operations</p>
         </div>
 
         <div className="grid md:grid-cols-4 gap-6">
           {items.map((it, i) => (
-            <div key={i} className="p-6 bg-card border border-border rounded-lg text-center">
-              <div className="mx-auto mb-3 inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary">{it.icon}</div>
-              <h3 className="font-semibold mb-2">{it.title}</h3>
-              <p className="text-sm text-muted-foreground">{it.desc}</p>
+            <div key={i} className="group p-8 bg-card border-2 border-border rounded-2xl text-center transition-all duration-300 hover:shadow-hover hover:-translate-y-2 hover:border-primary/50">
+              <div className="mx-auto mb-4 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 text-primary group-hover:scale-110 transition-transform duration-300">{it.icon}</div>
+              <h3 className="font-bold text-lg mb-3">{it.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{it.desc}</p>
             </div>
           ))}
         </div>

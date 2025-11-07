@@ -8,150 +8,119 @@ import Section from '@/components/Section';
 
 const Contact = () => {
   return (
-    <Section as="section" className="py-20 px-4 bg-background" aria-labelledby="contact-heading">
-      <div className="max-w-4xl mx-auto">
+    <Section as="section" className="py-24 px-4 bg-gradient-to-b from-background to-accent/20" aria-labelledby="contact-heading">
+      <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 id="contact-heading" className="text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Looking for a skilled website developer? Whether you're in Nigeria, Africa, or anywhere in the world, 
-              I'm ready to help bring your digital vision to life. Whether you need a corporate site, a small or medium e-commerce store, or a custom web application, 
-              let's discuss your project and create something amazing together. Contact me today for a free consultation!
+            <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+              Get In Touch
+            </div>
+            <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Project?</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Let's discuss your project and create something amazing together. I work with clients in Lagos, across Nigeria, and globally to build professional web solutions.
             </p>
           </div>
         
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-semibold mb-6">Start Your Project Today</h3>
-              <p className="text-muted-foreground mb-8">
-                Whether you need a simple business website, an e-commerce store, or a custom web application, 
-                I'm here to help. Based in Lagos, Nigeria, I work with clients locally and internationally to build 
-                professional web solutions that drive results and grow your business online.
+            <div className="p-8 bg-gradient-to-br from-card to-accent/5 border-2 border-border rounded-2xl">
+              <h3 className="text-2xl font-bold mb-4">Let's Build Together</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Whether you need a business website, e-commerce store, or custom web application, 
+                I'm here to help transform your vision into reality.
               </p>
             </div>
             
-            <div className="space-y-4">
-              <a 
-                href="mailto:Samuelolaonipekun050@Outlook.com"
-                className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2 transition-colors hover:bg-primary/5"
-              >
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <Mail className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <p className="font-medium">Email</p>
-                  <p className="text-muted-foreground">Samuelolaonipekun050@Outlook.com</p>
-                </div>
-              </a>
-              
-              <a 
-                href="https://github.com/Donsirmuel"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2 transition-colors hover:bg-primary/5"
-              >
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <Github className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <p className="font-medium">GitHub</p>
-                  <p className="text-muted-foreground">github.com/Donsirmuel</p>
-                </div>
-              </a>
-              
-              <a 
-                href="https://linkedin.com/in/samuel-olaonipekun"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2 transition-colors hover:bg-primary/5"
-              >
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <Linkedin className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <p className="font-medium">LinkedIn</p>
-                  <p className="text-muted-foreground">linkedin.com/in/samuel-olaonipekun</p>
-                </div>
-              </a>
-              
+            <div className="space-y-3">
               <a 
                 href="https://wa.me/2349150996465"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2 transition-colors hover:bg-green-500/5"
+                className="flex items-center gap-4 p-4 rounded-xl transition-all duration-300 hover:shadow-hover hover:-translate-y-1 bg-gradient-to-r from-green-500/10 to-green-600/10 border-2 border-green-500/20 hover:border-green-500/40"
               >
-                <div className="p-2 bg-green-500/10 rounded-lg">
-                  <MessageCircle className="h-5 w-5 text-green-500" />
+                <div className="p-3 bg-green-500/20 rounded-xl">
+                  <MessageCircle className="h-6 w-6 text-green-600" />
                 </div>
                 <div>
-                  <p className="font-medium">WhatsApp</p>
-                  <p className="text-muted-foreground">+234 915 099 6465</p>
+                  <p className="font-semibold text-sm text-muted-foreground">WhatsApp (Fastest)</p>
+                  <p className="font-medium">+234 915 099 6465</p>
                 </div>
               </a>
-              
+
               <a 
-                href="https://twitter.com/_donsirmuel"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2 transition-colors hover:bg-blue-500/5"
+                href="mailto:Samuelolaonipekun050@Outlook.com"
+                className="flex items-center gap-4 p-4 rounded-xl transition-all duration-300 hover:shadow-hover hover:-translate-y-1 bg-card border-2 border-border hover:border-primary/40"
               >
-                <div className="p-2 bg-blue-500/10 rounded-lg">
-                  <Send className="h-5 w-5 text-blue-500" />
+                <div className="p-3 bg-primary/10 rounded-xl">
+                  <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <p className="font-medium">Twitter</p>
-                  <p className="text-muted-foreground">@_donsirmuel</p>
+                  <p className="font-semibold text-sm text-muted-foreground">Email</p>
+                  <p className="font-medium text-sm">Samuelolaonipekun050@Outlook.com</p>
                 </div>
               </a>
               
-              <div className="flex items-center gap-4 hover-lift rounded-lg p-2 -m-2">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <MapPin className="h-5 w-5 text-primary" />
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-card border-2 border-border">
+                <div className="p-3 bg-primary/10 rounded-xl">
+                  <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <p className="font-medium">Location</p>
-                  <p className="text-muted-foreground">Lagos, Nigeria</p>
+                  <p className="font-semibold text-sm text-muted-foreground">Location</p>
+                  <p className="font-medium">Lagos, Nigeria</p>
                 </div>
+              </div>
+
+              <div className="flex gap-3 pt-4">
+                <a href="https://github.com/Donsirmuel" target="_blank" rel="noopener noreferrer" className="p-3 bg-card border-2 border-border rounded-xl hover:border-primary/40 transition-all hover:scale-110">
+                  <Github className="h-5 w-5 text-foreground" />
+                </a>
+                <a href="https://linkedin.com/in/samuel-olaonipekun" target="_blank" rel="noopener noreferrer" className="p-3 bg-card border-2 border-border rounded-xl hover:border-primary/40 transition-all hover:scale-110">
+                  <Linkedin className="h-5 w-5 text-foreground" />
+                </a>
+                <a href="https://twitter.com/_donsirmuel" target="_blank" rel="noopener noreferrer" className="p-3 bg-card border-2 border-border rounded-xl hover:border-primary/40 transition-all hover:scale-110">
+                  <Send className="h-5 w-5 text-foreground" />
+                </a>
               </div>
             </div>
           </div>
           
           {/* Contact Form */}
-          <Card className="shadow-card">
+          <Card className="shadow-hover border-2">
             <CardHeader>
-              <CardTitle>Get Your Free Quote</CardTitle>
-              <CardDescription>
-                Tell me about your project and I'll get back to you with a customized quote within 24 hours.
+              <CardTitle className="text-2xl">Get Your Free Quote</CardTitle>
+              <CardDescription className="text-base">
+                Tell me about your project and I'll get back to you within 24 hours.
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form className="space-y-4">
+              <form className="space-y-5">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="Your name" />
+                    <Label htmlFor="name" className="font-semibold">Name</Label>
+                    <Input id="name" placeholder="Your name" className="border-2" />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="your@email.com" />
+                    <Label htmlFor="email" className="font-semibold">Email</Label>
+                    <Input id="email" type="email" placeholder="your@email.com" className="border-2" />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="subject">Project Type</Label>
-                  <Input id="subject" placeholder="e.g. Business Website, E-commerce Store, Web App" />
+                  <Label htmlFor="subject" className="font-semibold">Project Type</Label>
+                  <Input id="subject" placeholder="e.g. Business Website, E-commerce Store" className="border-2" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="message">Project Details</Label>
+                  <Label htmlFor="message" className="font-semibold">Project Details</Label>
                   <Textarea 
                     id="message" 
-                    placeholder="Describe your business and what kind of website/app you need. Include your budget range if possible."
-                    className="min-h-[120px]"
+                    placeholder="Describe your business and what kind of website/app you need..."
+                    className="min-h-[120px] border-2"
                   />
                 </div>
                 <Button 
                   type="submit" 
-                  className="w-full bg-primary hover:bg-primary-hover text-primary-foreground"
+                  variant="hero"
+                  className="w-full"
+                  size="lg"
                 >
                   Get My Free Quote
                 </Button>

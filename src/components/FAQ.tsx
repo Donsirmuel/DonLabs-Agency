@@ -13,22 +13,28 @@ const FAQ = () => {
   const faq = content?.servicesInfo?.faq ?? defaultFaq;
 
   return (
-    <Section as="section" className="py-16 px-4 bg-muted/10" aria-labelledby="faq-heading">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-8">
-          <h2 id="faq-heading" className="text-3xl font-bold">Frequently asked questions</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto mt-2">Common questions clients ask before starting a project.</p>
+    <Section as="section" className="py-24 px-4" aria-labelledby="faq-heading">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16">
+          <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+            FAQ
+          </div>
+          <h2 id="faq-heading" className="text-4xl md:text-5xl font-bold mb-4">Common Questions</h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Everything you need to know before starting your project</p>
         </div>
 
-        <div className="max-w-3xl mx-auto space-y-2">
+        <div className="space-y-4">
           {faq.map((qa: any, i: number) => (
             <Collapsible key={i}>
-              <div className="border rounded-md p-3">
+              <div className="border-2 border-border rounded-2xl p-6 bg-card transition-all duration-300 hover:shadow-hover hover:border-primary/40">
                 <CollapsibleTrigger asChild>
-                  <button className="w-full text-left font-medium">{qa.q}</button>
+                  <button className="w-full text-left font-semibold text-lg flex justify-between items-center group">
+                    {qa.q}
+                    <span className="text-primary group-hover:scale-110 transition-transform">+</span>
+                  </button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
-                  <div className="mt-2 text-sm text-muted-foreground">{qa.a}</div>
+                  <div className="mt-4 text-muted-foreground leading-relaxed border-t border-border pt-4">{qa.a}</div>
                 </CollapsibleContent>
               </div>
             </Collapsible>
