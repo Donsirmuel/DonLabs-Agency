@@ -194,7 +194,7 @@ export const defaultContent: SiteContent = {
   {
     id: 'corporate',
     name: 'Corporate / Business Website',
-    price: '₦180,000 - ₦350,000',
+    price: '₦200,000 - ₦350,000',
     desc: 'For professionals, agencies, corporate teams and service providers who need a polished web presence or company site.',
     includes: [
       '5–10 content pages (About, Services, Team, Blog, Contact)',
