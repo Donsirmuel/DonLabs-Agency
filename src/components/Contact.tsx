@@ -1,12 +1,98 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import LoadingButton from "@/components/ui/loading-button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Github, Linkedin, MapPin, MessageCircle, Send } from "lucide-react";
 import Section from '@/components/Section';
+import { useState } from 'react';
+import { toast } from '@/hooks/use-toast';
+
+const WHATSAPP_NUMBER = '2349150996465'; // no plus sign
 
 const Contact = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+
+  const buildWhatsAppUrl = (to: string, text: string) => {
+    const encoded = encodeURIComponent(text);
+    return `https://wa.me/${to}?text=${encoded}`;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (submitting) return;
+
+    // Basic validation
+    if (!name.trim() || !message.trim()) {
+      // show toast instead of alert
+      toast({
+        title: 'Missing information',
+        description: 'Please provide your name and a short description of the project.',
+      });
+      return;
+    }
+
+    setSubmitting(true);
+
+    // Safety backstop: if nothing happens within 10s, notify the user and re-enable the form
+    const backstop = window.setTimeout(() => {
+      if (submitting) {
+        toast({ title: 'Still working', description: 'If this is taking too long, please try again or use email.' });
+        setSubmitting(false);
+      }
+    }, 10000);
+
+    const body = [`Hi Samuel, I'd like a quote for a project.`, `Name: ${name}`];
+    if (email.trim()) body.push(`Email: ${email}`);
+    if (subject.trim()) body.push(`Project: ${subject}`);
+    body.push(`Details: ${message}`);
+
+    const text = body.join('\n');
+    const encoded = encodeURIComponent(text);
+
+    // Prefer the whatsapp:// URL scheme (opens app on mobile if installed), then fallback to wa.me
+    const appUrl = `whatsapp://send?text=${encoded}`;
+    const webUrl = buildWhatsAppUrl(WHATSAPP_NUMBER, text);
+
+    // Try to open appUrl first (mobile). If that fails or is blocked, open webUrl in a new tab.
+    let opened = false;
+
+    try {
+      // On some mobile browsers, setting location.href opens the native app
+      window.location.href = appUrl;
+      opened = true;
+    } catch (err) {
+      // ignore and try web url
+    }
+
+    // If not opened yet (or on desktop), open the web wa.me link in a new tab
+    if (!opened) {
+      const win = window.open(webUrl, '_blank');
+      if (!win) {
+        // fallback: open mailto if popup blocked
+        const mailSubject = encodeURIComponent(subject || 'Website project inquiry');
+        const mailBody = encodeURIComponent(text);
+        window.location.href = `mailto:Samuelolaonipekun050@Outlook.com?subject=${mailSubject}&body=${mailBody}`;
+        toast({ title: 'Opening email', description: 'Could not open WhatsApp — opening your email client instead.' });
+      }
+    }
+
+    // optional: reset form after a short delay
+    setTimeout(() => {
+      setSubmitting(false);
+      window.clearTimeout(backstop);
+      setName('');
+      setEmail('');
+      setSubject('');
+      setMessage('');
+    }, 800);
+  };
+
   return (
     <Section as="section" className="section-spacing container-padding bg-gradient-to-b from-background to-accent/20" aria-labelledby="contact-heading">
       <div className="max-w-6xl mx-auto">
@@ -33,7 +119,7 @@ const Contact = () => {
             
             <div className="space-y-3">
               <a 
-                href="https://wa.me/2349150996465"
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-xl transition-all duration-300 hover:shadow-hover hover:-translate-y-1 bg-gradient-to-r from-green-500/10 to-green-600/10 border-2 border-green-500/20 hover:border-green-500/40"
@@ -56,7 +142,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-sm text-muted-foreground">Email</p>
-                  <p className="font-medium text-sm">Samuelolaonipekun050@Outlook.com</p>
+                  <p className="font-medium text-sm">Samuelolaonipekun050@Gmail.com</p>
                 </div>
               </a>
               
@@ -93,20 +179,20 @@ const Contact = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form className="space-y-5">
+              <form className="space-y-5" onSubmit={handleSubmit} aria-busy={submitting}>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="name" className="font-semibold">Name</Label>
-                    <Input id="name" placeholder="Your name" className="border-2" />
+                    <Input id="name" placeholder="Your name" className="border-2" value={name} onChange={(e) => setName(e.target.value)} />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email" className="font-semibold">Email</Label>
-                    <Input id="email" type="email" placeholder="your@email.com" className="border-2" />
+                    <Input id="email" type="email" placeholder="your@email.com" className="border-2" value={email} onChange={(e) => setEmail(e.target.value)} />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="subject" className="font-semibold">Project Type</Label>
-                  <Input id="subject" placeholder="e.g. Business Website, E-commerce Store" className="border-2" />
+                  <Input id="subject" placeholder="e.g. Business Website, E-commerce Store" className="border-2" value={subject} onChange={(e) => setSubject(e.target.value)} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message" className="font-semibold">Project Details</Label>
@@ -114,16 +200,20 @@ const Contact = () => {
                     id="message" 
                     placeholder="Describe your business and what kind of website/app you need..."
                     className="min-h-[120px] border-2"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
-                <Button 
-                  type="submit" 
+                <LoadingButton
+                  type="submit"
                   variant="hero"
                   className="w-full"
                   size="lg"
+                  isLoading={submitting}
+                  loadingText="Opening WhatsApp…"
                 >
                   Get My Free Quote
-                </Button>
+                </LoadingButton>
               </form>
             </CardContent>
           </Card>
