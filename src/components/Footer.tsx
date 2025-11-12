@@ -89,10 +89,10 @@ const Footer = () => {
                 WhatsApp: +234 915 099 6465
               </a>
               <a 
-                href="mailto:Samuelolaonipekun050@Outlook.com" 
+                href="mailto:samuelolaonipekun050@gmail.com" 
                 className="text-muted-foreground hover:text-primary transition-colors break-words"
               >
-                Samuelolaonipekun050@Outlook.com
+                samuelolaonipekun050@gmail.com
               </a>
               <p className="text-muted-foreground">
                 Lagos, Nigeria

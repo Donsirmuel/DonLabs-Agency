@@ -77,7 +77,7 @@ const Contact = () => {
         // fallback: open mailto if popup blocked
         const mailSubject = encodeURIComponent(subject || 'Website project inquiry');
         const mailBody = encodeURIComponent(text);
-        window.location.href = `mailto:Samuelolaonipekun050@Outlook.com?subject=${mailSubject}&body=${mailBody}`;
+  window.location.href = `mailto:samuelolaonipekun050@gmail.com?subject=${mailSubject}&body=${mailBody}`;
         toast({ title: 'Opening email', description: 'Could not open WhatsApp — opening your email client instead.' });
       }
     }
@@ -134,7 +134,7 @@ const Contact = () => {
               </a>
 
               <a 
-                href="mailto:Samuelolaonipekun050@Outlook.com"
+                href="mailto:samuelolaonipekun050@gmail.com"
                 className="flex items-center gap-4 p-4 rounded-xl transition-all duration-300 hover:shadow-hover hover:-translate-y-1 bg-card border-2 border-border hover:border-primary/40"
               >
                 <div className="p-3 bg-primary/10 rounded-xl">
