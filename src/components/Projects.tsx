@@ -89,13 +89,11 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in-up">
           <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold">
-            My Work
+            Portfolio
           </div>
           <h2 id="projects-heading" className="text-4xl md:text-5xl font-bold mb-6">Portfolio Projects</h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Explore my portfolio of web development projects built to learn and demonstrate my skills. 
-            These projects showcase different aspects of modern web development, from e-commerce platforms 
-            to business websites, featuring <strong className="text-foreground">clean code, responsive design, and modern functionality</strong>.
+            Explore DonLabs' portfolio of real projects delivered for clients. Each entry describes the business problem, what we built (stack and features), and the measurable results or value delivered.
           </p>
         </div>
         

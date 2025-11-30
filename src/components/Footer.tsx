@@ -13,10 +13,10 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <img src={ASSETS.logo} alt="Samuel Olaonipekun Logo" className="h-12 w-12 rounded-lg object-cover shadow-sm" />
+              <img src={ASSETS.logo} alt="DonLabs Logo" className="h-12 w-12 rounded-lg object-cover shadow-sm" />
               <div>
-                <div className="font-bold text-lg">Samuel Olaonipekun</div>
-                <div className="text-sm text-muted-foreground">Web Developer & Designer</div>
+                <div className="font-bold text-lg">DonLabs</div>
+                <div className="text-sm text-muted-foreground">Web Development Agency</div>
               </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-md mb-6">
@@ -62,7 +62,7 @@ const Footer = () => {
                 Home
               </Link>
               <Link to="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                About Me
+                About
               </Link>
               <Link to="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Services
@@ -81,18 +81,18 @@ const Footer = () => {
             <h3 className="font-semibold text-base mb-4">Get In Touch</h3>
             <div className="flex flex-col gap-3 text-sm">
               <a 
-                href="https://wa.me/2349150996465" 
+                href="https://wa.me/2349031386928" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                WhatsApp: +234 915 099 6465
+                WhatsApp: +234 903 138 6928
               </a>
               <a 
-                href="mailto:samuelolaonipekun050@gmail.com" 
+                href="mailto:samuelolaonipekun050@outlook.com" 
                 className="text-muted-foreground hover:text-primary transition-colors break-words"
               >
-                samuelolaonipekun050@gmail.com
+                samuelolaonipekun050@outlook.com
               </a>
               <p className="text-muted-foreground">
                 Lagos, Nigeria
@@ -101,7 +101,7 @@ const Footer = () => {
                 to="/contact" 
                 className="inline-flex items-center gap-2 text-primary hover:underline font-medium mt-2"
               >
-                Contact Me →
+                Contact →
               </Link>
             </div>
           </div>
@@ -109,7 +109,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-border py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <p>© {currentYear} Samuel Olaonipekun. All rights reserved.</p>
+          <p>© {currentYear} DonLabs. All rights reserved.</p>
           <p className="text-center sm:text-right">
             Built with React, TypeScript & Tailwind CSS
           </p>

@@ -9,7 +9,7 @@ import Section from '@/components/Section';
 import { useState } from 'react';
 import { toast } from '@/hooks/use-toast';
 
-const WHATSAPP_NUMBER = '2349150996465'; // no plus sign
+const WHATSAPP_NUMBER = '2349031386928'; // no plus sign (updated per user)
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -47,7 +47,7 @@ const Contact = () => {
       }
     }, 10000);
 
-    const body = [`Hi Samuel, I'd like a quote for a project.`, `Name: ${name}`];
+    const body = [`Hi DonLabs, I'd like a quote for a project.`, `Name: ${name}`];
     if (email.trim()) body.push(`Email: ${email}`);
     if (subject.trim()) body.push(`Project: ${subject}`);
     body.push(`Details: ${message}`);
@@ -73,13 +73,13 @@ const Contact = () => {
     // If not opened yet (or on desktop), open the web wa.me link in a new tab
     if (!opened) {
       const win = window.open(webUrl, '_blank');
-      if (!win) {
-        // fallback: open mailto if popup blocked
-        const mailSubject = encodeURIComponent(subject || 'Website project inquiry');
-        const mailBody = encodeURIComponent(text);
-  window.location.href = `mailto:samuelolaonipekun050@gmail.com?subject=${mailSubject}&body=${mailBody}`;
-        toast({ title: 'Opening email', description: 'Could not open WhatsApp — opening your email client instead.' });
-      }
+        if (!win) {
+          // fallback: open mailto if popup blocked
+          const mailSubject = encodeURIComponent(subject || 'Website project inquiry');
+          const mailBody = encodeURIComponent(text);
+          window.location.href = `mailto:samuelolaonipekun050@outlook.com?subject=${mailSubject}&body=${mailBody}`;
+          toast({ title: 'Opening email', description: 'Could not open WhatsApp — opening your email client instead.' });
+        }
     }
 
     // optional: reset form after a short delay
@@ -102,7 +102,7 @@ const Contact = () => {
             </div>
             <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Project?</h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Let's discuss your project and create something amazing together. I work with clients in Lagos, across Nigeria, and globally to build professional web solutions.
+              Let's discuss your project and create something amazing together. We work with clients across Africa and globally to build professional web solutions.
             </p>
           </div>
         
@@ -113,7 +113,7 @@ const Contact = () => {
               <h3 className="text-2xl font-bold mb-4">Let's Build Together</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Whether you need a business website, e-commerce store, or custom web application, 
-                I'm here to help transform your vision into reality.
+                we're here to help transform your vision into reality.
               </p>
             </div>
             
@@ -129,12 +129,12 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-sm text-muted-foreground">WhatsApp (Fastest)</p>
-                  <p className="font-medium">+234 915 099 6465</p>
+                  <p className="font-medium">+234 903 138 6928</p>
                 </div>
               </a>
 
               <a 
-                href="mailto:samuelolaonipekun050@gmail.com"
+                href="mailto:samuelolaonipekun050@outlook.com"
                 className="flex items-center gap-4 p-4 rounded-xl transition-all duration-300 hover:shadow-hover hover:-translate-y-1 bg-card border-2 border-border hover:border-primary/40"
               >
                 <div className="p-3 bg-primary/10 rounded-xl">
@@ -142,7 +142,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-sm text-muted-foreground">Email</p>
-                  <p className="font-medium text-sm">Samuelolaonipekun050@Gmail.com</p>
+                  <p className="font-medium text-sm">samuelolaonipekun050@outlook.com</p>
                 </div>
               </a>
               
@@ -152,7 +152,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-sm text-muted-foreground">Location</p>
-                  <p className="font-medium">Lagos, Nigeria</p>
+                  <p className="font-medium">Africa (Remote)</p>
                 </div>
               </div>
 
@@ -175,7 +175,7 @@ const Contact = () => {
             <CardHeader>
               <CardTitle className="text-2xl">Get Your Free Quote</CardTitle>
               <CardDescription className="text-base">
-                Tell me about your project and I'll get back to you within 24 hours.
+                Tell us about your project and we'll get back to you within 24 hours.
               </CardDescription>
             </CardHeader>
             <CardContent>

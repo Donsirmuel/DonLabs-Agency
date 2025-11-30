@@ -1,4 +1,6 @@
 // Utility function to get the correct base path for assets
+const CACHE_BUST = '?v=3';
+
 export const getAssetPath = (path: string): string => {
   // Remove leading slash if present
   const cleanPath = path.startsWith('/') ? path.slice(1) : path;
@@ -23,16 +25,27 @@ export const getAssetPath = (path: string): string => {
 
   const useRepoPrefix = isGitHubPagesBuild || isGitHubPagesRuntime();
 
-  return useRepoPrefix ? `/My-Portfolio/${cleanPath}` : `/${cleanPath}`;
+  const fullPath = useRepoPrefix ? `/My-Portfolio/${cleanPath}` : `/${cleanPath}`;
+  return `${fullPath}${CACHE_BUST}`;
 };
 
 // Pre-configured asset paths
 export const ASSETS = {
   profileImage: getAssetPath('profile-image.jpg'),
-  cv: getAssetPath('Samuel_Olaonipekun_CV.pdf'),
+  cv: getAssetPath('Founders_CV.pdf'),
+  // Human-facing label for the CV download link
+  cvLabel: "Founder's CV",
   placeholder: getAssetPath('placeholder.svg'),
-  favicon: getAssetPath('favicon.ico'),
-  logo: getAssetPath('logo.jpeg'),
+  favicon: getAssetPath('favicon.png'),
+  logo: getAssetPath('logo-full.png'),
+  // New brand assets added from uploaded media
+  logoIcon: getAssetPath('logo-icon.png'),
+  logoFull: getAssetPath('logo-full.png'),
+  // Hero video and posters
+  heroVideo: getAssetPath('hero-video.mp4'),
+  heroVideoWebm: getAssetPath('hero-video.webm'),
+  heroPosterDesktop: getAssetPath('hero-poster-desktop.jpg'),
+  heroPosterMobile: getAssetPath('hero-poster-mobile.jpg'),
   // Project screenshots
   devblog: getAssetPath('og/home.svg'),
   glitglam: getAssetPath('glitglam-screenshot.png'),

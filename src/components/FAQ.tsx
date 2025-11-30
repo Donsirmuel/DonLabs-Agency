@@ -3,8 +3,8 @@ import { useContent } from '@/lib/ContentProvider';
 import Section from '@/components/Section';
 
 const defaultFaq = [
-  { q: 'How long does a project take?', a: 'Small sites: 2–4 weeks. Simple stores: 4–8 weeks. Custom apps: it depends on scope.' },
-  { q: 'How much will it cost?', a: 'I provide clear price ranges and a fixed quote in the proposal so there are no surprises.' },
+  { q: 'How long does a project take?', a: 'Small sites: 2–4 weeks. Simple stores: 4–8 weeks. Custom apps: timelines depend on scope - we provide clear estimates during discovery.' },
+  { q: 'How much will it cost?', a: 'We provide clear price ranges and a fixed quote in the proposal so there are no surprises.' },
   { q: 'Do you offer support?', a: 'Yes — maintenance packages and hourly support are available after launch.' }
 ];
 

@@ -7,8 +7,8 @@ const servicesStructuredData = {
   "@type": "Service",
   "name": "Web Development Services",
   "provider": {
-    "@type": "Person",
-    "name": "Samuel Olaonipekun"
+    "@type": "Organization",
+    "name": "DonLabs"
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -46,8 +46,8 @@ const ServicesPage = () => {
   return (
     <main className="min-h-screen bg-background pt-20">
       <SEO 
-        title="Web Development Services | Samuel Olaonipekun Portfolio"
-        description="Web development services offered by Samuel Olaonipekun: Django web apps, React frontends, REST APIs, and full-stack solutions. View skills and technologies I work with."
+        title="Web Development Services | DonLabs"
+        description="Web development services by DonLabs: Django web apps, React frontends, REST APIs, and full-stack solutions for businesses."
         // canonical will default to the current runtime URL
         structuredData={{
           "@context": "https://schema.org",

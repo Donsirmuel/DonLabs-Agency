@@ -5,13 +5,13 @@ const ContactPage = () => {
   return (
     <main className="min-h-screen bg-background pt-20">
       <SEO 
-        title="Contact Samuel Olaonipekun | Web Developer Lagos" 
-        description="Get in touch with Samuel Olaonipekun for web development opportunities, collaborations, or freelance projects. Available for remote work across Nigeria and internationally." 
+        title="Contact DonLabs | Web Development Agency" 
+        description="Get in touch with DonLabs for web development projects, e-commerce, or web application work. We're available for partnerships and remote engagements." 
         // canonical will default to the current runtime URL
         structuredData={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
-          "name": "Contact Samuel Olaonipekun"
+          "name": "Contact DonLabs"
         }}
       />
       <div id="contact">

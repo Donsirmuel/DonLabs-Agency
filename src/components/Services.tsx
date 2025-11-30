@@ -15,9 +15,9 @@ const Services = () => {
 
   const whyChooseMe = [
     {
-      title: "Nigerian Market Focus",
+      title: "Business-first Approach",
       icon: <Zap className="h-6 w-6" />,
-      description: "I understand the Nigerian business landscape and build solutions that work for local market needs."
+      description: "Partner with a development agency that prioritizes business outcomes and customer experience."
     },
     {
       title: "Reliable & Professional",
@@ -27,7 +27,7 @@ const Services = () => {
     {
       title: "Modern Technology",
       icon: <Code className="h-6 w-6" />,
-      description: "Django (DRF) backends, React frontends, PostgreSQL databases and containerized deployments - built for reliability and scale."
+      description: "Django (DRF) backends, React frontends, Node.js tooling, PostgreSQL databases and containerized deployments - built for reliability and scale."
     }
   ];
 
@@ -45,10 +45,10 @@ const Services = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 id="services-heading" className="text-4xl font-bold mb-4">Professional Services</h2>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-            I provide comprehensive web development services to help businesses establish a strong digital presence. 
-            From custom web applications to e-commerce platforms, I deliver <strong>scalable, secure, and performance-optimized solutions</strong> 
-            tailored to your specific business needs and growth objectives.
+              <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+                We provide comprehensive web development services to help businesses establish a strong digital presence. 
+                From custom web applications to e-commerce platforms, we deliver <strong>scalable, secure, and performance-optimized solutions</strong> 
+                tailored to your specific business needs and growth objectives.
           </p>
         </div>
 
@@ -92,8 +92,8 @@ const Services = () => {
                     className="flex-1 bg-primary hover:bg-primary-hover text-primary-foreground"
                     onClick={() => {
                       const pkg = service.recommendedPackage ? `Recommended package: ${service.recommendedPackage}. ` : '';
-                      const msg = `Hi Samuel, I'm interested in your ${service.title} service. ${pkg}Please send pricing and next steps.`;
-                      window.open('https://wa.me/2349150996465?text=' + encodeURIComponent(msg), '_blank');
+                      const msg = `Hi DonLabs, I'm interested in your ${service.title} service. ${pkg}Please send pricing and next steps.`;
+                      window.open('https://wa.me/2349031386928?text=' + encodeURIComponent(msg), '_blank');
                     }}
                   >
                     Get Quote
@@ -117,7 +117,7 @@ const Services = () => {
 
         {/* Why Choose Me Section */}
         <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold mb-8">Why Nigerian Businesses Choose Me</h3>
+          <h3 className="text-3xl font-bold mb-8">Why Businesses Choose DonLabs</h3>
           <div className="grid md:grid-cols-3 gap-8">
             {whyChooseMe.map((item, index) => (
               <div key={index} className="text-center">
@@ -135,14 +135,14 @@ const Services = () => {
         <div className="bg-gradient-to-r from-primary/10 to-purple-500/10 rounded-lg p-8 text-center">
           <h3 className="text-3xl font-bold mb-4">Ready to Start Your Project?</h3>
           <p className="text-lg text-muted-foreground mb-6">
-            Let's discuss your project requirements and create a digital solution that helps your business grow and succeed online. 
-            I'm committed to delivering high-quality work that meets your objectives and exceeds expectations.
+              Let's discuss your project requirements and create a digital solution that helps your business grow and succeed online. 
+              We're committed to delivering high-quality work that meets your objectives and exceeds expectations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg"
               className="bg-green-600 hover:bg-green-700 text-white font-medium"
-              onClick={() => window.open('https://wa.me/2349150996465?text=Hi%20Samuel!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you.', '_blank')}
+                    onClick={() => window.open('https://wa.me/2349031386928?text=Hi%20DonLabs!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you.', '_blank')}
             >
               Message on WhatsApp
             </Button>
@@ -156,7 +156,7 @@ const Services = () => {
             </Button>
             <CustomQuoteModal />
           </div>
-          <p className="text-sm text-muted-foreground mt-4">Note: Pricing, hosting, content creation, and third-party service fees (domain, paid plugins, payment gateway charges) are not included. I can advise and help procure these where needed.</p>
+          <p className="text-sm text-muted-foreground mt-4">Note: Pricing, hosting, content creation, and third-party service fees (domain, paid plugins, payment gateway charges) are not included. We can advise and help procure these where needed.</p>
         </div>
 
         {/* How it works & FAQ */}

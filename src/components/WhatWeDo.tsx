@@ -16,7 +16,7 @@ const WhatWeDo = () => {
           <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold">
             Services
           </div>
-          <h2 id="what-we-do" className="text-4xl md:text-5xl font-bold mb-4">What I Build</h2>
+          <h2 id="what-we-do" className="text-4xl md:text-5xl font-bold mb-4">What We Build</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Practical web solutions that drive revenue and streamline operations</p>
         </div>
 

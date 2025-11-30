@@ -14,23 +14,21 @@ const Home = () => {
   return (
     <main className="min-h-screen bg-background pt-20">
       <SEO 
-        title="Samuel Olaonipekun | Web Developer Portfolio | Lagos Nigeria"
-        description="Portfolio of Samuel Olaonipekun - Web developer from Lagos, Nigeria. Showcasing projects in Django, React, JavaScript, and Python. Open to freelance work and collaborations."
-        keywords="Samuel Olaonipekun, web developer Lagos, Django developer, React developer, Python developer, freelance developer Nigeria"
+        title="DonLabs — Innovate your Digital Experience"
+        description="DonLabs is a web development agency building modern websites and web apps. We focus on design, performance, and measurable results for businesses."
+        keywords="DonLabs, web agency, web development, Django, React, e-commerce, digital agency"
   // canonical will default to the current runtime URL
         structuredData={{
           "@context": "https://schema.org",
-          "@type": "ProfilePage",
+          "@type": "WebPage",
           "mainEntity": {
-            "@type": "Person",
-            "name": "Samuel Olaonipekun",
-            "alternateName": "Donsirmuel",
-            "description": "Web Developer from Lagos, Nigeria",
-            "jobTitle": "Web Developer",
+            "@type": "Organization",
+            "name": "DonLabs",
+            "description": "DonLabs — web development agency",
             "url": "/",
             "sameAs": [
               "https://github.com/Donsirmuel",
-              "https://linkedin.com/in/samuel-olaonipekun",
+              "https://linkedin.com/company/donlabs",
               "https://twitter.com/_donsirmuel"
             ]
           }

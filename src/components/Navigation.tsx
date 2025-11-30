@@ -23,18 +23,18 @@ const Navigation = () => {
           <div className="flex items-center gap-3">
             <img 
               src={ASSETS.logo} 
-              alt="Samuel Olaonipekun Logo" 
+              alt="DonLabs Logo" 
               className="h-10 w-10 rounded-lg object-cover"
             />
-            <span className="font-bold text-lg">Samuel Olaonipekun</span>
+            <span className="font-bold text-lg">DonLabs</span>
           </div>
           
           <div className="hidden lg:flex items-center space-x-8">
             <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
             <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Services</Link>
             <Link to="/pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</Link>
-            <Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors">My Work</Link>
-            <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">About Me</Link>
+            <Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors">Projects</Link>
+            <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">About</Link>
             <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link>
           </div>
           
@@ -48,7 +48,7 @@ const Navigation = () => {
                 onClick={() => goto('/contact')}
                 className="bg-primary hover:bg-primary-hover text-primary-foreground hover-lift"
               >
-                Hire Me
+                Get a Quote
               </Button>
             </div>
             
@@ -76,7 +76,7 @@ const Navigation = () => {
                       onClick={() => goto('/contact')}
                       className="bg-primary hover:bg-primary-hover text-primary-foreground hover-lift mt-4 w-full"
                     >
-                      Hire Me
+                      Get a Quote
                     </Button>
                   </div>
                 </SheetContent>

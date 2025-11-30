@@ -11,8 +11,8 @@ const CustomQuoteModal = () => {
   const [details, setDetails] = useState("");
 
   const submit = () => {
-    const msg = `Hi Samuel, my name is ${name || 'N/A'}. Email: ${email || 'N/A'}. Project details: ${details || 'N/A'}. Please send a custom quote.`;
-    const url = 'https://wa.me/2349150996465?text=' + encodeURIComponent(msg);
+    const msg = `Hi DonLabs Team, my name is ${name || 'N/A'}. Email: ${email || 'N/A'}. Project details: ${details || 'N/A'}. Please send a custom quote.`;
+    const url = 'https://wa.me/2349031386928?text=' + encodeURIComponent(msg);
     window.open(url, '_blank');
     setOpen(false);
   };
@@ -25,7 +25,7 @@ const CustomQuoteModal = () => {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Request a custom quote</DialogTitle>
-          <DialogDescription>Please provide a few details and I'll reply with an estimate.</DialogDescription>
+          <DialogDescription>Please provide a few details and we'll reply with an estimate.</DialogDescription>
         </DialogHeader>
 
         <div className="grid gap-2">

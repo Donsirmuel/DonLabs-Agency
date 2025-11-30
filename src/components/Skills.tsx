@@ -21,7 +21,7 @@ const Skills = () => {
       title: "Frontend Technologies",
       icon: <Code className="h-6 w-6" />,
       description: "Frontend technologies for full-stack development",
-      skills: ["HTML", "CSS", "JavaScript", "Responsive Design", "Bootstrap", "Tailwind CSS"]
+      skills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Responsive Design", "Tailwind CSS"]
     },
     {
       title: "Tools & Methodologies",
@@ -35,10 +35,9 @@ const Skills = () => {
     <Section as="section" className="py-20 px-4 bg-background" aria-labelledby="skills-heading">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 id="skills-heading" className="text-4xl font-bold mb-4">Why Businesses Trust Me</h2>
+          <h2 id="skills-heading" className="text-4xl font-bold mb-4">Why Businesses Trust DonLabs</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Professional web developer with proven expertise in modern technologies. I deliver reliable, 
-            secure, and scalable solutions that help Nigerian businesses grow online.
+            Professional web development agency with proven expertise in modern technologies. We deliver reliable, secure, and scalable solutions that help businesses grow their digital presence.
           </p>
         </div>
         

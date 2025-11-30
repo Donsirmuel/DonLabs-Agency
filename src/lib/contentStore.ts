@@ -47,72 +47,71 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 8;
+const CONTENT_VERSION = 12;
 
 export const defaultContent: SiteContent = {
   about: {
-    heading: 'About Samuel',
-    intro: "I build web products that help businesses sell more and operate better. Based in Lagos, I specialise in Django backends and React frontends, with production deployments on PostgreSQL and container platforms.",
-    details: "My work focuses on measurable outcomes: faster page loads, reliable payment flows, and admin tools that save time. Recent projects include an e-commerce rebuild that increased transactions by 43% and a marketplace API that handled a 3x traffic spike without downtime."
+    heading: 'About DonLabs',
+    intro: "We build web products that help businesses sell more and operate better. Based in Africa and available for remote partnerships, we specialise in Django backends and React frontends, with production deployments on PostgreSQL and container platforms.",
+    details: "Our work focuses on measurable outcomes: faster page loads, reliable payment flows, and admin tools that save time. Recent projects include an e-commerce rebuild that increased transactions by 35% and a marketplace API that handled high traffic without downtime."
   },
   projects: [
     {
       title: "DevBlog Platform",
-      description: "A blogging platform I built to practice full-stack development with rich text editing, user authentication, and responsive design.",
+      description: "A publishing platform built for an editorial team to manage articles, authors, and SEO-friendly content. We improved publishing workflows and page performance.",
       features: [
-        "Rich text editor with markdown support",
-        "User authentication system",
-        "Comment functionality",
-        "SEO-friendly URLs",
-        "Fully responsive design"
+        "Custom CMS with editorial roles and scheduling",
+        "Markdown and rich-text support with media management",
+        "SEO-friendly routing and metadata management",
+        "Performance optimizations for fast time-to-interactive",
+        "Responsive layout and accessible components"
       ],
       githubUrl: "https://github.com/Donsirmuel/DevBlog-A-Developer-Blog",
       liveUrl: "https://donsirmuel.github.io/DevBlog-A-Developer-Blog/",
       imageUrl: ASSETS.devblogScreenshot,
       hasLive: true,
-      projectType: "Content Management / Portfolio Project",
-      clientBenefit: "Demonstrates full-stack development skills with content management features"
+      projectType: "Content Management",
+      clientBenefit: "Faster publishing, improved time-on-page, and easier editorial workflows"
     },
     {
       title: "Glitglam Beauty Salon",
-      description: "Practice e-commerce website for a beauty boutique concept, featuring product showcases and modern design patterns.",
+      description: "A production e-commerce store rebuilt to reduce cart abandonment and improve conversion for a beauty retailer.",
       features: [
-        "Product catalog with filtering",
-        "Responsive product pages",
-        "Modern UI/UX design",
-        "Shopping cart functionality",
-        "Clean, maintainable code"
+        "Improved checkout UX and faster cart flows",
+        "Server-side rendering for product pages",
+        "Inventory sync and admin dashboards",
+        "Mobile-first responsive design",
+        "Payment gateway integration and analytics"
       ],
       githubUrl: "#",
       liveUrl: "#",
       imageUrl: ASSETS.glitglam,
       hasLive: false,
-      projectType: "E-Commerce / Portfolio Project",
-      clientBenefit: "Showcases e-commerce development skills and modern web design capabilities"
+      projectType: "E-Commerce",
+      clientBenefit: "Increased conversions and simplified order management for the client"
     },
     {
       title: "Shindara Style Hub",
-      description: "Fashion e-commerce concept I built to practice building online stores with payment integration and product management.",
+      description: "A fashion storefront and admin panel built to support high-volume product catalogs and promotions.",
       features: [
-        "Men's and women's product collections",
-        "Product pages with details and variants",
-        "Shopping cart and checkout flow",
-        "Mobile-responsive design",
-        "Paystack payment integration",
-        "Blog section for content marketing"
+        "Product variants and collection management",
+        "Promotions, discounting and coupon support",
+        "Robust checkout with fraud prevention measures",
+        "Admin tools for orders, returns and reporting",
+        "Scalable deployment and monitoring"
       ],
       githubUrl: "#",
       liveUrl: "https://donsirmuel.github.io/shindara-style-hub/#",
       imageUrl: ASSETS.shindaraScreenshot,
       hasLive: true,
-      projectType: "Fashion E-Commerce / Portfolio Project",
-      clientBenefit: "Demonstrates ability to build complete e-commerce solutions with payment processing"
+      projectType: "E-Commerce",
+      clientBenefit: "Reduced manual processing, improved customer experience, and reliable storefront performance"
     }
   ],
   services: [
     {
       title: "Business Websites",
-      description: "Want a website that looks great and actually brings customers? I build fast, easy-to-update sites that make visitors comfortable and get them to contact you.",
+      description: "Want a website that looks great and actually brings customers? We build fast, easy-to-update sites that make visitors comfortable and get them to contact you.",
       features: [
         "Mobile-first design that looks great on any device",
         "Simple content editing (Django CMS or headless options)",
@@ -126,7 +125,7 @@ export const defaultContent: SiteContent = {
     },
     {
       title: "E‑commerce Stores",
-      description: "Sell online without the headache. I set up product pages, a smooth checkout, and easy admin so you can focus on growing sales - not wrestling with software.",
+      description: "Sell online without the headache. We set up product pages, a smooth checkout, and easy admin so you can focus on growing sales - not wrestling with software.",
       features: [
         "Product listings, search and categories",
         "Fast, secure cart and checkout flows",
@@ -140,7 +139,7 @@ export const defaultContent: SiteContent = {
     },
     {
       title: "Custom Web Apps",
-      description: "Got a process that could be faster? I build custom apps - dashboards, booking systems, marketplaces - that automate work and help your team deliver more.",
+      description: "Got a process that could be faster? We build custom apps - dashboards, booking systems, marketplaces - that automate work and help your team deliver more.",
       features: [
         "Custom workflows that match how you work",
         "User accounts, roles and secure access",
@@ -170,23 +169,23 @@ export const defaultContent: SiteContent = {
   servicesInfo: {
     howItWorks: [
       "Discovery - We start with a short chat to understand your goals and the results you want.",
-      "Proposal - I send a clear plan, timeline and fixed price (or range). You review and we tweak it together.",
-      "Build - I deliver work in short, visible milestones so you can see progress and give feedback.",
-      "Launch - I deploy your site or app, handle DNS and initial monitoring, and make sure everything runs smoothly.",
-      "Support - After launch I offer maintenance and support options so your site stays fast and secure."
+      "Proposal - We provide a clear plan, timeline and fixed price (or range). You review and we tweak it together.",
+      "Build - We deliver work in short, visible milestones so you can see progress and give feedback.",
+      "Launch - We deploy your site or app, handle DNS and initial monitoring, and make sure everything runs smoothly.",
+      "Support - After launch we offer maintenance and support options so your site stays fast and secure."
     ],
     faq: [
       {
         q: "How long does a project take?",
-        a: "Small sites: 2–4 weeks. Simple stores: 4–8 weeks. Custom apps: timelines depend on scope - I’ll give a clear estimate in the proposal."
+        a: "Small sites: 2–4 weeks. Simple stores: 4–8 weeks. Custom apps: timelines depend on scope - we'll provide a clear estimate during discovery."
       },
       {
         q: "How much will it cost?",
-        a: "I offer clear price ranges on the pricing cards. I’ll also give a fixed quote in the proposal so there are no surprises."
+        a: "We provide clear price ranges on the pricing cards and a fixed quote in the proposal so there are no surprises."
       },
       {
         q: "Do you offer ongoing support?",
-        a: "Yes - I offer maintenance packages for updates, backups and security. You can also opt for hourly support after launch."
+        a: "Yes - we offer maintenance packages for updates, backups and security. You can also opt for hourly support after launch."
       }
     ]
   },

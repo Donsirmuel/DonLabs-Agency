@@ -47,11 +47,11 @@ const ensureStructuredData = (data: object | null) => {
 };
 
 const SEO = ({ 
-  title = "Samuel Olaonipekun | Web Developer Portfolio | Lagos Nigeria",
-  description = "Portfolio of Samuel Olaonipekun, an aspiring web developer from Lagos, Nigeria specializing in Django, React, and Python. View projects and get in touch for web development opportunities.",
-  keywords = "Samuel Olaonipekun, web developer Lagos, Django developer, React developer, Python developer, freelance web developer Nigeria, web development portfolio",
-  image = ASSETS.devblog,
-  url = typeof window !== 'undefined' ? window.location.href : 'https://donsirmuel.github.io/My-Portfolio/',
+  title = "DonLabs — Innovate your Digital Experience",
+  description = "DonLabs is a web development agency building modern websites, e-commerce platforms, and web applications for businesses. We focus on design, performance and measurable results.",
+  keywords = "DonLabs, web agency, web development, Django, React, e-commerce, digital agency",
+  image = ASSETS.logo,
+  url = typeof window !== 'undefined' ? window.location.href : '/',
   canonical,
   structuredData = null
 }: SEOProps) => {
@@ -61,14 +61,20 @@ const SEO = ({
 
     setMetaTag('meta[name="description"]', 'content', description);
     setMetaTag('meta[name="keywords"]', 'content', keywords);
+    setMetaTag('meta[name="robots"]', 'content', 'index,follow');
 
     // Open Graph
+    setMetaTag('meta[property="og:type"]', 'content', 'website');
+    setMetaTag('meta[property="og:site_name"]', 'content', 'DonLabs');
     setMetaTag('meta[property="og:title"]', 'content', title);
     setMetaTag('meta[property="og:description"]', 'content', description);
     setMetaTag('meta[property="og:image"]', 'content', image);
     setMetaTag('meta[property="og:url"]', 'content', url);
+    setMetaTag('meta[property="og:image:width"]', 'content', '1200');
+    setMetaTag('meta[property="og:image:height"]', 'content', '630');
 
     // Twitter
+    setMetaTag('meta[name="twitter:card"]', 'content', 'summary_large_image');
     setMetaTag('meta[name="twitter:title"]', 'content', title);
     setMetaTag('meta[name="twitter:description"]', 'content', description);
     setMetaTag('meta[name="twitter:image"]', 'content', image);
@@ -79,6 +85,21 @@ const SEO = ({
 
     // Structured data injection (per-page)
     ensureStructuredData(structuredData);
+
+    // Prefetch large social image to help crawlers and improve link previews where supported
+    try {
+      const id = 'prefetch-og-image';
+      if (!document.getElementById(id)) {
+        const l = document.createElement('link');
+        l.id = id;
+        l.rel = 'preload';
+        l.as = 'image';
+        l.href = image;
+        document.head.appendChild(l);
+      }
+    } catch (e) {
+      // ignore
+    }
 
   }, [title, description, keywords, image, url, canonical, structuredData]);
 

@@ -1,14 +1,13 @@
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Samuel Olaonipekun",
-  "alternateName": "Donsirmuel",
-  "jobTitle": "Django Web Developer",
-  "description": "Django Web Developer with hands-on experience building scalable web applications and APIs. Passionate about clean architecture, backend performance, and delivering user-focused solutions.",
+  "@type": "Organization",
+  "name": "DonLabs",
+  "alternateName": "DonLabs Agency",
+  "description": "DonLabs is a web development agency building business websites, e-commerce platforms, and web applications. We focus on reliable engineering and thoughtful design.",
   "url": "/",
-  "image": "/profile-image.jpg",
-  "email": "samuelolaonipekun050@gmail.com",
-  "telephone": "+2349150996465",
+  "logo": "/logo-full.png",
+  "email": "samuelolaonipekun050@outlook.com",
+  "telephone": "+2349031386928",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Lagos",
@@ -26,31 +25,15 @@
     "REST API",
     "PostgreSQL",
     "JavaScript",
-    "Flask",
-    "MySQL",
-    "Git",
+    "E-commerce",
     "Docker",
     "AWS",
-    "Backend Development",
     "Full Stack Development"
   ],
-  "hasOccupation": {
-    "@type": "Occupation",
-    "name": "Web Developer",
-    "occupationalCategory": "Software Development",
-    "skills": ["Django", "Python", "JavaScript", "PostgreSQL", "REST API Development"]
-  },
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Freelance"
-  },
-  "owns": [
+  "makesOffer": [
     {
-      "@type": "SoftwareApplication",
-      "name": "Vendora E-Commerce Platform",
-      "applicationCategory": "E-Commerce",
-      "operatingSystem": "Web",
-      "url": "https://github.com/Donsirmuel/vendora"
+      "@type": "Offer",
+      "itemOffered": { "@type": "Service", "name": "Web Development" }
     }
   ]
 }

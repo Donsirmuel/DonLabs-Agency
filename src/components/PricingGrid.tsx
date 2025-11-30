@@ -66,7 +66,7 @@ const PricingGrid = () => {
                   size="lg" 
                   variant={p.popular ? "hero" : "default"}
                   className="w-full" 
-                  onClick={() => window.open('https://wa.me/2349150996465?text=Hi%20Samuel!%20I%20am%20interested%20in%20the%20' + encodeURIComponent(p.name) + '%20package.', '_blank')}
+                  onClick={() => window.open('https://wa.me/2349031386928?text=Hi%20DonLabs!%20I%20am%20interested%20in%20the%20' + encodeURIComponent(p.name) + '%20package.', '_blank')}
                 >
                   Get Quote • {p.price}
                 </Button>
