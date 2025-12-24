@@ -51,6 +51,7 @@ export const ASSETS = {
   glitglam: getAssetPath('glitglam-screenshot.png'),
   devblogScreenshot: getAssetPath('devblog-screenshot.png'),
   shindaraScreenshot: getAssetPath('shindara-screenshot.png'),
+  bubbaliciousScreenshot: getAssetPath('bubbalicious-screenshot.jng'),
   // Hero background images - place copies in public/ as hero.jpg and hero-mobile.jpg
   hero: getAssetPath('hero.jpg'),
   // use generated 640px mobile-friendly variant when available

@@ -106,6 +106,24 @@ export const defaultContent: SiteContent = {
       hasLive: true,
       projectType: "E-Commerce",
       clientBenefit: "Reduced manual processing, improved customer experience, and reliable storefront performance"
+    },
+    {
+      title: "Bubbalicious Hair & Co",
+      description: "A professional salon website for Rothwell's premier destination for lived-in blonde hair colour services. Built with modern web technologies to showcase services, enable online booking, and provide an elegant browsing experience.",
+      features: [
+        "Responsive design optimized for mobile and desktop",
+        "Service showcase with detailed descriptions",
+        "Online booking system integration",
+        "Gallery section for portfolio display",
+        "Contact forms and location information",
+        "SEO-optimized for local search visibility"
+      ],
+      githubUrl: "#",
+      liveUrl: "https://bubbalicioushairandco.vercel.app",
+      imageUrl: ASSETS.bubbaliciousScreenshot,
+      hasLive: true,
+      projectType: "Business Website",
+      clientBenefit: "Professional online presence enabling client bookings and service discovery for a premium salon"
     }
   ],
   services: [

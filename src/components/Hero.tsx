@@ -34,7 +34,7 @@ const Hero = () => {
   useEffect(() => {
     if (prefersReducedMotion) return;
     try {
-      const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 1024;
+      const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 720;
       if (isDesktop && videoRef.current) {
         // muted videos are allowed to autoplay in most browsers; attempt play as a fallback
         const p = videoRef.current.play();
