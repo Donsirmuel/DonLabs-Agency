@@ -6,7 +6,7 @@ const testimonials = [
     name: "Aisha Bello",
     role: "Founder, GlitGlam Ltd",
     project: "Glitglam Beauty Salon",
-    quote: "DonLabs rebuilt our Glitglam online store and improved checkout flows — conversions rose 35% within two months. Clear communication and measurable results."
+    quote: "DonLabs rebuilt our Glitglam online store and improved checkout flows - conversions rose 35% within two months. Clear communication and measurable results."
   },
   {
     name: "Chukwu Emeka",

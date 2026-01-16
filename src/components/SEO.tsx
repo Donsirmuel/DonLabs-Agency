@@ -47,9 +47,9 @@ const ensureStructuredData = (data: object | null) => {
 };
 
 const SEO = ({ 
-  title = "DonLabs — Innovate your Digital Experience",
-  description = "DonLabs is a web development agency building modern websites, e-commerce platforms, and web applications for businesses. We focus on design, performance and measurable results.",
-  keywords = "DonLabs, web agency, web development, Django, React, e-commerce, digital agency",
+  title = "Best Web Developer in Nigeria | DonLabs",
+  description = "DonLabs is a top Nigeria-based web developer delivering high-performance business websites, e-commerce stores, and web applications with Django and React.",
+  keywords = "web developer, best web developer in nigeria, nigeria web developer, software developer nigeria, web development agency, django developer, react developer, ecommerce developer",
   image = ASSETS.logo,
   url = typeof window !== 'undefined' ? window.location.href : '/',
   canonical,

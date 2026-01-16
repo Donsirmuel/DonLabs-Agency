@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <main className="min-h-screen bg-background pt-20">
       <SEO 
-        title="DonLabs — Innovate your Digital Experience"
+        title="DonLabs - Custom Web Development & Digital Solutions"
         description="DonLabs is a web development agency building modern websites and web apps. We focus on design, performance, and measurable results for businesses."
         keywords="DonLabs, web agency, web development, Django, React, e-commerce, digital agency"
   // canonical will default to the current runtime URL
@@ -24,7 +24,7 @@ const Home = () => {
           "mainEntity": {
             "@type": "Organization",
             "name": "DonLabs",
-            "description": "DonLabs — web development agency",
+            "description": "DonLabs - web development agency",
             "url": "/",
             "sameAs": [
               "https://github.com/Donsirmuel",
