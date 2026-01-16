@@ -114,9 +114,14 @@
   }
 
   body {
-    @apply bg-background text-foreground font-['Inter'] transition-colors duration-300;
+    @apply bg-background text-foreground font-['Inter'] transition-colors duration-300 overflow-x-hidden;
     font-size: 16px;
     line-height: 1.6;
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
   }
   
   /* Professional typography scale */
@@ -141,7 +146,7 @@
   
   /* Better spacing utilities */
   .section-spacing {
-    @apply py-16 md:py-24 lg:py-32;
+    @apply py-12 md:py-20 lg:py-28;
   }
   
   .container-padding {

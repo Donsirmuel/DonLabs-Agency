@@ -55,7 +55,7 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {services.map((service: any, index: number) => (
-            <Card key={index} className={`relative shadow-card hover:shadow-hover transition-all duration-300 ${service.popular ? 'border-primary ring-2 ring-primary/20' : ''}`}>
+            <Card key={index} className={`relative shadow-card hover:shadow-hover transition-all duration-300 min-w-0 ${service.popular ? 'border-primary ring-2 ring-primary/20' : ''}`}>
               {service.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                   <Badge className="bg-primary text-primary-foreground px-4 py-1">Most Popular</Badge>
@@ -64,11 +64,11 @@ const Services = () => {
               
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-3 bg-primary/10 rounded-lg text-primary">
+                  <div className="p-3 bg-primary/10 rounded-lg text-primary flex-shrink-0">
                     {getServiceIcon(service.title)}
                   </div>
-                  <div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                  <div className="min-w-0 flex-1">
+                    <CardTitle className="text-xl break-words leading-tight">{service.title}</CardTitle>
                     {service.recommendedPackage && (
                       <div className="text-sm text-muted-foreground mt-1">Recommended package: <strong>{service.recommendedPackage}</strong></div>
                     )}
@@ -87,9 +87,9 @@ const Services = () => {
                   ))}
                 </ul>
                 
-                <div className="flex gap-3">
+                <div className="flex gap-3 flex-wrap">
                   <Button 
-                    className="flex-1 bg-primary hover:bg-primary-hover text-primary-foreground"
+                    className="flex-1 min-w-[120px] bg-primary hover:bg-primary-hover text-primary-foreground"
                     onClick={() => {
                       const pkg = service.recommendedPackage ? `Recommended package: ${service.recommendedPackage}. ` : '';
                       const msg = `Hi DonLabs, I'm interested in your ${service.title} service. ${pkg}Please send pricing and next steps.`;
@@ -101,7 +101,7 @@ const Services = () => {
 
                   <Button 
                     variant="outline"
-                    className="flex-1 border-primary text-primary hover:bg-primary/5"
+                    className="flex-1 min-w-[120px] border-primary text-primary hover:bg-primary/5"
                     onClick={() => {
                       // Scroll to How it works / FAQ section
                       document.getElementById('how-we-work')?.scrollIntoView({ behavior: 'smooth' });

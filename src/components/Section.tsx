@@ -14,8 +14,7 @@ type SectionProps = React.PropsWithChildren<{
 const ANIMATIONS = [
   'animate-fade-in-up',
   'animate-slide-up',
-  'animate-float',
-  'animate-glow'
+  'animate-float'
 ];
 
 const Section = ({ children, className = '', animationClass, once = true, delay = 0, as = 'section', ...rest }: SectionProps) => {

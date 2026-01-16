@@ -14,6 +14,7 @@ import SEO from "./components/SEO";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
       <SEO />
       <Toaster />
       <Sonner />
+      <ScrollToTop />
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />

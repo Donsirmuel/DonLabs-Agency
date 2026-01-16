@@ -64,7 +64,7 @@ const Navigation = () => {
                     <Menu className="h-5 w-5" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <SheetContent side="right" className="w-[90vw] max-w-sm sm:max-w-md">
                   <div className="flex flex-col space-y-4 mt-8">
                     <button onClick={() => goto('/')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">Home</button>
                     <button onClick={() => goto('/about')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">About</button>

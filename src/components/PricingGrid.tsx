@@ -29,12 +29,12 @@ const PricingGrid = () => {
           {packages.map((p, index) => (
             <Card 
               key={p.id} 
-              className={`flex flex-col hover-lift ${p.popular ? 'ring-2 ring-primary shadow-premium' : 'shadow-card'}`}
+              className={`flex flex-col hover-lift min-w-0 ${p.popular ? 'ring-2 ring-primary shadow-premium' : 'shadow-card'}`}
             >
               <CardHeader className="p-6 pb-4">
                 <div className="space-y-3">
-                  <div className="flex items-start justify-between gap-4">
-                    <CardTitle className="text-2xl flex-1">{p.name}</CardTitle>
+                  <div className="flex items-start justify-between gap-4 flex-wrap">
+                    <CardTitle className="text-2xl flex-1 min-w-0 break-words leading-tight">{p.name}</CardTitle>
                     {p.popular && (
                       <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-full whitespace-nowrap">
                         Popular
@@ -65,7 +65,7 @@ const PricingGrid = () => {
                 <Button 
                   size="lg" 
                   variant={p.popular ? "hero" : "default"}
-                  className="w-full" 
+                  className="w-full whitespace-normal break-words text-sm md:text-base leading-snug px-4 py-3"
                   onClick={() => window.open('https://wa.me/2349031386928?text=Hi%20DonLabs!%20I%20am%20interested%20in%20the%20' + encodeURIComponent(p.name) + '%20package.', '_blank')}
                 >
                   Get Quote • {p.price}
