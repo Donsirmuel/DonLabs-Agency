@@ -73,7 +73,7 @@ const About = () => {
           </div>
 
           <div className="flex flex-wrap gap-4 mb-8">
-            <Button variant="hero" onClick={() => window.open('https://wa.me/2349031386928?text=Hi%20DonLabs!%20I%20would%20like%20to%20discuss%20working%20together.', '_blank')}>Let's Work Together</Button>
+            <Button variant="hero" onClick={() => navigate('/contact')}>Let's work together</Button>
             <Button onClick={() => navigate('/services')}>View Services</Button>
             <Button variant="outline" onClick={() => navigate('/projects')}>See Projects</Button>
           </div>

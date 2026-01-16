@@ -53,21 +53,21 @@ const Hero = () => {
 
   return (
     <section
-      className="min-h-screen w-screen flex items-center px-4 relative overflow-hidden"
+      className="min-h-screen w-screen flex items-center relative overflow-hidden"
       aria-label="Hero section introducing DonLabs"
         itemScope
         itemType="https://schema.org/Organization"
     >
       <Section
         as="section"
-        className="relative overflow-hidden bg-gradient-to-tr from-primary/10 via-transparent to-transparent min-h-screen w-screen flex items-center"
+        className="relative overflow-hidden min-h-screen w-screen flex items-center"
         aria-labelledby="home-heading"
       >
         {/* Background: desktop uses an autoplaying, muted video when allowed; mobile shows an <img> for better performance or respects reduced-motion */}
         {!prefersReducedMotion ? (
           <video
             ref={videoRef}
-            className="absolute left-0 top-0 w-screen h-screen object-cover hidden lg:block"
+            className="absolute left-0 top-0 w-screen h-screen object-cover object-center hidden lg:block"
             autoPlay
             muted
             loop
@@ -88,16 +88,16 @@ const Hero = () => {
             {ASSETS.heroVideo && <source src={ASSETS.heroVideo} type="video/mp4" />}
           </video>
         ) : (
-          <img src={ASSETS.heroPosterDesktop} alt="Hero background" className="absolute inset-0 w-full h-full object-cover hidden lg:block" aria-hidden />
+          <img src={ASSETS.heroPosterDesktop} alt="Hero background" className="absolute inset-0 w-full h-full object-cover object-center hidden lg:block" aria-hidden />
         )}
-        <img src={ASSETS.heroPosterMobile} alt="Hero background" className="absolute inset-0 w-full h-full object-cover object-top sm:object-center lg:hidden" aria-hidden />
+        <img src={ASSETS.heroPosterMobile} alt="Hero background" className="absolute inset-0 w-full h-full object-cover object-center lg:hidden" aria-hidden />
         {/* Dark overlay to improve text contrast against busy images */}
         <div className="absolute inset-0 bg-black/50 lg:bg-black/40" aria-hidden />
         {/* Decorative SVG removed to avoid right-side tint/gap on desktop */}
 
         
 
-      <div className="max-w-6xl mx-auto w-full relative z-10 py-20 lg:py-0 min-h-screen flex items-center">
+      <div className="max-w-6xl mx-auto w-full relative z-10 py-20 lg:py-0 min-h-screen flex items-center px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-left">
               <div className="mb-8 inline-flex items-center gap-3 text-sm font-semibold px-5 py-2.5 rounded-full bg-primary/10 backdrop-blur-sm text-primary border border-primary/20 animate-fade-in">
@@ -107,11 +107,12 @@ const Hero = () => {
 
             <h1 id="home-heading" className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-[1.1] mb-6 text-white hero-text-shadow">
               <span className="block mb-2">Build Websites That</span>
-              <span className="block bg-gradient-to-r from-primary via-primary-glow to-cyan-400 bg-clip-text text-transparent animate-slide-up">Convert & Scale</span>
+              <span className="block bg-gradient-to-r from-primary via-primary-glow to-blue-400 bg-clip-text text-transparent animate-slide-up">Convert & Scale</span>
             </h1>
 
             <p className="text-xl text-white/90 max-w-2xl mb-10 leading-relaxed hero-text-shadow">
-              DonLabs — a web development agency crafting <strong className="text-white font-semibold">high-performance digital experiences</strong> for businesses. From landing pages to complex e-commerce systems.
+              DonLabs — a web development agency crafting <strong className="text-white font-semibold">high-performance digital experiences</strong> for businesses.
+              <span className="block mt-2">From landing pages to complex e-commerce systems. Utilising latest technologies, we elevate your personal and business presence digitally, bringing you to the forefront of your niche.</span>
             </p>
 
             <div className="flex flex-wrap gap-4 mb-10">

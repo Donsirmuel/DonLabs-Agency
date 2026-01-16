@@ -47,7 +47,7 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 14;
+const CONTENT_VERSION = 16;
 
 export const defaultContent: SiteContent = {
   about: {
@@ -66,7 +66,7 @@ export const defaultContent: SiteContent = {
         "Performance optimizations for fast time-to-interactive",
         "Responsive layout and accessible components"
       ],
-      githubUrl: "https://github.com/Donsirmuel/DevBlog-A-Developer-Blog",
+      githubUrl: "#",
       liveUrl: "https://donsirmuel.github.io/DevBlog-A-Developer-Blog/",
       imageUrl: ASSETS.devblogScreenshot,
       hasLive: true,
@@ -124,6 +124,23 @@ export const defaultContent: SiteContent = {
       hasLive: true,
       projectType: "Business Website",
       clientBenefit: "Professional online presence enabling client bookings and service discovery for a premium salon"
+    }
+    ,
+    {
+      title: "Vendora",
+      description: "A marketplace-style e-commerce experience focused on fast discovery and reliable checkout for multi-vendor catalogs.",
+      features: [
+        "Multi-vendor product listings with search and filtering",
+        "Secure checkout with payment gateway integration",
+        "Responsive UX tuned for mobile shoppers",
+        "Admin workflows for vendors and order management"
+      ],
+      githubUrl: "#",
+      liveUrl: "https://vendora.page",
+      imageUrl: ASSETS.vendoraScreenshot,
+      hasLive: true,
+      projectType: "Marketplace",
+      clientBenefit: "Increased vendor reach and smoother buyer journeys through optimized browsing and checkout"
     }
   ],
   services: [
