@@ -47,7 +47,7 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 16;
+const CONTENT_VERSION = 17;
 
 export const defaultContent: SiteContent = {
   about: {
