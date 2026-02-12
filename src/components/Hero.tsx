@@ -62,8 +62,8 @@ const Hero = () => {
       >
         {/* Background: responsive imagery optimized for LCP */}
         <picture className="absolute inset-0 w-full h-full">
-          <source media="(min-width: 1024px)" srcSet={`${ASSETS.hero}?w=1920 1920w, ${ASSETS.hero}?w=1024 1024w`} sizes="100vw" />
-          <source media="(max-width: 1023px)" srcSet={`${ASSETS.heroMobile}?w=640 640w`} sizes="100vw" />
+          <source media="(min-width: 1024px)" srcSet={`${ASSETS.heroPosterDesktop}?w=1920 1920w, ${ASSETS.heroPosterDesktop}?w=1024 1024w`} sizes="100vw" />
+          <source media="(max-width: 1023px)" srcSet={`${ASSETS.heroPosterMobile}?w=640 640w`} sizes="100vw" />
           <img 
             src={ASSETS.heroPosterDesktop} 
             alt="Hero background" 
