@@ -1,3 +1,4 @@
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Code2, Database, Server } from "lucide-react";
 import { ASSETS } from "@/lib/assets";
@@ -6,6 +7,47 @@ import Section from '@/components/Section';
 
 const Hero = () => {
   const navigate = useNavigate();
+
+  const typewriterText = useMemo(() => {
+    const line1Prefix = "DonLabs is a web and software development agency building ";
+    const line1Bold = "fast, secure and scalable";
+    const line1Suffix = " digital solutions for modern businesses.";
+    const line2 = "From high-converting landing pages to complex e-commerce systems, We help brands grow online with confidence.";
+    return { line1Prefix, line1Bold, line1Suffix, line2 };
+  }, []);
+
+  const totalTypeLength = useMemo(() => {
+    return (
+      typewriterText.line1Prefix.length +
+      typewriterText.line1Bold.length +
+      typewriterText.line1Suffix.length +
+      typewriterText.line2.length
+    );
+  }, [typewriterText]);
+
+  const [typedCount, setTypedCount] = useState(0);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    setTypedCount(0);
+    const speed = 28; // ms per character
+    const interval = window.setInterval(() => {
+      setTypedCount((prev) => {
+        if (prev >= totalTypeLength) {
+          window.clearInterval(interval);
+          return prev;
+        }
+        return prev + 1;
+      });
+    }, speed);
+
+    return () => window.clearInterval(interval);
+  }, [totalTypeLength]);
+
+  const getVisibleText = (text: string, count: number) => {
+    if (count <= 0) return "";
+    return text.slice(0, Math.min(text.length, count));
+  };
   return (
     <section
       className="min-h-screen w-full flex items-center relative overflow-hidden"
@@ -22,7 +64,7 @@ const Hero = () => {
         <img src={ASSETS.heroPosterDesktop} alt="Hero background" className="absolute inset-0 w-full h-full object-cover object-center hidden lg:block" aria-hidden />
         <img src={ASSETS.heroPosterMobile} alt="Hero background" className="absolute inset-0 w-full h-full object-cover object-center lg:hidden" aria-hidden />
         {/* Dark overlay to improve text contrast against busy images */}
-        <div className="absolute inset-0 bg-black/50 lg:bg-black/40" aria-hidden />
+        <div className="absolute inset-0 bg-black/65 lg:bg-black/55" aria-hidden />
         {/* Decorative SVG removed to avoid right-side tint/gap on desktop */}
 
 
@@ -36,13 +78,32 @@ const Hero = () => {
             </div>
 
             <h1 id="home-heading" className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-[1.1] mb-6 text-white hero-text-shadow">
-              <span className="block mb-2">Build Websites That</span>
-              <span className="block bg-gradient-to-r from-primary via-primary-glow to-blue-400 bg-clip-text text-transparent animate-slide-up">Convert & Scale</span>
+              <span className="block mb-2">Websites That Convert</span>
+              <span className="block bg-gradient-to-r from-white/95 via-white/80 to-blue-300 bg-clip-text text-transparent animate-slide-up">and Scale With You</span>
             </h1>
 
             <p className="text-xl text-white/90 max-w-2xl mb-10 leading-relaxed hero-text-shadow">
-              DonLabs - a web development agency crafting <strong className="text-white font-semibold">high-performance digital experiences</strong> for businesses.
-              <span className="block mt-2">From landing pages to complex e-commerce systems, We Utilise latest technologies to elevate your personal and business presence digitally, bringing you to the forefront of your niche.</span>
+              <span className="hero-typewriter" aria-label={`${typewriterText.line1Prefix}${typewriterText.line1Bold}${typewriterText.line1Suffix} ${typewriterText.line2}`} role="text">
+                {(() => {
+                  let remaining = typedCount;
+                  const line1PrefixVisible = getVisibleText(typewriterText.line1Prefix, remaining);
+                  remaining -= typewriterText.line1Prefix.length;
+                  const line1BoldVisible = getVisibleText(typewriterText.line1Bold, remaining);
+                  remaining -= typewriterText.line1Bold.length;
+                  const line1SuffixVisible = getVisibleText(typewriterText.line1Suffix, remaining);
+                  remaining -= typewriterText.line1Suffix.length;
+                  const line2Visible = getVisibleText(typewriterText.line2, remaining);
+
+                  return (
+                    <>
+                      {line1PrefixVisible}
+                      <strong className="text-white font-semibold">{line1BoldVisible}</strong>
+                      {line1SuffixVisible}
+                      <span className="block mt-2">{line2Visible}</span>
+                    </>
+                  );
+                })()}
+              </span>
             </p>
 
             <div className="flex flex-wrap gap-4 mb-10">
