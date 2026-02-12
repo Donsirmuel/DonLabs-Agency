@@ -103,7 +103,7 @@ export default function ProjectDetailModal({ project }: { project: Project }) {
 
             <div className="flex gap-2 mt-4">
               {project.githubUrl && project.githubUrl !== '#' ? (
-                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer nofollow" className="flex-1">
                   <Button variant="outline" size="sm" className="w-full">
                     <Github className="h-4 w-4 mr-1" />
                     View code
@@ -117,7 +117,7 @@ export default function ProjectDetailModal({ project }: { project: Project }) {
               )}
 
               {project.liveUrl && project.liveUrl !== '#' ? (
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer nofollow" className="flex-1">
                   <Button size="sm" className="w-full bg-primary hover:bg-primary-hover text-primary-foreground">
                     <ExternalLink className="h-4 w-4 mr-1" />
                     Open live

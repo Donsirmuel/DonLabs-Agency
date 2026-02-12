@@ -60,9 +60,19 @@ const Hero = () => {
         className="relative overflow-hidden min-h-screen w-full flex items-center"
         aria-labelledby="home-heading"
       >
-        {/* Background: static imagery for all breakpoints */}
-        <img src={ASSETS.heroPosterDesktop} alt="Hero background" className="absolute inset-0 w-full h-full object-cover object-center hidden lg:block" aria-hidden />
-        <img src={ASSETS.heroPosterMobile} alt="Hero background" className="absolute inset-0 w-full h-full object-cover object-center lg:hidden" aria-hidden />
+        {/* Background: responsive imagery optimized for LCP */}
+        <picture className="absolute inset-0 w-full h-full">
+          <source media="(min-width: 1024px)" srcSet={`${ASSETS.hero}?w=1920 1920w, ${ASSETS.hero}?w=1024 1024w`} sizes="100vw" />
+          <source media="(max-width: 1023px)" srcSet={`${ASSETS.heroMobile}?w=640 640w`} sizes="100vw" />
+          <img 
+            src={ASSETS.heroPosterDesktop} 
+            alt="Hero background" 
+            className="absolute inset-0 w-full h-full object-cover object-center" 
+            fetchPriority="high"
+            loading="eager"
+            aria-hidden 
+          />
+        </picture>
         {/* Dark overlay to improve text contrast against busy images */}
         <div className="absolute inset-0 bg-black/65 lg:bg-black/55" aria-hidden />
         {/* Decorative SVG removed to avoid right-side tint/gap on desktop */}

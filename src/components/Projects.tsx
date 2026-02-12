@@ -67,7 +67,7 @@ const ProjectMedia = ({ title, liveUrl, hasLive, imageUrl }: ProjectMediaProps) 
             />
             <div className="mt-2 text-center">
               {liveUrl && (
-                <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded">
+                <a href={liveUrl} target="_blank" rel="noopener noreferrer nofollow" className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded">
                   Open live site
                 </a>
               )}
@@ -143,7 +143,7 @@ const Projects = () => {
                   
                   <div className="flex gap-2 pt-3">
                     {project.githubUrl && project.githubUrl !== '#' ? (
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer nofollow" className="flex-1">
                         <Button 
                           variant="outline" 
                           size="sm"
@@ -166,7 +166,7 @@ const Projects = () => {
                     )}
 
                     {project.hasLive && project.liveUrl && project.liveUrl !== '#' ? (
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer nofollow" className="flex-1">
                         <Button 
                           size="sm"
                           className="w-full bg-primary hover:bg-primary-hover text-primary-foreground hover-lift"
