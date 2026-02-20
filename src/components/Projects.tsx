@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Database, Image as ImageIcon } from "lucide-react";
 import { ASSETS } from "@/lib/assets";
 import { useContent } from '@/lib/ContentProvider';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
 import ProjectDetailModal from '@/components/ProjectDetailModal';
 import Section from '@/components/Section';
@@ -18,6 +18,19 @@ type ProjectMediaProps = {
 const ProjectMedia = ({ title, liveUrl, hasLive, imageUrl }: ProjectMediaProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [isOpen]);
+
   // Derive responsive sources by naming convention: name-640.png, name-1024.png, name-1920.png
   const src640 = imageUrl ? imageUrl.replace(/(\.png|\.jpg|\.jpeg)$/, '-640$1') : undefined;
   const src1024 = imageUrl ? imageUrl.replace(/(\.png|\.jpg|\.jpeg)$/, '-1024$1') : undefined;
@@ -30,7 +43,7 @@ const ProjectMedia = ({ title, liveUrl, hasLive, imageUrl }: ProjectMediaProps) 
 
   return (
     <>
-      <button onClick={open} className="block w-full h-full p-0 m-0">
+      <button onClick={open} className="block w-full h-full p-0 m-0 cursor-zoom-in" aria-label={`Expand screenshot for ${title}`}>
         <img
           src={imageUrl}
           srcSet={`${src640 ? src640 + ' 640w,' : ''}${src1024 ? src1024 + ' 1024w,' : ''}${src1920 ? src1920 + ' 1920w' : ''}`}
@@ -50,7 +63,12 @@ const ProjectMedia = ({ title, liveUrl, hasLive, imageUrl }: ProjectMediaProps) 
 
       {/* Lightbox modal */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70" role="dialog" aria-modal="true">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setIsOpen(false)}
+        >
           <button
             className="absolute top-4 right-4 p-2 rounded-full bg-black/50 hover:bg-black/60 text-white"
             onClick={() => setIsOpen(false)}
@@ -59,7 +77,7 @@ const ProjectMedia = ({ title, liveUrl, hasLive, imageUrl }: ProjectMediaProps) 
             <X className="w-6 h-6" />
           </button>
 
-          <div className="max-w-[90vw] max-h-[90vh] overflow-auto p-4">
+          <div className="max-w-[90vw] max-h-[90vh] overflow-auto p-4" onClick={(event) => event.stopPropagation()}>
             <img
               src={src1920 || src1024 || src640 || imageUrl}
               alt={`${title} - full preview`}
@@ -109,7 +127,7 @@ const Projects = () => {
                   imageUrl={project.imageUrl}
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               
               <CardHeader className="pb-3">

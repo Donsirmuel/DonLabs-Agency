@@ -47,7 +47,7 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 17;
+const CONTENT_VERSION = 18;
 
 export const defaultContent: SiteContent = {
   about: {
@@ -67,7 +67,7 @@ export const defaultContent: SiteContent = {
         "Responsive layout and accessible components"
       ],
       githubUrl: "#",
-      liveUrl: "https://donsirmuel.github.io/DevBlog-A-Developer-Blog/",
+      liveUrl: "https://Devblog.com.ng",
       imageUrl: ASSETS.devblogScreenshot,
       hasLive: true,
       projectType: "Content Management",
