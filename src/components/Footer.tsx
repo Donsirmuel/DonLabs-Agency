@@ -15,7 +15,7 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-4">
               <img src={ASSETS.logo} alt="DonLabs Logo" className="h-12 w-12 rounded-lg object-cover shadow-sm" />
               <div>
-                <div className="font-bold text-lg">DonLabs</div>
+                <div className="font-brand font-bold text-lg">DonLabs</div>
                 <div className="text-sm text-muted-foreground">Web Development Agency</div>
               </div>
             </div>
@@ -110,9 +110,6 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-border py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
           <p>© {currentYear} DonLabs. All rights reserved.</p>
-          <p className="text-center sm:text-right">
-            Built with React, TypeScript & Tailwind CSS
-          </p>
         </div>
       </div>
     </footer>

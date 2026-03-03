@@ -26,7 +26,7 @@ const Navigation = () => {
               alt="DonLabs Logo" 
               className="h-10 w-10 rounded-lg object-cover"
             />
-            <span className="font-bold text-lg">DonLabs</span>
+            <span className="font-brand font-bold text-lg">DonLabs</span>
           </div>
           
           <div className="hidden lg:flex items-center space-x-8">
