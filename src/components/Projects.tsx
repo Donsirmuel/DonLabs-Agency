@@ -4,10 +4,10 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Database, Image as ImageIcon } from "lucide-react";
 import { ASSETS } from "@/lib/assets";
 import { useContent } from '@/lib/ContentProvider';
-import { useEffect, useState } from 'react';
-import { X } from 'lucide-react';
+import { useState } from 'react';
 import ProjectDetailModal from '@/components/ProjectDetailModal';
 import Section from '@/components/Section';
+import ImageLightbox from '@/components/ImageLightbox';
 
 type ProjectMediaProps = {
   title: string;
@@ -17,19 +17,6 @@ type ProjectMediaProps = {
 };
 const ProjectMedia = ({ title, liveUrl, hasLive, imageUrl }: ProjectMediaProps) => {
   const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setIsOpen(false);
-      }
-    };
-
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [isOpen]);
 
   // Derive responsive sources by naming convention: name-640.png, name-1024.png, name-1920.png
   const src640 = imageUrl ? imageUrl.replace(/(\.png|\.jpg|\.jpeg)$/, '-640$1') : undefined;
@@ -61,38 +48,12 @@ const ProjectMedia = ({ title, liveUrl, hasLive, imageUrl }: ProjectMediaProps) 
         </Badge>
       </div>
 
-      {/* Lightbox modal */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
-          role="dialog"
-          aria-modal="true"
-          onClick={() => setIsOpen(false)}
-        >
-          <button
-            className="absolute top-4 right-4 p-2 rounded-full bg-black/50 hover:bg-black/60 text-white"
-            onClick={() => setIsOpen(false)}
-            aria-label="Close preview"
-          >
-            <X className="w-6 h-6" />
-          </button>
-
-          <div className="max-w-[90vw] max-h-[90vh] overflow-auto p-4" onClick={(event) => event.stopPropagation()}>
-            <img
-              src={src1920 || src1024 || src640 || imageUrl}
-              alt={`${title} - full preview`}
-              className="max-w-full max-h-[80vh] rounded shadow-lg"
-            />
-            <div className="mt-2 text-center">
-              {liveUrl && (
-                <a href={liveUrl} target="_blank" rel="noopener noreferrer nofollow" className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded">
-                  Open live site
-                </a>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+      <ImageLightbox
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        imageSrc={src1920 || src1024 || src640 || imageUrl}
+        imageAlt={`${title} - full preview`}
+      />
     </>
   );
 };
