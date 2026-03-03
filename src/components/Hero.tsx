@@ -1,4 +1,3 @@
-import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Code2, Database, Server } from "lucide-react";
 import { ASSETS } from "@/lib/assets";
@@ -8,46 +7,6 @@ import Section from '@/components/Section';
 const Hero = () => {
   const navigate = useNavigate();
 
-  const typewriterText = useMemo(() => {
-    const line1Prefix = "DonLabs is a web and software development agency building ";
-    const line1Bold = "fast, secure and scalable";
-    const line1Suffix = " digital solutions for modern businesses.";
-    const line2 = "From high-converting landing pages to complex e-commerce systems, We help brands grow online with confidence.";
-    return { line1Prefix, line1Bold, line1Suffix, line2 };
-  }, []);
-
-  const totalTypeLength = useMemo(() => {
-    return (
-      typewriterText.line1Prefix.length +
-      typewriterText.line1Bold.length +
-      typewriterText.line1Suffix.length +
-      typewriterText.line2.length
-    );
-  }, [typewriterText]);
-
-  const [typedCount, setTypedCount] = useState(0);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    setTypedCount(0);
-    const speed = 28; // ms per character
-    const interval = window.setInterval(() => {
-      setTypedCount((prev) => {
-        if (prev >= totalTypeLength) {
-          window.clearInterval(interval);
-          return prev;
-        }
-        return prev + 1;
-      });
-    }, speed);
-
-    return () => window.clearInterval(interval);
-  }, [totalTypeLength]);
-
-  const getVisibleText = (text: string, count: number) => {
-    if (count <= 0) return "";
-    return text.slice(0, Math.min(text.length, count));
-  };
   return (
     <section
       className="min-h-screen w-full flex items-center relative overflow-hidden"
@@ -93,26 +52,9 @@ const Hero = () => {
             </h1>
 
             <p className="text-xl text-white/90 max-w-2xl mb-10 leading-relaxed hero-text-shadow">
-              <span className="hero-typewriter" aria-label={`${typewriterText.line1Prefix}${typewriterText.line1Bold}${typewriterText.line1Suffix} ${typewriterText.line2}`} role="text">
-                {(() => {
-                  let remaining = typedCount;
-                  const line1PrefixVisible = getVisibleText(typewriterText.line1Prefix, remaining);
-                  remaining -= typewriterText.line1Prefix.length;
-                  const line1BoldVisible = getVisibleText(typewriterText.line1Bold, remaining);
-                  remaining -= typewriterText.line1Bold.length;
-                  const line1SuffixVisible = getVisibleText(typewriterText.line1Suffix, remaining);
-                  remaining -= typewriterText.line1Suffix.length;
-                  const line2Visible = getVisibleText(typewriterText.line2, remaining);
-
-                  return (
-                    <>
-                      {line1PrefixVisible}
-                      <strong className="text-white font-semibold">{line1BoldVisible}</strong>
-                      {line1SuffixVisible}
-                      <span className="block mt-2">{line2Visible}</span>
-                    </>
-                  );
-                })()}
+              <span role="text" aria-label="DonLabs is a web and software development agency building fast, secure and scalable digital solutions for modern businesses. From high-converting landing pages to complex e-commerce systems, we help brands grow online with confidence.">
+                DonLabs is a web and software development agency building <strong className="text-white font-semibold">fast, secure and scalable</strong> digital solutions for modern businesses.
+                <span className="block mt-2">From high-converting landing pages to complex e-commerce systems, we help brands grow online with confidence.</span>
               </span>
             </p>
 
