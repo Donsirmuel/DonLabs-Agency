@@ -50,7 +50,7 @@ const SEO = ({
   title = "Best Web Developer in Nigeria | DonLabs",
   description = "DonLabs is a top Nigeria-based web developer delivering high-performance business websites, e-commerce stores, and web applications with Django and React.",
   keywords = "web developer, best web developer in nigeria, nigeria web developer, software developer nigeria, web development agency, django developer, react developer, ecommerce developer",
-  image = ASSETS.logo,
+  image = ASSETS.ogDefault,
   url = typeof window !== 'undefined' ? window.location.href : '/',
   canonical,
   structuredData = null

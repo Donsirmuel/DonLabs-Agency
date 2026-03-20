@@ -38,6 +38,7 @@ export const ASSETS = {
   placeholder: getAssetPath('placeholder.svg'),
   favicon: getAssetPath('favicon.png'),
   logo: getAssetPath('logo-full.png'),
+  ogDefault: getAssetPath('og/Donlabs-OG.png'),
   // New brand assets added from uploaded media
   logoIcon: getAssetPath('logo-icon.png'),
   logoFull: getAssetPath('logo-full.png'),
