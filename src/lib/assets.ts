@@ -26,7 +26,8 @@ export const getAssetPath = (path: string): string => {
   const useRepoPrefix = isGitHubPagesBuild || isGitHubPagesRuntime();
 
   const fullPath = useRepoPrefix ? `/My-Portfolio/${cleanPath}` : `/${cleanPath}`;
-  return `${fullPath}${CACHE_BUST}`;
+  const encodedPath = encodeURI(fullPath);
+  return `${encodedPath}${CACHE_BUST}`;
 };
 
 // Pre-configured asset paths
@@ -54,6 +55,9 @@ export const ASSETS = {
   shindaraScreenshot: getAssetPath('shindara-screenshot.png'),
   bubbaliciousScreenshot: getAssetPath('bubbalicious-screenshot.png'),
   vendoraScreenshot: getAssetPath('vendora-screenshot.png'),
+  businessWebsite: getAssetPath('business website.png'),
+  dataVisualization: getAssetPath('data visualization.png'),
+  codeScreenshot: getAssetPath('code screenshot.png'),
   // Hero background images - place copies in public/ as hero.jpg and hero-mobile.jpg
   hero: getAssetPath('hero.jpg'),
   // use generated 640px mobile-friendly variant when available

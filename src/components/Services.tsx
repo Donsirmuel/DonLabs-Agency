@@ -1,192 +1,180 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Globe, ShoppingCart, Smartphone, Code, Zap, Shield } from "lucide-react";
-import CustomQuoteModal from "@/components/CustomQuoteModal";
-import Section from '@/components/Section';
-import { useContent } from '@/lib/ContentProvider';
-import { defaultContent } from '@/lib/contentStore';
-import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
+import { ArrowRight, Gauge, ShieldCheck, Sparkles, Zap } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import Section from "@/components/Section";
+import { ASSETS } from "@/lib/assets";
+
+const capabilities = [
+  {
+    title: "Business Websites",
+    description:
+      "Professional websites built to help people trust your brand quickly and contact you with confidence.",
+    points: [
+      "Clean page layouts",
+      "Fast loading pages",
+      "Easy content updates",
+    ],
+  },
+  {
+    title: "E-commerce",
+    description:
+      "Online stores designed to sell more with clear product pages, smooth checkout, and reliable order flow.",
+    points: ["Smooth checkout", "Fast product browsing", "Sales tracking", "Store integrations"],
+  },
+  {
+    title: "Custom Web Apps",
+    description:
+      "Custom tools for your team and customers, built to simplify daily work and support growth over time.",
+    points: ["Modern frontend", "Reliable backend", "Cloud hosting", "Live updates"],
+  },
+];
+
+const specialistCards = [
+  {
+    title: "Speed Review",
+    description: "We review your current site and show exactly where speed can be improved.",
+    icon: <Zap className="h-5 w-5" />,
+  },
+  {
+    title: "SEO Setup",
+    description: "We set up search visibility basics so customers can find your business online.",
+    icon: <Gauge className="h-5 w-5" />,
+  },
+  {
+    title: "Hardened Security",
+    description: "Practical security setup to protect your data and keep customer trust.",
+    icon: <ShieldCheck className="h-5 w-5" />,
+  },
+];
 
 const Services = () => {
-  // pull services from content provider so admin can update them
-  const { content } = useContent();
-  const services = Array.isArray(content?.services) ? content.services : [];
-
-  const whyChooseMe = [
-    {
-      title: "Business-first Approach",
-      icon: <Zap className="h-6 w-6" />,
-      description: "Partner with a development agency that prioritizes business outcomes and customer experience."
-    },
-    {
-      title: "Reliable & Professional",
-      icon: <Shield className="h-6 w-6" />,
-      description: "Clear communication, timely delivery, and ongoing support. Your project is in safe hands."
-    },
-    {
-      title: "Modern Technology",
-      icon: <Code className="h-6 w-6" />,
-      description: "Django (DRF) backends, React frontends, Node.js tooling, PostgreSQL databases and containerized deployments - built for reliability and scale."
-    }
-  ];
-
-  const getServiceIcon = (title: string) => {
-    const t = (title || '').toLowerCase();
-    if (t.includes('e‑commerce') || t.includes('e-commerce') || t.includes('commerce') || t.includes('store')) return <ShoppingCart className="h-6 w-6" />;
-    if (t.includes('business') || t.includes('website') || t.includes('websites')) return <Globe className="h-6 w-6" />;
-    if (t.includes('custom') || t.includes('app') || t.includes('application')) return <Code className="h-6 w-6" />;
-    if (t.includes('pwa') || t.includes('progressive') || t.includes('mobile') || t.includes('app-like')) return <Smartphone className="h-6 w-6" />;
-    return <Globe className="h-6 w-6" />;
-  };
+  const navigate = useNavigate();
 
   return (
-    <Section as="section" className="py-20 px-4 bg-background" id="services" aria-labelledby="services-heading">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 id="services-heading" className="text-4xl font-bold mb-4">Professional Services</h2>
-              <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-                We provide comprehensive web development services to help businesses establish a strong digital presence. 
-                From custom web applications to e-commerce platforms, we deliver <strong>scalable, secure, and performance-optimized solutions</strong> 
-                tailored to your specific business needs and growth objectives.
+    <Section as="section" className="border-y border-slate-800 bg-slate-950 px-4 py-16 sm:py-20" id="services" aria-labelledby="services-heading">
+      <div className="mx-auto max-w-6xl">
+        <header className="mb-14 max-w-4xl">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-200">
+            <Sparkles className="h-3.5 w-3.5" />
+            What We Offer
+          </div>
+          <h1 id="services-heading" className="mb-6 text-5xl font-extrabold leading-[1.04] text-slate-100 md:text-6xl">
+            Web Solutions for
+            <span className="block bg-gradient-to-r from-cyan-300 to-teal-300 bg-clip-text text-transparent">Growing Businesses.</span>
+          </h1>
+          <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
+            From business websites to custom web applications, we build practical digital products that are fast, scalable, and aligned with your goals.
           </p>
-        </div>
+        </header>
 
-        {/* Services Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          {services.map((service: any, index: number) => (
-            <Card key={index} className={`relative shadow-card hover:shadow-hover transition-all duration-300 min-w-0 ${service.popular ? 'border-primary ring-2 ring-primary/20' : ''}`}>
-              {service.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-primary text-primary-foreground px-4 py-1">Most Popular</Badge>
-                </div>
-              )}
-              
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-3 bg-primary/10 rounded-lg text-primary flex-shrink-0">
-                    {getServiceIcon(service.title)}
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <CardTitle className="text-xl break-words leading-tight">{service.title}</CardTitle>
-                    {service.recommendedPackage && (
-                      <div className="text-sm text-muted-foreground mt-1">Recommended package: <strong>{service.recommendedPackage}</strong></div>
-                    )}
-                  </div>
-                </div>
-                <CardDescription>{service.description}</CardDescription>
-              </CardHeader>
-              
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center gap-2 text-sm">
-                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      {feature}
+        <div className="space-y-6">
+          <article className="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900">
+            <div className="grid lg:grid-cols-2">
+              <div className="p-8">
+                <h2 className="mb-4 text-3xl font-semibold text-slate-100">{capabilities[0].title}</h2>
+                <p className="mb-6 text-slate-300">{capabilities[0].description}</p>
+                <ul className="space-y-3 text-sm text-slate-200">
+                  {capabilities[0].points.map((point) => (
+                    <li key={point} className="flex items-center gap-2">
+                      <span className="h-2 w-2 rounded-full bg-cyan-300" />
+                      {point}
                     </li>
                   ))}
                 </ul>
-                
-                <div className="flex gap-3 flex-wrap">
-                  <Button 
-                    className="flex-1 min-w-[120px] bg-primary hover:bg-primary-hover text-primary-foreground"
-                    onClick={() => {
-                      const pkg = service.recommendedPackage ? `Recommended package: ${service.recommendedPackage}. ` : '';
-                      const msg = `Hi DonLabs, I'm interested in your ${service.title} service. ${pkg}Please send pricing and next steps.`;
-                      window.open('https://wa.me/2349031386928?text=' + encodeURIComponent(msg), '_blank');
-                    }}
-                  >
-                    Get Quote
-                  </Button>
-
-                  <Button 
-                    variant="outline"
-                    className="flex-1 min-w-[120px] border-primary text-primary hover:bg-primary/5"
-                    onClick={() => {
-                      // Scroll to How it works / FAQ section
-                      document.getElementById('how-we-work')?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                  >
-                    Learn more
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* Why Choose Me Section */}
-        <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold mb-8">Why Businesses Choose DonLabs</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {whyChooseMe.map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
-                  <div className="text-primary">{item.icon}</div>
-                </div>
-                <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
-                <p className="text-muted-foreground text-sm">{item.description}</p>
+                <Button variant="hero" className="mt-8" onClick={() => navigate('/contact')}>
+                  Start a Project
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
               </div>
-            ))}
-          </div>
+
+              <div className="border-t border-slate-700 p-3 lg:border-l lg:border-t-0 bg-gradient-to-br from-slate-900 to-slate-950">
+                <img
+                  src={ASSETS.businessWebsite}
+                  alt="Business website project preview"
+                  className="h-full min-h-[300px] w-full rounded-xl object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </article>
+
+          <article className="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900">
+            <div className="grid lg:grid-cols-2">
+              <div className="p-8 order-2 lg:order-1">
+                <h2 className="mb-4 text-3xl font-semibold text-slate-100">{capabilities[1].title}</h2>
+                <p className="mb-6 text-slate-300">{capabilities[1].description}</p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {capabilities[1].points.map((point) => (
+                    <div key={point} className="rounded-lg border border-slate-800 bg-slate-950/80 px-3 py-2 text-sm text-slate-200">
+                      {point}
+                    </div>
+                  ))}
+                </div>
+                <Button variant="hero" className="mt-8" onClick={() => navigate('/contact')}>
+                  Start a Project
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </div>
+
+              <div className="order-1 lg:order-2 border-b border-slate-700 p-3 lg:border-b-0 lg:border-l bg-gradient-to-br from-slate-900 to-slate-950">
+                <img
+                  src={ASSETS.glitglam}
+                  alt="Glitglam e-commerce website preview"
+                  className="h-full min-h-[300px] w-full rounded-xl object-cover object-left"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </article>
+
+          <article className="rounded-2xl border border-slate-700 bg-slate-900 p-8">
+            <h2 className="mb-4 text-3xl font-semibold text-slate-100">{capabilities[2].title}</h2>
+            <p className="mb-6 max-w-3xl text-slate-300">{capabilities[2].description}</p>
+            <div className="mb-8 flex flex-wrap gap-3">
+              {capabilities[2].points.map((point) => (
+                <span key={point} className="rounded-md border border-slate-700 bg-slate-950/70 px-3 py-1.5 text-xs font-medium text-slate-200">
+                  {point}
+                </span>
+              ))}
+            </div>
+            <Button variant="hero" onClick={() => navigate('/contact')}>
+              Start a Project
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          </article>
         </div>
 
-        {/* Call to Action */}
-        <div className="bg-gradient-to-r from-primary/10 to-purple-500/10 rounded-lg p-8 text-center">
-          <h3 className="text-3xl font-bold mb-4">Ready to Start Your Project?</h3>
-          <p className="text-lg text-muted-foreground mb-6">
-              Let's discuss your project requirements and create a digital solution that helps your business grow and succeed online. 
-              We're committed to delivering high-quality work that meets your objectives and exceeds expectations.
+        <section className="mt-14 grid gap-5 md:grid-cols-3">
+          {specialistCards.map((card) => (
+            <article key={card.title} className="rounded-xl border border-slate-700 bg-slate-900/80 p-6">
+              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-cyan-300">
+                {card.icon}
+              </div>
+              <h3 className="mb-2 text-2xl font-semibold text-slate-100">{card.title}</h3>
+              <p className="text-sm leading-relaxed text-slate-300">{card.description}</p>
+            </article>
+          ))}
+        </section>
+
+        <section className="mt-16 rounded-2xl border border-cyan-300/20 bg-gradient-to-br from-slate-950 to-cyan-950/20 px-6 py-12 text-center sm:px-10">
+          <h2 className="mb-4 text-4xl font-bold text-slate-100">Ready to Start Your Project?</h2>
+          <p className="mx-auto mb-8 max-w-2xl text-slate-300">
+            Our team is currently accepting new projects. Let&apos;s discuss your goals and map the best way forward.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white font-medium"
-                    onClick={() => window.open('https://wa.me/2349031386928?text=Hi%20DonLabs!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you.', '_blank')}
-            >
-              Message on WhatsApp
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Button variant="hero" size="lg" onClick={() => navigate('/contact')}>
+              Book a Strategy Session
             </Button>
-            <Button 
+            <Button
               variant="outline"
               size="lg"
-              className="border-primary text-primary hover:bg-primary/5 font-medium"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="border-slate-600 bg-slate-900/70 text-slate-100 hover:bg-slate-800"
+              onClick={() => navigate('/')}
             >
-              Get Started
+              View Our Process
             </Button>
-            <CustomQuoteModal />
           </div>
-          <p className="text-sm text-muted-foreground mt-4">Note: Pricing, hosting, content creation, and third-party service fees (domain, paid plugins, payment gateway charges) are not included. We can advise and help procure these where needed.</p>
-        </div>
-
-        {/* How it works & FAQ */}
-        <div id="how-we-work" className="max-w-4xl mx-auto mt-12">
-          <h3 className="text-2xl font-semibold text-center mb-4">How we work</h3>
-          <div className="space-y-3 text-sm text-muted-foreground mb-8">
-            {((content?.servicesInfo?.howItWorks && content.servicesInfo.howItWorks.length > 0) ? content.servicesInfo.howItWorks : (defaultContent.servicesInfo?.howItWorks ?? [])).map((step: string, i: number) => (
-              <div key={i} className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center mt-1">{i+1}</div>
-                <div>{step}</div>
-              </div>
-            ))}
-          </div>
-
-          <h4 className="text-xl font-semibold mb-3">Frequently asked questions</h4>
-          <div className="space-y-2">
-            {((content?.servicesInfo?.faq && content.servicesInfo.faq.length > 0) ? content.servicesInfo.faq : (defaultContent.servicesInfo?.faq ?? [])).map((qa: any, idx: number) => (
-              <Collapsible key={idx}>
-                <div className="border rounded-md p-3">
-                  <CollapsibleTrigger asChild>
-                    <button className="w-full text-left font-medium">{qa.q}</button>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    <div className="mt-2 text-sm text-muted-foreground">{qa.a}</div>
-                  </CollapsibleContent>
-                </div>
-              </Collapsible>
-            ))}
-          </div>
-        </div>
+        </section>
       </div>
     </Section>
   );

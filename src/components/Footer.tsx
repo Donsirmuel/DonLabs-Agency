@@ -1,34 +1,30 @@
 import { ASSETS } from "@/lib/assets";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-card border-t border-border mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
-        <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Brand Section */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <img src={ASSETS.logo} alt="DonLabs Logo" className="h-12 w-12 rounded-lg object-cover shadow-sm" />
-              <div>
-                <div className="font-brand font-bold text-lg">DonLabs</div>
-                <div className="text-sm text-muted-foreground">Web Development Agency</div>
-              </div>
+    <footer className="mt-10 border-t border-slate-800 bg-slate-950">
+      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <div className="mb-4 flex items-center gap-3">
+              <img src={ASSETS.logo} alt="DonLabs Logo" className="h-10 w-10 rounded-lg object-cover" />
+              <div className="font-brand text-lg font-bold text-slate-100">DonLabs</div>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-md mb-6">
-              Building high-performance web solutions for businesses in Lagos and beyond. 
-              Specializing in Django, React, and modern full-stack development.
+            <p className="max-w-xs text-sm leading-relaxed text-slate-400">
+              We build high-performance websites and web apps for businesses that want reliable growth online.
             </p>
-            <div className="flex items-center gap-3">
+            <div className="mt-5 flex items-center gap-3">
               <a 
                 href="https://github.com/Donsirmuel" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="p-2.5 bg-muted hover:bg-primary hover:text-primary-foreground rounded-lg transition-all hover:scale-110"
+                className="rounded-lg border border-slate-700 bg-slate-900 p-2.5 text-slate-300 transition-all hover:border-cyan-300/50 hover:text-cyan-300"
                 aria-label="GitHub Profile"
               >
                 <Github className="h-5 w-5" />
@@ -37,7 +33,7 @@ const Footer = () => {
                 href="https://linkedin.com/in/samuel-olaonipekun" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="p-2.5 bg-muted hover:bg-primary hover:text-primary-foreground rounded-lg transition-all hover:scale-110"
+                className="rounded-lg border border-slate-700 bg-slate-900 p-2.5 text-slate-300 transition-all hover:border-cyan-300/50 hover:text-cyan-300"
                 aria-label="LinkedIn Profile"
               >
                 <Linkedin className="h-5 w-5" />
@@ -46,7 +42,7 @@ const Footer = () => {
                 href="https://twitter.com/_donsirmuel" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="p-2.5 bg-muted hover:bg-primary hover:text-primary-foreground rounded-lg transition-all hover:scale-110"
+                className="rounded-lg border border-slate-700 bg-slate-900 p-2.5 text-slate-300 transition-all hover:border-cyan-300/50 hover:text-cyan-300"
                 aria-label="Twitter Profile"
               >
                 <Twitter className="h-5 w-5" />
@@ -54,62 +50,59 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-base mb-4">Quick Links</h3>
+            <h3 className="mb-4 text-base font-semibold text-slate-100">Navigation</h3>
             <nav className="flex flex-col gap-2.5">
-              <Link to="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Home
-              </Link>
-              <Link to="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                About
-              </Link>
-              <Link to="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/services" className="text-sm text-slate-400 transition-colors hover:text-cyan-300">
                 Services
               </Link>
-              <Link to="/projects" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Portfolio
+              <Link to="/projects" className="text-sm text-slate-400 transition-colors hover:text-cyan-300">
+                Projects
               </Link>
-              <Link to="/pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Pricing
+              <Link to="/about" className="text-sm text-slate-400 transition-colors hover:text-cyan-300">
+                About
+              </Link>
+              <Link to="/contact" className="text-sm text-slate-400 transition-colors hover:text-cyan-300">
+                Contact
               </Link>
             </nav>
           </div>
 
-          {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-base mb-4">Get In Touch</h3>
+            <h3 className="mb-4 text-base font-semibold text-slate-100">Support</h3>
             <div className="flex flex-col gap-3 text-sm">
               <a 
                 href="https://wa.me/2349031386928" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-slate-400 transition-colors hover:text-cyan-300"
               >
-                WhatsApp: +234 903 138 6928
+                WhatsApp Support
               </a>
               <a 
                 href="mailto:samuelolaonipekun050@outlook.com" 
-                className="text-muted-foreground hover:text-primary transition-colors break-words"
+                className="break-words text-slate-400 transition-colors hover:text-cyan-300"
               >
                 samuelolaonipekun050@outlook.com
               </a>
-              <p className="text-muted-foreground">
+              <p className="text-slate-400">
                 Lagos, Nigeria
               </p>
-              <Link 
-                to="/contact" 
-                className="inline-flex items-center gap-2 text-primary hover:underline font-medium mt-2"
-              >
-                Contact →
-              </Link>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-base font-semibold text-slate-100">Newsletter</h3>
+            <p className="mb-3 text-sm text-slate-400">Get occasional updates on new work, product releases, and useful web insights.</p>
+            <div className="flex items-center gap-2">
+              <Input placeholder="Email" className="border-slate-700 bg-slate-900 text-slate-100 placeholder:text-slate-500" />
+              <Button className="flex flex-wrap gap-4">→</Button>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-border py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <p>© {currentYear} DonLabs. All rights reserved.</p>
+        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-slate-800 py-6 text-sm text-slate-500 sm:flex-row sm:items-center">
+          <p>© {currentYear} DonLabs. Built for performance, clarity, and growth.</p>
         </div>
       </div>
     </footer>

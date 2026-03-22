@@ -1,11 +1,8 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Database, Image as ImageIcon } from "lucide-react";
-import { ASSETS } from "@/lib/assets";
 import { useContent } from '@/lib/ContentProvider';
 import { useState } from 'react';
-import ProjectDetailModal from '@/components/ProjectDetailModal';
 import Section from '@/components/Section';
 import ImageLightbox from '@/components/ImageLightbox';
 
@@ -58,123 +55,214 @@ const ProjectMedia = ({ title, liveUrl, hasLive, imageUrl }: ProjectMediaProps) 
   );
 };
 
+type Project = {
+  title: string;
+  description?: string;
+  features?: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+  imageUrl?: string;
+  hasLive?: boolean;
+  projectType?: string;
+  clientBenefit?: string;
+};
+
+const hasValidUrl = (url?: string) => !!url && url !== '#';
+
+const ProjectActions = ({ project }: { project: Project }) => {
+  const canView = (project.hasLive ?? true) && hasValidUrl(project.liveUrl);
+  const canCode = hasValidUrl(project.githubUrl);
+
+  return (
+    <div className="flex flex-wrap gap-3">
+      {canView ? (
+        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer nofollow">
+          <Button size="sm" className="bg-primary hover:bg-primary-hover text-primary-foreground">
+            <ExternalLink className="h-4 w-4 mr-1" />
+            View Project
+          </Button>
+        </a>
+      ) : (
+        <Button size="sm" variant="outline" disabled className="border-slate-700 text-slate-500">
+          <ExternalLink className="h-4 w-4 mr-1" />
+          View Project
+        </Button>
+      )}
+
+      {canCode && (
+        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer nofollow">
+          <Button size="sm" variant="outline" className="border-primary/30 text-primary hover:bg-primary/5">
+            <Github className="h-4 w-4 mr-1" />
+            Code
+          </Button>
+        </a>
+      )}
+    </div>
+  );
+};
+
+const FeatureList = ({ features }: { features?: string[] }) => {
+  if (!Array.isArray(features) || features.length === 0) {
+    return null;
+  }
+
+  return (
+    <ul className="space-y-2 text-sm text-slate-300">
+      {features.slice(0, 4).map((feature, index) => (
+        <li key={index} className="flex items-start gap-2">
+          <span className="text-primary mt-1">•</span>
+          <span>{feature}</span>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+const ValueBlock = ({ value }: { value?: string }) => {
+  if (!value) return null;
+
+  return (
+    <p className="text-sm text-slate-300 bg-slate-900/70 border border-slate-800 rounded-lg p-3 leading-relaxed">
+      <strong className="text-slate-100">Value:</strong> {value}
+    </p>
+  );
+};
+
+const FeatureSlate = ({ project }: { project: Project }) => (
+  <article className="rounded-2xl border border-slate-800 bg-slate-950/90 overflow-hidden">
+    <div className="grid lg:grid-cols-2">
+      <div className="relative min-h-[260px] bg-slate-900/70 group">
+        <ProjectMedia
+          title={project.title}
+          liveUrl={project.liveUrl}
+          hasLive={project.hasLive}
+          imageUrl={project.imageUrl}
+        />
+      </div>
+
+      <div className="p-6 md:p-8 space-y-5">
+        <div className="flex flex-wrap items-center gap-2">
+          <Badge className="bg-primary/20 text-primary border border-primary/30">Feature Slate</Badge>
+          {project.projectType && (
+            <Badge variant="outline" className="border-slate-700 text-slate-300">{project.projectType}</Badge>
+          )}
+        </div>
+
+        <div>
+          <h3 className="text-2xl md:text-3xl font-bold text-slate-100">{project.title}</h3>
+          {project.description && (
+            <p className="text-slate-300 leading-relaxed mt-3">{project.description}</p>
+          )}
+        </div>
+
+        <FeatureList features={project.features} />
+        <ValueBlock value={project.clientBenefit} />
+        <ProjectActions project={project} />
+      </div>
+    </div>
+  </article>
+);
+
+const SplitSlate = ({ project }: { project: Project }) => (
+  <article className="rounded-2xl border border-slate-800 bg-slate-900/70 overflow-hidden">
+    <div className="grid lg:grid-cols-5 gap-0">
+      <div className="p-6 md:p-7 lg:col-span-3 space-y-4 order-2 lg:order-1">
+        <div className="flex items-center gap-2">
+          <Database className="h-5 w-5 text-primary" />
+          <h3 className="text-xl md:text-2xl font-semibold text-slate-100">{project.title}</h3>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <Badge className="bg-primary/15 text-primary border border-primary/30">Split Slate</Badge>
+          {project.projectType && (
+            <Badge variant="outline" className="border-slate-700 text-slate-300">{project.projectType}</Badge>
+          )}
+        </div>
+
+        {project.description && (
+          <p className="text-slate-300 leading-relaxed">{project.description}</p>
+        )}
+
+        <FeatureList features={project.features} />
+        <ValueBlock value={project.clientBenefit} />
+        <ProjectActions project={project} />
+      </div>
+
+      <div className="relative min-h-[230px] lg:min-h-full bg-slate-950 group lg:col-span-2 order-1 lg:order-2">
+        <ProjectMedia
+          title={project.title}
+          liveUrl={project.liveUrl}
+          hasLive={project.hasLive}
+          imageUrl={project.imageUrl}
+        />
+      </div>
+    </div>
+  </article>
+);
+
+const CompactSlate = ({ project }: { project: Project }) => (
+  <article className="rounded-2xl border border-slate-800 bg-slate-950/80 overflow-hidden">
+    <div className="p-6 md:p-7 border-b border-slate-800">
+      <div className="flex flex-wrap items-center gap-2 mb-3">
+        <Badge className="bg-primary/15 text-primary border border-primary/30">Compact Slate</Badge>
+        {project.projectType && (
+          <Badge variant="outline" className="border-slate-700 text-slate-300">{project.projectType}</Badge>
+        )}
+      </div>
+
+      <h3 className="text-xl md:text-2xl font-semibold text-slate-100">{project.title}</h3>
+      {project.description && (
+        <p className="text-slate-300 leading-relaxed mt-3">{project.description}</p>
+      )}
+    </div>
+
+    <div className="grid md:grid-cols-3">
+      <div className="relative md:col-span-1 min-h-[220px] bg-slate-900 group">
+        <ProjectMedia
+          title={project.title}
+          liveUrl={project.liveUrl}
+          hasLive={project.hasLive}
+          imageUrl={project.imageUrl}
+        />
+      </div>
+
+      <div className="md:col-span-2 p-6 md:p-7 space-y-4">
+        <FeatureList features={project.features} />
+        <ValueBlock value={project.clientBenefit} />
+        <ProjectActions project={project} />
+      </div>
+    </div>
+  </article>
+);
+
 const Projects = () => {
   const { content } = useContent();
 
-  const projects = Array.isArray(content?.projects) ? content.projects : [];
+  const projects = Array.isArray(content?.projects) ? (content.projects as Project[]) : [];
+
+  const renderProject = (project: Project, index: number) => {
+    const variant = index % 3;
+
+    if (variant === 0) return <FeatureSlate key={index} project={project} />;
+    if (variant === 1) return <SplitSlate key={index} project={project} />;
+    return <CompactSlate key={index} project={project} />;
+  };
 
   return (
-    <Section as="section" className="section-spacing container-padding bg-muted/30" aria-labelledby="projects-heading">
-      <div className="max-w-7xl mx-auto">
+    <Section as="section" className="section-spacing container-padding bg-slate-950" aria-labelledby="projects-heading">
+      <div className="max-w-7xl mx-auto space-y-8">
         <div className="text-center mb-16 animate-fade-in-up">
-          <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+          <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-primary/20 text-primary text-sm font-semibold border border-primary/30">
             Portfolio
           </div>
-          <h2 id="projects-heading" className="text-4xl md:text-5xl font-bold mb-6">Portfolio Projects</h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          <h2 id="projects-heading" className="text-4xl md:text-5xl font-bold mb-6 text-slate-100">Portfolio Projects</h2>
+          <p className="text-lg md:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
             Explore DonLabs' portfolio of real projects delivered for clients. Each entry describes the business problem, what we built (stack and features), and the measurable results or value delivered.
           </p>
         </div>
-        
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 stagger-children">
-          {projects.map((project, index) => (
-            <Card key={index} className="project-card shadow-card bg-card overflow-hidden group flex flex-col">
-              {/* Project Image / Live Preview with fallback */}
-              <div className="aspect-video bg-muted relative overflow-hidden cursor-pointer">
-                <ProjectMedia
-                  title={project.title}
-                  liveUrl={project.liveUrl}
-                  hasLive={!!project.hasLive}
-                  imageUrl={project.imageUrl}
-                />
 
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              
-              <CardHeader className="pb-3">
-                <div className="flex items-center gap-2 mb-2">
-                  <Database className="h-5 w-5 text-primary flex-shrink-0" />
-                  <CardTitle className="text-xl md:text-2xl">{project.title}</CardTitle>
-                </div>
-                <CardDescription className="text-sm leading-relaxed">
-                  {project.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col">
-                <div className="space-y-4 flex-1 flex flex-col">
-                  <div className="flex-1">
-                    <h4 className="text-sm font-semibold mb-3 text-foreground">Key Features:</h4>
-                    <ul className="text-sm space-y-2">
-                      {project.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start gap-2 text-muted-foreground">
-                          <span className="text-primary mt-1">•</span>
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="pt-2">
-                    <p className="text-sm text-muted-foreground bg-muted/40 p-3 rounded-lg leading-relaxed">
-                      <strong className="text-foreground">Value:</strong> {project.clientBenefit}
-                    </p>
-                  </div>
-                  
-                  <div className="flex gap-2 pt-3">
-                    {project.githubUrl && project.githubUrl !== '#' ? (
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer nofollow" className="flex-1">
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          className="w-full border-primary/20 text-primary hover:bg-primary/5 hover-lift"
-                        >
-                          <Github className="h-4 w-4 mr-1" />
-                          Code
-                        </Button>
-                      </a>
-                    ) : (
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        className="flex-1 border-primary/20 text-primary/50 cursor-not-allowed"
-                        disabled
-                      >
-                        <Github className="h-4 w-4 mr-1" />
-                        Code
-                      </Button>
-                    )}
-
-                    {project.hasLive && project.liveUrl && project.liveUrl !== '#' ? (
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer nofollow" className="flex-1">
-                        <Button 
-                          size="sm"
-                          className="w-full bg-primary hover:bg-primary-hover text-primary-foreground hover-lift"
-                        >
-                          <ExternalLink className="h-4 w-4 mr-1" />
-                          Live
-                        </Button>
-                      </a>
-                    ) : (
-                      <Button 
-                        variant="outline"
-                        size="sm"
-                        className="flex-1 border-muted-foreground/20 text-muted-foreground cursor-not-allowed"
-                        disabled
-                      >
-                        <ImageIcon className="h-4 w-4 mr-1" />
-                        Preview
-                      </Button>
-                    )}
-
-                    {/* Project details modal trigger */}
-                    <div className="flex-1">
-                      <ProjectDetailModal project={project} />
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="space-y-6 md:space-y-8 stagger-children">
+          {projects.map((project, index) => renderProject(project, index))}
         </div>
       </div>
     </Section>

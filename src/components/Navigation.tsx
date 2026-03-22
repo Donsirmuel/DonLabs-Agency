@@ -4,51 +4,75 @@ import { Menu } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { useState } from "react";
 import { ASSETS } from "@/lib/assets";
-import { Link, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  
+  const location = useLocation();
   const navigate = useNavigate();
+
+  const navItems = [
+    { label: 'Home', path: '/' },
+    { label: 'Services', path: '/services' },
+    { label: 'Projects', path: '/projects' },
+    { label: 'Pricing', path: '/pricing' },
+    { label: 'About', path: '/about' },
+  ];
 
   const goto = (path: string) => {
     setIsOpen(false);
+
+    if (path === '/#process-section') {
+      if (location.pathname === '/') {
+        document.getElementById('process-section')?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        navigate('/');
+        setTimeout(() => {
+          document.getElementById('process-section')?.scrollIntoView({ behavior: 'smooth' });
+        }, 250);
+      }
+      return;
+    }
+
     navigate(path);
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
-      <div className="max-w-6xl mx-auto px-4 py-4">
+    <nav className="fixed top-0 z-50 w-full border-b border-slate-800/80 bg-slate-950/85 backdrop-blur-xl">
+      <div className="mx-auto max-w-6xl px-4 py-3">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <button onClick={() => goto('/')} className="flex items-center gap-3" aria-label="Go to home page">
             <img 
               src={ASSETS.logo} 
               alt="DonLabs Logo" 
-              className="h-10 w-10 rounded-lg object-cover"
+              className="h-9 w-9 rounded-lg object-cover"
             />
-            <span className="font-brand font-bold text-lg">DonLabs</span>
-          </div>
+            <span className="font-brand text-lg font-bold text-slate-100">DonLabs</span>
+          </button>
           
-          <div className="hidden lg:flex items-center space-x-8">
-            <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
-            <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Services</Link>
-            <Link to="/pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</Link>
-            <Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors">Projects</Link>
-            <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">About</Link>
-            <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link>
+          <div className="hidden items-center space-x-8 lg:flex">
+            {navItems.map((item) => (
+              <button
+                key={item.label}
+                onClick={() => goto(item.path)}
+                className="text-sm font-medium text-slate-300 transition-colors hover:text-cyan-300"
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
           
           <div className="flex items-center space-x-2">
-            <div className="hidden lg:flex items-center space-x-2">
+            <div className="hidden items-center space-x-2 lg:flex">
               {/* ThemeToggle is hidden but still functional */}
               <div className="hidden">
                 <ThemeToggle />
               </div>
               <Button 
                 onClick={() => goto('/contact')}
-                className="bg-primary hover:bg-primary-hover text-primary-foreground hover-lift"
+                className="flex flex-wrap gap-4"
               >
-                Get a Quote
+                Start a Project
               </Button>
             </div>
             
@@ -60,23 +84,23 @@ const Navigation = () => {
               </div>
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon">
+                  <Button variant="ghost" size="icon" className="text-slate-200 hover:bg-slate-800">
                     <Menu className="h-5 w-5" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-[90vw] max-w-sm sm:max-w-md">
+                <SheetContent side="right" className="w-[90vw] max-w-sm border-slate-800 bg-slate-950 text-slate-100 sm:max-w-md">
                   <div className="flex flex-col space-y-4 mt-8">
-                    <button onClick={() => goto('/')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">Home</button>
-                    <button onClick={() => goto('/about')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">About</button>
-                    <button onClick={() => goto('/services')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">Services</button>
-                    <button onClick={() => goto('/pricing')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">Pricing</button>
-                    <button onClick={() => goto('/projects')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">Projects</button>
-                    <button onClick={() => goto('/contact')} className="text-left text-lg text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border">Contact</button>
+                    <button onClick={() => goto('/')} className="border-b border-slate-800 py-3 text-left text-lg text-slate-300 transition-colors hover:text-cyan-300">Home</button>
+                    <button onClick={() => goto('/services')} className="border-b border-slate-800 py-3 text-left text-lg text-slate-300 transition-colors hover:text-cyan-300">Services</button>
+                    <button onClick={() => goto('/projects')} className="border-b border-slate-800 py-3 text-left text-lg text-slate-300 transition-colors hover:text-cyan-300">Projects</button>
+                    <button onClick={() => goto('/pricing')} className="border-b border-slate-800 py-3 text-left text-lg text-slate-300 transition-colors hover:text-cyan-300">Pricing</button>
+                    <button onClick={() => goto('/about')} className="border-b border-slate-800 py-3 text-left text-lg text-slate-300 transition-colors hover:text-cyan-300">About</button>
+                    <button onClick={() => goto('/contact')} className="border-b border-slate-800 py-3 text-left text-lg text-slate-300 transition-colors hover:text-cyan-300">Contact</button>
                     <Button 
                       onClick={() => goto('/contact')}
-                      className="bg-primary hover:bg-primary-hover text-primary-foreground hover-lift mt-4 w-full"
+                      className="mt-4 w-full bg-cyan-300 text-slate-950 hover:bg-cyan-200"
                     >
-                      Get a Quote
+                      Start a Project
                     </Button>
                   </div>
                 </SheetContent>

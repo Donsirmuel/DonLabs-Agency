@@ -1,4 +1,4 @@
-import PricingGrid from "@/components/PricingGrid";
+import PricingGrid from "../components/PricingGrid";
 import SEO from "@/components/SEO";
 
 const Pricing = () => {

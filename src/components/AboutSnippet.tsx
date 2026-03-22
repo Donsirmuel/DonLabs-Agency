@@ -9,7 +9,7 @@ const AboutSnippet = () => {
           <h2 id="about-me" className="text-3xl font-bold mb-4">About DonLabs</h2>
           <p className="text-sm text-muted-foreground">We build web products focused on results — faster pages, reliable payments, and admin tools that save time. Our approach combines attention to detail with thoughtful design to create seamless digital experiences that improve productivity and conversions.</p>
           <p className="text-sm text-muted-foreground">We work with personal brands, startups, fashion boutiques, retailers, SaaS companies, NGOs, educational platforms, and real estate brands who need practical, measurable results from their web presence.</p>
-          <p className="text-sm text-muted-foreground">When you work with DonLabs you get clear milestones, regular check-ins, and a focus on measurable results. We build with Django on the backend and React on the frontend, using PostgreSQL and containerized deployments for production.</p>
+          <p className="text-sm text-muted-foreground">When you work with DonLabs you get clear milestones, regular check-ins, and a focus on measurable results. We use trusted tools for the backend and frontend so your website stays stable and easy to grow.</p>
         </div>
 
         <div className="rounded-lg overflow-hidden bg-card p-4">

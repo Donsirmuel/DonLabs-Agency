@@ -47,7 +47,7 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 19;
+const CONTENT_VERSION = 21;
 
 export const defaultContent: SiteContent = {
   about: {
@@ -228,11 +228,11 @@ export const defaultContent: SiteContent = {
   {
     id: 'corporate',
     name: 'Corporate / Business Website',
-    price: '₦200,000 - ₦350,000',
+    price: '₦200,000+',
     desc: 'For professionals, agencies, corporate teams and service providers who need a polished web presence or company site.',
     includes: [
       '5–10 content pages (About, Services, Team, Blog, Contact)',
-      'SEO-friendly React frontend, optional Django headless CMS',
+      'Fast frontend with optional easy content editing',
       'Blog setup with structured content and RSS',
       'Contact forms, lead capture & newsletter integration',
       'Basic analytics, accessibility checks & 1 month support'
@@ -241,13 +241,13 @@ export const defaultContent: SiteContent = {
   {
     id: 'small-ecom',
     name: 'Small e‑commerce',
-    price: '₦350,000 - ₦600,000',
+    price: '₦350,000+',
     desc: 'Small online stores with product catalogs and simple checkout - ideal for boutiques and SMB sellers.',
     includes: [
       'Product catalog, product pages and category browsing',
       'Cart, checkout and order confirmation flows',
       'Payment gateway integration (Paystack / Flutterwave / Stripe)',
-      'Django backend or Django + DRF APIs with PostgreSQL',
+      'Reliable backend with secure data storage',
       'Admin order/product management, basic reporting & 3 months support'
     ],
     popular: true
@@ -255,26 +255,26 @@ export const defaultContent: SiteContent = {
   {
     id: 'medium-ecom',
     name: 'Medium e‑commerce',
-    price: '₦600,000 - ₦1,200,000',
+    price: '₦600,000+',
     desc: 'Growing stores that need inventory, user accounts, discounts and integrations.',
     includes: [
       'Everything in Small e‑commerce',
       'User accounts, order history and customer dashboards',
       'Inventory management, discounts & coupon systems',
-      'Integrated email/SMS notifications and analytics',
-      'Performance tuning, staging environment & 4 months support'
+      'Email/SMS notifications and sales tracking',
+      'Speed improvements, test environment & 4 months support'
     ]
   },
   {
     id: 'premium-ecom',
     name: 'Premium e‑commerce / Enterprise',
-    price: 'Custom pricing (₦1,200,000+)',
+    price: '₦1,200,000+',
     desc: 'Full custom e‑commerce platforms with integrations, automation and scaling support.',
     includes: [
-      'Custom API design (Django + DRF) and React storefront',
-      'PostgreSQL schema design, caching & background workers',
+      'Custom backend setup and React storefront',
+      'Database setup, caching, and background processing',
       'Third‑party integrations (ERP/CRM, logistics, payment providers)',
-      'Containerized deployments (Docker), CI/CD, monitoring & 6 months support'
+      'Reliable deployment, monitoring & 6 months support'
     ]
   }
 ]

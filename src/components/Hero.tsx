@@ -1,94 +1,108 @@
 import { Button } from "@/components/ui/button";
-import { Code2, Database, Server } from "lucide-react";
-import { ASSETS } from "@/lib/assets";
+import { ArrowRight, Gauge, Layers3, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Section from '@/components/Section';
+import { ASSETS } from "@/lib/assets";
 
 const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <section
-      className="min-h-screen w-full flex items-center relative overflow-hidden"
+    <Section
+      as="section"
+      className="relative isolate min-h-screen overflow-hidden bg-slate-950 px-4 pb-14 pt-24 sm:px-8"
       aria-label="Hero section introducing DonLabs"
-        itemScope
-        itemType="https://schema.org/Organization"
+      aria-labelledby="home-heading"
     >
-      <Section
-        as="section"
-        className="relative overflow-hidden min-h-screen w-full flex items-center"
-        aria-labelledby="home-heading"
-      >
-        {/* Background: responsive imagery optimized for LCP */}
-        <picture className="absolute inset-0 w-full h-full">
-          <source media="(min-width: 1024px)" srcSet={`${ASSETS.heroPosterDesktop}?w=1920 1920w, ${ASSETS.heroPosterDesktop}?w=1024 1024w`} sizes="100vw" />
-          <source media="(max-width: 1023px)" srcSet={`${ASSETS.heroPosterMobile}?w=640 640w`} sizes="100vw" />
-          <img 
-            src={ASSETS.heroPosterDesktop} 
-            alt="Hero background" 
-            className="absolute inset-0 w-full h-full object-cover object-center" 
-            fetchPriority="high"
-            loading="eager"
-            aria-hidden 
-          />
-        </picture>
-        {/* Dark overlay to improve text contrast against busy images */}
-        <div className="absolute inset-0 bg-black/65 lg:bg-black/55" aria-hidden />
-        {/* Decorative SVG removed to avoid right-side tint/gap on desktop */}
+      <div className="pointer-events-none absolute inset-0 opacity-60" aria-hidden>
+        <div className="absolute -left-24 top-8 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
+        <div className="absolute right-0 top-24 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl" />
+      </div>
 
+      <div className="relative mx-auto grid min-h-[78vh] w-full max-w-6xl items-center gap-10 lg:grid-cols-[1.25fr_0.9fr]">
+        <div>
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-200">
+            <Sparkles className="h-3.5 w-3.5" />
+            Open for New Projects
+          </div>
 
+          <h1 id="home-heading" className="mb-6 text-5xl font-extrabold leading-[1.02] text-slate-50 sm:text-6xl lg:text-7xl">
+            <span className="block">Websites That</span>
+            <span className="block bg-gradient-to-r from-cyan-300 via-cyan-400 to-teal-300 bg-clip-text text-transparent">Convert</span>
+            <span className="block">and Scale</span>
+            <span className="block">With You.</span>
+          </h1>
 
-          <div className="max-w-6xl mx-auto w-full relative z-10 py-20 lg:py-0 min-h-screen flex items-center px-6 sm:px-10 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="text-left">
-              <div className="mb-8 inline-flex items-center gap-3 text-sm font-semibold px-5 py-2.5 rounded-full bg-primary/10 backdrop-blur-sm text-primary border border-primary/20 animate-fade-in">
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-              Available for Projects • Africa & Remote
-            </div>
+          <p className="mb-10 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+            We build fast, reliable websites and web apps for modern businesses. Our focus is clean design, strong performance, and measurable growth.
+          </p>
 
-            <h1 id="home-heading" className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-[1.1] mb-6 text-white hero-text-shadow">
-              <span className="block mb-2">Websites That Convert</span>
-              <span className="block bg-gradient-to-r from-white/95 via-white/80 to-blue-300 bg-clip-text text-transparent animate-slide-up">and Scale With You</span>
-            </h1>
+          <div className="flex flex-wrap gap-4">
+            <Button
+              variant="hero"
+              size="lg"
+              onClick={() => document.getElementById('process-section')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              View Our Process
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-slate-600 bg-slate-900/70 text-slate-100 hover:bg-slate-800"
+              onClick={() => navigate('/services')}
+            >
+              Explore Services
+            </Button>
+          </div>
 
-            <p className="text-xl text-white/90 max-w-2xl mb-10 leading-relaxed hero-text-shadow">
-              <span role="text" aria-label="DonLabs is a web and software development agency building fast, secure and scalable digital solutions for modern businesses. From high-converting landing pages to complex e-commerce systems, we help brands grow online with confidence.">
-                DonLabs is a web and software development agency building <strong className="text-white font-semibold">fast, secure and scalable</strong> digital solutions for modern businesses.
-                <span className="block mt-2">From high-converting landing pages to complex e-commerce systems, we help brands grow online with confidence.</span>
-              </span>
-            </p>
-
-            <div className="flex flex-wrap gap-4 mb-10">
-              <Button variant="hero" size="lg" onClick={() => window.open('https://wa.me/2349031386928?text=Hi%20DonLabs!%20I%20would%20like%20to%20discuss%20a%20project.', '_blank')}>
-                Start Your Project
-              </Button>
-              <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20" onClick={() => navigate('/services')}>
-                View Services
-              </Button>
-              <Button variant="ghost" size="lg" className="text-white hover:bg-white/10" onClick={() => navigate('/projects')}>
-                See Portfolio →
-              </Button>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-6 text-sm">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
-                <Server className="h-4 w-4 text-primary" />
-                <span className="text-white/80 font-medium">Django + React</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
-                <Database className="h-4 w-4 text-primary" />
-                <span className="text-white/80 font-medium">PostgreSQL + APIs</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
-                <Code2 className="h-4 w-4 text-primary" />
-                <span className="text-white/80 font-medium">E-commerce Expert</span>
-              </div>
-            </div>
+          <div className="mt-8 flex flex-wrap gap-3 text-xs text-slate-300 sm:text-sm">
+            <span className="rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5">Django + React Websites</span>
+            <span className="rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5">Conversion-first Systems</span>
+            <span className="rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5">Fast Performance</span>
           </div>
         </div>
+
+        <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900 to-slate-950 p-5 shadow-2xl shadow-cyan-950/20">
+          <div className="mb-5 h-72 overflow-hidden rounded-xl border border-slate-800">
+            <img
+              src={ASSETS.heroPosterDesktop}
+              alt="DonLabs hero showcase"
+              className="h-full w-full object-cover"
+              loading="eager"
+              fetchPriority="high"
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-4 rounded-xl border border-slate-800 bg-slate-900/80 p-4">
+            <div>
+              <p className="mb-1 text-[10px] uppercase tracking-widest text-cyan-200/80">Success Rate</p>
+              <p className="text-2xl font-bold text-slate-100">98.4%</p>
+            </div>
+            <div>
+              <p className="mb-1 text-[10px] uppercase tracking-widest text-cyan-200/80">Turnaround Period</p>
+              <p className="text-2xl font-bold text-slate-100">2-6 Weeks Avg</p>
+            </div>
+          </div>
+          <div className="mt-4 grid grid-cols-2 gap-3 text-sm text-slate-300">
+            <div className="flex items-center gap-2 rounded-lg border border-slate-800 bg-slate-900/70 px-3 py-2">
+              <Gauge className="h-4 w-4 text-cyan-300" />
+              Core Web Vitals
+            </div>
+            <div className="flex items-center gap-2 rounded-lg border border-slate-800 bg-slate-900/70 px-3 py-2">
+              <Layers3 className="h-4 w-4 text-cyan-300" />
+              Scalable Systems
+            </div>
+          </div>
+          <Button
+            variant="ghost"
+            className="mt-5 w-full justify-between rounded-lg border border-slate-700 bg-slate-900/80 text-slate-200 hover:bg-slate-800"
+            onClick={() => navigate('/projects')}
+          >
+            View Recent Projects
+            <ArrowRight className="h-4 w-4" />
+          </Button>
+        </div>
       </div>
-        </Section>
-    </section>
+    </Section>
   );
 };
 

@@ -1,46 +1,5 @@
-import Services from "@/components/Services";
-import PricingGrid from "@/components/PricingGrid";
+import Services from "../components/Services";
 import SEO from "@/components/SEO";
-
-const servicesStructuredData = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Web Development Services",
-  "provider": {
-    "@type": "Organization",
-    "name": "DonLabs"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Service Offerings",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {"@type":"Service","name":"Corporate / Business Website"},
-        "price": "180000",
-        "priceCurrency": "NGN"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {"@type":"Service","name":"Small e-commerce"},
-        "price": "350000",
-        "priceCurrency": "NGN"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {"@type":"Service","name":"Medium e-commerce"},
-        "price": "600000",
-        "priceCurrency": "NGN"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {"@type":"Service","name":"Premium e-commerce / Enterprise"},
-        "price": "1200000",
-        "priceCurrency": "NGN"
-      }
-    ]
-  }
-};
 
 const ServicesPage = () => {
   return (
@@ -77,7 +36,6 @@ const ServicesPage = () => {
       />
       <div id="services">
         <Services />
-        <PricingGrid />
       </div>
     </main>
   );
