@@ -142,7 +142,6 @@ const FeatureSlate = ({ project }: { project: Project }) => (
 
       <div className="p-6 md:p-8 space-y-5">
         <div className="flex flex-wrap items-center gap-2">
-          <Badge className="bg-primary/20 text-primary border border-primary/30">Feature Slate</Badge>
           {project.projectType && (
             <Badge variant="outline" className="border-slate-700 text-slate-300">{project.projectType}</Badge>
           )}
@@ -173,7 +172,6 @@ const SplitSlate = ({ project }: { project: Project }) => (
         </div>
 
         <div className="flex flex-wrap gap-2">
-          <Badge className="bg-primary/15 text-primary border border-primary/30">Split Slate</Badge>
           {project.projectType && (
             <Badge variant="outline" className="border-slate-700 text-slate-300">{project.projectType}</Badge>
           )}
@@ -204,7 +202,6 @@ const CompactSlate = ({ project }: { project: Project }) => (
   <article className="rounded-2xl border border-slate-800 bg-slate-950/80 overflow-hidden">
     <div className="p-6 md:p-7 border-b border-slate-800">
       <div className="flex flex-wrap items-center gap-2 mb-3">
-        <Badge className="bg-primary/15 text-primary border border-primary/30">Compact Slate</Badge>
         {project.projectType && (
           <Badge variant="outline" className="border-slate-700 text-slate-300">{project.projectType}</Badge>
         )}
