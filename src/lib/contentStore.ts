@@ -47,7 +47,7 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 21;
+const CONTENT_VERSION = 22;
 
 export const defaultContent: SiteContent = {
   about: {
@@ -101,7 +101,7 @@ export const defaultContent: SiteContent = {
         "Scalable deployment and monitoring"
       ],
       githubUrl: "#",
-      liveUrl: "https://donsirmuel.github.io/shindara-style-hub/#",
+      liveUrl: "https://shindara-style.vercel.app",
       imageUrl: ASSETS.shindaraScreenshot,
       hasLive: true,
       projectType: "E-Commerce",
