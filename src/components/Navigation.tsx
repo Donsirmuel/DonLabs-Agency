@@ -98,7 +98,7 @@ const Navigation = () => {
                     <button onClick={() => goto('/contact')} className="border-b border-slate-800 py-3 text-left text-lg text-slate-300 transition-colors hover:text-cyan-300">Contact</button>
                     <Button 
                       onClick={() => goto('/contact')}
-                      className="mt-4 w-full bg-cyan-300 text-slate-950 hover:bg-cyan-200"
+                      className="mt-4 w-full bg-primary text-primary-foreground hover:bg-primary-hover"
                     >
                       Start a Project
                     </Button>

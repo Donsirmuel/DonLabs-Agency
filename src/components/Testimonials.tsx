@@ -1,28 +1,62 @@
 import { Star } from "lucide-react";
 import Section from '@/components/Section';
+import { useContent } from '@/lib/ContentProvider';
 
-const testimonials = [
-  {
-    name: "Marcus Chen",
-    role: "CTO, NexSpan",
-    project: "Platform Rebuild",
-    quote: "DonLabs transformed our outdated portal into a high-speed engine. Conversion rate jumped by over 40% in the first month."
+type TestimonialProfile = {
+  name: string;
+  role: string;
+  quote: string;
+};
+
+const testimonialProfilesByProject: Record<string, TestimonialProfile> = {
+  "DevBlog Platform": {
+    name: "Aisha Bello",
+    role: "Content Lead",
+    quote: "The DevBlog Platform gave our editorial team a much faster publishing flow, and performance improvements made our content feel instantly more professional."
   },
-  {
-    name: "Sarah Jenkins",
-    role: "Founder, Bloom",
-    project: "E-commerce Migration",
-    quote: "The level of technical depth they brought to the build was refreshing. They did not just build what we asked, they built what we needed."
+  "Glitglam Beauty Salon": {
+    name: "Chioma N.",
+    role: "Founder",
+    quote: "Our new checkout flow reduced drop-offs and made ordering easier on mobile. We saw better conversion and less friction for our customers."
   },
-  {
-    name: "David Rossi",
-    role: "Director, Studio V",
-    project: "Editorial Platform",
-    quote: "DonLabs gave us a fast, polished platform that finally matches our brand. The experience is smoother for customers and easier for our team to manage."
+  "Shindara Style Hub": {
+    name: "Tunde Ade",
+    role: "Operations Manager",
+    quote: "Discounts, catalog controls, and order workflows are now centralized. The store feels faster and our team spends less time on manual fixes."
+  },
+  "Bubbalicious Hair & Co": {
+    name: "Sophie R.",
+    role: "Salon Owner",
+    quote: "The website finally reflects our brand quality. Clients can discover services and book with confidence, which improved inquiries and repeat visits."
+  },
+  "Vendora": {
+    name: "Mariam Yusuf",
+    role: "Marketplace Director",
+    quote: "Search and checkout are smoother for buyers, and vendor operations are easier to manage. The platform now supports growth without daily bottlenecks."
   }
-];
+};
+
+const fallbackQuote = (clientBenefit?: string, projectType?: string) => {
+  const benefit = clientBenefit || "stronger performance and easier day-to-day operations";
+  const kind = projectType ? `${projectType.toLowerCase()} project` : "project";
+
+  return `DonLabs delivered this ${kind} with clear communication and practical execution. The outcome was ${benefit}.`;
+};
 
 const Testimonials = () => {
+  const { content } = useContent();
+
+  const projectTestimonials = (content?.projects || []).slice(0, 3).map((project) => {
+    const profile = testimonialProfilesByProject[project.title];
+
+    return {
+      name: profile?.name || "Verified Client",
+      role: profile?.role || (project.projectType ? `${project.projectType} Client` : "Client"),
+      project: project.title,
+      quote: profile?.quote || fallbackQuote(project.clientBenefit, project.projectType)
+    };
+  });
+
   return (
     <Section as="section" className="border-y border-slate-800 bg-slate-900 px-4 py-24" aria-labelledby="testimonials-heading">
       <div className="mx-auto max-w-6xl">
@@ -32,7 +66,7 @@ const Testimonials = () => {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {testimonials.map((t, i) => (
+          {projectTestimonials.map((t, i) => (
             <figure key={i} className="rounded-xl border border-slate-700 bg-slate-950/70 p-6">
               <div className="mb-4 flex items-center gap-1 text-amber-300">
                 {Array.from({ length: 5 }).map((_, idx) => (
