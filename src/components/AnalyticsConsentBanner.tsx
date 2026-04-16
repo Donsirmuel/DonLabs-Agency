@@ -10,8 +10,9 @@ import {
 
 const AnalyticsConsentBanner = () => {
   const [status, setStatus] = useState(getConsentStatus());
+  const analyticsConfigured = hasAnalyticsId();
 
-  if (!hasAnalyticsId() || status !== 'unset') {
+  if (status !== 'unset') {
     return null;
   }
 
@@ -30,9 +31,16 @@ const AnalyticsConsentBanner = () => {
   return (
     <div className="fixed inset-x-0 bottom-0 z-[100] border-t border-slate-700 bg-slate-950/95 p-4 backdrop-blur-md">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 md:flex-row md:items-center md:justify-between">
-        <p className="text-sm text-slate-200">
-          DonLabs uses privacy-friendly analytics to understand site performance. Tracking starts only if you accept.
-        </p>
+        <div className="space-y-1">
+          <p className="text-sm text-slate-200">
+            DonLabs uses privacy-friendly analytics to understand site performance. Tracking starts only if you accept.
+          </p>
+          {!analyticsConfigured && (
+            <p className="text-xs text-amber-300">
+              Analytics is not configured yet in this environment, but your consent choice will still be saved.
+            </p>
+          )}
+        </div>
         <div className="flex items-center gap-2">
           <Button variant="outline" onClick={rejectAnalytics} className="border-slate-600 text-slate-200 hover:bg-slate-800">
             Decline
