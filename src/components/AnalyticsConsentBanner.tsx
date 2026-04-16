@@ -33,13 +33,8 @@ const AnalyticsConsentBanner = () => {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <div className="space-y-1">
           <p className="text-sm text-slate-200">
-            DonLabs uses privacy-friendly analytics to understand site performance. Tracking starts only if you accept.
+            DonLabs uses privacy-friendly analytics to improve site performance and understand user behavior. You can choose to accept or decline analytics, and your choice will be saved for future visits.
           </p>
-          {!analyticsConfigured && (
-            <p className="text-xs text-amber-300">
-              Analytics is not configured yet in this environment, but your consent choice will still be saved.
-            </p>
-          )}
         </div>
         <div className="flex items-center gap-2">
           <Button variant="outline" onClick={rejectAnalytics} className="border-slate-600 text-slate-200 hover:bg-slate-800">
