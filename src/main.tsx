@@ -7,6 +7,22 @@ import { ContentProvider } from '@/lib/ContentProvider';
 
 // Small production-friendly error overlay to help diagnose runtime failures
 function mountErrorOverlay() {
+  const shouldIgnoreWindowError = (ev: ErrorEvent) => {
+    const msg = (ev.message || '').trim();
+
+    // Browsers emit this generic message for cross-origin/extension scripts without stack details.
+    if (msg === 'Script error.' || msg === 'Script error') {
+      return true;
+    }
+
+    // Common non-fatal browser noise.
+    if (msg.includes('ResizeObserver loop limit exceeded')) {
+      return true;
+    }
+
+    return false;
+  };
+
   function show(message: string) {
     try {
       const existing = document.getElementById('runtime-error-overlay');
@@ -34,6 +50,10 @@ function mountErrorOverlay() {
   }
 
   window.addEventListener('error', (ev) => {
+    if (shouldIgnoreWindowError(ev)) {
+      return;
+    }
+
     const err = ev.error || ev.message || String(ev);
     console.error('Captured runtime error', err);
     show(typeof err === 'string' ? err : JSON.stringify(err, Object.getOwnPropertyNames(err), 2));
