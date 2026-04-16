@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import App from "./App.tsx";
 import "./index.css";
@@ -62,9 +62,9 @@ function initApp() {
   createRoot(mount).render(
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
       <ContentProvider>
-        <HashRouter>
+        <BrowserRouter>
           <App />
-        </HashRouter>
+        </BrowserRouter>
       </ContentProvider>
     </ThemeProvider>
   );

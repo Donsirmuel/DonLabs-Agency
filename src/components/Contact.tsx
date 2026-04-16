@@ -8,6 +8,7 @@ import { Mail, Github, Linkedin, MapPin, MessageCircle, Send } from "lucide-reac
 import Section from '@/components/Section';
 import { useState } from 'react';
 import { toast } from '@/hooks/use-toast';
+import { trackEvent } from '@/lib/analytics';
 
 const WHATSAPP_NUMBER = '2349031386928'; // no plus sign (updated per user)
 
@@ -29,6 +30,11 @@ const Contact = () => {
 
     // Basic validation
     if (!name.trim() || !message.trim()) {
+      trackEvent('contact_validation_error', {
+        missing_name: !name.trim(),
+        missing_details: !message.trim(),
+      });
+
       // show toast instead of alert
       toast({
         title: 'Missing information',
@@ -38,6 +44,11 @@ const Contact = () => {
     }
 
     setSubmitting(true);
+    trackEvent('contact_quote_submit', {
+      channel: 'whatsapp',
+      has_email: Boolean(email.trim()),
+      has_subject: Boolean(subject.trim()),
+    });
 
     // Safety backstop: if nothing happens within 10s, notify the user and re-enable the form
     const backstop = window.setTimeout(() => {
@@ -74,6 +85,8 @@ const Contact = () => {
     if (!opened) {
       const win = window.open(webUrl, '_blank');
         if (!win) {
+          trackEvent('contact_fallback_mailto');
+
           // fallback: open mailto if popup blocked
           const mailSubject = encodeURIComponent(subject || 'Website project inquiry');
           const mailBody = encodeURIComponent(text);

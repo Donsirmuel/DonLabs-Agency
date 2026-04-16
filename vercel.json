@@ -3,7 +3,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/:path((?!ads\\.txt|robots\\.txt).*)", "destination": "/index.html" }
+    { "source": "/:path((?!ads\\.txt|robots\\.txt|sitemap\\.xml|manifest\\.json|schema\\.json|favicon\\.ico|.*\\..*).*)", "destination": "/index.html" }
   ],
   "headers": [
     {
