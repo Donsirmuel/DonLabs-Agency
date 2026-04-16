@@ -15,7 +15,6 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
-import AnalyticsConsentBanner from "./components/AnalyticsConsentBanner";
 
 const queryClient = new QueryClient();
 
@@ -40,7 +39,6 @@ const App = () => (
       </Routes>
       <Footer />
       <BackToTop />
-      <AnalyticsConsentBanner />
     </TooltipProvider>
   </QueryClientProvider>
 );

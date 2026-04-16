@@ -1,8 +1,6 @@
-const CONSENT_KEY = 'donlabs.analytics.consent';
 const GTAG_SCRIPT_ID = 'ga4-script';
 const GA_MEASUREMENT_ID = (import.meta.env.VITE_GA4_MEASUREMENT_ID || '').trim();
 
-type ConsentStatus = 'granted' | 'denied' | 'unset';
 type EventParams = Record<string, string | number | boolean | undefined>;
 
 declare global {
@@ -16,21 +14,6 @@ let analyticsInitialized = false;
 let scriptLoadingPromise: Promise<void> | null = null;
 
 const hasWindow = () => typeof window !== 'undefined';
-
-export const getConsentStatus = (): ConsentStatus => {
-  if (!hasWindow()) return 'unset';
-
-  const raw = window.localStorage.getItem(CONSENT_KEY);
-  if (raw === 'granted' || raw === 'denied') return raw;
-  return 'unset';
-};
-
-export const setConsentStatus = (status: Exclude<ConsentStatus, 'unset'>) => {
-  if (!hasWindow()) return;
-  window.localStorage.setItem(CONSENT_KEY, status);
-};
-
-export const hasAnalyticsConsent = () => getConsentStatus() === 'granted';
 
 export const hasAnalyticsId = () => Boolean(GA_MEASUREMENT_ID);
 
@@ -61,7 +44,7 @@ const loadScript = (): Promise<void> => {
 };
 
 export const initAnalytics = async () => {
-  if (!hasWindow() || analyticsInitialized || !hasAnalyticsConsent() || !hasAnalyticsId()) {
+  if (!hasWindow() || analyticsInitialized || !hasAnalyticsId()) {
     return;
   }
 
@@ -88,7 +71,7 @@ export const initAnalytics = async () => {
 };
 
 export const trackPageView = async (path: string) => {
-  if (!hasAnalyticsConsent() || !hasAnalyticsId()) return;
+  if (!hasAnalyticsId()) return;
 
   await initAnalytics();
   if (!window.gtag) return;
@@ -101,7 +84,7 @@ export const trackPageView = async (path: string) => {
 };
 
 export const trackEvent = async (eventName: string, params: EventParams = {}) => {
-  if (!hasAnalyticsConsent() || !hasAnalyticsId()) return;
+  if (!hasAnalyticsId()) return;
 
   await initAnalytics();
   if (!window.gtag) return;

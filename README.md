@@ -22,10 +22,9 @@ This project is built with:
 
 ## Analytics Setup (GA4)
 
-1. Copy [.env.example](.env.example) to `.env.local`.
-2. Create a GA4 property and web data stream for your site.
-3. Set `VITE_GA4_MEASUREMENT_ID` in `.env.local`.
-4. Deploy. Visitors will see a consent banner, and analytics starts only after acceptance.
+1. Create a GA4 property and web data stream for your site.
+2. Set `VITE_GA4_MEASUREMENT_ID` in your deployment environment and local `.env` file.
+3. Deploy. Analytics loads immediately once the Measurement ID is available.
 
 Tracked events include route `page_view` plus key contact-flow events.
 
