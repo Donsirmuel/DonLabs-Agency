@@ -47,7 +47,7 @@ const ensureStructuredData = (data: object | null) => {
 };
 
 const getDefaultPageUrl = () => {
-  if (typeof window === 'undefined') return 'https://donlabs.vercel.app/';
+  if (typeof window === 'undefined') return 'https://donlabs.site/';
   return `${window.location.origin}${window.location.pathname}`;
 };
 

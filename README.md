@@ -30,11 +30,11 @@ Tracked events include route `page_view` plus key contact-flow events.
 
 ## Google Indexing Checklist
 
-The project now uses clean BrowserRouter URLs and an absolute-url sitemap for `https://donlabs.vercel.app`.
+The project now uses clean BrowserRouter URLs and an absolute-url sitemap for `https://donlabs.site`.
 
 After deployment:
 
 1. Verify [public/robots.txt](public/robots.txt) is served at `/robots.txt`.
 2. Verify [public/sitemap.xml](public/sitemap.xml) is served at `/sitemap.xml`.
-3. Submit `https://donlabs.vercel.app/sitemap.xml` in Google Search Console.
+3. Submit `https://donlabs.site/sitemap.xml` in Google Search Console.
 4. Request indexing for primary pages: `/`, `/services`, `/projects`, `/pricing`, `/about`, `/contact`.
