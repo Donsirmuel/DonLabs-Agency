@@ -47,7 +47,7 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 22;
+const CONTENT_VERSION = 23;
 
 export const defaultContent: SiteContent = {
   about: {
@@ -124,8 +124,24 @@ export const defaultContent: SiteContent = {
       hasLive: true,
       projectType: "Business Website",
       clientBenefit: "Professional online presence enabling client bookings and service discovery for a premium salon"
-    }
-    ,
+    },
+    {
+      title: "Shobs Graphic Design Portfolio",
+      description: "A newly developed portfolio site for a graphic design brand, showcasing services, brand identity work, and a curated gallery of visual projects.",
+      features: [
+        "Portfolio-driven layout with visual project highlights",
+        "Services and brand story sections for lead generation",
+        "Responsive design optimized for mobile browsing",
+        "Performance-focused asset loading for crisp visuals",
+        "Clear contact paths for client inquiries"
+      ],
+      githubUrl: "#",
+      liveUrl: "https://shobs-portfolio-site.vercel.app/",
+      imageUrl: ASSETS.shobsPortfolioScreenshot,
+      hasLive: true,
+      projectType: "Portfolio Website",
+      clientBenefit: "Elevated brand presence with a polished showcase for design work"
+    },
     {
       title: "Vendora",
       description: "A marketplace-style e-commerce experience focused on fast discovery and reliable checkout for multi-vendor catalogs.",

@@ -54,6 +54,7 @@ export const ASSETS = {
   devblogScreenshot: getAssetPath('devblog-screenshot.png'),
   shindaraScreenshot: getAssetPath('shindara-screenshot.png'),
   bubbaliciousScreenshot: getAssetPath('bubbalicious-screenshot.png'),
+  shobsPortfolioScreenshot: getAssetPath('Shobs-portfolio-image.jpeg'),
   vendoraScreenshot: getAssetPath('vendora-screenshot.png'),
   businessWebsite: getAssetPath('business website.png'),
   dataVisualization: getAssetPath('data visualization.png'),
