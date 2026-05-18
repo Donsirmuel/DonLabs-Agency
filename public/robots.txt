@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://donlabs.vercel.app/sitemap.xml
+Sitemap: https://donlabs.site/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
