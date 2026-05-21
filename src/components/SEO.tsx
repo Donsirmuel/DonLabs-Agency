@@ -46,15 +46,18 @@ const ensureStructuredData = (data: object | null) => {
   }
 };
 
+const PRIMARY_HOST = 'donlabs.site';
+const PRIMARY_ORIGIN = `https://${PRIMARY_HOST}`;
+
 const getDefaultPageUrl = () => {
-  if (typeof window === 'undefined') return 'https://donlabs.site/';
+  if (typeof window === 'undefined') return `${PRIMARY_ORIGIN}/`;
   return `${window.location.origin}${window.location.pathname}`;
 };
 
 const SEO = ({ 
-  title = "Best Web Developer in Nigeria | DonLabs",
-  description = "DonLabs is a top Nigeria-based web developer delivering high-performance business websites, e-commerce stores, and web applications with Django and React.",
-  keywords = "web developer, best web developer in nigeria, nigeria web developer, software developer nigeria, web development agency, django developer, react developer, ecommerce developer",
+  title = "DonLabs Development Agency",
+  description = "DonLabs Development Agency builds modern software tools, business websites, e-commerce storefronts, and web applications with Latest Technologies.",
+  keywords = "web developer, best web developer in nigeria, nigeria web developer, software developer nigeria, web development agency, django developer, react developer, ecommerce developer, web designer, donlabs, donlabs development agency",
   image = ASSETS.ogDefault,
   url = getDefaultPageUrl(),
   canonical,
@@ -66,11 +69,14 @@ const SEO = ({
 
     setMetaTag('meta[name="description"]', 'content', description);
     setMetaTag('meta[name="keywords"]', 'content', keywords);
-    setMetaTag('meta[name="robots"]', 'content', 'index,follow');
+    const host = typeof window === 'undefined' ? PRIMARY_HOST : window.location.hostname;
+    const isPrimaryHost = host === PRIMARY_HOST || host === `www.${PRIMARY_HOST}`;
+    const robotsValue = isPrimaryHost ? 'index,follow' : 'noindex,nofollow';
+    setMetaTag('meta[name="robots"]', 'content', robotsValue);
 
     // Open Graph
     setMetaTag('meta[property="og:type"]', 'content', 'website');
-    setMetaTag('meta[property="og:site_name"]', 'content', 'DonLabs');
+    setMetaTag('meta[property="og:site_name"]', 'content', 'DonLabs Development Agency');
     setMetaTag('meta[property="og:title"]', 'content', title);
     setMetaTag('meta[property="og:description"]', 'content', description);
     setMetaTag('meta[property="og:image"]', 'content', image);
@@ -85,7 +91,7 @@ const SEO = ({
     setMetaTag('meta[name="twitter:image"]', 'content', image);
 
     // Canonical
-    const canonicalHref = canonical || url;
+    const canonicalHref = canonical || (isPrimaryHost ? url : `${PRIMARY_ORIGIN}${window.location.pathname}`);
     if (canonicalHref) ensureLinkCanonical(canonicalHref);
 
     // Structured data injection (per-page)
