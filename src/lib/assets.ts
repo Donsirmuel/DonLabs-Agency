@@ -51,7 +51,7 @@ export const ASSETS = {
   // Project screenshots
   devblog: getAssetPath('og/home.svg'),
   glitglam: getAssetPath('glitglam-screenshot.png'),
-  devblogScreenshot: getAssetPath('devblog-screenshot.jpeg'),
+  devblogScreenshot: getAssetPath('devblog-screenshot.png'),
   shindaraScreenshot: getAssetPath('shindara-screenshot.png'),
   bubbaliciousScreenshot: getAssetPath('bubbalicious-screenshot.jpeg'),
   shobsPortfolioScreenshot: getAssetPath('Shobs-portfolio-image.jpeg'),
