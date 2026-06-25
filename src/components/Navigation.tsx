@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle";
 import { useState } from "react";
 import { ASSETS } from "@/lib/assets";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -64,10 +63,6 @@ const Navigation = () => {
           
           <div className="flex items-center space-x-2">
             <div className="hidden items-center space-x-2 lg:flex">
-              {/* ThemeToggle is hidden but still functional */}
-              <div className="hidden">
-                <ThemeToggle />
-              </div>
               <Button 
                 onClick={() => goto('/contact')}
                 className="flex flex-wrap gap-4"
@@ -78,10 +73,6 @@ const Navigation = () => {
             
             {/* Mobile Menu */}
             <div className="lg:hidden flex items-center space-x-2">
-              {/* ThemeToggle is hidden but still functional */}
-              <div className="hidden">
-                <ThemeToggle />
-              </div>
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon" className="text-slate-200 hover:bg-slate-800">

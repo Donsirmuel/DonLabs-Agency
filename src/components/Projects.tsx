@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Database, Image as ImageIcon } from "lucide-react";
+import { ExternalLink, Database, Image as ImageIcon, ArrowRight } from "lucide-react";
 import { useContent } from '@/lib/ContentProvider';
 import { useState } from 'react';
 import Section from '@/components/Section';
 import ImageLightbox from '@/components/ImageLightbox';
+import { Link } from "react-router-dom";
+import { getProjectPath } from "@/lib/projects";
 
 type ProjectMediaProps = {
   title: string;
@@ -59,7 +61,6 @@ type Project = {
   title: string;
   description?: string;
   features?: string[];
-  githubUrl?: string;
   liveUrl?: string;
   imageUrl?: string;
   hasLive?: boolean;
@@ -71,31 +72,34 @@ const hasValidUrl = (url?: string) => !!url && url !== '#';
 
 const ProjectActions = ({ project }: { project: Project }) => {
   const canView = (project.hasLive ?? true) && hasValidUrl(project.liveUrl);
-  const canCode = hasValidUrl(project.githubUrl);
+  const projectPath = getProjectPath(project);
 
   return (
     <div className="flex flex-wrap gap-3">
+      <Button
+        asChild
+        size="sm"
+        className="bg-gradient-to-r from-primary to-emerald-500 text-primary-foreground shadow-md shadow-primary/20 hover:shadow-hover hover:translate-y-[-1px]"
+      >
+        <Link to={projectPath}>
+          <ArrowRight className="h-4 w-4 mr-1" />
+          View details
+        </Link>
+      </Button>
+
       {canView ? (
         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer nofollow">
-          <Button size="sm" className="bg-primary hover:bg-primary-hover text-primary-foreground">
+          <Button
+            size="sm"
+            variant="outline"
+            className="border-primary/30 bg-slate-900/80 text-primary hover:border-primary/50 hover:bg-slate-900/80 hover:text-primary-hover"
+          >
             <ExternalLink className="h-4 w-4 mr-1" />
-            View Project
+            Visit
           </Button>
         </a>
       ) : (
-        <Button size="sm" variant="outline" disabled className="border-slate-700 text-slate-500">
-          <ExternalLink className="h-4 w-4 mr-1" />
-          View Project
-        </Button>
-      )}
-
-      {canCode && (
-        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer nofollow">
-          <Button size="sm" variant="outline" className="border-primary/30 text-primary hover:bg-primary/5">
-            <Github className="h-4 w-4 mr-1" />
-            Code
-          </Button>
-        </a>
+        null
       )}
     </div>
   );
@@ -122,14 +126,14 @@ const ValueBlock = ({ value }: { value?: string }) => {
   if (!value) return null;
 
   return (
-    <p className="text-sm text-slate-300 bg-slate-900/70 border border-slate-800 rounded-lg p-3 leading-relaxed">
-      <strong className="text-slate-100">Value:</strong> {value}
+    <p className="text-sm text-slate-300 bg-white/5 border border-white/10 rounded-xl p-4 leading-relaxed">
+      <strong className="text-slate-100">Why it matters:</strong> {value}
     </p>
   );
 };
 
 const FeatureSlate = ({ project }: { project: Project }) => (
-  <article className="rounded-2xl border border-slate-800 bg-slate-950/90 overflow-hidden">
+  <article className="rounded-2xl border border-white/10 bg-slate-950/90 overflow-hidden shadow-card">
     <div className="grid lg:grid-cols-2">
       <div className="relative min-h-[260px] bg-slate-900/70 group">
         <ProjectMedia
@@ -143,7 +147,7 @@ const FeatureSlate = ({ project }: { project: Project }) => (
       <div className="p-6 md:p-8 space-y-5">
         <div className="flex flex-wrap items-center gap-2">
           {project.projectType && (
-            <Badge variant="outline" className="border-slate-700 text-slate-300">{project.projectType}</Badge>
+            <Badge variant="outline" className="border-primary/20 bg-primary/10 text-primary">{project.projectType}</Badge>
           )}
         </div>
 
@@ -163,7 +167,7 @@ const FeatureSlate = ({ project }: { project: Project }) => (
 );
 
 const SplitSlate = ({ project }: { project: Project }) => (
-  <article className="rounded-2xl border border-slate-800 bg-slate-900/70 overflow-hidden">
+  <article className="rounded-2xl border border-white/10 bg-slate-900/70 overflow-hidden shadow-card">
     <div className="grid lg:grid-cols-5 gap-0">
       <div className="p-6 md:p-7 lg:col-span-3 space-y-4 order-2 lg:order-1">
         <div className="flex items-center gap-2">
@@ -173,7 +177,7 @@ const SplitSlate = ({ project }: { project: Project }) => (
 
         <div className="flex flex-wrap gap-2">
           {project.projectType && (
-            <Badge variant="outline" className="border-slate-700 text-slate-300">{project.projectType}</Badge>
+          <Badge variant="outline" className="border-primary/20 bg-primary/10 text-primary">{project.projectType}</Badge>
           )}
         </div>
 
@@ -199,11 +203,11 @@ const SplitSlate = ({ project }: { project: Project }) => (
 );
 
 const CompactSlate = ({ project }: { project: Project }) => (
-  <article className="rounded-2xl border border-slate-800 bg-slate-950/80 overflow-hidden">
-    <div className="p-6 md:p-7 border-b border-slate-800">
+  <article className="rounded-2xl border border-white/10 bg-slate-950/80 overflow-hidden shadow-card">
+    <div className="p-6 md:p-7 border-b border-white/10">
       <div className="flex flex-wrap items-center gap-2 mb-3">
         {project.projectType && (
-          <Badge variant="outline" className="border-slate-700 text-slate-300">{project.projectType}</Badge>
+          <Badge variant="outline" className="border-primary/20 bg-primary/10 text-primary">{project.projectType}</Badge>
         )}
       </div>
 

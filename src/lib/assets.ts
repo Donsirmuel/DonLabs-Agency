@@ -1,5 +1,5 @@
 // Utility function to get the correct base path for assets
-const CACHE_BUST = '?v=3';
+const CACHE_BUST = '?v=4';
 
 export const getAssetPath = (path: string): string => {
   // Remove leading slash if present
@@ -56,6 +56,14 @@ export const ASSETS = {
   bubbaliciousScreenshot: getAssetPath('bubbalicious-screenshot.jpeg'),
   shobsPortfolioScreenshot: getAssetPath('Shobs-portfolio-image.jpeg'),
   vendoraScreenshot: getAssetPath('vendora-screenshot.png'),
+  showcaseShindaraDesktop: getAssetPath('project-showcases/desktop/shindara-style-hub.png'),
+  showcaseShindaraMobile: getAssetPath('project-showcases/mobile/shindara-style-hub.png'),
+  showcaseBubbaliciousDesktop: getAssetPath('project-showcases/desktop/bubbalicious-hair-and-co.png'),
+  showcaseBubbaliciousMobile: getAssetPath('project-showcases/mobile/bubbalicious-hair-and-co.png'),
+  showcaseShobsDesktop: getAssetPath('project-showcases/desktop/shobs-graphic-design-portfolio.png'),
+  showcaseShobsMobile: getAssetPath('project-showcases/mobile/shobs-graphic-design-portfolio.png'),
+  showcaseVendoraDesktop: getAssetPath('project-showcases/desktop/vendora.png'),
+  showcaseVendoraMobile: getAssetPath('project-showcases/mobile/vendora.png'),
   businessWebsite: getAssetPath('business website.png'),
   dataVisualization: getAssetPath('data visualization.png'),
   codeScreenshot: getAssetPath('code screenshot.png'),

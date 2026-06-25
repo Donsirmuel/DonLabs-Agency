@@ -80,7 +80,7 @@ function initApp() {
   }
 
   createRoot(mount).render(
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+    <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" enableSystem={false}>
       <ContentProvider>
         <BrowserRouter>
           <App />

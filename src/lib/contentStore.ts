@@ -2,9 +2,12 @@ export type Project = {
   title: string;
   description: string;
   features: string[];
+  slug?: string;
   githubUrl?: string;
   liveUrl?: string;
   imageUrl?: string;
+  caseStudyDesktopImageUrl?: string;
+  caseStudyMobileImageUrl?: string;
   hasLive?: boolean;
   projectType?: string;
   clientBenefit?: string;
@@ -47,7 +50,7 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 27;
+const CONTENT_VERSION = 28;
 
 export const defaultContent: SiteContent = {
   about: {
@@ -67,9 +70,10 @@ export const defaultContent: SiteContent = {
         "Responsive layout and accessible components"
       ],
       githubUrl: "#",
-      liveUrl: "https://Devblog.com.ng",
+      liveUrl: "#",
       imageUrl: ASSETS.devblogScreenshot,
-      hasLive: true,
+      caseStudyDesktopImageUrl: ASSETS.devblogScreenshot,
+      hasLive: false,
       projectType: "Content Management",
       clientBenefit: "Faster publishing, improved time-on-page, and easier editorial workflows"
     },
@@ -86,6 +90,7 @@ export const defaultContent: SiteContent = {
       githubUrl: "#",
       liveUrl: "#",
       imageUrl: ASSETS.glitglam,
+      caseStudyDesktopImageUrl: ASSETS.glitglam,
       hasLive: false,
       projectType: "E-Commerce",
       clientBenefit: "Increased conversions and simplified order management for the client"
@@ -103,6 +108,8 @@ export const defaultContent: SiteContent = {
       githubUrl: "#",
       liveUrl: "https://shindara-style.vercel.app",
       imageUrl: ASSETS.shindaraScreenshot,
+      caseStudyDesktopImageUrl: ASSETS.showcaseShindaraDesktop,
+      caseStudyMobileImageUrl: ASSETS.showcaseShindaraMobile,
       hasLive: true,
       projectType: "E-Commerce",
       clientBenefit: "Reduced manual processing, improved customer experience, and reliable storefront performance"
@@ -121,6 +128,8 @@ export const defaultContent: SiteContent = {
       githubUrl: "#",
       liveUrl: "https://bubbalicioushairandco.vercel.app",
       imageUrl: ASSETS.bubbaliciousScreenshot,
+      caseStudyDesktopImageUrl: ASSETS.showcaseBubbaliciousDesktop,
+      caseStudyMobileImageUrl: ASSETS.showcaseBubbaliciousMobile,
       hasLive: true,
       projectType: "Business Website",
       clientBenefit: "Professional online presence enabling client bookings and service discovery for a premium salon"
@@ -138,6 +147,8 @@ export const defaultContent: SiteContent = {
       githubUrl: "#",
       liveUrl: "https://shobs-portfolio-site.vercel.app/",
       imageUrl: ASSETS.shobsPortfolioScreenshot,
+      caseStudyDesktopImageUrl: ASSETS.showcaseShobsDesktop,
+      caseStudyMobileImageUrl: ASSETS.showcaseShobsMobile,
       hasLive: true,
       projectType: "Portfolio Website",
       clientBenefit: "Elevated brand presence with a polished showcase for design work"
@@ -152,9 +163,11 @@ export const defaultContent: SiteContent = {
         "Admin workflows for vendors and order management"
       ],
       githubUrl: "#",
-      liveUrl: "https://vendora.page",
+      liveUrl: "#",
       imageUrl: ASSETS.vendoraScreenshot,
-      hasLive: true,
+      caseStudyDesktopImageUrl: ASSETS.showcaseVendoraDesktop,
+      caseStudyMobileImageUrl: ASSETS.showcaseVendoraMobile,
+      hasLive: false,
       projectType: "Marketplace",
       clientBenefit: "Increased vendor reach and smoother buyer journeys through optimized browsing and checkout"
     }
