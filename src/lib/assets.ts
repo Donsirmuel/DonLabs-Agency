@@ -56,7 +56,7 @@ export const ASSETS = {
   bubbaliciousScreenshot: getAssetPath('bubbalicious-screenshot.jpeg'),
   shobsPortfolioScreenshot: getAssetPath('Shobs-portfolio-image.jpeg'),
   vendoraScreenshot: getAssetPath('vendora-screenshot.png'),
-  northlineWearsScreenshot: getAssetPath('northline-screenshot.png'),
+  northlineWearsScreenshot: getAssetPath('northline-screenshot.webp'),
   showcaseShindaraDesktop: getAssetPath('project-showcases/desktop/shindara-style-hub.png'),
   showcaseShindaraMobile: getAssetPath('project-showcases/mobile/shindara-style-hub.png'),
   showcaseBubbaliciousDesktop: getAssetPath('project-showcases/desktop/bubbalicious-hair-and-co.png'),
