@@ -1,5 +1,5 @@
 // Utility function to get the correct base path for assets
-const CACHE_BUST = '?v=5';
+const CACHE_BUST = '?v=4';
 
 export const getAssetPath = (path: string): string => {
   // Remove leading slash if present
