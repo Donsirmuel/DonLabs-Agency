@@ -80,10 +80,10 @@ const Footer = () => {
                 WhatsApp Support
               </a>
               <a 
-                href="mailto:samuel@donlabs.site" 
+                href="mailto:samuelolaonipekun050@outlook.com" 
                 className="break-words text-slate-400 transition-colors hover:text-cyan-300"
               >
-                samuel@donlabs.site
+                samuelolaonipekun050@outlook.com
               </a>
               <p className="text-slate-400">
                 Lagos, Nigeria
