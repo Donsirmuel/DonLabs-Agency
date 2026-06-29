@@ -50,7 +50,7 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 29;
+const CONTENT_VERSION = 30;
 
 export const defaultContent: SiteContent = {
   about: {
@@ -181,7 +181,7 @@ export const defaultContent: SiteContent = {
         "Admin dashboard for order and inventory management"
       ],
       githubUrl: "#",
-      liveUrl: "#",
+      liveUrl: "https://northline-wears.vercel.app/",
       imageUrl: ASSETS.northlineWearsScreenshot,
       caseStudyDesktopImageUrl: ASSETS.showcaseNorthlineWearsDesktop,
       caseStudyMobileImageUrl: ASSETS.showcaseNorthlineWearsMobile,
