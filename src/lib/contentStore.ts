@@ -50,7 +50,7 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 30;
+const CONTENT_VERSION = 31;
 
 export const defaultContent: SiteContent = {
   about: {
@@ -171,24 +171,6 @@ export const defaultContent: SiteContent = {
       projectType: "Marketplace",
       clientBenefit: "Increased vendor reach and smoother buyer journeys through optimized browsing and checkout"
     },
-    {
-      title: "Northline Wears",
-      description: "An e-commerce storefront for a fashion brand that sells custom designed clothings in the UK.",
-      features: [
-        "Custom product catalog with size and color variants",
-        "Secure checkout with integrated payment options",
-        "Responsive design for mobile and desktop users",
-        "Admin dashboard for order and inventory management"
-      ],
-      githubUrl: "#",
-      liveUrl: "https://northline-wears.vercel.app/",
-      imageUrl: ASSETS.northlineWearsScreenshot,
-      caseStudyDesktopImageUrl: ASSETS.showcaseNorthlineWearsDesktop,
-      caseStudyMobileImageUrl: ASSETS.showcaseNorthlineWearsMobile,
-      hasLive: true,
-      projectType: "E-Commerce",
-      clientBenefit: "Moved the brand from their old outdated website to a modern e-commerce platform with improved user experience, better product showcase and elevated brand image."
-    }
   ],
   services: [
     {
