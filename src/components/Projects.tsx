@@ -36,7 +36,7 @@ const ProjectMedia = ({ title, liveUrl, hasLive, imageUrl }: ProjectMediaProps) 
           sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
           alt={`${title} - project screenshot`}
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-          loading="lazy"
+          loading="eager"
         />
       </button>
 
