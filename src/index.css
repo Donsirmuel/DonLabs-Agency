@@ -191,7 +191,7 @@
   
   /* Staggered animations for children */
   .stagger-children > * {
-    opacity: 0;
+    opacity: 1;
     animation: fadeInUp 0.6s ease-out forwards;
   }
   

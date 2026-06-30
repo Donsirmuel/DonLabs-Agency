@@ -127,7 +127,7 @@ const ValueBlock = ({ value }: { value?: string }) => {
 
   return (
     <p className="text-sm text-slate-300 bg-white/5 border border-white/10 rounded-xl p-4 leading-relaxed">
-      <strong className="text-slate-100">Why it matters:</strong> {value}
+      <strong className="text-slate-100">Achievement:</strong> {value}
     </p>
   );
 };

@@ -151,7 +151,7 @@ const ProjectCaseStudy = () => {
               </Link>
             </Button>
             {project.projectType && <Badge variant="outline" className="border-primary/20 bg-primary/10 text-primary">{project.projectType}</Badge>}
-            {project.clientBenefit && <Badge variant="secondary" className="bg-white/5 text-slate-200">{project.clientBenefit}</Badge>}
+            {project.clientBenefit && <Badge variant="secondary" className="bg-white/5 text-slate-200">Achievement</Badge>}
           </div>
 
           <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
@@ -208,24 +208,24 @@ const ProjectCaseStudy = () => {
             </div>
 
             <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-slate-300">
-              <p className="text-xs uppercase tracking-[0.22em] text-slate-400">What this gives your business</p>
+              <p className="text-xs uppercase tracking-[0.22em] text-slate-400">What this means for your business</p>
               <div className="mt-5 space-y-4">
                 <div className="rounded-2xl border border-white/5 bg-white/5 px-4 py-3">
-                  <p className="text-sm font-medium text-white">A stronger first impression</p>
+                  <p className="text-sm font-medium text-white">A sharper first impression</p>
                   <p className="mt-1 text-sm leading-relaxed text-slate-300">
-                    Visitors see a polished brand, clear services, and a site that feels trustworthy from the first glance.
+                    Visitors land on a polished brand, understand what you do quickly, and feel more confident taking the next step.
                   </p>
                 </div>
                 <div className="rounded-2xl border border-white/5 bg-white/5 px-4 py-3">
-                  <p className="text-sm font-medium text-white">Less friction for enquiries</p>
+                  <p className="text-sm font-medium text-white">Less back-and-forth on enquiries</p>
                   <p className="mt-1 text-sm leading-relaxed text-slate-300">
-                    People can quickly understand what you offer, then move straight to booking or contacting you.
+                    People can see your offer, pricing, or services faster and move straight to booking, calling, or sending a message.
                   </p>
                 </div>
                 <div className="rounded-2xl border border-white/5 bg-white/5 px-4 py-3">
-                  <p className="text-sm font-medium text-white">A page you can share anywhere</p>
+                  <p className="text-sm font-medium text-white">A link you can send anywhere</p>
                   <p className="mt-1 text-sm leading-relaxed text-slate-300">
-                    Use this link in messages, proposals, or social posts when you want to show a similar result.
+                    Share it in messages, proposals, or social posts whenever you want to show a polished result with zero extra explanation.
                   </p>
                 </div>
               </div>
@@ -257,17 +257,17 @@ const ProjectCaseStudy = () => {
 
         <div className="space-y-6">
           <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <p className="text-xs uppercase tracking-[0.22em] text-slate-400">Why it works</p>
+            <p className="text-xs uppercase tracking-[0.22em] text-slate-400">Achievement</p>
             <p className="mt-4 text-lg leading-relaxed text-slate-200">
-              {project.clientBenefit || "This project is designed to make the business look credible, get found more easily, and turn visitors into enquiries."}
+              {project.clientBenefit || "This project solved a real business problem by making the brand look more credible, the experience easier to use, and the next step clearer for visitors."}
             </p>
           </div>
 
           <div className="rounded-3xl border border-primary/15 bg-primary/5 p-6">
-            <p className="text-xs uppercase tracking-[0.22em] text-primary/80">Need something similar?</p>
+            <p className="text-xs uppercase tracking-[0.22em] text-primary/80">Want something similar?</p>
             <h2 className="mt-3 text-2xl font-semibold text-white">Book a free consultation.</h2>
             <p className="mt-3 text-slate-300">
-              We can turn a salon, studio, or service business into a clear, polished online presence that makes enquiries easier.
+              If you want a site that feels polished, explains your offer clearly, and makes it easier for people to reach out, let’s build it together.
             </p>
             <div className="mt-5">
               <Button asChild size="lg" className="bg-gradient-to-r from-primary to-emerald-500 text-primary-foreground shadow-md shadow-primary/20 hover:shadow-hover hover:translate-y-[-1px]">

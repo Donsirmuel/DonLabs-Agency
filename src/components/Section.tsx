@@ -29,7 +29,7 @@ const Section = ({ children, className = '', animationClass, once = true, delay 
 
   const Tag: any = as;
   return (
-    <Tag ref={ref} className={`opacity-0 ${className}`} {...rest}>
+    <Tag ref={ref} className={className} {...rest}>
       {children}
     </Tag>
   );

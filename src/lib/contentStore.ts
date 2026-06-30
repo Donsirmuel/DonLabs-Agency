@@ -50,7 +50,7 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 31;
+const CONTENT_VERSION = 32;
 
 export const defaultContent: SiteContent = {
   about: {
@@ -75,7 +75,7 @@ export const defaultContent: SiteContent = {
       caseStudyDesktopImageUrl: ASSETS.devblogScreenshot,
       hasLive: false,
       projectType: "Content Management",
-      clientBenefit: "Faster publishing, improved time-on-page, and easier editorial workflows"
+      clientBenefit: "Solved the slow, manual publishing process by giving the team role-based CMS controls, scheduling, and a faster reading experience."
     },
     {
       title: "Glitglam Beauty Salon",
@@ -93,7 +93,7 @@ export const defaultContent: SiteContent = {
       caseStudyDesktopImageUrl: ASSETS.glitglam,
       hasLive: false,
       projectType: "E-Commerce",
-      clientBenefit: "Increased conversions and simplified order management for the client"
+      clientBenefit: "Solved checkout drop-off and messy order handling with a cleaner shopping flow, stronger mobile UX, and simpler admin control."
     },
     {
       title: "Shindara Style Hub",
@@ -112,7 +112,7 @@ export const defaultContent: SiteContent = {
       caseStudyMobileImageUrl: ASSETS.showcaseShindaraMobile,
       hasLive: true,
       projectType: "E-Commerce",
-      clientBenefit: "Reduced manual processing, improved customer experience, and reliable storefront performance"
+      clientBenefit: "Solved the pressure of managing a larger catalog by making promotions, orders, and storefront updates easier to handle at scale."
     },
     {
       title: "Bubbalicious Hair & Co",
@@ -132,7 +132,7 @@ export const defaultContent: SiteContent = {
       caseStudyMobileImageUrl: ASSETS.showcaseBubbaliciousMobile,
       hasLive: true,
       projectType: "Business Website",
-      clientBenefit: "Professional online presence enabling client bookings and service discovery for a premium salon"
+      clientBenefit: "Solved the 'hard to understand at a glance' problem by presenting services clearly, supporting bookings, and making the salon look premium online."
     },
     {
       title: "Shobs Graphic Design Portfolio",
@@ -151,7 +151,7 @@ export const defaultContent: SiteContent = {
       caseStudyMobileImageUrl: ASSETS.showcaseShobsMobile,
       hasLive: true,
       projectType: "Portfolio Website",
-      clientBenefit: "Elevated brand presence with a polished showcase for design work"
+      clientBenefit: "Solved the weak portfolio presentation by giving the brand a sharper story, clearer services, and easier enquiry paths."
     },
     {
       title: "Vendora",
@@ -169,7 +169,26 @@ export const defaultContent: SiteContent = {
       caseStudyMobileImageUrl: ASSETS.showcaseVendoraMobile,
       hasLive: false,
       projectType: "Marketplace",
-      clientBenefit: "Increased vendor reach and smoother buyer journeys through optimized browsing and checkout"
+      clientBenefit: "Solved slow product discovery and clunky checkout by making browsing faster, order handling cleaner, and the buyer journey more reliable."
+    },
+    {
+      title: "Northline Wears",
+      description: "A fashion storefront created to give the brand a cleaner online presence, stronger product presentation, and a smoother path to browsing and enquiries.",
+      features: [
+        "Responsive storefront layout for mobile and desktop shoppers",
+        "Clear product presentation with polished visual hierarchy",
+        "Simple navigation that helps visitors browse faster",
+        "Brand-focused design that feels modern and trustworthy",
+        "Optimized enquiry and conversion pathways"
+      ],
+      githubUrl: "#",
+      liveUrl: "https://northline-wears.vercel.app",
+      imageUrl: ASSETS.northlineScreenshot,
+      caseStudyDesktopImageUrl: ASSETS.showcaseNorthlineDesktop,
+      caseStudyMobileImageUrl: ASSETS.showcaseNorthlineMobile,
+      hasLive: true,
+      projectType: "Fashion E-Commerce",
+      clientBenefit: "Solved the need for a more polished fashion storefront by making the brand look credible, the products easier to explore, and the next step clearer for shoppers."
     },
   ],
   services: [
