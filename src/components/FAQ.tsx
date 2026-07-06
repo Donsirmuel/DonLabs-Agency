@@ -2,6 +2,11 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
 import { useContent } from '@/lib/ContentProvider';
 import Section from '@/components/Section';
 
+type FaqItem = {
+  q: string;
+  a: string;
+};
+
 const defaultFaq = [
   { q: 'How long does a project take?', a: 'Small sites: 2–4 weeks. Simple stores: 4–8 weeks. Custom apps: timelines depend on scope - we provide clear estimates during discovery.' },
   { q: 'How much will it cost?', a: 'We provide clear price ranges and a fixed quote in the proposal so there are no surprises.' },
@@ -10,7 +15,7 @@ const defaultFaq = [
 
 const FAQ = () => {
   const { content } = useContent();
-  const faq = content?.servicesInfo?.faq ?? defaultFaq;
+  const faq = (content?.servicesInfo?.faq ?? defaultFaq) as FaqItem[];
 
   return (
     <Section as="section" className="border-y border-slate-800 bg-slate-950 px-4 py-24" aria-labelledby="faq-heading">
@@ -24,7 +29,7 @@ const FAQ = () => {
         </div>
 
         <div className="space-y-4">
-          {faq.map((qa: any, i: number) => (
+          {faq.map((qa: FaqItem, i: number) => (
             <Collapsible key={i}>
               <div className="rounded-xl border border-slate-700 bg-slate-900/70 p-5 transition-all duration-300 hover:border-cyan-300/40">
                 <CollapsibleTrigger asChild>

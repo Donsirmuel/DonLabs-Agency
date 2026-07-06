@@ -27,7 +27,7 @@ const Section = ({ children, className = '', animationClass, once = true, delay 
 
   useInViewAnimate(ref as React.RefObject<HTMLElement>, { animationClass: chosenAnimation, once, delay });
 
-  const Tag: any = as;
+  const Tag = as;
   return (
     <Tag ref={ref} className={className} {...rest}>
       {children}

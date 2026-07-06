@@ -18,10 +18,10 @@ export async function getJSON(path: string, opts: RequestInit = {}) {
   return res.json();
 }
 
-export async function postJSON(path: string, body: any) {
+export async function postJSON(path: string, body: unknown) {
   return getJSON(path, { method: 'POST', body: JSON.stringify(body) });
 }
 
-export async function patchJSON(path: string, body: any) {
+export async function patchJSON(path: string, body: unknown) {
   return getJSON(path, { method: 'PATCH', body: JSON.stringify(body) });
 }

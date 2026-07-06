@@ -10,7 +10,7 @@ type LoadingButtonProps = ButtonProps & {
 export const LoadingButton = React.forwardRef<HTMLButtonElement, LoadingButtonProps>(
   ({ isLoading = false, loadingText = "Loading…", children, ...props }, ref) => {
     return (
-      <Button {...(props as any)} ref={ref} loading={isLoading}>
+      <Button {...props} ref={ref} loading={isLoading}>
         {isLoading ? (
           <span className="flex items-center gap-2">
             <Spinner size={16} />

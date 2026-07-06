@@ -6,7 +6,6 @@ interface SpinnerProps extends React.HTMLAttributes<HTMLSpanElement> {
 }
 
 export const Spinner = ({ size = 16, label = "Loading", className, ...props }: SpinnerProps) => {
-  const s = `${size}px`;
   return (
     <span
       role="status"
@@ -21,8 +20,7 @@ export const Spinner = ({ size = 16, label = "Loading", className, ...props }: S
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="animate-spin motion-reduce:animate-none"
-        style={{ display: "inline-block", verticalAlign: "middle", width: s, height: s }}
+        className="inline-block align-middle animate-spin motion-reduce:animate-none"
       >
         <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" opacity="0.15" />
         <path d="M22 12a10 10 0 00-10-10" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />

@@ -8,9 +8,11 @@ type ContentContextValue = {
   reset: () => void;
 };
 
+type ContentProviderProps = React.PropsWithChildren;
+
 const ContentContext = createContext<ContentContextValue | undefined>(undefined);
 
-export const ContentProvider: React.FC<any> = ({ children }) => {
+export const ContentProvider = ({ children }: ContentProviderProps) => {
   const [content, setContentState] = useState<SiteContent>(() => loadContent());
 
   useEffect(() => {

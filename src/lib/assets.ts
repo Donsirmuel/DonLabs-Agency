@@ -20,7 +20,7 @@ export const getAssetPath = (path: string): string => {
   };
 
   // Build-time heuristic: Vite exposes BASE_URL; if it's set to the repo subpath, respect it
-  const baseUrl = (import.meta.env && (import.meta.env as any).BASE_URL) || '/';
+  const baseUrl = import.meta.env.BASE_URL || '/';
   const isGitHubPagesBuild = typeof baseUrl === 'string' && baseUrl.startsWith('/My-Portfolio/');
 
   const useRepoPrefix = isGitHubPagesBuild || isGitHubPagesRuntime();
