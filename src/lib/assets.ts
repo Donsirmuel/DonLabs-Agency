@@ -56,6 +56,7 @@ export const ASSETS = {
   shobsPortfolioScreenshot: getAssetPath('Shobs-portfolio-image.webp'),
   vendoraScreenshot: getAssetPath('vendora-screenshot.webp'),
   northlineScreenshot: getAssetPath('northline-screenshot.webp'),
+  vericlickScreenshot: getAssetPath('vericlick-screenshot.png'),
   showcaseShindaraDesktop: getAssetPath('project-showcases/desktop/shindara-style-hub.png'),
   showcaseShindaraMobile: getAssetPath('project-showcases/mobile/shindara-style-hub.png'),
   showcaseBubbaliciousDesktop: getAssetPath('project-showcases/desktop/bubbalicious-hair-and-co.png'),
@@ -66,6 +67,8 @@ export const ASSETS = {
   showcaseVendoraMobile: getAssetPath('project-showcases/mobile/vendora.png'),
   showcaseNorthlineDesktop: getAssetPath('project-showcases/desktop/northline-wears.png'),
   showcaseNorthlineMobile: getAssetPath('project-showcases/mobile/northline-wears.png'),
+  showcaseVericlickDesktop: getAssetPath('project-showcases/desktop/vericlick.png'),
+  showcaseVericlickMobile: getAssetPath('project-showcases/mobile/vericlick.png'),
   // Other project images
   businessWebsite: getAssetPath('business website.png'),
   dataVisualization: getAssetPath('data visualization.png'),

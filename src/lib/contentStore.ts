@@ -50,7 +50,7 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 32;
+const CONTENT_VERSION = 33;
 
 export const defaultContent: SiteContent = {
   about: {
@@ -189,6 +189,26 @@ export const defaultContent: SiteContent = {
       hasLive: true,
       projectType: "Fashion E-Commerce",
       clientBenefit: "Solved the need for a more polished fashion storefront by making the brand look credible, the products easier to explore, and the next step clearer for shoppers."
+    },
+    {
+      title: "VeriClick",
+      description: "A SaaS security tool that protects your links from bots and suspicious traffic. Every click is checked against your IP rules and bot detection before it reaches your page, with a plain-language reason for every decision.",
+      features: [
+        "Bot detection and suspicious traffic screening on every click",
+        "Custom IP rules and allow/block configurations",
+        "Plain-language explanations for why each request was flagged",
+        "Real-time click analytics and request insights",
+        "SaaS subscription model with a free beta tier"
+      ],
+      slug: "vericlick",
+      githubUrl: "#",
+      liveUrl: "https://getvericlick.site",
+      imageUrl: ASSETS.vericlickScreenshot,
+      caseStudyDesktopImageUrl: ASSETS.showcaseVericlickDesktop,
+      caseStudyMobileImageUrl: ASSETS.showcaseVericlickMobile,
+      hasLive: true,
+      projectType: "SaaS",
+      clientBenefit: "Solved the problem of bot clicks and junk traffic distorting link performance by filtering suspicious requests automatically and showing exactly why each one was blocked."
     },
   ],
   services: [
