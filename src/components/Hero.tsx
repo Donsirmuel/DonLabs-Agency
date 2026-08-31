@@ -74,12 +74,12 @@ const Hero = () => {
           </div>
           <div className="grid grid-cols-2 gap-4 rounded-xl border border-slate-800 bg-slate-900/80 p-4">
             <div>
-              <p className="mb-1 text-[10px] uppercase tracking-widest text-cyan-200/80">Success Rate</p>
-              <p className="text-2xl font-bold text-slate-100">98.4%</p>
+              <p className="mb-1 text-[10px] uppercase tracking-widest text-cyan-200/80">Client Satisfaction Rate</p>
+              <p className="text-2xl font-bold text-slate-100">99.5%</p>
             </div>
             <div>
               <p className="mb-1 text-[10px] uppercase tracking-widest text-cyan-200/80">Turnaround Period</p>
-              <p className="text-2xl font-bold text-slate-100">2-6 Weeks Avg</p>
+              <p className="text-2xl font-bold text-slate-100">5-14 Days Avg.</p>
             </div>
           </div>
           <div className="mt-4 grid grid-cols-2 gap-3 text-sm text-slate-300">

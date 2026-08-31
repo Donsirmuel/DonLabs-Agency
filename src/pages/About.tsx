@@ -60,7 +60,7 @@ const processSteps = [
   {
     number: "02",
     title: "Design & Build",
-    description: "Iterative delivery where UI and code progress in focused weekly sprints.",
+    description: "Iterative delivery where UI and code progress in focused timely sprints.",
   },
   {
     number: "03",

@@ -8,7 +8,7 @@ type FaqItem = {
 };
 
 const defaultFaq = [
-  { q: 'How long does a project take?', a: 'Small sites: 2–4 weeks. Simple stores: 4–8 weeks. Custom apps: timelines depend on scope - we provide clear estimates during discovery.' },
+  { q: 'How long does a project take?', a: 'Small sites: 3-7 days. Simple stores: 7-14 days. Custom apps: timelines depend on scope - we provide clear estimates during discovery.' },
   { q: 'How much will it cost?', a: 'We provide clear price ranges and a fixed quote in the proposal so there are no surprises.' },
   { q: 'Do you offer support?', a: 'Yes — maintenance packages and hourly support are available after launch.' }
 ];
