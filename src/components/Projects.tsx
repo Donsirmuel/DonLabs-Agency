@@ -7,6 +7,8 @@ import Section from '@/components/Section';
 import ImageLightbox from '@/components/ImageLightbox';
 import { Link } from "react-router-dom";
 import { getProjectPath } from "@/lib/projects";
+import { motion } from "framer-motion";
+import { StaggerItem, StaggerReveal, spring } from "@/components/motion";
 
 type ProjectMediaProps = {
   title: string;
@@ -29,19 +31,19 @@ const ProjectMedia = ({ title, liveUrl, hasLive, imageUrl }: ProjectMediaProps) 
 
   return (
     <>
-      <button onClick={open} className="block w-full h-full p-0 m-0 cursor-zoom-in" aria-label={`Expand screenshot for ${title}`}>
+      <button onClick={open} className="block h-full w-full cursor-zoom-in p-0 m-0" aria-label={`Expand screenshot for ${title}`}>
         <img
           src={imageUrl}
           srcSet={`${src640 ? src640 + ' 640w,' : ''}${src1024 ? src1024 + ' 1024w,' : ''}${src1920 ? src1920 + ' 1920w' : ''}`}
           sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
           alt={`${title} - project screenshot`}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
           loading="eager"
         />
       </button>
 
       <div className="absolute top-3 right-3">
-        <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm">
+        <Badge variant="secondary" className="border border-border bg-background/80 text-foreground backdrop-blur-sm">
           <ImageIcon className="h-3 w-3 mr-1" />
           Screenshot
         </Badge>
@@ -75,11 +77,11 @@ const ProjectActions = ({ project }: { project: Project }) => {
   const projectPath = getProjectPath(project);
 
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
       <Button
         asChild
         size="sm"
-        className="bg-gradient-to-r from-primary to-emerald-500 text-primary-foreground shadow-md shadow-primary/20 hover:shadow-hover hover:translate-y-[-1px]"
+        className="w-full text-primary-foreground shadow-md shadow-primary/20 hover:translate-y-[-1px] hover:shadow-hover sm:w-auto"
       >
         <Link to={projectPath}>
           <ArrowRight className="h-4 w-4 mr-1" />
@@ -92,7 +94,7 @@ const ProjectActions = ({ project }: { project: Project }) => {
           <Button
             size="sm"
             variant="outline"
-            className="border-primary/30 bg-slate-900/80 text-primary hover:border-primary/50 hover:bg-slate-900/80 hover:text-primary-hover"
+            className="w-full border-border bg-background text-foreground hover:border-primary/40 hover:bg-foreground/5 sm:w-auto"
           >
             <ExternalLink className="h-4 w-4 mr-1" />
             Visit
@@ -111,7 +113,7 @@ const FeatureList = ({ features }: { features?: string[] }) => {
   }
 
   return (
-    <ul className="space-y-2 text-sm text-slate-300">
+    <ul className="space-y-2 text-sm text-muted-foreground">
       {features.slice(0, 4).map((feature, index) => (
         <li key={index} className="flex items-start gap-2">
           <span className="text-primary mt-1">•</span>
@@ -126,16 +128,16 @@ const ValueBlock = ({ value }: { value?: string }) => {
   if (!value) return null;
 
   return (
-    <p className="text-sm text-slate-300 bg-white/5 border border-white/10 rounded-xl p-4 leading-relaxed">
-      <strong className="text-slate-100">Achievement:</strong> {value}
+    <p className="rounded-xl border border-border bg-background p-4 text-sm leading-relaxed text-muted-foreground">
+      <strong className="text-foreground">Outcome:</strong> {value}
     </p>
   );
 };
 
 const FeatureSlate = ({ project }: { project: Project }) => (
-  <article className="rounded-2xl border border-white/10 bg-slate-950/90 overflow-hidden shadow-card">
+  <motion.article whileHover={{ y: -5 }} transition={spring} className="overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-colors hover:border-primary/35">
     <div className="grid lg:grid-cols-2">
-      <div className="relative min-h-[260px] bg-slate-900/70 group">
+      <div className="group relative min-h-[220px] bg-background sm:min-h-[260px]">
         <ProjectMedia
           title={project.title}
           liveUrl={project.liveUrl}
@@ -144,7 +146,7 @@ const FeatureSlate = ({ project }: { project: Project }) => (
         />
       </div>
 
-      <div className="p-6 md:p-8 space-y-5">
+      <div className="space-y-5 p-5 sm:p-6 md:p-8">
         <div className="flex flex-wrap items-center gap-2">
           {project.projectType && (
             <Badge variant="outline" className="border-primary/20 bg-primary/10 text-primary">{project.projectType}</Badge>
@@ -152,9 +154,9 @@ const FeatureSlate = ({ project }: { project: Project }) => (
         </div>
 
         <div>
-          <h3 className="text-2xl md:text-3xl font-bold text-slate-100">{project.title}</h3>
+          <h3 className="text-2xl font-bold text-foreground md:text-3xl">{project.title}</h3>
           {project.description && (
-            <p className="text-slate-300 leading-relaxed mt-3">{project.description}</p>
+            <p className="mt-3 leading-relaxed text-muted-foreground">{project.description}</p>
           )}
         </div>
 
@@ -163,16 +165,16 @@ const FeatureSlate = ({ project }: { project: Project }) => (
         <ProjectActions project={project} />
       </div>
     </div>
-  </article>
+  </motion.article>
 );
 
 const SplitSlate = ({ project }: { project: Project }) => (
-  <article className="rounded-2xl border border-white/10 bg-slate-900/70 overflow-hidden shadow-card">
-    <div className="grid lg:grid-cols-5 gap-0">
-      <div className="p-6 md:p-7 lg:col-span-3 space-y-4 order-2 lg:order-1">
+  <motion.article whileHover={{ y: -5 }} transition={spring} className="overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-colors hover:border-primary/35">
+    <div className="grid gap-0 lg:grid-cols-5">
+      <div className="order-2 space-y-4 p-5 sm:p-6 md:p-7 lg:order-1 lg:col-span-3">
         <div className="flex items-center gap-2">
           <Database className="h-5 w-5 text-primary" />
-          <h3 className="text-xl md:text-2xl font-semibold text-slate-100">{project.title}</h3>
+          <h3 className="text-xl font-semibold text-foreground md:text-2xl">{project.title}</h3>
         </div>
 
         <div className="flex flex-wrap gap-2">
@@ -182,7 +184,7 @@ const SplitSlate = ({ project }: { project: Project }) => (
         </div>
 
         {project.description && (
-          <p className="text-slate-300 leading-relaxed">{project.description}</p>
+          <p className="leading-relaxed text-muted-foreground">{project.description}</p>
         )}
 
         <FeatureList features={project.features} />
@@ -190,7 +192,7 @@ const SplitSlate = ({ project }: { project: Project }) => (
         <ProjectActions project={project} />
       </div>
 
-      <div className="relative min-h-[230px] lg:min-h-full bg-slate-950 group lg:col-span-2 order-1 lg:order-2">
+      <div className="group relative order-1 min-h-[220px] bg-background lg:order-2 lg:col-span-2 lg:min-h-full">
         <ProjectMedia
           title={project.title}
           liveUrl={project.liveUrl}
@@ -199,26 +201,26 @@ const SplitSlate = ({ project }: { project: Project }) => (
         />
       </div>
     </div>
-  </article>
+  </motion.article>
 );
 
 const CompactSlate = ({ project }: { project: Project }) => (
-  <article className="rounded-2xl border border-white/10 bg-slate-950/80 overflow-hidden shadow-card">
-    <div className="p-6 md:p-7 border-b border-white/10">
-      <div className="flex flex-wrap items-center gap-2 mb-3">
+  <motion.article whileHover={{ y: -5 }} transition={spring} className="overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-colors hover:border-primary/35">
+    <div className="border-b border-border p-5 sm:p-6 md:p-7">
+      <div className="mb-3 flex flex-wrap items-center gap-2">
         {project.projectType && (
           <Badge variant="outline" className="border-primary/20 bg-primary/10 text-primary">{project.projectType}</Badge>
         )}
       </div>
 
-      <h3 className="text-xl md:text-2xl font-semibold text-slate-100">{project.title}</h3>
+      <h3 className="text-xl font-semibold text-foreground md:text-2xl">{project.title}</h3>
       {project.description && (
-        <p className="text-slate-300 leading-relaxed mt-3">{project.description}</p>
+        <p className="mt-3 leading-relaxed text-muted-foreground">{project.description}</p>
       )}
     </div>
 
     <div className="grid md:grid-cols-3">
-      <div className="relative md:col-span-1 min-h-[220px] bg-slate-900 group">
+      <div className="group relative min-h-[220px] bg-background md:col-span-1">
         <ProjectMedia
           title={project.title}
           liveUrl={project.liveUrl}
@@ -227,13 +229,13 @@ const CompactSlate = ({ project }: { project: Project }) => (
         />
       </div>
 
-      <div className="md:col-span-2 p-6 md:p-7 space-y-4">
+      <div className="space-y-4 p-5 sm:p-6 md:col-span-2 md:p-7">
         <FeatureList features={project.features} />
         <ValueBlock value={project.clientBenefit} />
         <ProjectActions project={project} />
       </div>
     </div>
-  </article>
+  </motion.article>
 );
 
 const Projects = () => {
@@ -244,27 +246,33 @@ const Projects = () => {
   const renderProject = (project: Project, index: number) => {
     const variant = index % 3;
 
-    if (variant === 0) return <FeatureSlate key={index} project={project} />;
-    if (variant === 1) return <SplitSlate key={index} project={project} />;
-    return <CompactSlate key={index} project={project} />;
+    if (variant === 0) return <StaggerItem key={index}><FeatureSlate project={project} /></StaggerItem>;
+    if (variant === 1) return <StaggerItem key={index}><SplitSlate project={project} /></StaggerItem>;
+    return <StaggerItem key={index}><CompactSlate project={project} /></StaggerItem>;
   };
 
   return (
-    <Section as="section" className="section-spacing container-padding bg-slate-950" aria-labelledby="projects-heading">
-      <div className="max-w-7xl mx-auto space-y-8">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-primary/20 text-primary text-sm font-semibold border border-primary/30">
+    <Section as="section" className="section-band-dark relative overflow-hidden px-4 py-16 sm:py-20 lg:py-24" aria-labelledby="projects-heading">
+      <motion.div
+        animate={{ opacity: [0.06, 0.18, 0.06] }}
+        transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-foreground/25 to-transparent"
+        aria-hidden
+      />
+      <div className="mx-auto max-w-7xl space-y-8">
+        <div className="mx-auto mb-12 max-w-4xl text-center sm:mb-16">
+          <div className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
             Portfolio
           </div>
-          <h2 id="projects-heading" className="text-4xl md:text-5xl font-bold mb-6 text-slate-100">Portfolio Projects</h2>
-          <p className="text-lg md:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            Explore DonLabs' portfolio of real projects delivered for clients. Each entry describes the business problem, what we built (stack and features), and the measurable results or value delivered.
+          <h2 id="projects-heading" className="mb-6 text-4xl font-black uppercase leading-[0.98] text-foreground sm:text-5xl md:text-6xl">Selected Work</h2>
+          <p className="mx-auto max-w-4xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            A closer look at websites, stores, and web platforms we have shaped for clearer presentation, smoother customer journeys, and stronger business operations.
           </p>
         </div>
 
-        <div className="space-y-6 md:space-y-8 stagger-children">
+        <StaggerReveal className="space-y-6 md:space-y-8">
           {projects.map((project, index) => renderProject(project, index))}
-        </div>
+        </StaggerReveal>
       </div>
     </Section>
   );

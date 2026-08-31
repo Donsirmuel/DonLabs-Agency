@@ -9,6 +9,8 @@ import Section from '@/components/Section';
 import { useState } from 'react';
 import { toast } from '@/hooks/use-toast';
 import { trackEvent } from '@/lib/analytics';
+import { motion } from "framer-motion";
+import { StaggerItem, StaggerReveal, spring } from "@/components/motion";
 
 const WHATSAPP_NUMBER = '2349031386928'; // no plus sign (updated per user)
 
@@ -107,59 +109,73 @@ const Contact = () => {
   };
 
   return (
-    <Section as="section" className="section-spacing container-padding bg-gradient-to-b from-background to-accent/20" aria-labelledby="contact-heading">
-      <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+    <Section as="section" className="section-band-dark relative overflow-hidden px-4 py-16 sm:py-20 lg:py-24" aria-labelledby="contact-heading">
+      <motion.div
+        animate={{ opacity: [0.06, 0.18, 0.06] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-foreground/25 to-transparent"
+        aria-hidden
+      />
+      <div className="mx-auto max-w-6xl">
+          <div className="mx-auto mb-12 max-w-4xl text-center sm:mb-16">
+            <div className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
               Get In Touch
             </div>
-            <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Project?</h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Let's discuss your project and create something amazing together. We work with clients across Africa and globally to build professional web solutions.
+            <h2 id="contact-heading" className="mb-6 text-4xl font-black uppercase leading-[0.98] text-foreground sm:text-5xl md:text-6xl">Tell Us What You Want to Build</h2>
+            <p className="mx-auto max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              Share the business goal, the kind of website or platform you need, and what is not working today. We will help you shape the next practical step.
             </p>
           </div>
         
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
           {/* Contact Info */}
           <div className="space-y-8">
-            <div className="p-8 bg-gradient-to-br from-card to-accent/5 border-2 border-border rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4">Let's Build Together</h3>
+            <motion.div whileHover={{ y: -4 }} transition={spring} className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+              <h3 className="mb-4 text-2xl font-bold">A Good Project Starts With Clarity</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Whether you need a business website, e-commerce store, or custom web application, 
-                we're here to help transform your vision into reality.
+                Whether you need a business website, online store, dashboard, or booking flow, we will help turn the idea into a clear scope before anyone starts building.
               </p>
-            </div>
+            </motion.div>
             
-            <div className="space-y-3">
-              <a 
+            <StaggerReveal className="space-y-3">
+              <StaggerItem>
+              <motion.a 
                 href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl transition-all duration-300 hover:shadow-hover hover:-translate-y-1 bg-gradient-to-r from-green-500/10 to-green-600/10 border-2 border-green-500/20 hover:border-green-500/40"
+                whileHover={{ y: -4 }}
+                transition={spring}
+                className="flex items-center gap-4 rounded-xl border border-primary/25 bg-primary/10 p-4 transition-colors hover:border-primary/45 hover:shadow-hover"
               >
-                <div className="p-3 bg-green-500/20 rounded-xl">
-                  <MessageCircle className="h-6 w-6 text-green-600" />
+                <div className="rounded-xl bg-primary/15 p-3">
+                  <MessageCircle className="h-6 w-6 text-primary" />
                 </div>
                 <div>
                   <p className="font-semibold text-sm text-muted-foreground">WhatsApp (Fastest)</p>
                   <p className="font-medium">+234 903 138 6928</p>
                 </div>
-              </a>
+              </motion.a>
+              </StaggerItem>
 
-              <a 
+              <StaggerItem>
+              <motion.a 
                 href="mailto:samuelolaonipekun050@outlook.com"
-                className="flex items-center gap-4 p-4 rounded-xl transition-all duration-300 hover:shadow-hover hover:-translate-y-1 bg-card border-2 border-border hover:border-primary/40"
+                whileHover={{ y: -4 }}
+                transition={spring}
+                className="flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/40 hover:shadow-hover"
               >
                 <div className="p-3 bg-primary/10 rounded-xl">
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <div>
                   <p className="font-semibold text-sm text-muted-foreground">Email</p>
-                  <p className="font-medium text-sm">samuelolaonipekun050@outlook.com</p>
+                  <p className="break-all text-sm font-medium">samuelolaonipekun050@outlook.com</p>
                 </div>
-              </a>
+              </motion.a>
+              </StaggerItem>
               
-              <div className="flex items-center gap-4 p-4 rounded-xl bg-card border-2 border-border">
+              <StaggerItem>
+              <div className="flex items-center gap-4 rounded-xl border border-border bg-card p-4">
                 <div className="p-3 bg-primary/10 rounded-xl">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
@@ -168,51 +184,52 @@ const Contact = () => {
                   <p className="font-medium">Africa (Remote)</p>
                 </div>
               </div>
+              </StaggerItem>
 
               <div className="flex gap-3 pt-4">
-                <a href="https://github.com/Donsirmuel" target="_blank" rel="noopener noreferrer" className="p-3 bg-card border-2 border-border rounded-xl hover:border-primary/40 transition-all hover:scale-110">
+                <a href="https://github.com/Donsirmuel" target="_blank" rel="noopener noreferrer" className="rounded-xl border border-border bg-card p-3 transition-all hover:scale-110 hover:border-primary/40">
                   <Github className="h-5 w-5 text-foreground" />
                 </a>
-                <a href="https://linkedin.com/in/samuel-olaonipekun" target="_blank" rel="noopener noreferrer" className="p-3 bg-card border-2 border-border rounded-xl hover:border-primary/40 transition-all hover:scale-110">
+                <a href="https://linkedin.com/in/samuel-olaonipekun" target="_blank" rel="noopener noreferrer" className="rounded-xl border border-border bg-card p-3 transition-all hover:scale-110 hover:border-primary/40">
                   <Linkedin className="h-5 w-5 text-foreground" />
                 </a>
-                <a href="https://twitter.com/_donsirmuel" target="_blank" rel="noopener noreferrer" className="p-3 bg-card border-2 border-border rounded-xl hover:border-primary/40 transition-all hover:scale-110">
+                <a href="https://twitter.com/_donsirmuel" target="_blank" rel="noopener noreferrer" className="rounded-xl border border-border bg-card p-3 transition-all hover:scale-110 hover:border-primary/40">
                   <Send className="h-5 w-5 text-foreground" />
                 </a>
               </div>
-            </div>
+            </StaggerReveal>
           </div>
           
           {/* Contact Form */}
-          <Card className="shadow-hover border-2">
+          <Card className="border-border bg-card shadow-card">
             <CardHeader>
               <CardTitle className="text-2xl">Get Your Free Quote</CardTitle>
               <CardDescription className="text-base">
-                Tell us about your project and we'll get back to you within 24 hours.
+                Tell us what you are trying to improve. We will reply with next steps, questions, or a simple recommendation.
               </CardDescription>
             </CardHeader>
             <CardContent>
               <form className="space-y-5" onSubmit={handleSubmit} aria-busy={submitting}>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <Label htmlFor="name" className="font-semibold">Name</Label>
-                    <Input id="name" placeholder="Your name" className="border-2" value={name} onChange={(e) => setName(e.target.value)} />
+                    <Input id="name" placeholder="Your name" className="border-border bg-background" value={name} onChange={(e) => setName(e.target.value)} />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email" className="font-semibold">Email</Label>
-                    <Input id="email" type="email" placeholder="your@email.com" className="border-2" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <Input id="email" type="email" placeholder="your@email.com" className="border-border bg-background" value={email} onChange={(e) => setEmail(e.target.value)} />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="subject" className="font-semibold">Project Type</Label>
-                  <Input id="subject" placeholder="e.g. Business Website, E-commerce Store" className="border-2" value={subject} onChange={(e) => setSubject(e.target.value)} />
+                  <Label htmlFor="subject" className="font-semibold">What do you need?</Label>
+                  <Input id="subject" placeholder="e.g. Website, online store, dashboard" className="border-border bg-background" value={subject} onChange={(e) => setSubject(e.target.value)} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message" className="font-semibold">Project Details</Label>
                   <Textarea 
                     id="message" 
-                    placeholder="Describe your business and what kind of website/app you need..."
-                    className="min-h-[120px] border-2"
+                    placeholder="Tell us about your business, what you want visitors to do, and any deadline or budget range..."
+                    className="min-h-[120px] border-border bg-background"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                   />
@@ -225,7 +242,7 @@ const Contact = () => {
                   isLoading={submitting}
                   loadingText="Opening WhatsApp…"
                 >
-                  Get My Free Quote
+                  Send Project Details
                 </LoadingButton>
               </form>
             </CardContent>

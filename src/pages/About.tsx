@@ -4,52 +4,54 @@ import { Button } from "@/components/ui/button";
 import { ASSETS } from "@/lib/assets";
 import { Activity, CloudCog, Code2, CreditCard, Server, ShieldCheck } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { StaggerItem, StaggerReveal, spring } from "@/components/motion";
 
 const outcomes = [
   {
     value: "35%",
-    label: "Average Conversion Increase",
-    description: "Achieved through checkout optimization and reduced payment friction.",
-    accent: "border-cyan-300",
+    label: "Conversion-Focused Builds",
+    description: "We shape pages around clearer decisions, smoother flows, and fewer points of confusion.",
+    accent: "border-primary",
   },
   {
     value: "99.9%",
-    label: "API Stability",
-    description: "Reliable backend setup that stays stable during heavy traffic.",
-    accent: "border-amber-300",
+    label: "Reliable Foundations",
+    description: "We build with stability in mind so your site can keep working when people depend on it.",
+    accent: "border-foreground/35",
   },
   {
     value: "2.4s",
-    label: "Average Load Time",
-    description: "Performance gains across frontend delivery, assets, and server responses.",
-    accent: "border-indigo-300",
+    label: "Fast User Experience",
+    description: "We pay attention to speed because trust drops quickly when a page feels slow.",
+    accent: "border-primary/60",
   },
 ];
 
 const expertiseCards = [
   {
-    title: "Backend Excellence",
-    description: "Robust Django and Python services with PostgreSQL at the core.",
+    title: "Business Logic",
+    description: "The forms, accounts, payments, dashboards, and rules that make your website useful.",
     icon: <Server className="h-5 w-5" />,
   },
   {
-    title: "Payments & Commerce",
-    description: "Secure integrations for Paystack, Flutterwave, and Stripe checkout flows.",
+    title: "Payments & Stores",
+    description: "Product pages, checkout flows, order handling, and payment setup for online selling.",
     icon: <CreditCard className="h-5 w-5" />,
   },
   {
-    title: "Frontend Precision",
-    description: "Fast, responsive React interfaces designed for clarity and conversion.",
+    title: "Interface Design",
+    description: "Clean, responsive pages that feel premium and make the next step obvious.",
     icon: <Code2 className="h-5 w-5" />,
   },
   {
-    title: "DevOps & Scale",
-    description: "Reliable deployment and monitoring to keep releases smooth and consistent.",
+    title: "Launch Support",
+    description: "Deployment, testing, monitoring, and practical handoff so the site is not abandoned after launch.",
     icon: <CloudCog className="h-5 w-5" />,
   },
 ];
 
-const stackChips = ["Django", "React", "PostgreSQL", "Docker", "CI/CD", "APIs"];
+const stackChips = ["Websites", "Online stores", "Dashboards", "Payments", "Content editing", "Support"];
 
 const processSteps = [
   {
@@ -78,7 +80,7 @@ const About = () => {
   const navigate = useNavigate();
 
   return (
-    <main className="min-h-screen bg-slate-950 pt-20">
+    <main className="min-h-screen bg-background pt-20">
       <SEO
         title="About DonLabs - Web Development Agency"
         description="Learn about DonLabs, our process, and our technical capabilities. We build fast, reliable web products with Django, React, and modern engineering practices."
@@ -94,108 +96,121 @@ const About = () => {
         }}
       />
 
-      <Section as="section" className="border-b border-slate-800 bg-slate-950 px-4 py-16 sm:py-20" aria-labelledby="about-heading">
+      <Section as="section" className="section-band-dark relative overflow-hidden border-b border-border px-4 py-16 sm:py-20" aria-labelledby="about-heading">
+        <motion.div
+          animate={{ opacity: [0.06, 0.18, 0.06] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-foreground/25 to-transparent"
+          aria-hidden
+        />
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
           <div>
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200">
+            <div className="mb-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
               <Activity className="h-3.5 w-3.5" />
               Built for Growth
             </div>
-            <h1 id="about-heading" className="mb-6 text-5xl font-extrabold leading-[1.02] text-slate-100 md:text-6xl">
-              About <span className="bg-gradient-to-r from-cyan-300 to-teal-300 bg-clip-text text-transparent">DonLabs</span>
+            <h1 id="about-heading" className="mb-6 text-4xl font-black uppercase leading-[0.98] text-foreground sm:text-5xl md:text-6xl">
+              About <span className="headline-accent">DonLabs</span>
             </h1>
-            <p className="max-w-3xl text-lg leading-relaxed text-slate-300">
-              We build web products that help businesses sell more and operate better. Based in Africa and available for remote partnerships, we deliver reliable digital systems with Django backends and React frontends.
+            <p className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              We build the kind of websites and web systems businesses can actually run on: clear to use, fast to load, easy to update, and strong enough to support sales, enquiries, and daily operations.
             </p>
           </div>
 
-          <div className="mx-auto w-full max-w-[260px] rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+          <motion.div whileHover={{ y: -5 }} transition={spring} className="mx-auto w-full max-w-[260px] rounded-2xl border border-border bg-card p-4">
             <img src={ASSETS.logoFull} alt="DonLabs logo" className="h-40 w-full rounded-xl object-cover" loading="lazy" />
-          </div>
+          </motion.div>
         </div>
       </Section>
 
-      <Section as="section" className="border-b border-slate-800 bg-slate-900 px-4 py-16 sm:py-20" aria-labelledby="outcomes-heading">
+      <Section as="section" className="section-band-card border-b border-border px-4 py-16 sm:py-20" aria-labelledby="outcomes-heading">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10">
-            <h2 id="outcomes-heading" className="mb-3 text-4xl font-bold text-slate-100">Measurable Outcomes</h2>
-            <p className="max-w-3xl text-slate-300">We focus on metrics that impact your growth, not vanity numbers.</p>
+            <h2 id="outcomes-heading" className="mb-3 text-3xl font-bold text-foreground sm:text-4xl">Measurable Outcomes</h2>
+            <p className="max-w-3xl text-muted-foreground">Good design should make the business easier to understand and easier to work with.</p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-3">
+          <StaggerReveal className="grid gap-5 md:grid-cols-3">
             {outcomes.map((item) => (
-              <article key={item.label} className={`rounded-xl border border-slate-700 bg-slate-950/60 p-6 border-l-2 ${item.accent}`}>
-                <p className="mb-2 text-4xl font-bold text-slate-100">{item.value}</p>
-                <h3 className="mb-2 text-lg font-semibold text-slate-100">{item.label}</h3>
-                <p className="text-sm leading-relaxed text-slate-300">{item.description}</p>
-              </article>
+              <StaggerItem key={item.label}>
+                <motion.article whileHover={{ y: -5 }} transition={spring} className={`rounded-xl border border-border border-l-2 bg-background p-6 transition-colors hover:border-primary/35 ${item.accent}`}>
+                  <p className="mb-2 text-4xl font-bold text-foreground">{item.value}</p>
+                  <h3 className="mb-2 text-lg font-semibold text-foreground">{item.label}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                </motion.article>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </Section>
 
-      <Section as="section" className="border-b border-slate-800 bg-slate-950 px-4 py-16 sm:py-20" aria-labelledby="expertise-heading">
+      <Section as="section" className="section-band-dark border-b border-border px-4 py-16 sm:py-20" aria-labelledby="expertise-heading">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1fr_1.6fr]">
           <div>
-            <h2 id="expertise-heading" className="mb-4 text-4xl font-bold text-slate-100">Core Expertise</h2>
-            <p className="mb-6 text-slate-300">
-              We choose tools that are secure, reliable, and easy to maintain over time.
+            <h2 id="expertise-heading" className="mb-4 text-3xl font-bold text-foreground sm:text-4xl">What We Handle</h2>
+            <p className="mb-6 text-muted-foreground">
+              We keep the experience simple for your customers, while taking care of the technical parts in the background.
             </p>
             <div className="flex flex-wrap gap-2">
               {stackChips.map((chip) => (
-                <span key={chip} className="rounded-md border border-slate-700 bg-slate-900 px-3 py-1 text-xs font-medium text-slate-200">
+                <span key={chip} className="rounded-md border border-border bg-card px-3 py-1 text-xs font-medium text-foreground/75">
                   {chip}
                 </span>
               ))}
             </div>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <StaggerReveal className="grid gap-4 md:grid-cols-2">
             {expertiseCards.map((card) => (
-              <article key={card.title} className="rounded-xl border border-slate-700 bg-gradient-to-b from-slate-900 to-slate-950 p-5">
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-cyan-300">
-                  {card.icon}
-                </div>
-                <h3 className="mb-2 text-2xl font-semibold text-slate-100">{card.title}</h3>
-                <p className="text-sm leading-relaxed text-slate-300">{card.description}</p>
-              </article>
+              <StaggerItem key={card.title}>
+                <motion.article whileHover={{ y: -5 }} transition={spring} className="rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/35">
+                  <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-primary/25 bg-primary/10 text-primary">
+                    {card.icon}
+                  </div>
+                  <h3 className="mb-2 text-2xl font-semibold text-foreground">{card.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{card.description}</p>
+                </motion.article>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </Section>
 
-      <Section as="section" className="border-b border-slate-800 bg-slate-950 px-4 py-16 sm:py-20" aria-labelledby="about-process-heading">
+      <Section as="section" className="section-band-dark border-b border-border px-4 py-16 sm:py-20" aria-labelledby="about-process-heading">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 text-center">
-            <h2 id="about-process-heading" className="mb-3 text-4xl font-bold text-slate-100">How We Work</h2>
-            <p className="mx-auto max-w-2xl text-slate-300">A clear delivery process that keeps your project moving from idea to launch.</p>
+            <h2 id="about-process-heading" className="mb-3 text-3xl font-bold text-foreground sm:text-4xl">How We Work</h2>
+            <p className="mx-auto max-w-2xl text-muted-foreground">A steady process that keeps you informed without dragging you into unnecessary complexity.</p>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <StaggerReveal className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step) => (
-              <article key={step.number} className="relative rounded-xl border border-slate-700 bg-slate-900/70 p-5">
-                <p className="absolute right-4 top-3 text-5xl font-bold leading-none text-cyan-300/25">{step.number}</p>
-                <h3 className="mb-2 mt-7 text-xl font-semibold text-slate-100">{step.title}</h3>
-                <p className="text-sm leading-relaxed text-slate-300">{step.description}</p>
-              </article>
+              <StaggerItem key={step.number}>
+                <motion.article whileHover={{ y: -5 }} transition={spring} className="relative overflow-hidden rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/35">
+                  <p className="absolute right-4 top-3 text-5xl font-bold leading-none text-primary/20">{step.number}</p>
+                  <h3 className="mb-2 mt-7 text-xl font-semibold text-foreground">{step.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{step.description}</p>
+                </motion.article>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </Section>
 
-      <Section as="section" className="bg-slate-950 px-4 py-16 sm:py-20" aria-labelledby="about-cta-heading">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-cyan-300/20 bg-gradient-to-br from-slate-950 via-slate-950 to-cyan-950/25 px-6 py-12 sm:px-10">
-          <h2 id="about-cta-heading" className="mb-4 max-w-3xl text-5xl font-bold leading-tight text-slate-100">
-            Ready to launch your next <span className="bg-gradient-to-r from-cyan-300 to-teal-300 bg-clip-text text-transparent">breakthrough?</span>
+      <Section as="section" className="section-band-dark px-4 py-16 sm:py-20" aria-labelledby="about-cta-heading">
+        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-2xl border border-border bg-card px-6 py-12 sm:px-10">
+          <div className="animate-soft-pulse pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" aria-hidden />
+          <h2 id="about-cta-heading" className="mb-4 max-w-3xl text-4xl font-bold leading-tight text-foreground sm:text-5xl">
+            Ready to launch your next <span className="headline-accent">breakthrough?</span>
           </h2>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button variant="hero" size="lg" onClick={() => navigate('/contact')}>
               Let&apos;s Work Together
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="border-slate-600 bg-slate-900/70 text-slate-100 hover:bg-slate-800"
+              className="border-border bg-background text-foreground hover:bg-foreground/5"
               onClick={() => navigate('/services')}
             >
               View Services
@@ -203,14 +218,14 @@ const About = () => {
             <Button
               variant="outline"
               size="lg"
-              className="border-slate-600 bg-slate-900/70 text-slate-100 hover:bg-slate-800"
+              className="border-border bg-background text-foreground hover:bg-foreground/5"
               onClick={() => navigate('/projects')}
             >
               See Projects
             </Button>
           </div>
-          <div className="mt-6 flex items-center gap-2 text-sm text-slate-300">
-            <ShieldCheck className="h-4 w-4 text-cyan-300" />
+          <div className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
+            <ShieldCheck className="h-4 w-4 text-primary" />
             Built for security, speed, and long-term reliability.
           </div>
         </div>

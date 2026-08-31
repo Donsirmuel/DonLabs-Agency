@@ -1,37 +1,41 @@
-import React, { useRef } from 'react';
-import useInViewAnimate from '@/lib/useInViewAnimate';
+import React from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { fadeUp, spring } from '@/components/motion';
 
 type SectionProps = React.PropsWithChildren<{
   className?: string;
-  animationClass?: string;
   once?: boolean;
   delay?: number;
-  as?: string;
+  as?: 'section' | 'div';
   id?: string;
   'aria-labelledby'?: string;
 }>;
 
-const ANIMATIONS = [
-  'animate-fade-in-up',
-  'animate-slide-up',
-  'animate-float'
-];
+const Section = ({ children, className = '', once = true, delay = 0, as = 'section', ...rest }: SectionProps) => {
+  const prefersReduced = useReducedMotion();
 
-const Section = ({ children, className = '', animationClass, once = true, delay = 0, as = 'section', ...rest }: SectionProps) => {
-  const ref = useRef<HTMLElement | null>(null);
+  if (prefersReduced) {
+    const Tag = as;
+    return (
+      <Tag className={className} {...rest}>
+        {children}
+      </Tag>
+    );
+  }
 
-  // Respect user reduced motion preference
-  const prefersReduced = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  const chosenAnimation = animationClass ?? (prefersReduced ? 'animate-fade-in-up' : ANIMATIONS[Math.floor(Math.random() * ANIMATIONS.length)]);
-
-  useInViewAnimate(ref as React.RefObject<HTMLElement>, { animationClass: chosenAnimation, once, delay });
-
-  const Tag = as;
+  const MotionTag = (as === 'div' ? motion.div : motion.section) as typeof motion.section;
   return (
-    <Tag ref={ref} className={className} {...rest}>
+    <MotionTag
+      className={className}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once, margin: '-80px' }}
+      variants={fadeUp}
+      transition={{ ...spring, delay: delay / 1000 }}
+      {...rest}
+    >
       {children}
-    </Tag>
+    </MotionTag>
   );
 };
 

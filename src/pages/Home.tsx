@@ -5,8 +5,8 @@ import Testimonials from "@/components/Testimonials";
 import WhatWeDo from "@/components/WhatWeDo";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import FAQ from "@/components/FAQ";
-import AnimatedSection from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
+import { SectionReveal } from "@/components/motion";
 import { useNavigate } from "react-router-dom";
 
 // canonical left to default runtime URL
@@ -41,42 +41,46 @@ const Home = () => {
         <Hero />
       </div>
       <div>
-        <AnimatedSection animation="fade-in-up">
-          <WhatWeDo />
-        </AnimatedSection>
-        <AnimatedSection animation="slide-in-right" delay={100}>
-          <WhyChooseUs />
-        </AnimatedSection>
-        <AnimatedSection animation="fade-in-up" delay={100}>
-          <Process />
-        </AnimatedSection>
-        <AnimatedSection animation="fade-in-up" delay={100}>
-          <Testimonials />
-        </AnimatedSection>
-        <AnimatedSection animation="scale-in" delay={100}>
-          <FAQ />
-        </AnimatedSection>
-        <section className="px-4 pb-10">
-          <div className="mx-auto max-w-6xl rounded-3xl border border-primary/20 bg-gradient-to-br from-slate-950 via-slate-950 to-cyan-950/20 px-6 py-14 text-center sm:px-10">
-            <h2 className="mb-4 text-3xl font-bold text-white md:text-5xl">Ready to Grow Online?</h2>
-            <p className="mx-auto mb-8 max-w-2xl text-base text-slate-300 md:text-lg">
-              Work with DonLabs to build a fast, reliable web presence that supports your business today and scales with you over time.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button variant="hero" size="lg" onClick={() => navigate('/contact')}>
-                Let&apos;s Talk Strategy
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-cyan-300/40 bg-slate-900/80 text-slate-100 hover:bg-slate-800"
-                onClick={() => navigate('/services')}
-              >
-                Explore Services
-              </Button>
+        <WhatWeDo />
+        <WhyChooseUs />
+        <Process />
+        <Testimonials />
+        <FAQ />
+        <SectionReveal className="px-4 pb-24 pt-4">
+          <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-border bg-card px-6 py-16 text-center sm:px-10 md:py-20">
+            <div className="animate-soft-pulse pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-foreground/25 to-transparent" aria-hidden />
+            <div className="animate-soft-pulse pointer-events-none absolute inset-x-10 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" aria-hidden />
+            <div className="animate-soft-pulse pointer-events-none absolute inset-y-8 left-1/2 hidden w-px bg-gradient-to-b from-transparent via-foreground/15 to-transparent md:block" aria-hidden />
+            <div className="relative">
+              <div className="mb-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-foreground/70">
+                <span className="h-px w-8 bg-foreground/60" aria-hidden />
+                Get started
+                <span className="h-px w-8 bg-foreground/60" aria-hidden />
+              </div>
+              <h2 className="mb-5 text-4xl font-black uppercase leading-[0.95] tracking-tight text-foreground md:text-6xl">
+                Build the site your
+                <br />
+                <span className="headline-accent">business can run on</span>
+              </h2>
+              <p className="mx-auto mb-10 max-w-2xl text-base text-muted-foreground md:text-lg">
+                Launch a web platform that works as hard as you do — fast, reliable, and built to grow with your business.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <Button variant="hero" size="lg" onClick={() => navigate('/contact')}>
+                  Let&apos;s talk strategy
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-border bg-background text-foreground hover:bg-foreground/5"
+                  onClick={() => navigate('/services')}
+                >
+                  Explore services
+                </Button>
+              </div>
             </div>
           </div>
-        </section>
+        </SectionReveal>
       </div>
     </main>
   );

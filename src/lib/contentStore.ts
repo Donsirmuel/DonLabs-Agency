@@ -50,18 +50,18 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 34;
+const CONTENT_VERSION = 35;
 
 export const defaultContent: SiteContent = {
   about: {
     heading: 'About DonLabs',
-    intro: "We build web products that help businesses sell more and operate better. Based in Africa and available for remote partnerships, we specialise in Django backends and React frontends, with production deployments on PostgreSQL and container platforms.",
-    details: "Our work focuses on measurable outcomes: faster page loads, reliable payment flows, and admin tools that save time. Recent projects include an e-commerce rebuild that increased transactions by 35% and a marketplace API that handled high traffic without downtime."
+    intro: "DonLabs builds websites, commerce systems, and custom web platforms for businesses that need their online presence to look credible, load fast, and support real operations.",
+    details: "We pair sharp React interfaces with dependable Django/Python backends, clean admin workflows, payments, analytics, and deployment support. The goal is not just a better-looking site; it is a web system your team can run, improve, and trust after launch."
   },
   projects: [
     {
       title: "DevBlog Platform",
-      description: "A publishing platform built for an editorial team to manage articles, authors, and SEO-friendly content. We improved publishing workflows and page performance.",
+      description: "An editorial publishing system built to replace slow manual article handling with role-based workflows, scheduled publishing, and fast SEO-ready pages.",
       features: [
         "Custom CMS with editorial roles and scheduling",
         "Markdown and rich-text support with media management",
@@ -75,11 +75,11 @@ export const defaultContent: SiteContent = {
       caseStudyDesktopImageUrl: ASSETS.devblogScreenshot,
       hasLive: false,
       projectType: "Content Management",
-      clientBenefit: "Solved the slow, manual publishing process by giving the team role-based CMS controls, scheduling, and a faster reading experience."
+      clientBenefit: "Helped the editorial team publish with less friction by centralising author roles, scheduling, media handling, metadata, and performance-focused reading pages."
     },
     {
       title: "Glitglam Beauty Salon",
-      description: "A production e-commerce store rebuilt to reduce cart abandonment and improve conversion for a beauty retailer.",
+      description: "A beauty commerce rebuild focused on clearer product discovery, faster mobile shopping, smoother checkout, and easier order management.",
       features: [
         "Improved checkout UX and faster cart flows",
         "Server-side rendering for product pages",
@@ -93,11 +93,11 @@ export const defaultContent: SiteContent = {
       caseStudyDesktopImageUrl: ASSETS.glitglam,
       hasLive: false,
       projectType: "E-Commerce",
-      clientBenefit: "Solved checkout drop-off and messy order handling with a cleaner shopping flow, stronger mobile UX, and simpler admin control."
+      clientBenefit: "Reduced buying friction by improving the mobile journey, simplifying checkout decisions, and giving the business a cleaner way to manage products and orders."
     },
     {
       title: "Shindara Style Hub",
-      description: "A fashion storefront and admin panel built to support high-volume product catalogs and promotions.",
+      description: "A fashion storefront and admin system built for larger catalogs, seasonal drops, promotions, and day-to-day order visibility.",
       features: [
         "Product variants and collection management",
         "Promotions, discounting and coupon support",
@@ -112,11 +112,11 @@ export const defaultContent: SiteContent = {
       caseStudyMobileImageUrl: ASSETS.showcaseShindaraMobile,
       hasLive: true,
       projectType: "E-Commerce",
-      clientBenefit: "Solved the pressure of managing a larger catalog by making promotions, orders, and storefront updates easier to handle at scale."
+      clientBenefit: "Made catalog growth easier to handle by giving the team clearer product controls, promotional tools, and a storefront designed for fast browsing."
     },
     {
       title: "Bubbalicious Hair & Co",
-      description: "A professional salon website for Rothwell's premier destination for lived-in blonde hair colour services. Built with modern web technologies to showcase services, enable online booking, and provide an elegant browsing experience.",
+      description: "A premium salon website designed to make specialist hair services easier to understand, showcase the brand beautifully, and guide visitors toward booking.",
       features: [
         "Responsive design optimized for mobile and desktop",
         "Service showcase with detailed descriptions",
@@ -132,11 +132,11 @@ export const defaultContent: SiteContent = {
       caseStudyMobileImageUrl: ASSETS.showcaseBubbaliciousMobile,
       hasLive: true,
       projectType: "Business Website",
-      clientBenefit: "Solved the 'hard to understand at a glance' problem by presenting services clearly, supporting bookings, and making the salon look premium online."
+      clientBenefit: "Turned a service-heavy offer into a clearer browsing experience with stronger visual trust, local SEO foundations, and direct booking paths."
     },
     {
       title: "Shobs Graphic Design Portfolio",
-      description: "A newly developed portfolio site for a graphic design brand, showcasing services, brand identity work, and a curated gallery of visual projects.",
+      description: "A portfolio website for a graphic design brand, structured around strong visual proof, clear service positioning, and easier client enquiries.",
       features: [
         "Portfolio-driven layout with visual project highlights",
         "Services and brand story sections for lead generation",
@@ -151,11 +151,11 @@ export const defaultContent: SiteContent = {
       caseStudyMobileImageUrl: ASSETS.showcaseShobsMobile,
       hasLive: true,
       projectType: "Portfolio Website",
-      clientBenefit: "Solved the weak portfolio presentation by giving the brand a sharper story, clearer services, and easier enquiry paths."
+      clientBenefit: "Gave the brand a stronger digital showroom where prospects can understand the offer, scan the work, and start a conversation quickly."
     },
     {
       title: "Vendora",
-      description: "A marketplace-style e-commerce experience focused on fast discovery and reliable checkout for multi-vendor catalogs.",
+      description: "A marketplace-style commerce experience focused on faster product discovery, reliable checkout, and cleaner vendor/order workflows.",
       features: [
         "Multi-vendor product listings with search and filtering",
         "Secure checkout with payment gateway integration",
@@ -169,11 +169,11 @@ export const defaultContent: SiteContent = {
       caseStudyMobileImageUrl: ASSETS.showcaseVendoraMobile,
       hasLive: false,
       projectType: "Marketplace",
-      clientBenefit: "Solved slow product discovery and clunky checkout by making browsing faster, order handling cleaner, and the buyer journey more reliable."
+      clientBenefit: "Improved the buyer journey by making search, filtering, checkout, and admin handling feel more predictable across a multi-vendor catalog."
     },
     {
       title: "Northline Wears",
-      description: "A fashion storefront created to give the brand a cleaner online presence, stronger product presentation, and a smoother path to browsing and enquiries.",
+      description: "A fashion storefront created to give the brand a sharper online presence, stronger product presentation, and clearer shopping intent.",
       features: [
         "Responsive storefront layout for mobile and desktop shoppers",
         "Clear product presentation with polished visual hierarchy",
@@ -188,11 +188,11 @@ export const defaultContent: SiteContent = {
       caseStudyMobileImageUrl: ASSETS.showcaseNorthlineMobile,
       hasLive: true,
       projectType: "Fashion E-Commerce",
-      clientBenefit: "Solved the need for a more polished fashion storefront by making the brand look credible, the products easier to explore, and the next step clearer for shoppers."
+      clientBenefit: "Made the brand feel more credible online while helping shoppers browse products, understand the style direction, and move toward enquiry or purchase."
     },
     {
       title: "VeriClick",
-      description: "A SaaS security tool that protects your links from bots and suspicious traffic. Every click is checked against your IP rules and bot detection before it reaches your page, with a plain-language reason for every decision.",
+      description: "A SaaS link-security product that checks traffic before it reaches protected pages, helping teams filter bot clicks, suspicious IPs, and distorted analytics.",
       features: [
         "Bot detection and suspicious traffic screening on every click",
         "Custom IP rules and allow/block configurations",
@@ -208,62 +208,62 @@ export const defaultContent: SiteContent = {
       caseStudyMobileImageUrl: ASSETS.showcaseVericlickMobile,
       hasLive: true,
       projectType: "SaaS",
-      clientBenefit: "Solved the problem of bot clicks and junk traffic distorting link performance by filtering suspicious requests automatically and showing exactly why each one was blocked."
+      clientBenefit: "Protected campaign links from junk traffic by screening suspicious clicks automatically and explaining every allow/block decision in plain language."
     },
   ],
   services: [
     {
       title: "Business Websites",
-      description: "Want a website that looks great and actually brings customers? We build fast, easy-to-update sites that make visitors comfortable and get them to contact you.",
+      description: "Premium business websites for service brands, teams, and companies that need a credible online presence with clear messaging and conversion paths.",
       features: [
-        "Mobile-first design that looks great on any device",
-        "Simple content editing (Django CMS or headless options)",
-        "SEO basics so new customers can find you",
-        "Contact forms, lead capture and newsletters",
-        "Speed and accessibility checks for better conversions",
-        "Launch help and optional ongoing support"
+        "Mobile-first interface design with a polished brand feel",
+        "Clear page structure for services, proof, and enquiries",
+        "Simple content editing with Django CMS or headless options",
+        "Technical SEO, metadata, and performance foundations",
+        "Lead capture, newsletter, and contact workflows",
+        "Launch support with optional care after handoff"
       ],
       popular: false,
       recommendedPackage: 'Corporate / Business Website'
     },
     {
       title: "E‑commerce Stores",
-      description: "Sell online without the headache. We set up product pages, a smooth checkout, and easy admin so you can focus on growing sales - not wrestling with software.",
+      description: "Commerce stores built around fast browsing, confident product decisions, reliable checkout, and admin workflows your team can actually manage.",
       features: [
-        "Product listings, search and categories",
-        "Fast, secure cart and checkout flows",
+        "Product catalogs with search, filtering, and categories",
+        "Fast, secure cart and checkout flows tuned for mobile",
         "Payment integrations (Paystack / Flutterwave / Stripe)",
-        "Order and inventory management made simple",
-        "Mobile shopping that converts",
-        "Launch support and basic fraud protections"
+        "Order, inventory, and customer management",
+        "Analytics setup for tracking sales and drop-off points",
+        "Launch support, testing, and basic fraud protections"
       ],
       popular: true,
       recommendedPackage: 'Small e‑commerce / Medium e‑commerce'
     },
     {
       title: "Custom Web Apps",
-      description: "Got a process that could be faster? We build custom apps - dashboards, booking systems, marketplaces - that automate work and help your team deliver more.",
+      description: "Custom dashboards, portals, booking tools, marketplaces, and workflow systems designed to remove manual bottlenecks from your business.",
       features: [
-        "Custom workflows that match how you work",
+        "Custom workflows mapped around how your team operates",
         "User accounts, roles and secure access",
         "APIs and integrations (payments, shipping, CRM)",
         "Reports, dashboards and admin tools",
-        "Built to scale with performance in mind",
-        "Transparent milestones and ongoing support"
+        "Performance-minded architecture that can grow with usage",
+        "Transparent milestones, documentation, and ongoing support"
       ],
       popular: false,
       recommendedPackage: 'Premium e‑commerce / Enterprise'
     },
     {
       title: "Progressive Web Apps (PWA)",
-      description: "Want an app-like experience without the app store hassle? PWAs install on phones, work offline and feel instant - great for repeat customers.",
+      description: "Installable web experiences that feel app-like on mobile while staying easier to launch, update, and maintain than native app-store builds.",
       features: [
         "Install on the home screen for quick access",
         "Offline caching for fast repeat visits",
         "Push notifications to bring customers back",
         "Smooth cross-platform experience on mobile browsers",
         "Lightweight and easy to maintain",
-        "Tracking to improve conversions"
+        "Usage tracking to improve repeat engagement"
       ],
       popular: false,
       recommendedPackage: 'Premium / Enterprise'
@@ -271,24 +271,24 @@ export const defaultContent: SiteContent = {
   ],
   servicesInfo: {
     howItWorks: [
-      "Discovery - We start with a short chat to understand your goals and the results you want.",
-      "Proposal - We provide a clear plan, timeline and fixed price (or range). You review and we tweak it together.",
-      "Build - We deliver work in short, visible milestones so you can see progress and give feedback.",
-      "Launch - We deploy your site or app, handle DNS and initial monitoring, and make sure everything runs smoothly.",
-      "Support - After launch we offer maintenance and support options so your site stays fast and secure."
+      "Discovery - We clarify the business goal, audience, offer, and what success should look like after launch.",
+      "Proposal - You get a clear scope, timeline, deliverables, and budget before build work starts.",
+      "Build - We design and develop in visible milestones so feedback happens before anything drifts.",
+      "Launch - We handle deployment, DNS support, testing, analytics, and initial monitoring.",
+      "Support - After launch, we keep the system stable with maintenance, improvements, and practical handoff."
     ],
     faq: [
       {
         q: "How long does a project take?",
-        a: "Small sites: 3-7 days. Simple stores: 7-14 days. Custom apps: timelines depend on scope - we provide clear estimates during discovery."
+        a: "Small business sites can take 3-7 days. Commerce stores often take 7-14 days. Custom platforms depend on scope, but we give you a clear timeline before work begins."
       },
       {
         q: "How much will it cost?",
-        a: "We provide clear price ranges on the pricing cards and a fixed quote in the proposal so there are no surprises."
+        a: "The pricing page gives starting ranges. After discovery, we provide a fixed quote or a clear phased budget so you know what is included before we start."
       },
       {
         q: "Do you offer ongoing support?",
-        a: "Yes - we offer maintenance packages for updates, backups and security. You can also opt for hourly support after launch."
+        a: "Yes. We offer maintenance for updates, backups, security checks, small improvements, and post-launch support when your team needs help."
       }
     ]
   },
@@ -297,22 +297,22 @@ export const defaultContent: SiteContent = {
     id: 'corporate',
     name: 'Corporate / Business Website',
     price: '₦200,000+',
-    desc: 'For professionals, agencies, corporate teams and service providers who need a polished web presence or company site.',
+    desc: 'For service businesses, professionals, and teams that need a credible website with clear messaging, proof, and enquiry paths.',
     includes: [
       '5–10 content pages (About, Services, Team, Blog, Contact)',
-      'Fast frontend with optional easy content editing',
-      'Blog setup with structured content and RSS',
-      'Contact forms, lead capture & newsletter integration',
-      'Basic analytics, accessibility checks & 1 month support'
+      'Fast frontend with optional content editing',
+      'Structured service, proof, blog, and contact sections',
+      'Lead capture, newsletter, and enquiry workflows',
+      'Analytics setup, accessibility checks & 1 month support'
     ]
   },
   {
     id: 'small-ecom',
     name: 'Small e‑commerce',
     price: '₦350,000+',
-    desc: 'Small online stores with product catalogs and simple checkout - ideal for boutiques and SMB sellers.',
+    desc: 'For small stores that need polished product pages, reliable checkout, and a backend that keeps orders manageable.',
     includes: [
-      'Product catalog, product pages and category browsing',
+      'Product catalog, product pages, search and category browsing',
       'Cart, checkout and order confirmation flows',
       'Payment gateway integration (Paystack / Flutterwave / Stripe)',
       'Reliable backend with secure data storage',
@@ -324,25 +324,25 @@ export const defaultContent: SiteContent = {
     id: 'medium-ecom',
     name: 'Medium e‑commerce',
     price: '₦600,000+',
-    desc: 'Growing stores that need inventory, user accounts, discounts and integrations.',
+    desc: 'For growing stores that need accounts, inventory, discounts, better reporting, and room to scale.',
     includes: [
       'Everything in Small e‑commerce',
       'User accounts, order history and customer dashboards',
       'Inventory management, discounts & coupon systems',
       'Email/SMS notifications and sales tracking',
-      'Speed improvements, test environment & 4 months support'
+      'Performance tuning, test environment & 4 months support'
     ]
   },
   {
     id: 'premium-ecom',
     name: 'Premium e‑commerce / Enterprise',
     price: '₦1,200,000+',
-    desc: 'Full custom e‑commerce platforms with integrations, automation and scaling support.',
+    desc: 'For serious commerce operations that need custom workflows, integrations, automation, and scaling support.',
     includes: [
       'Custom backend setup and React storefront',
       'Database setup, caching, and background processing',
       'Third‑party integrations (ERP/CRM, logistics, payment providers)',
-      'Reliable deployment, monitoring & 6 months support'
+      'Reliable deployment, monitoring, documentation & 6 months support'
     ]
   }
 ]

@@ -6,7 +6,7 @@ const ServicesPage = () => {
     <main className="min-h-screen bg-background pt-20">
       <SEO 
         title="Web Development Services | DonLabs"
-        description="Web development services by DonLabs: Django web apps, React frontends, REST APIs, and full-stack solutions for businesses."
+        description="Premium websites, online stores, dashboards, and custom web platforms for businesses that need clearer customer journeys and smoother operations."
         // canonical will default to the current runtime URL
         structuredData={{
           "@context": "https://schema.org",
@@ -16,20 +16,20 @@ const ServicesPage = () => {
             {
               "@type": "Service",
               "position": 1,
-              "name": "Django Web Development",
-              "description": "Building web applications with Django framework"
+              "name": "Business Website Design and Development",
+              "description": "Clear, fast websites for service brands and growing businesses"
             },
             {
               "@type": "Service",
               "position": 2,
-              "name": "React Development",
-              "description": "Creating interactive user interfaces with React"
+              "name": "E-commerce Website Development",
+              "description": "Online stores with polished product pages, reliable checkout, and practical admin tools"
             },
             {
               "@type": "Service",
               "position": 3,
-              "name": "Full Stack Development",
-              "description": "End-to-end web application development"
+              "name": "Custom Web Platform Development",
+              "description": "Dashboards, booking tools, customer portals, and workflow systems"
             }
           ]
         }}

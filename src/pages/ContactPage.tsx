@@ -6,7 +6,7 @@ const ContactPage = () => {
     <main className="min-h-screen bg-background pt-20">
       <SEO 
         title="Contact DonLabs | Web Development Agency" 
-        description="Get in touch with DonLabs for web development projects, e-commerce, or web application work. We're available for partnerships and remote engagements." 
+        description="Contact DonLabs to discuss a business website, online store, dashboard, booking flow, or custom web platform. Share your goals and get practical next steps." 
         // canonical will default to the current runtime URL
         structuredData={{
           "@context": "https://schema.org",

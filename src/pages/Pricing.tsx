@@ -6,7 +6,7 @@ const Pricing = () => {
     <main className="min-h-screen bg-background pt-20">
   <SEO 
     title="Web Development Pricing | DonLabs" 
-    description="DonLabs pricing for business websites, e-commerce stores, and custom web applications. View packages and request a quote." 
+    description="Starting prices for DonLabs business websites, online stores, and custom web platforms. Compare packages and request a scoped quote." 
     // canonical will default to the current runtime URL
     // image uses ASSETS by default; override only when necessary
         structuredData={{
