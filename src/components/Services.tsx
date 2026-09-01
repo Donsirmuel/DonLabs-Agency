@@ -29,6 +29,18 @@ const capabilities = [
       "Tailored web tools that reduce manual work, organise your operations, and give customers a smoother experience.",
     points: ["Dashboards", "Booking flows", "Customer portals", "Team workflows"],
   },
+  {
+    title: "UI/UX Design",
+    description:
+      "Intuitive and engaging designs that enhance user experience and drive conversions.",
+    points: ["User research", "Wireframing & prototyping", "Visual design"],
+  },
+  {
+    title: "Saas Platforms",
+    description:
+      "Scalable software solutions that help businesses manage their operations and serve their customers more effectively.",
+    points: ["Subscription management", "Analytics dashboards", "User management"],
+  }
 ];
 
 const specialistCards = [
@@ -147,19 +159,94 @@ const Services = () => {
 
           <StaggerItem>
           <motion.article whileHover={{ y: -4 }} transition={spring} className="rounded-2xl border border-border bg-card p-8 transition-colors hover:border-primary/35">
-            <h2 className="mb-4 text-3xl font-semibold text-foreground">{capabilities[2].title}</h2>
-            <p className="mb-6 max-w-3xl text-muted-foreground">{capabilities[2].description}</p>
-            <div className="mb-8 flex flex-wrap gap-3">
-              {capabilities[2].points.map((point) => (
-                <span key={point} className="rounded-md border border-border bg-background px-3 py-1.5 text-xs font-medium text-foreground/75">
-                  {point}
-                </span>
-              ))}
+            <div className="grid lg:grid-cols-2">
+              <div className="p-8 order-2 lg:order-1">
+                <h2 className="mb-4 text-3xl font-semibold text-foreground">{capabilities[3].title}</h2>
+                <p className="mb-6 text-muted-foreground">{capabilities[3].description}</p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {capabilities[3].points.map((point) => (
+                    <div key={point} className="rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground/80">
+                      {point}
+                    </div>
+                  ))}
+                </div>
+                <Button variant="hero" className="mt-8" onClick={() => navigate('/contact')}>
+                  Start a Project
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </div>
+
+              <div className="order-1 border-b border-border bg-background p-3 lg:order-2 lg:border-b-0 lg:border-l">
+                <img
+                  src={ASSETS.shobsPortfolioScreenshot}
+                  alt="Shobs e-commerce website preview"
+                  className="h-full min-h-[300px] w-full rounded-xl object-cover object-left"
+                  loading="lazy"
+                />
+              </div>
             </div>
-            <Button variant="hero" onClick={() => navigate('/contact')}>
-              Start a Project
-              <ArrowRight className="h-4 w-4" />
-            </Button>
+          </motion.article>
+          </StaggerItem>
+
+          <StaggerItem>
+          <motion.article whileHover={{ y: -4 }} transition={spring} className="rounded-2xl border border-border bg-card p-8 transition-colors hover:border-primary/35">
+            <div className="grid lg:grid-cols-2">
+              <div className="p-8 order-2 lg:order-1">
+                <h2 className="mb-4 text-3xl font-semibold text-foreground">{capabilities[2].title}</h2>
+                <p className="mb-6 text-muted-foreground">{capabilities[2].description}</p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {capabilities[2].points.map((point) => (
+                    <div key={point} className="rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground/80">
+                      {point}
+                    </div>
+                  ))}
+                </div>
+                <Button variant="hero" className="mt-8" onClick={() => navigate('/contact')}>
+                  Start a Project
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </div>
+
+              <div className="order-1 border-b border-border bg-background p-3 lg:order-2 lg:border-b-0 lg:border-l">
+                <img
+                  src={ASSETS.showcaseNorthlineDesktop}
+                  alt="Custom web app project preview"
+                  className="h-full min-h-[300px] w-full rounded-xl object-cover object-left"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </motion.article>
+          </StaggerItem>
+
+          <StaggerItem>
+          <motion.article whileHover={{ y: -4 }} transition={spring} className="rounded-2xl border border-border bg-card p-8 transition-colors hover:border-primary/35">
+            <div className="grid lg:grid-cols-2">
+              <div className="p-8 order-2 lg:order-1">
+                <h2 className="mb-4 text-3xl font-semibold text-foreground">{capabilities[4].title}</h2>
+                <p className="mb-6 text-muted-foreground">{capabilities[4].description}</p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {capabilities[4].points.map((point) => (
+                    <div key={point} className="rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground/80">
+                      {point}
+                    </div>
+                  ))}
+                </div>
+                <Button variant="hero" className="mt-8" onClick={() => navigate('/contact')}>
+                  Start a Project
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </div>
+
+              <div className="order-1 border-b border-border bg-background p-3 lg:order-2 lg:border-b-0 lg:border-l">
+                <img
+                  src={ASSETS.showcaseVericlickDesktop}
+                  alt="Saas platform project preview"
+                  className="h-full min-h-[300px] w-full rounded-xl object-cover object-left"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </motion.article>
           </StaggerItem>
         </StaggerReveal>

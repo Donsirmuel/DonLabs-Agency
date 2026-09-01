@@ -9,14 +9,14 @@ import { StaggerItem, StaggerReveal, spring } from "@/components/motion";
 
 const outcomes = [
   {
-    value: "35%",
-    label: "Conversion-Focused Builds",
+    value: "5.49/5.0 ⭐",
+    label: "Result-oriented Builds",
     description: "We shape pages around clearer decisions, smoother flows, and fewer points of confusion.",
     accent: "border-primary",
   },
   {
     value: "99.9%",
-    label: "Reliable Foundations",
+    label: "Reliable Codebase",
     description: "We build with stability in mind so your site can keep working when people depend on it.",
     accent: "border-foreground/35",
   },
@@ -49,6 +49,11 @@ const expertiseCards = [
     description: "Deployment, testing, monitoring, and practical handoff so the site is not abandoned after launch.",
     icon: <CloudCog className="h-5 w-5" />,
   },
+  {
+    title: "Saas Platforms",
+    description: "Scalable software solutions that help businesses manage their operations and serve their customers more effectively.",
+    icon: <ShieldCheck className="h-5 w-5" />,
+  }
 ];
 
 const stackChips = ["Websites", "Online stores", "Dashboards", "Payments", "Content editing", "Support"];

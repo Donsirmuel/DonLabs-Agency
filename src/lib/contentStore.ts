@@ -50,7 +50,7 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 35;
+const CONTENT_VERSION = 36;
 
 export const defaultContent: SiteContent = {
   about: {
@@ -78,8 +78,8 @@ export const defaultContent: SiteContent = {
       clientBenefit: "Helped the editorial team publish with less friction by centralising author roles, scheduling, media handling, metadata, and performance-focused reading pages."
     },
     {
-      title: "Glitglam Beauty Salon",
-      description: "A beauty commerce rebuild focused on clearer product discovery, faster mobile shopping, smoother checkout, and easier order management.",
+      title: "Glitglam Storefront",
+      description: "An e-commerce storefront built to focus on clearer product discovery, faster mobile shopping, smoother checkout, and easier order management.",
       features: [
         "Improved checkout UX and faster cart flows",
         "Server-side rendering for product pages",
@@ -288,7 +288,7 @@ export const defaultContent: SiteContent = {
       },
       {
         q: "Do you offer ongoing support?",
-        a: "Yes. We offer maintenance for updates, backups, security checks, small improvements, and post-launch support when your team needs help."
+        a: "Yes. We offer maintenance for updates, backups, security checks, small improvements, and post-launch support when your team needs help up to 2 weeks after launch."
       }
     ]
   },
@@ -296,7 +296,7 @@ export const defaultContent: SiteContent = {
   {
     id: 'corporate',
     name: 'Corporate / Business Website',
-    price: '₦200,000+',
+    price: '₦250,000+',
     desc: 'For service businesses, professionals, and teams that need a credible website with clear messaging, proof, and enquiry paths.',
     includes: [
       '5–10 content pages (About, Services, Team, Blog, Contact)',
@@ -309,7 +309,7 @@ export const defaultContent: SiteContent = {
   {
     id: 'small-ecom',
     name: 'Small e‑commerce',
-    price: '₦350,000+',
+    price: '₦400,000+',
     desc: 'For small stores that need polished product pages, reliable checkout, and a backend that keeps orders manageable.',
     includes: [
       'Product catalog, product pages, search and category browsing',

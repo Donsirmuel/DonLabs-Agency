@@ -15,6 +15,33 @@ const items = [
     imgAlt: "Vendora e-commerce platform showcase",
   },
   {
+    title: "SEO Optimization",
+    desc: "Speed and search improvements that help you rank better and feel faster to every visitor.",
+    bullets: ["SEO health checks", "Faster load times"],
+    icon: <Braces className="h-5 w-5" />,
+    span: "md:col-span-2 md:row-span-1",
+    image: ASSETS.showcaseNorthlineDesktop,
+    imgAlt: "Northline Wears commerce platform showcase",
+  },
+  {
+    title: "Custom Solutions & Saas Platforms",
+    desc: "Tailored software solutions that address your unique business challenges.",
+    bullets: ["Custom development", "Unique features", "Scalable architecture"],
+    icon: <LayoutTemplate className="h-5 w-5" />,
+    span: "",
+    image: ASSETS.showcaseVendoraDesktop,
+    imgAlt: "Vendora e-commerce platform showcase",
+  },
+  {
+    title: "UI/UX Design",
+    desc: "Intuitive and engaging designs that enhance user experience and drive conversions.",
+    bullets: ["User research", "Wireframing & prototyping"],
+    icon: <Orbit className="h-5 w-5" />,
+    span: "",
+    image: ASSETS.showcaseShobsDesktop,
+    imgAlt: "Shobs e-commerce platform showcase",
+  },
+  {
     title: "Commerce Systems",
     desc: "Shopping experiences that reduce friction and turn browsers into buyers.",
     bullets: ["Online stores", "Checkout flow"],
@@ -22,24 +49,6 @@ const items = [
     span: "",
     image: null,
     imgAlt: "",
-  },
-  {
-    title: "Admin Dashboards",
-    desc: "Clear internal tools that organize your data and simplify day-to-day operations.",
-    bullets: ["Reliable integrations", "Clean admin UI"],
-    icon: <Gauge className="h-5 w-5" />,
-    span: "",
-    image: null,
-    imgAlt: "",
-  },
-  {
-    title: "Performance Optimization",
-    desc: "Speed and search improvements that help you rank better and feel faster to every visitor.",
-    bullets: ["SEO health checks", "Faster load times"],
-    icon: <Braces className="h-5 w-5" />,
-    span: "md:col-span-2",
-    image: ASSETS.showcaseNorthlineDesktop,
-    imgAlt: "Northline Wears commerce platform showcase",
   },
 ];
 
@@ -72,7 +81,7 @@ const WhatWeDo = () => {
             </div>
             <h2 id="what-we-do" className="mb-3 text-4xl font-bold text-foreground md:text-5xl">Capabilities</h2>
             <p className="max-w-3xl text-lg text-foreground/65">
-              Full-stack platforms for brands that want results — not generic templates.
+              Full-stack platforms for brands that want results and not generic templates.
             </p>
           </div>
         </div>
@@ -104,7 +113,7 @@ const WhatWeDo = () => {
                         src={it.image}
                         alt={it.imgAlt}
                         loading="lazy"
-                        className="block max-h-72 w-full object-contain object-top grayscale transition-all duration-500 group-hover:-translate-y-1 group-hover:opacity-95 group-hover:grayscale-0 sm:max-h-80"
+                        className="block max-h-72 w-full object-contain object-top transition-all duration-500 group-hover:-translate-y-1 group-hover:opacity-95 group-hover:grayscale-0 sm:max-h-80"
                       />
                     </div>
                   </div>

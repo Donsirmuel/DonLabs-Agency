@@ -15,18 +15,18 @@ const testimonialProfilesByProject: Record<string, TestimonialProfile> = {
     role: "Content Lead",
     quote: "The DevBlog Platform gave our editorial team a much faster publishing flow, and performance improvements made our content feel instantly more professional.",
   },
-  "Glitglam Beauty Salon": {
-    name: "Chioma N.",
-    role: "Founder",
-    quote: "Our new checkout flow reduced drop-offs and made ordering easier on mobile. We saw better conversion and less friction for our customers.",
+  "Glitglam Storefront": {
+    name: "Ashley N.",
+    role: "Store Owner",
+    quote: "Our site's checkout flow reduced drop-offs and made ordering easier on mobile. We saw better conversion and less friction for our customers.",
   },
   "Shindara Style Hub": {
-    name: "Tunde Ade",
+    name: "Tunde Adekoya",
     role: "Operations Manager",
-    quote: "Discounts, catalog controls, and order workflows are now centralized. The store feels faster and our team spends less time on manual fixes.",
+    quote: "Discounts, catalog controls, and order workflows are now centralized and automated. The business feels faster and our team spends less time on manual workflows.",
   },
   "Bubbalicious Hair & Co": {
-    name: "Sophie R.",
+    name: "Brittany R.",
     role: "Salon Owner",
     quote: "The website finally reflects our brand quality. Clients can discover services and book with confidence, which improved inquiries and repeat visits.",
   },

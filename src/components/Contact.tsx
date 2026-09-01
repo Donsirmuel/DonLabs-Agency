@@ -92,7 +92,7 @@ const Contact = () => {
           // fallback: open mailto if popup blocked
           const mailSubject = encodeURIComponent(subject || 'Website project inquiry');
           const mailBody = encodeURIComponent(text);
-          window.location.href = `mailto:samuelolaonipekun050@outlook.com?subject=${mailSubject}&body=${mailBody}`;
+          window.location.href = `mailto:samuel@donlabs.site?subject=${mailSubject}&body=${mailBody}`;
           toast({ title: 'Opening email', description: 'Could not open WhatsApp — opening your email client instead.' });
         }
     }
@@ -159,7 +159,7 @@ const Contact = () => {
 
               <StaggerItem>
               <motion.a 
-                href="mailto:samuelolaonipekun050@outlook.com"
+                href="mailto:samuel@donlabs.site"
                 whileHover={{ y: -4 }}
                 transition={spring}
                 className="flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/40 hover:shadow-hover"
@@ -169,7 +169,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-sm text-muted-foreground">Email</p>
-                  <p className="break-all text-sm font-medium">samuelolaonipekun050@outlook.com</p>
+                  <p className="break-all text-sm font-medium">samuel@donlabs.site</p>
                 </div>
               </motion.a>
               </StaggerItem>
