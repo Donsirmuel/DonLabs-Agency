@@ -86,7 +86,7 @@ const Footer = () => {
                 samuel@donlabs.site
               </a>
               <p className="text-muted-foreground">
-                Lagos, Nigeria
+                Remote
               </p>
             </div>
           </div>

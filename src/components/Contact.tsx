@@ -181,7 +181,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-sm text-muted-foreground">Location</p>
-                  <p className="font-medium">Africa (Remote)</p>
+                  <p className="font-medium">Remote</p>
                 </div>
               </div>
               </StaggerItem>
