@@ -202,7 +202,7 @@ export const defaultContent: SiteContent = {
       ],
       slug: "vericlick",
       githubUrl: "#",
-      liveUrl: "https://getvericlick.site",
+      liveUrl: "https://vericlick.site",
       imageUrl: ASSETS.vericlickScreenshot,
       caseStudyDesktopImageUrl: ASSETS.showcaseVericlickDesktop,
       caseStudyMobileImageUrl: ASSETS.showcaseVericlickMobile,
