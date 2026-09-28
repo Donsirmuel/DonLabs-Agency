@@ -42,9 +42,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <button onClick={() => goto('/')} className="flex items-center gap-3" aria-label="Go to home page">
             <img 
-              src={ASSETS.logo} 
+              src={ASSETS.logoNav} 
               alt="DonLabs Logo" 
               className="h-9 w-9 rounded-lg object-cover"
+              width={36}
+              height={36}
             />
             <span className="font-brand text-lg font-bold text-foreground">DonLabs</span>
           </button>

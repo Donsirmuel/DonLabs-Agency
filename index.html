@@ -21,6 +21,10 @@
     <!-- Preload critical hero image for LCP -->
     <link rel="preload" as="image" href="/hero-poster-desktop.jpg" media="(min-width: 1024px)" fetchpriority="high" />
     <link rel="preload" as="image" href="/hero-poster-mobile.jpg" media="(max-width: 1023px)" fetchpriority="high" />
+
+    <!-- Preload self-hosted fonts to avoid render-blocking flash -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/jetbrains-mono-latin.woff2" crossorigin />
   
   <!-- Canonical URL (relative to current host) -->
   <link rel="canonical" href="https://donlabs.site/" />

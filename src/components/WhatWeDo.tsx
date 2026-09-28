@@ -29,8 +29,8 @@ const items = [
     bullets: ["Custom development", "Unique features", "Scalable architecture"],
     icon: <LayoutTemplate className="h-5 w-5" />,
     span: "",
-    image: ASSETS.showcaseVendoraDesktop,
-    imgAlt: "Vendora e-commerce platform showcase",
+    image: ASSETS.showcaseVericlickDesktop,
+    imgAlt: "Vericlick SaaS platform showcase",
   },
   {
     title: "UI/UX Design",
@@ -39,7 +39,7 @@ const items = [
     icon: <Orbit className="h-5 w-5" />,
     span: "",
     image: ASSETS.showcaseShobsDesktop,
-    imgAlt: "Shobs e-commerce platform showcase",
+    imgAlt: "Shobs graphic design portfolio showcase",
   },
   {
     title: "Commerce Systems",
