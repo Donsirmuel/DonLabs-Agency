@@ -50,7 +50,7 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 37;
+const CONTENT_VERSION = 38;
 
 export const defaultContent: SiteContent = {
   about: {
@@ -209,6 +209,82 @@ export const defaultContent: SiteContent = {
       hasLive: true,
       projectType: "SaaS",
       clientBenefit: "Protected campaign links from junk traffic by screening suspicious clicks automatically and explaining every allow/block decision in plain language."
+    },
+    {
+      title: "OOH JAY Plumbing & Construction",
+      description: "A service website for a Nigerian plumbing and construction brand, built to explain specialist water systems clearly and turn visits into fast WhatsApp and call enquiries.",
+      features: [
+        "Service breakdown for water systems, bathrooms, plant rooms and construction support",
+        "Click-to-chat WhatsApp and call enquiry paths",
+        "SEO foundations for Lagos, Abuja and Abeokuta plumbing searches",
+        "Responsive layout tuned for mobile enquiries",
+        "Structured data for services, FAQs and service areas"
+      ],
+      slug: "ooh-jay",
+      githubUrl: "#",
+      liveUrl: "https://ooh-jay.vercel.app",
+      imageUrl: ASSETS.placeholder,
+      hasLive: true,
+      projectType: "Construction Website",
+      clientBenefit: "Made a specialist trade easier to trust by clarifying the offer, proving engineering standards, and shortening the path to a quote."
+    },
+    {
+      title: "Jurista Law",
+      description: "A law-firm website built around transparent counsel, with upfront fee quotes, plain-English contracts, and clear paths to reach an attorney.",
+      features: [
+        "Practice-area positioning with plain-English messaging",
+        "Upfront fee-quote and consultation enquiry paths",
+        "Attorney contact details, office hours and location info",
+        "Responsive layout with accessible typography",
+        "SEO and structured data for legal-service discovery"
+      ],
+      slug: "jurista-law",
+      githubUrl: "#",
+      liveUrl: "https://jurista-law.vercel.app/",
+      imageUrl: ASSETS.juristaScreenshot,
+      caseStudyDesktopImageUrl: ASSETS.showcaseJuristaDesktop,
+      caseStudyMobileImageUrl: ASSETS.showcaseJuristaMobile,
+      hasLive: true,
+      projectType: "Legal Website",
+      clientBenefit: "Turned legal services into a clearer decision by leading with transparency, simple next steps, and direct attorney access."
+    },
+    {
+      title: "SunGrid Systems",
+      description: "A solar-company website for Nigerian homes and businesses, built to explain load sizing, lithium storage packages, and inverter installs with clear quote paths.",
+      features: [
+        "Solar package presentation from 3.5kVA apartments to 10kVA family homes",
+        "Load-calculation guidance for fridges, ACs, pumps and workstations",
+        "Service-area coverage for Lagos, Abuja, Port Harcourt and Ibadan",
+        "Quote and consultation enquiry flows",
+        "SEO foundations for solar and inverter searches"
+      ],
+      slug: "sungrid-systems",
+      githubUrl: "#",
+      liveUrl: "https://sungrid-systems.vercel.app",
+      imageUrl: ASSETS.placeholder,
+      hasLive: true,
+      projectType: "Energy Website",
+      clientBenefit: "Made solar easier to buy by translating panels, batteries and inverters into package sizes, running loads, and a clear next step."
+    },
+    {
+      title: "Near Home",
+      description: "A premium shortlet website showcasing furnished apartments across ten cities, set up with proper desks, tested fiber internet, and quiet bedrooms.",
+      features: [
+        "Apartment showcase built around work-ready stays",
+        "Amenity highlights: fiber internet, workspaces, quiet rooms and backup power",
+        "Keyless self check-in and stay information",
+        "Booking and enquiry paths with multi-currency context",
+        "Responsive design tuned for mobile browsing and booking"
+      ],
+      slug: "near-home",
+      githubUrl: "#",
+      liveUrl: "https://nearhome-luxe.vercel.app/",
+      imageUrl: ASSETS.nearhomeScreenshot,
+      caseStudyDesktopImageUrl: ASSETS.showcaseNearHomeDesktop,
+      caseStudyMobileImageUrl: ASSETS.showcaseNearHomeMobile,
+      hasLive: true,
+      projectType: "Hospitality Website",
+      clientBenefit: "Helped guests judge a stay faster by leading with work essentials, sleep quality, and simple booking steps."
     },
   ],
   services: [

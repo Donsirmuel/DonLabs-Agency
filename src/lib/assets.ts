@@ -55,6 +55,8 @@ export const ASSETS = {
   vendoraScreenshot: getAssetPath('vendora-screenshot.webp'),
   northlineScreenshot: getAssetPath('northline-screenshot.webp'),
   vericlickScreenshot: getAssetPath('vericlick-screenshot.png'),
+  juristaScreenshot: getAssetPath('jurista-screenshot.webp'),
+  nearhomeScreenshot: getAssetPath('nearhome-screenshot.webp'),
   showcaseShindaraDesktop: getAssetPath('project-showcases/desktop/shindara-style-hub.webp'),
   showcaseShindaraMobile: getAssetPath('project-showcases/mobile/shindara-style-hub.webp'),
   showcaseBubbaliciousDesktop: getAssetPath('project-showcases/desktop/bubbalicious-hair-and-co.webp'),
@@ -67,6 +69,10 @@ export const ASSETS = {
   showcaseNorthlineMobile: getAssetPath('project-showcases/mobile/northline-wears.webp'),
   showcaseVericlickDesktop: getAssetPath('project-showcases/desktop/vericlick.webp'),
   showcaseVericlickMobile: getAssetPath('project-showcases/mobile/vericlick.webp'),
+  showcaseJuristaDesktop: getAssetPath('project-showcases/desktop/jurista-law.webp'),
+  showcaseJuristaMobile: getAssetPath('project-showcases/mobile/jurista-law.webp'),
+  showcaseNearHomeDesktop: getAssetPath('project-showcases/desktop/near-home.webp'),
+  showcaseNearHomeMobile: getAssetPath('project-showcases/mobile/near-home.webp'),
   // Other project images
   businessWebsite: getAssetPath('business website.png'),
   // Hero background images - place copies in public/ as hero.jpg and hero-mobile.jpg
