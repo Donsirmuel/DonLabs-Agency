@@ -50,7 +50,7 @@ export type SiteContent = {
 import { ASSETS } from "@/lib/assets";
 
 // Version number - increment this when you want to force update all users' cached content
-const CONTENT_VERSION = 39;
+const CONTENT_VERSION = 40;
 
 export const defaultContent: SiteContent = {
   about: {
@@ -223,7 +223,9 @@ export const defaultContent: SiteContent = {
       slug: "ooh-jay",
       githubUrl: "#",
       liveUrl: "https://ooh-jay.vercel.app",
-      imageUrl: ASSETS.placeholder,
+      imageUrl: ASSETS.oohjayscreenshot,
+      caseStudyDesktopImageUrl: ASSETS.showcaseOohJayDesktop,
+      caseStudyMobileImageUrl: ASSETS.showcaseOohJayMobile,
       hasLive: true,
       projectType: "Construction Website",
       clientBenefit: "Made a specialist trade easier to trust by clarifying the offer, proving engineering standards, and shortening the path to a quote."
