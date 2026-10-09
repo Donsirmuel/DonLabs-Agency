@@ -73,6 +73,9 @@ export const ASSETS = {
   showcaseJuristaMobile: getAssetPath('project-showcases/mobile/jurista-law.webp'),
   showcaseNearHomeDesktop: getAssetPath('project-showcases/desktop/near-home.webp'),
   showcaseNearHomeMobile: getAssetPath('project-showcases/mobile/near-home.webp'),
+  sungridScreenshot: getAssetPath('sungrid-screenshot.webp'),
+  showcaseSungridDesktop: getAssetPath('project-showcases/desktop/sungrid-systems.webp'),
+  showcaseSungridMobile: getAssetPath('project-showcases/mobile/sungrid-systems.webp'),
   // Other project images
   businessWebsite: getAssetPath('business website.png'),
   // Hero background images - place copies in public/ as hero.jpg and hero-mobile.jpg

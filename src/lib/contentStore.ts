@@ -261,7 +261,9 @@ export const defaultContent: SiteContent = {
       slug: "sungrid-systems",
       githubUrl: "#",
       liveUrl: "https://sungrid-systems.vercel.app",
-      imageUrl: ASSETS.placeholder,
+      imageUrl: ASSETS.sungridScreenshot,
+      caseStudyDesktopImageUrl: ASSETS.showcaseSungridDesktop,
+      caseStudyMobileImageUrl: ASSETS.showcaseSungridMobile,
       hasLive: true,
       projectType: "Energy Website",
       clientBenefit: "Made solar easier to buy by translating panels, batteries and inverters into package sizes, running loads, and a clear next step."
