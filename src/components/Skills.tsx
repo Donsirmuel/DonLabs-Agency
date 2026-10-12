@@ -9,7 +9,7 @@ const Skills = () => {
       title: "Backend Development",
       icon: <Server className="h-6 w-6" />,
       description: "Core expertise in server-side development",
-      skills: ["Django", "Django REST Framework", "Flask", "Python", "Celery", "Redis"]
+      skills: ["Django", "Django REST Framework", "Flask", "Python", "REST APIs"]
     },
     {
       title: "Database & APIs",
@@ -21,13 +21,13 @@ const Skills = () => {
       title: "Frontend Technologies",
       icon: <Code className="h-6 w-6" />,
       description: "Frontend technologies for full-stack development",
-      skills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Responsive Design", "Tailwind CSS"]
+      skills: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Node.js", "Responsive Design", "Tailwind CSS"]
     },
     {
       title: "Tools & Methodologies",
       icon: <Globe className="h-6 w-6" />,
       description: "Development tools and practices",
-      skills: ["Git", "Docker", "AWS", "Agile", "Clean Architecture", "Performance Optimization"]
+      skills: ["Git", "Vercel", "DigitalOcean", "AWS", "Agile", "Performance Optimization"]
     }
   ];
 

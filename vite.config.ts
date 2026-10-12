@@ -5,9 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Use GH_PAGES env flag to decide whether to build with the GitHub Pages base path.
-  // In CI for GitHub Pages set GH_PAGES=true; Vercel builds will leave it unset and use '/'.
-  base: process.env.GH_PAGES === 'true' ? "/My-Portfolio/" : "/",
+  // Canonical host is https://donlabs.site on Vercel (GH Pages retired).
+  // Always build from root so absolute URLs, sitemap, and OG tags stay correct.
+  base: "/",
   server: {
     host: "::",
     port: 8080,

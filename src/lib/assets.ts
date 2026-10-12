@@ -5,27 +5,9 @@ export const getAssetPath = (path: string): string => {
   // Remove leading slash if present
   const cleanPath = path.startsWith('/') ? path.slice(1) : path;
 
-  // Helper to detect GitHub Pages-like subpath at runtime
-  const isGitHubPagesRuntime = () => {
-    try {
-      if (typeof window !== 'undefined') {
-        // Hostname contains github.io OR the current path contains the repo base
-        if (window.location.hostname.includes('github.io')) return true;
-        if (window.location.pathname.startsWith('/My-Portfolio/')) return true;
-      }
-    } catch (e) {
-      // ignore
-    }
-    return false;
-  };
-
-  // Build-time heuristic: Vite exposes BASE_URL; if it's set to the repo subpath, respect it
-  const baseUrl = import.meta.env.BASE_URL || '/';
-  const isGitHubPagesBuild = typeof baseUrl === 'string' && baseUrl.startsWith('/My-Portfolio/');
-
-  const useRepoPrefix = isGitHubPagesBuild || isGitHubPagesRuntime();
-
-  const fullPath = useRepoPrefix ? `/My-Portfolio/${cleanPath}` : `/${cleanPath}`;
+  // Canonical host is https://donlabs.site on Vercel (GH Pages retired).
+  // Always serve from root so sitemap, OG, and asset URLs stay absolute.
+  const fullPath = `/${cleanPath}`;
   const encodedPath = encodeURI(fullPath);
   return `${encodedPath}${CACHE_BUST}`;
 };
